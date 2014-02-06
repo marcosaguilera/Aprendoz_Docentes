@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="ContratoMatriculaEstandar"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="612"
+		 pageHeight="792"
+		 columnWidth="563"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="19"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="fechaContrato" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["20/06/2011"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="idPersona" isForPrompting="false" class="java.lang.Integer"/>
+	<queryString><![CDATA[select padre.Id_Persona, estud.nombre1 estudn1, estud.nombre2 estudn2, estud.Apellido1 estuda1, estud.Apellido2 estuda2
+     , padre.nombre1 padren1, padre.nombre2 padren2, padre.Apellido1 padrea1, padre.Apellido2 padrea2
+		 , padre.Tipo_Documento padretdoc, padre.No_Documento padredoc, padre.Lugar_Expedicion_Municipio padreexpdoc
+		 , padre.Direccion_Residencia padredir, padre.Telefono padretel, padre.Celular padrecel, padre.email padremail
+
+		 , madre.nombre1 madren1, madre.nombre2 madren2, madre.Apellido1 madrea1, madre.Apellido2 madrea2
+		 , madre.Tipo_Documento madretdoc, madre.No_Documento madredoc, madre.Lugar_Expedicion_Municipio madreexpdoc
+		 , madre.Direccion_Residencia madredir, madre.Telefono madretel, madre.Celular madrecel, madre.email madremail
+
+  	 , acud.nombre1 acudn1, acud.nombre2 acudn2, acud.Apellido1 acuda1, acud.Apellido2 acuda2
+		 , acud.Tipo_Documento acudtdoc, acud.No_Documento acuddoc, acud.Lugar_Expedicion_Municipio acudexpdoc
+		 , acud.Direccion_Residencia acuddir, acud.Telefono acudtel, acud.Celular acudcel, acud.email acudmail
+
+     , g.grado
+  from persona estud, persona padre, insc_alum_curso ic, curso c, grado g
+     , persona madre, persona acud
+		 , Area /*tabla para hacer dos paginas obligatorias en el reporte*/
+where 1=1
+  and padre.Tipo_Persona_Id_Tipo_Persona = 2
+  and madre.Tipo_Persona_Id_Tipo_Persona = 12
+  and acud.Tipo_Persona_Id_Tipo_Persona = 3
+  and padre.Grupo_Familiar_ID_Grupo_Familiar = estud.Grupo_Familiar_ID_Grupo_Familiar
+  and madre.Grupo_Familiar_ID_Grupo_Familiar = estud.Grupo_Familiar_ID_Grupo_Familiar
+  and acud.Grupo_Familiar_ID_Grupo_Familiar = estud.Grupo_Familiar_ID_Grupo_Familiar
+  and ic.Persona_Id_Persona = estud.id_persona
+  and ic.Curso_Id_Curso = c.Id_Curso 
+  and c.Grado_id_grado = g.Id_Grado
+  LIMIT 0, 2]]></queryString>
+
+	<field name="Id_Persona" class="java.lang.Integer"/>
+	<field name="estudn1" class="java.lang.String"/>
+	<field name="estudn2" class="java.lang.String"/>
+	<field name="estuda1" class="java.lang.String"/>
+	<field name="estuda2" class="java.lang.String"/>
+	<field name="padren1" class="java.lang.String"/>
+	<field name="padren2" class="java.lang.String"/>
+	<field name="padrea1" class="java.lang.String"/>
+	<field name="padrea2" class="java.lang.String"/>
+	<field name="padretdoc" class="java.lang.String"/>
+	<field name="padredoc" class="java.lang.String"/>
+	<field name="padreexpdoc" class="java.lang.String"/>
+	<field name="padredir" class="java.lang.String"/>
+	<field name="padretel" class="java.lang.String"/>
+	<field name="padrecel" class="java.lang.String"/>
+	<field name="padremail" class="java.lang.String"/>
+	<field name="madren1" class="java.lang.String"/>
+	<field name="madren2" class="java.lang.String"/>
+	<field name="madrea1" class="java.lang.String"/>
+	<field name="madrea2" class="java.lang.String"/>
+	<field name="madretdoc" class="java.lang.String"/>
+	<field name="madredoc" class="java.lang.String"/>
+	<field name="madreexpdoc" class="java.lang.String"/>
+	<field name="madredir" class="java.lang.String"/>
+	<field name="madretel" class="java.lang.String"/>
+	<field name="madrecel" class="java.lang.String"/>
+	<field name="madremail" class="java.lang.String"/>
+	<field name="acudn1" class="java.lang.String"/>
+	<field name="acudn2" class="java.lang.String"/>
+	<field name="acuda1" class="java.lang.String"/>
+	<field name="acuda2" class="java.lang.String"/>
+	<field name="acudtdoc" class="java.lang.String"/>
+	<field name="acuddoc" class="java.lang.String"/>
+	<field name="acudexpdoc" class="java.lang.String"/>
+	<field name="acuddir" class="java.lang.String"/>
+	<field name="acudtel" class="java.lang.String"/>
+	<field name="acudcel" class="java.lang.String"/>
+	<field name="acudmail" class="java.lang.String"/>
+	<field name="grado" class="java.lang.String"/>
+
+	<variable name="anioIncial" class="java.lang.String" resetType="Report" calculation="Nothing">
+		<variableExpression><![CDATA["2011"]]></variableExpression>
+		<initialValueExpression><![CDATA["2011"]]></initialValueExpression>
+	</variable>
+	<variable name="anioFinal" class="java.lang.String" resetType="Report" calculation="Nothing">
+		<variableExpression><![CDATA["2012"]]></variableExpression>
+		<initialValueExpression><![CDATA["2012"]]></initialValueExpression>
+	</variable>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="75"  isSplitAllowed="true" >
+				<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.equals(new Integer(1))||$V{PAGE_NUMBER}.equals(new Integer(2)))]]></printWhenExpression>
+				<line direction="TopDown">
+					<reportElement
+						x="1"
+						y="2"
+						width="562"
+						height="0"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="1"
+						y="65"
+						width="562"
+						height="0"
+						key="line-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="482"
+						y="45"
+						width="36"
+						height="20"
+						key="staticText-1"/>
+					<box></box>
+					<textElement verticalAlignment="Bottom">
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Folio:]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="510"
+						y="62"
+						width="45"
+						height="0"
+						key="line-3"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="4"
+						y="6"
+						width="559"
+						height="53"
+						key="textField-1"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["COLEGIO ROCHESTER "+
+"\nCONTRATO DE SERVICIOS EDUCATIVOS"+
+"\nAÑO ESCOLAR "+$V{anioIncial}+" - "+$V{anioFinal}+
+"\nCONTRATO DE MUESTRA"]]></textFieldExpression>
+				</textField>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="677"  isSplitAllowed="true" >
+				<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.equals(new Integer(1))||$V{PAGE_NUMBER}.equals(new Integer(2)))]]></printWhenExpression>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1"
+						y="1"
+						width="556"
+						height="676"
+						forecolor="#000000"
+						key="textField-2">
+							<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.equals(new Integer(1)))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Entre los suscritos JUAN PABLO ALJURE LEÓN, identificado con la C.C. No.79.159.081 de Usaquén, en nombre y representación del COLEGIO ROCHESTER de Bogotá, en su calidad de Rector, quien en adelante se llamará EL COLEGIO, por una parte, y "
++
+"NOMBRE DEL PADRE"
++
+" y "
++
+"NOMBRE DE LA MADRE"
++
+" en su condición de padres o acudientes del estudiante "
++
+"NOMBRE DEL ESTUDIANTE"
++
+", quienes en lo sucesivo se denominarán PADRES O ACUDIENTES, identificados como aparece al pie de las firmas, hemos celebrado el presente contrato que se regirá por la ley colombiana y por las siguientes cláusulas especiales:"
++"\n\n"+
+"PRIMERA: Definición del Contrato. El presente contrato de servicios educativos formaliza la vinculación del estudiante al servicio educativo que ofrece EL COLEGIO, en los términos de los Artículos 95 y 201 de la Ley 115 de 1994 y compromete a las partes en las obligaciones legales y pedagógicas tendientes a hacer efectiva la prestación del servicio educativo."
++"\n\n"+
+"SEGUNDA: Objeto del Contrato: El objeto del presente contrato es procurar la formación integral del estudiante mediante la recíproca complementación de esfuerzos del mismo, de los PADRES O ACUDIENTES y de EL COLEGIO, en la búsqueda del pleno desarrollo de la personalidad del estudiante y de un rendimiento académico de calidad en el ejercicio del programa curricular correspondiente al grado ("
++"GRADO"+
+"), de acuerdo con el Proyecto Educativo Institucional del Colegio Rochester, para el año escolar "
++$V{anioIncial}+"-"+$V{anioFinal}+"."
++"\n\n"+
+"TERCERA: Obligaciones de los Padres de Familia: 1. Aceptar y cumplir con lo dispuesto en el Manual de Convivencia Educativa del Colegio Rochester, ajustado a la Ley 115 de 1994, copia del cual recibirán al iniciar clases, y que forma parte del presente contrato. 2. Pagar los derechos de matrícula al Colegio Rochester junto con los otros cobros que deben ser pagados en la fecha de matrícula, según la factura recibida por los PADRES O ACUDIENTES. Pagar también la pensión en 10 cuotas mensuales iguales y el servicio de cafetería y/o transporte escolar desde agosto de "
++$V{anioIncial}+" a Mayo de "+$V{anioFinal}+
+", en las cuantías adoptadas por el Consejo Directivo en desarrollo de las disposiciones legales, particularmente la Resolución 8260 de Septiembre 20 de 2010  del Ministerio de Educación Nacional y El Decreto 2253 de 1995, pagos que haremos según la factura mensual formulada por Diners de Davivienda, dentro del cupo de crédito rotativo que nos apruebe dicho Banco a través del convenio que ha firmado con el Colegio Rochester. En caso de que no solicitemos el cupo de crédito mencionado o de que decidamos no continuar haciendo uso del cupo asignado, pagaremos como alternativa directamente al Colegio Rochester en forma anticipada todas las mensualidades de pensión, cafetería y/o transporte escolar con un descuento del 6%. 3. En caso de que DAVIVIENDA rechace el pago a EL COLEGIO por algunos padres que estén en mora con DAVIVIENDA, estos padres deberán pagar a EL COLEGIO las mensualidades y deberán pagar intereses de mora en caso de mora por el retardo o incumplimiento del plazo de pago de las mensualidades en los 5 primeros días de cada mes, de acuerdo con el Artículo 65 de la Ley 45 de 1990, que reemplazó el Artículo 883 del Código de Comercio. 4.Colaborar con los profesores y directivos del Colegio, asistiendo a los cursos realizados por EL COLEGIO como “Padres Pacíficos y Exitosos” y atendiendo a las citaciones y recomendaciones que redunden en el mejoramiento del desempeño del estudiante frente a los aprendizajes y comportamientos esperados por parte de EL COLEGIO."
++"\n\n"+
+"CUARTA: Obligaciones de EL COLEGIO. 1. Dar al estudiante matriculado el servicio educativo bilingüe (español-inglés) con un alto nivel académico, moral y social, de acuerdo con el Proyecto Educativo Institucional. 2. Fijar las tarifas de matrícula, pensión, cobros periódicos y otros cobros autorizados por la Secretaría de Educación Distrital de acuerdo a las disposiciones legales vigentes, especialmente la Resolución 8260 de Septiembre 20 de 2010 expedida por el Ministerio de Educación Nacional. 3. Expedir certificados de estudios y de evaluación estudiantil, bimestral y al final del grado cursado, por Internet o por solicitud de los padres mediante el pago del certificado, si se han cumplido las obligaciones contractuales, que incluye estar a paz y salvo con la tesorería de EL COLEGIO y no estar en mora con Davivienda, todo en concordancia con la sentencia SU-624 de 1999 de la Corte Constitucional. 4.EL COLEGIO no se hace responsable por el bajo rendimiento del estudiante cuando ello fuere imputable a fallas del estudiante o de los padres."
++"\n\n"+
+"QUINTA: Duración y Renovación. El presente contrato tiene una vigencia de un año escolar. La firma de un nuevo contrato para el siguiente año escolar se efectuará de acuerdo con las disposiciones legales, una vez cumplidas las obligaciones del presente contrato y las previstas en el Manual de Convivencia y cuando los padres de familia o acudientes se encuentren a paz y salvo con la Tesorería del Colegio y tengan disponibilidad en su cupo de crédito de DAVIVIENDA. La no concurrencia de los padres de familia o del acudiente en la fechas fijadas por EL COLEGIO para la matrícula del siguiente año escolar, sin mediar excusa justificada, será interpretada como la voluntad de retirar al estudiante, en cuyo caso EL COLEGIO podrá adjudicar su cupo a otro estudiante."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1"
+						y="23"
+						width="556"
+						height="222"
+						key="textField-3">
+							<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.equals(new Integer(2)))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["SEXTA: Perfeccionamiento y terminación del contrato. El presente contrato se perfeccionará cuando las partes lo hayan firmado y se podrá terminar: 1. Por acuerdo entre las partes. 2. Por retiro voluntario del estudiante beneficiario mediante carta suscrita por los PADRES O ACUDIENTES. 3. Por decisión motivada de EL COLEGIO cuando hubiere causal de retiro, de acuerdo a lo dispuesto en el Manual de Convivencia."
++"\n\n"+
+"SÉPTIMA: Si el estudiante, una vez matriculado, se retira del Colegio antes de la fecha de iniciación de clases del año escolar "
++$V{anioIncial}+"-"+$V{anioFinal}+
+", se le devolverá el 50% del valor de la matrícula y el valor de los otros costos pagados. Si el estudiante se retira después de iniciadas las clases, no habrá lugar a devolver alguna suma del valor de la matrícula, y se le devolverá únicamente lo pagado por los otros conceptos de costos."
++"\n\n"+
+"OCTAVA: El presente contrato prestará mérito ejecutivo para el cobro de cualquier suma pendiente de pago a EL COLEGIO por parte de los PADRES O ACUDIENTES."
++"\n\n"+
+"En constancia se firma por las partes, en Bogotá, D.C., el día "+$P{fechaContrato}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="4"
+						y="280"
+						width="223"
+						height="92"
+						key="textField-4">
+							<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.equals(new Integer(2)))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["NOMBRE PADRE"
++"\n"+
+"CÉDULA PADRE, LUGAR EXPEDICIÓN, DIRECCIÓN"
++"\n"+
+"TELÉFONO "
++"\n"+
+"CELULAR "
++"\n"+
+"E-MAIL "]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="332"
+						y="281"
+						width="223"
+						height="92"
+						key="textField-5">
+							<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.equals(new Integer(2)))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["NOMBRE MADRE"
++"\n"+
+"CÉDULA MADRE, LUGAR EXPEDICIÓN, DIRECCIÓN"
++"\n"+
+"TELÉFONO "
++"\n"+
+"CELULAR "
++"\n"+
+"E-MAIL "]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="4"
+						y="465"
+						width="223"
+						height="92"
+						key="textField-6">
+							<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.equals(new Integer(2)))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["NOMBRE ACUDIENTE"
++"\n"+
+"CÉDULA ACUDIENTE, LUGAR EXPEDICIÓN, DIRECCIÓN"
++"\n"+
+"TELÉFONO "
++"\n"+
+"CELULAR "
++"\n"+
+"E-MAIL "]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="4"
+						y="267"
+						width="222"
+						height="0"
+						key="line-4">
+							<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.equals(new Integer(2)))]]></printWhenExpression>
+						</reportElement>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="331"
+						y="267"
+						width="222"
+						height="0"
+						key="line-5">
+							<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.equals(new Integer(2)))]]></printWhenExpression>
+						</reportElement>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="5"
+						y="453"
+						width="222"
+						height="0"
+						key="line-6">
+							<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.equals(new Integer(2)))]]></printWhenExpression>
+						</reportElement>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

@@ -1,0 +1,682 @@
+.wmgrid-disabled .dojoxGrid-cell {
+color: Gray;
+background-color: VeryLightGray;
+}
+
+.Reg_eventualidades .Reg_eventualidades-buscar_boton_1{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+
+.Reg_eventualidades .Reg_eventualidades-limpiar_boton_1{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+
+.Reg_eventualidades .Reg_eventualidades-r_eventualidades{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 9pt;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+
+.Reg_eventualidades .Reg_eventualidades-b_consulta{
+  background: #FA5858;
+  background-image: -moz-linear-gradient(center top , #FA5858, #FA5858);
+  background-image: -webkit-linear-gradient(center top , #FA5858, #FA5858);
+  background-image: -moz-linear-gradient(center top , #FA5858, #FA5858);
+  background-image: -o-linear-gradient(center top , #FA5858, #FA5858);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 9pt;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+
+.Reg_eventualidades .Reg_eventualidades-eventualidadesDetailsPanel{
+  background: #3399FF;
+  background-image: -moz-linear-gradient(center top , #3399FF, #3399FF);
+  background-image: -webkit-linear-gradient(center top , #3399FF, #3399FF);
+  background-image: -moz-linear-gradient(center top , #3399FF, #3399FF);
+  background-image: -o-linear-gradient(center top , #3399FF, #3399FF);
+ 
+}
+
+.Reg_eventualidades .Reg_eventualidades-eventualidadesGridPanel{
+  background: #3399FF;
+  background-image: -moz-linear-gradient(center top , #3399FF, #3399FF);
+  background-image: -webkit-linear-gradient(center top , #3399FF, #3399FF);
+  background-image: -moz-linear-gradient(center top , #3399FF, #3399FF);
+  background-image: -o-linear-gradient(center top , #3399FF, #3399FF);
+ 
+}
+
+.Reg_eventualidades .Reg_eventualidades-eventualidadpersonasGridPanel{
+  background: #3399FF;
+  background-image: -moz-linear-gradient(center top , #3399FF, #3399FF);
+  background-image: -webkit-linear-gradient(center top , #3399FF, #3399FF);
+  background-image: -moz-linear-gradient(center top , #3399FF, #3399FF);
+  background-image: -o-linear-gradient(center top , #3399FF, #3399FF);
+ 
+}
+
+.Reg_eventualidades .Reg_eventualidades-eventualidadpersonasDetailsPanel{
+  background: #3399FF;
+  background-image: -moz-linear-gradient(center top , #3399FF, #3399FF);
+  background-image: -webkit-linear-gradient(center top , #3399FF, #3399FF);
+  background-image: -moz-linear-gradient(center top , #3399FF, #3399FF);
+  background-image: -o-linear-gradient(center top , #3399FF, #3399FF);
+ 
+}
+
+.Reg_eventualidades .Reg_eventualidades-historial_eventualidades{
+  background: #FA5858;
+  background-image: -moz-linear-gradient(center top , #FA5858, #FA5858);
+  background-image: -webkit-linear-gradient(center top , #FA5858, #FA5858);
+  background-image: -moz-linear-gradient(center top , #FA5858, #FA5858);
+  background-image: -o-linear-gradient(center top , #FA5858, #FA5858);
+ 
+}
+
+.Reg_eventualidades .Reg_eventualidades-buscar_boton_2{
+  background: #F4F4F4;
+  background-image: -moz-linear-gradient(center top , #848484, #848484);
+  background-image: -webkit-linear-gradient(center top , #848484, #848484);
+  background-image: -moz-linear-gradient(center top , #848484, #848484);
+  background-image: -o-linear-gradient(center top , #848484, #848484);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  /*text-transform: uppercase; */
+  cursor: pointer;
+  font-size: 9pt;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+
+.Reg_eventualidades .Reg_eventualidades-limpiar_boton_2{
+  background: #F4F4F4;
+  background-image: -moz-linear-gradient(center top , #848484, #848484);
+  background-image: -webkit-linear-gradient(center top , #848484, #848484);
+  background-image: -moz-linear-gradient(center top , #848484, #848484);
+  background-image: -o-linear-gradient(center top , #848484, #848484);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  /*text-transform: uppercase;*/
+  cursor: pointer;
+  font-size: 9pt;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+
+
+.Reg_eventualidades .Reg_eventualidades-b_consulta {
+  background-color: #f8f8f8;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#ececec));
+background-image: -webkit-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -moz-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -ms-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -o-linear-gradient(top,#f8f8f8,#ececec);
+background-image: linear-gradient(top,#f8f8f8,#ececec);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8f8f8',EndColorStr='#ececec');
+border: 1px solid #c6c6c6;
+-moz-border-radius: 2px;
+-o-border-radius: 2px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+padding: 0 10px;
+position: relative;
+color: #666;
+
+}
+
+.Reg_eventualidades .Reg_eventualidades-tabla_buscar_persona {
+  cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-eventualidadesDataGrid1 {
+  cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-eventualidadpersonasDataGrid1 {
+  cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-warningPanel {
+  color: #9F6000;
+  background-color: #FEEFB3;
+background-image: url('resources/images/buttons/KnobAttention.ico');
+background-repeat: no-repeat;
+border-radius: 5px;
+}
+
+.Reg_eventualidades .Reg_eventualidades-panel4 {
+  
+}
+
+.Reg_eventualidades .Reg_eventualidades-r_eventualidades {
+  background-color: #f8f8f8;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#ececec));
+background-image: -webkit-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -moz-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -ms-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -o-linear-gradient(top,#f8f8f8,#ececec);
+background-image: linear-gradient(top,#f8f8f8,#ececec);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8f8f8',EndColorStr='#ececec');
+border: 1px solid #c6c6c6;
+-moz-border-radius: 2px;
+-o-border-radius: 2px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+padding: 0 10px;
+position: relative;
+color: #666;
+}
+.Reg_eventualidades .Reg_eventualidades-buscar_boton_2 {
+  border-color: #BBB;
+  -moz-box-shadow: inset 0 0 10px #D4D4D4;
+-webkit-box-shadow: inset 0 0 10px #D4D4D4;
+box-shadow: inset 0 0 10px #D4D4D4;
+color: #333;
+}
+
+.Reg_eventualidades .Reg_eventualidades-limpiar_boton_2 {
+	  background-color: #f8f8f8;
+	  background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#ececec));
+background-image: -webkit-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -moz-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -ms-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -o-linear-gradient(top,#f8f8f8,#ececec);
+background-image: linear-gradient(top,#f8f8f8,#ececec);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8f8f8',EndColorStr='#ececec');
+border: 1px solid #c6c6c6;
+-moz-border-radius: 2px;
+-o-border-radius: 2px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+padding: 0 10px;
+position: relative;
+color: #666;
+cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-adicionarPlan {
+  cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-picture1 {
+  cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-agregarPlanReparacion {
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-agregar_butt {
+	display: inline-block;
+	height: 24px;
+padding: 0 7px 0 7px;
+margin: 0 7px 0 0;
+font-size: 11px;
+font-weight: bold;
+line-height: 24px;
+color: #333;
+text-align: center;
+text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
+border: solid 1px #aaa;
+float: left;
+cursor: pointer;
+text-decoration: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+border: 1px solid #3079ED !important;
+background: #4B8DF8;
+background: -webkit-linear-gradient(top, #4C8FFD, #4787ED);
+background: -moz-linear-gradient(top, #4C8FFD, #4787ED);
+background: -ms-linear-gradient(top, #4C8FFD, #4787ED);
+background: -o-linear-gradient(top, #4C8FFD, #4787ED);
+-webkit-transition: all 0.05s linear;
+-moz-transition: all 0.05s linear;
+-ms-transition: all 0.05s linear;
+-o-transition: all 0.05s linear;
+transition: all 0.05s linear;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 12px;
+line-height: 20px;
+color: rgb(255, 255, 255);
+width: 55px;
+height: 30px;
+line-height: 30px;
+text-align: center;
+cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-quitar_butt {
+	display: inline-block;
+	height: 24px;
+padding: 0 7px 0 7px;
+margin: 0 7px 0 0;
+font-size: 11px;
+font-weight: bold;
+line-height: 24px;
+color: #333;
+text-align: center;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+border: solid 1px #aaa;
+float: left;
+cursor: pointer;
+text-decoration: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-webkit-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05),inset 0px 1px 0px 0px #ffffff;
+-moz-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05),inset 0px 1px 0px 0px #ffffff;
+box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05),inset 0px 1px 0px 0px #ffffff;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+background-color: #f5f5f5;
+background-image: -moz-linear-gradient(top, #fafafa, #ededed);
+background-image: -ms-linear-gradient(top, #fafafa, #ededed);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#ededed));
+background-image: -webkit-linear-gradient(top, #fafafa, #ededed);
+background-image: -o-linear-gradient(top, #fafafa, #ededed);
+background-image: linear-gradient(top, #fafafa, #ededed);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#fafafa', endColorstr='#ededed', GradientType=0);
+-webkit-transition: all 0.05s linear;
+-moz-transition: all 0.05s linear;
+-ms-transition: all 0.05s linear;
+-o-transition: all 0.05s linear;
+transition: all 0.05s linear;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 12px;
+line-height: 20px;
+color: #333333;
+width: 55px;
+height: 30px;
+line-height: 30px;
+text-align: center;
+}
+
+.Reg_eventualidades .Reg_eventualidades-eventualidadPersonasDataGrid {
+	cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-actualizarEventualidad_butt {
+	  background-color: #f8f8f8;
+	  background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#ececec));
+background-image: -webkit-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -moz-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -ms-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -o-linear-gradient(top,#f8f8f8,#ececec);
+background-image: linear-gradient(top,#f8f8f8,#ececec);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8f8f8',EndColorStr='#ececec');
+border: 1px solid #c6c6c6;
+-moz-border-radius: 2px;
+-o-border-radius: 2px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+padding: 0 10px;
+position: relative;
+color: #666;
+cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-quitar_butt2 {
+	display: inline-block;
+	height: 24px;
+padding: 0 7px 0 7px;
+margin: 0 7px 0 0;
+font-size: 11px;
+font-weight: bold;
+line-height: 24px;
+color: #333;
+text-align: center;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+border: solid 1px #aaa;
+float: left;
+cursor: pointer;
+text-decoration: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-webkit-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05),inset 0px 1px 0px 0px #ffffff;
+-moz-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05),inset 0px 1px 0px 0px #ffffff;
+box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05),inset 0px 1px 0px 0px #ffffff;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+background-color: #f5f5f5;
+background-image: -moz-linear-gradient(top, #fafafa, #ededed);
+background-image: -ms-linear-gradient(top, #fafafa, #ededed);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#ededed));
+background-image: -webkit-linear-gradient(top, #fafafa, #ededed);
+background-image: -o-linear-gradient(top, #fafafa, #ededed);
+background-image: linear-gradient(top, #fafafa, #ededed);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#fafafa', endColorstr='#ededed', GradientType=0);
+-webkit-transition: all 0.05s linear;
+-moz-transition: all 0.05s linear;
+-ms-transition: all 0.05s linear;
+-o-transition: all 0.05s linear;
+transition: all 0.05s linear;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 12px;
+line-height: 20px;
+color: #333333;
+width: 55px;
+height: 30px;
+line-height: 30px;
+text-align: center;
+}
+
+.Reg_eventualidades .Reg_eventualidades-eventualidades {
+	cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-imprimir_acta {
+	display: inline-block;
+	height: 24px;
+padding: 0 7px 0 7px;
+margin: 0 7px 0 0;
+font-size: 11px;
+font-weight: bold;
+line-height: 24px;
+color: #333;
+text-align: center;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+border: solid 1px #aaa;
+float: left;
+cursor: pointer;
+text-decoration: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-webkit-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05),inset 0px 1px 0px 0px #ffffff;
+-moz-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05),inset 0px 1px 0px 0px #ffffff;
+box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05),inset 0px 1px 0px 0px #ffffff;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+background-color: #f5f5f5;
+background-image: -moz-linear-gradient(top, #fafafa, #ededed);
+background-image: -ms-linear-gradient(top, #fafafa, #ededed);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#ededed));
+background-image: -webkit-linear-gradient(top, #fafafa, #ededed);
+background-image: -o-linear-gradient(top, #fafafa, #ededed);
+background-image: linear-gradient(top, #fafafa, #ededed);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#fafafa', endColorstr='#ededed', GradientType=0);
+-webkit-transition: all 0.05s linear;
+-moz-transition: all 0.05s linear;
+-ms-transition: all 0.05s linear;
+-o-transition: all 0.05s linear;
+transition: all 0.05s linear;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 12px;
+line-height: 20px;
+color: #333333;
+width: 55px;
+height: 30px;
+line-height: 30px;
+text-align: center;
+}
+
+.Reg_eventualidades .Reg_eventualidades-guardar_cuerpo_eventualidades {
+	display: inline-block;
+	height: 24px;
+padding: 0 7px 0 7px;
+margin: 0 7px 0 0;
+font-size: 11px;
+font-weight: bold;
+line-height: 24px;
+color: #333;
+text-align: center;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+border: solid 1px #aaa;
+float: left;
+cursor: pointer;
+text-decoration: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-webkit-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05),inset 0px 1px 0px 0px #ffffff;
+-moz-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05),inset 0px 1px 0px 0px #ffffff;
+box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05),inset 0px 1px 0px 0px #ffffff;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+background-color: #f5f5f5;
+background-image: -moz-linear-gradient(top, #fafafa, #ededed);
+background-image: -ms-linear-gradient(top, #fafafa, #ededed);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#ededed));
+background-image: -webkit-linear-gradient(top, #fafafa, #ededed);
+background-image: -o-linear-gradient(top, #fafafa, #ededed);
+background-image: linear-gradient(top, #fafafa, #ededed);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#fafafa', endColorstr='#ededed', GradientType=0);
+-webkit-transition: all 0.05s linear;
+-moz-transition: all 0.05s linear;
+-ms-transition: all 0.05s linear;
+-o-transition: all 0.05s linear;
+transition: all 0.05s linear;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 12px;
+line-height: 20px;
+color: #333333;
+width: 55px;
+height: 30px;
+line-height: 30px;
+text-align: center;
+}
+
+.Reg_eventualidades .Reg_eventualidades-reporte_eventualidades {
+	  background-color: #f8f8f8;
+	  background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#ececec));
+background-image: -webkit-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -moz-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -ms-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -o-linear-gradient(top,#f8f8f8,#ececec);
+background-image: linear-gradient(top,#f8f8f8,#ececec);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8f8f8',EndColorStr='#ececec');
+border: 1px solid #c6c6c6;
+-moz-border-radius: 2px;
+-o-border-radius: 2px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+padding: 0 10px;
+position: relative;
+color: #666;
+cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-testSV {
+	display: inline-block;
+	height: 24px;
+padding: 0 7px 0 7px;
+margin: 0 7px 0 0;
+font-size: 11px;
+font-weight: bold;
+line-height: 24px;
+color: #333;
+text-align: center;
+text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
+border: solid 1px #aaa;
+float: left;
+cursor: pointer;
+text-decoration: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+border: 1px solid #3079ED !important;
+background: #4B8DF8;
+background: -webkit-linear-gradient(top, #4C8FFD, #4787ED);
+background: -moz-linear-gradient(top, #4C8FFD, #4787ED);
+background: -ms-linear-gradient(top, #4C8FFD, #4787ED);
+background: -o-linear-gradient(top, #4C8FFD, #4787ED);
+-webkit-transition: all 0.05s linear;
+-moz-transition: all 0.05s linear;
+-ms-transition: all 0.05s linear;
+-o-transition: all 0.05s linear;
+transition: all 0.05s linear;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 12px;
+line-height: 20px;
+color: rgb(255, 255, 255);
+width: 55px;
+height: 30px;
+line-height: 30px;
+text-align: center;
+cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-b_orientacion {
+	  background-color: #f8f8f8;
+	  background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#ececec));
+background-image: -webkit-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -moz-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -ms-linear-gradient(top,#f8f8f8,#ececec);
+background-image: -o-linear-gradient(top,#f8f8f8,#ececec);
+background-image: linear-gradient(top,#f8f8f8,#ececec);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8f8f8',EndColorStr='#ececec');
+border: 1px solid #c6c6c6;
+-moz-border-radius: 2px;
+-o-border-radius: 2px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+padding: 0 10px;
+position: relative;
+color: #666;
+font-size: 9pt;
+cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-orientacionTopHead {
+	background-color: #465AA3;
+}
+
+.Reg_eventualidades .Reg_eventualidades-orientacionTopHead1 {
+	background-color: #465AA3;
+}
+
+.Reg_eventualidades .Reg_eventualidades-orientacionEventualidades {
+	cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-orientacionInvolucrados {
+	cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-buscarEventualidades {
+	color: #ffffff;
+	background-color: #428bca !important;
+border-color: #357ebd;
+border-radius: 2px;
+cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-cancelar {
+	color: #ffffff;
+	background-color: #d2322d;
+border-color: #ac2925;
+border-radius: 2px;
+cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-enviarCita {
+	color: #ffffff;
+	background-color: #428bca !important;
+border-color: #357ebd;
+border-radius: 2px;
+cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-responseMessageOk {
+	color: #468847;
+	background-color: #dff0d8;
+border-color: #d6e9c6;
+}
+
+.Reg_eventualidades .Reg_eventualidades-responseMessageBad {
+	color: #b94a48;
+	background-color: #f2dede;
+border-color: #eed3d7;
+}
+
+.Reg_eventualidades .Reg_eventualidades-imprimirCita {
+	color: #ffffff;
+	background-color: #428bca !important;
+border-color: #357ebd;
+border-radius: 2px;
+cursor: pointer;
+}
+
+.Reg_eventualidades .Reg_eventualidades-responseMessageWait {
+	color: #3a87ad;
+	background-color: #d9edf7;
+border-color: #bce8f1;
+}
+
+.Reg_eventualidades .Reg_eventualidades-importantMessage {
+	padding: 8px 35px 8px 14px;
+	margin-bottom: 20px;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+background-color: #fcf8e3;
+border: 1px solid #fbeed5;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+color: #c09853;
+}
+

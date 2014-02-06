@@ -1,0 +1,1716 @@
+/*********************************************
+ *Esquema de colores Aprendoz
+ *Colores basados en el escudo e imagen institucional
+ *  Azul oscuro: #281d73
+ *  Azul claro:  #5c548c
+ *  Rojo Oscuro: #a62121
+ *  Rojo Claro:  #bf5e5e
+ *  Blanco:      #f2f2f2
+ *
+ *  ***Esquema alterno***
+ *  Rojo Vino:       #690011
+ *  Rojo:            #bf0426
+ *  Rojo claro:      #bf0426
+ *  Amarillo claro:  #f2d99c
+ *  Amarrillo:       #e5b96f
+ *********************************************/
+ .wmlabel.wmeditor-caption{
+  font-family: Tahoma;
+  font-weight: normal !important;
+  color: #333333;
+  padding: 4px 8px 4px 4px;
+}
+#main_MAIN .wmtablayers-tabbar {
+    background: #ffffff url(images/sb_bar_bg.png) repeat-x;
+    border-bottom: 1px solid #939fb6;
+    background-repeat: repeat-x;
+    overflow: visible !important;
+    padding-top: 6px;
+    /*top: 0px !important;*/
+}
+
+/*.Main .Main-wmcontainer.wmpanel.wm.TabLayers-client{
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    border: 0px solid rgb(240, 240, 240);
+    overflow: hidden;
+    left: 10px;
+    top: 48px;
+    width: 1259px;
+    height: 1376px;
+    line-height: normal;
+}*/
+
+/*#main_MAIN_client {
+top: 52px !important;
+}*/
+
+/*.wmtablayers-tab {
+height: 36px !important;
+width: 106px !important;
+}*/
+
+
+.wmgrid-disabled .dojoxGrid-cell {
+color: Gray;
+background-color: VeryLightGray;
+}
+
+.Main .Main-rSecretaria{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+.Main .Main-rSeguimiento{
+  background: #FFCC00;
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -webkit-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -o-linear-gradient(center top , #FFCC00, #FFCC00);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+
+.Main .Main-rCurriculo{
+  background: #009900;
+  background-image: -moz-linear-gradient(center top , #009900, #009900);
+  background-image: -webkit-linear-gradient(center top , #009900, #009900);
+  background-image: -moz-linear-gradient(center top , #009900, #009900);
+  background-image: -o-linear-gradient(center top , #009900, #009900);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+
+.Main .Main-rEventualidades{
+  background: #CC6600;
+  background-image: -moz-linear-gradient(center top , #CC0000, #CC0000);
+  background-image: -webkit-linear-gradient(center top , #CC0000, #CC0000);
+  background-image: -moz-linear-gradient(center top , #CC0000, #CC0000);
+  background-image: -o-linear-gradient(center top , #CC0000, #CC0000);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+}
+
+.Main .Main-rAsistencia{
+  background: #0cb7ef;
+  background-image: -moz-linear-gradient(center top , #0cb7ef, #0cb7ef);
+  background-image: -webkit-linear-gradient(center top , #0cb7ef, #0cb7ef);
+  background-image: -moz-linear-gradient(center top , #0cb7ef, #0cb7ef);
+  background-image: -o-linear-gradient(center top , #0cb7ef, #0cb7ef);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+}
+
+/*Botones de generadores Styles*/
+
+  .Main .Main-bAusentes{
+  background: #0cb7ef;
+  background-image: -moz-linear-gradient(center top , #0cb7ef, #0cb7ef);
+  background-image: -webkit-linear-gradient(center top , #0cb7ef, #0cb7ef);
+  background-image: -moz-linear-gradient(center top , #0cb7ef, #0cb7ef);
+  background-image: -o-linear-gradient(center top , #0cb7ef, #0cb7ef);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+.Main .Main-generar5{
+  background: #FFCC00;
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -webkit-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -o-linear-gradient(center top , #FFCC00, #FFCC00);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+
+.Main .Main-button57{
+  background: #FFCC00;
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -webkit-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -o-linear-gradient(center top , #FFCC00, #FFCC00);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+
+.Main .Main-generar6{
+  background: #FFCC00;
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -webkit-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -o-linear-gradient(center top , #FFCC00, #FFCC00);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+
+.Main .Main-button55{
+  background: #FFCC00;
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -webkit-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -o-linear-gradient(center top , #FFCC00, #FFCC00);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px; button58
+ 
+}
+
+.Main .Main-button58{
+  background: #FFCC00;
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -webkit-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -o-linear-gradient(center top , #FFCC00, #FFCC00);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px; 
+ 
+}
+
+.Main .Main-button_activities{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  border: 1px solid #3079ED;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  /**text-transform: uppercase; */
+  cursor: pointer;
+  border-radius: 0px 2px 2px 0px;
+  -moz-transition: all 0.218s ease 0s; 
+ 
+}
+
+.Main .Main-l_calif_alumnos_panel1_butt_promocion{
+  /*background: #4D90FE;*/
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4D90FE);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4D90FE);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4D90FE);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4D90FE);
+  color: #FFFFFF;
+  border: 1px solid #3079ED;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  /**text-transform: uppercase; */
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+  -moz-transition: all 0.218s ease 0s; 
+ 
+}
+
+.Main .Main-xxx{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  border: 1px solid #3079ED;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+  -moz-transition: all 0.218s ease 0s; 
+ 
+}
+
+.Main .Main-button12{
+  background: #3C9300;
+  background-image: -moz-linear-gradient(center top , #3C9300, #398A00) ;
+  background-image: -webkit-linear-gradient(center top , #3C9300, #398A00);
+  background-image: -moz-linear-gradient(center top , #3C9300, #398A00);
+  background-image: -o-linear-gradient(center top , #3C9300, #398A00);
+  color: #FFFFFF;
+  border: 1px solid #3079ED;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  /**text-transform: uppercase; */
+  cursor: pointer;
+  border-radius: 0px 0px 0px 0px;
+  -moz-transition: all 0.218s ease 0s; 
+ 
+}
+
+.Main .Main-l_calif_alumnos_panel1_butt_cambiarPanel{
+  background: #D14836;
+  background-image: -moz-linear-gradient(center top , #DD4B39, #D14836);
+  background-image: -webkit-linear-gradient(center top , #DD4B39, #D14836);
+  background-image: -moz-linear-gradient(center top , #DD4B39, #D14836);
+  background-image: -o-linear-gradient(center top , #DD4B39, #D14836);
+  color: #FFFFFF;
+  border: 1px solid #3079ED;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  /**text-transform: uppercase; */
+  cursor: pointer;
+  -moz-transition: all 0.218s ease 0s; 
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+
+.Main .Main-calif_encabezado_opciones_butt_limpiar{
+  background: #FFCC00;
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -webkit-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -o-linear-gradient(center top , #FFCC00, #FFCC00);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+
+.Main .Main-calif_encabezado_opciones_butt_reporte{
+  background: #FFCC00;
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -webkit-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -o-linear-gradient(center top , #FFCC00, #FFCC00);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+
+.Main .Main-button16{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  border: 1px solid #3079ED;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  /**text-transform: uppercase; */
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+  -moz-transition: all 0.218s ease 0s; 
+ 
+}
+
+.Main .Main-button17{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  border: 1px solid #3079ED;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  /**text-transform: uppercase; */
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+  -moz-transition: all 0.218s ease 0s; 
+ 
+}
+
+.Main .Main-calif_alumnos_panel1_butt_limpiar{
+  background: #FFCC00;
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -webkit-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -o-linear-gradient(center top , #FFCC00, #FFCC00);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+
+.Main .Main-cur_asig_datag_asignaturasDataGrid1{
+  
+  cursor: pointer;
+  
+}
+
+.Main .Main-cur_unid_datag_unidadesDataGrid1{
+  
+  cursor: pointer;
+  
+}
+
+.Main .Main-cur_subt_datag_subtopicoDataGrid1{
+  
+  cursor: pointer;
+  
+}
+
+.Main .Main-cur_apr_datag_aprendizajeDataGrid1{
+  
+  cursor: pointer;
+  
+}
+
+.Main .Main-cur_metas_datag_otrasmetasDataGrid1{
+  
+  cursor: pointer;
+  
+}
+
+.Main .actividadDataGrid1{
+  
+  cursor: pointer;
+  
+}
+
+.Main .Main-cur_rec_datag_recursosDataGrid1{
+  
+  cursor: pointer;
+  
+}
+
+.Main .Main-nivel_asig_datag_asignaturasDataGrid1{
+  
+  cursor: pointer;
+   text-transform: none;
+    color: #000000;
+  
+}
+
+.Main .Main-unidadDataGrid2{
+  
+  cursor: pointer;
+  text-transform: none;
+   color: #000000;
+  
+}
+
+.Main .Main-subtopicoDataGrid2{
+  
+  cursor: pointer;
+  text-transform: none;
+  color: #000000;
+  
+}
+
+.Main .Main-aprendizajeDataGrid2{
+  
+  cursor: pointer;
+  text-transform: none;
+  color: #000000;
+  
+}
+
+.Main .Main-otrasmetasDataGrid2{
+  
+  cursor: pointer;
+  text-transform: none;
+  color: #000000;
+  
+}
+
+
+.Main .Main-actividadDataGrid2{
+  
+  cursor: pointer;
+  text-transform: none;
+  color: #000000;
+  
+}
+
+.Main .Main-recursoDataGrid2{
+  
+  cursor: pointer;
+  text-transform: none;
+   color: #000000;
+  
+}
+
+/*PANELES PRINCIPALES*/
+/*Asignaturas*/
+.Main .Main-nivel_asig_panel_asignaturas{
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+ 
+}
+/*Unidad*/
+.Main .Main-unidadGridPanel1{
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+ 
+}
+/*Subtopicos*/
+.Main .Main-subtopicoGridPanel1{
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+ 
+}
+/*Aprendizajes*/
+.Main .Main-aprendizajeGridPanel1{
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+ 
+}
+/*Metas*/
+.Main .Main-otrasmetasGridPanel1{
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  
+}
+/*Actividades*/
+.Main .Main-actividadGridPanel1{
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+ 
+}
+/*Recursos*/
+.Main .Main-recursoGridPanel1{
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+ 
+}
+
+/*Botones*/
+
+/*boton restaurar*/
+.Main .Main-nivel_encabezado_butt_restaurar{
+  background: #D64937;
+  background-image: -moz-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -webkit-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -moz-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -o-linear-gradient(center top, #DC4A38, #D14836);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+  }
+  
+ /*boton Unidad*/
+.Main .Main-bCrearUnidad{
+  background: #D64937;
+  background-image: -moz-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -webkit-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -moz-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -o-linear-gradient(center top, #DC4A38, #D14836);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px; 
+}
+
+ /*boton Subtopicos*/
+.Main .Main-bSubtopico{
+  background: #D64937;
+  background-image: -moz-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -webkit-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -moz-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -o-linear-gradient(center top, #DC4A38, #D14836);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px; 
+  }
+  
+   /*boton Aprendizajes*/
+.Main .Main-bAprendizajes{
+  background: #D64937;
+  background-image: -moz-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -webkit-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -moz-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -o-linear-gradient(center top, #DC4A38, #D14836);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px; 
+  }
+  
+   /*boton Metas*/
+.Main .Main-bMetas{
+  background: #D64937;
+  background-image: -moz-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -webkit-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -moz-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -o-linear-gradient(center top, #DC4A38, #D14836);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px; 
+  }
+  
+   /*boton Actividades*/
+.Main .Main-bActividades{
+  background: #D64937;
+  background-image: -moz-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -webkit-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -moz-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -o-linear-gradient(center top, #DC4A38, #D14836);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px; 
+  }
+  
+     /*boton Recursos*/
+.Main .Main-bRecursos{
+  background: #D64937;
+  background-image: -moz-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -webkit-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -moz-linear-gradient(center top, #DC4A38, #D14836);
+  background-image: -o-linear-gradient(center top, #DC4A38, #D14836);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px; 
+  }
+  
+/*fin botones*/
+
+/*Hand Cursor overMouse table*/
+
+.Main .Main-calif_alumnos_datagrids_datag_alumnos_cursos{ cursor: pointer; }
+.Main .Main-calif_alumnos_datagrids_datag_alumnos_asignaturas{ cursor: pointer; }
+.Main .Main-calif_alumnos_datagrids_datag_aprendizajes_asignaturas{ cursor: pointer; }
+.Main .Main-inscalumaprendizajeDataGrid2{ cursor: pointer; }
+.Main .Main-calif_asig_datag_asignaturasDataGrid1{ cursor: pointer;}
+.Main .Main-calif_asig_datag_aprendizajesDataGrid1{ cursor: pointer; }
+.Main .Main-calif_alumnos_curso_datag_alumnosDataGrid1{ cursor: pointer; }
+.Main .Main-inscalumaprendizajeDataGrid1{ cursor: pointer; }
+
+/*footer*/
+.Main .Main-panelFooter{
+  background: #E0E0E0;
+  background-image: -moz-linear-gradient(center top , #E0E0E0, #E0E0E0);
+  background-image: -webkit-linear-gradient(center top , #E0E0E0, #E0E0E0);
+  background-image: -moz-linear-gradient(center top , #E0E0E0, #E0E0E0);
+  background-image: -o-linear-gradient(center top , #E0E0E0, #E0E0E0);
+  color: #990000;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+
+}
+
+.Main .Main-generar1{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+.Main .Main-generar2{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+.Main .Main-generar3{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+.Main .Main-generar4{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+.Main .Main-button59{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+
+
+.Main .Main-button60{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+ 
+}
+.Main .Main-button61 {
+  background: #FFCC00;
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -webkit-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -o-linear-gradient(center top , #FFCC00, #FFCC00);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px; button58
+}
+
+.Main .Main-button7 {
+    background-color: #f1f5fc;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.Main .Main-cur_asig_panel_asignaturas{
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  
+
+}.Main .Main-cur_unid_panel_unidades {
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+ 
+}
+
+.Main .Main-cur_subt_panel_subtopicos {
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  
+}
+
+.Main .Main-cur_apr_panel_subtopicos {
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-cur_metas_panel_metas {
+  background: #3366CC;
+    background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-cur_act_panel_actividades {
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-cur_rec_panel_recursos {
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-cur_formularios_panel_unidad {
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-cur_formularios_panel_subtopico {
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-cur_formularios_panel_otrasmetas {
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-cur_formularios_panel_actividad {
+  background: #3366CC;
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-cur_asig_datag_asignaturasDataGrid1 {
+  cursor: pointer;
+}
+
+.Main .Main-cur_unid_datag_unidadesDataGrid1 {
+  cursor: pointer;
+}
+
+.Main .Main-cur_subt_datag_subtopicoDataGrid1 {
+  cursor: pointer;
+}
+
+.Main .Main-cur_apr_datag_aprendizajeDataGrid1 {
+  cursor: pointer;
+}
+
+.Main .Main-cur_metas_datag_otrasmetasDataGrid1 {
+  cursor: pointer;
+}
+
+.Main .Main-cur_subTablas_act {
+  cursor: pointer;
+}
+
+.Main .Main-cur_rec_datag_recursosDataGrid1 {
+  cursor: pointer;
+}
+
+.Main .Main-cur_encabezado_butt_reporte1 {
+      background: #F3F3F3;
+      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.Main .Main-cur_encabezado_butt_restaurar {
+      background: #F3F3F3;
+      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.Main .Main-cur_encabezado2_butt_crea_unidad {
+      background: #F3F3F3;
+      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.Main .Main-cur_encabezado3_butt_crear_subtopico {
+      background: #F3F3F3;
+      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.Main .Main-cur_apr_encabezado_butt_crear_aprendizaje {
+    cursor: pointer;
+      background: #F3F3F3;
+    background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.Main .Main-cur_formularios_panel_aprendizaje {
+   background: #3366CC;
+    background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-cur_act_encabezado_butt_crear_actividad {
+      background: #F3F3F3;
+      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.Main .Main-cur_formularios_panel_recurso {
+  background: #3366CC;
+      background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-cur_formularios_butt_cargar_recurso {
+  cursor: pointer;
+}
+
+.Main .Main-cur_rec_encabezado_butt_crear_recurso {
+      background: #F3F3F3;
+      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+
+}
+
+.Main .Main-calif_contenedor_panel_encabezado {
+  background: #bf5e5e;
+    background-image: -moz-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -webkit-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -moz-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -o-linear-gradient(center top , #3366CC, #bf5e5e);
+ 
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+
+}
+.Main .Main-calif_contenedor_panel_encabezado2 {
+    background: #bf5e5e;
+      background-image: -moz-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -webkit-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -moz-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -o-linear-gradient(center top , #3366CC, #bf5e5e);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+
+.Main .Main-inscalumaprendizajeGridPanel {
+    background: #bf5e5e;
+      background-image: -moz-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -webkit-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -moz-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -o-linear-gradient(center top , #3366CC, #bf5e5e);
+  border: #FFCC00;
+  text: black;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  
+}
+
+.Main .Main-inscalumaprendizajeDetailsPanel {
+  background: #bf5e5e;
+  background-image: -moz-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -webkit-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -moz-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -o-linear-gradient(center top , #3366CC, #bf5e5e);
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  
+}
+
+.Main .Main-calif_asig_datag_aprendizajesDataGrid1 {
+  cursor: pointer;
+}
+
+.Main .Main-dataGrid1 {
+  cursor: pointer;
+}
+
+.Main .Main-inscalumaprendizajeDataGrid1 {
+  cursor: pointer;
+}
+
+.Main .Main-inscalumaprendizajeGridPanel1 {
+  background: #bf5e5e;
+    background-image: -moz-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -webkit-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -moz-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -o-linear-gradient(center top , #3366CC, #bf5e5e);
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-inscalumaprendizajeDetailsPanel1 {
+  background: #bf5e5e;
+    background-image: -moz-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -webkit-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -moz-linear-gradient(center top , #bf5e5e, #bf5e5e);
+  background-image: -o-linear-gradient(center top , #3366CC, #bf5e5e);
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-inscalumaprendizajeDataGrid2 {
+  cursor: pointer;
+}
+
+.Main .Main-calif_alumnos_datag_calificaciones_finales {
+  cursor: pointer;
+}
+
+.Main .Main-calif_alumnos_datagrids_datag_aprendizajes_asignaturas {
+  cursor: pointer;
+}
+
+.Main .Main-calif_alumnos_datagrids_datag_alumnos_asignaturas {
+  cursor: pointer;
+}
+
+.Main .Main-calif_alumnos_datagrids_datag_alumnos_cursos {
+  cursor: pointer;
+}
+
+.Main .Main-calif_alumnos_panel1_butt_limpiar {
+  cursor: pointer;
+}
+
+.Main .Main-calif_alumnos_panel1_butt_show {
+      background: #F3F3F3;
+      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 0px 0px 3px;
+
+}
+
+.Main .Main-calif_alumnos_panel1_butt_hide {
+        background: #F3F3F3;
+        background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 0px 3px 3px 0px;
+
+
+}
+
+.Main .Main-l_calif_alumnos_butt_ocultar {
+    background: #F3F3F3;
+    background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 0px 0px 3px;
+
+}
+
+.Main .Main-l_calif_alumnos_butt_mostrar {
+      background: #F3F3F3;
+    background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 0px 3px 3px 0px;
+}
+
+.Main .Main-insc_panel_panel1 {
+  color: #000000;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-inscalumasigDetailsPanel {
+  background: #3366CC;
+    background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-blink_message {
+    text-decoration: blink;
+    background: #FFCC00;
+    background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -webkit-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -moz-linear-gradient(center top , #FFCC00, #FFCC00);
+  background-image: -o-linear-gradient(center top , #FFCC00, #FFCC00);
+  color: #000000;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+}
+
+.Main .Main-inscalumasigGridPanel {
+    background: #3366CC;
+      background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-calif_encabezado_opciones_butt_limpiar1 {
+     background: #2E2E2E;
+      background-image: -moz-linear-gradient(center top , #2E2E2E, #2E2E2E);
+  background-image: -webkit-linear-gradient(center top , #2E2E2E, #2E2E2E);
+  background-image: -moz-linear-gradient(center top , #2E2E2E, #2E2E2E);
+  background-image: -o-linear-gradient(center top , #2E2E2E, #2E2E2E);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+cursor: pointer;
+}
+
+.Main .Main-button2 {
+     background: #B8B8B8;
+      background-image: -moz-linear-gradient(center top , #B8B8B8, #B8B8B8);
+  background-image: -webkit-linear-gradient(center top , #B8B8B8, #B8B8B8);
+  background-image: -moz-linear-gradient(center top , #B8B8B8, #B8B8B8);
+  background-image: -o-linear-gradient(center top , #B8B8B8, #B8B8B8);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+cursor: pointer;
+
+}
+
+.Main .Main-unidadDetalles {
+    background: #3366CC;
+    background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-aprendizajeDetailsPanel2 {
+    background: #3366CC;
+    background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-subtopicoDetailsPanel2 {
+    background: #3366CC;
+    background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-l_calif_alumnos_panel1_butt_promocion {
+    background: #CD3333;
+    background-image: -moz-linear-gradient(center top , #CD3333, #CD3333);
+  background-image: -webkit-linear-gradient(center top , #CD3333, #CD3333);
+  background-image: -moz-linear-gradient(center top , #CD3333, #CD3333);
+  background-image: -o-linear-gradient(center top , #CD3333, #CD3333);
+  color: #ffffff;
+  border: 1px solid #3079ED;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 0px 0px 0px 0px;
+  -moz-transition: all 0.218s ease 0s; 
+}
+.Main .Main-promocionDetailsPanel {
+  background: #3366CC;
+    background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Main .Main-promocion_butt_buscar {
+    background: #3366CC;
+      background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+color: #FFFFFF;
+cursor: pointer;
+  
+}
+
+.Main .Main-promocion_butt_limpiar {
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.Main .Main-promocion_container_datag_personas_x_curso {
+  cursor: pointer;
+}
+
+.Main .Main-promocionDataGrid1 {
+  cursor: pointer;
+}
+
+.Main .Main-promocion_butt_promover {
+  float: left;
+  display: block;
+line-height: 60px;
+height: 60px;
+padding: 0 30px 0 66px;
+font-size: 12px;
+text-decoration: none;
+background: 
+#E6F7FB;
+border: solid 1px 
+#A1CBD3;
+text-transform: uppercase;
+font-weight: bold;
+color: 
+#000000;
+margin-right: 20px;
+border-radius: 5px;
+}
+
+.Main .Main-button3 {
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.Main .Main-inscripcion_estudiante {
+  cursor: pointer;
+}
+
+.Main .Main-inscripcion_asignatura {
+  cursor: pointer;
+}
+
+.Main .Main-asignaturaGridPanel3 {
+  background: #4D90FE;
+    background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #000000;
+  border: 1px solid #3079ED;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  /**text-transform: uppercase; */
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+  -moz-transition: all 0.218s ease 0s; 
+}
+
+.Main .Main-asignaturaDetailsPanel1 {
+  background: #4D90FE;
+    background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #000000;
+  border: 1px solid #3079ED;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  /**text-transform: uppercase; */
+  cursor: pointer;
+  border-radius: 2px 2px 2px 2px;
+  -moz-transition: all 0.218s ease 0s;
+}
+
+.Main .Main-inicio {
+  background: #f2f2f2;
+}
+
+.Main .Main-logo_aprendoz {
+  background: white;
+    border-top-left-radius: 50px;
+border-bottom-right-radius: 50px;
+}
+
+.Main .Main-label_bienvenida {
+   border: 1px solid #B0281A;
+       color: #b22418;
+   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.Main .Main-label_nombreCompleto {
+  color: #B22418;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.Main .Main-timeEditor1 {
+  color: #281D73;
+}
+
+.Main .Main-dateEditor1 {
+  color: #281D73;
+}
+
+.Main .Main-inicio_panel_opciones {
+    background: white;
+    border-bottom-left-radius: 10px;
+    color: #a62121;
+}
+
+.Main .Main-inicio_abrir_preferencias {
+   border-bottom-left-radius: 5px;
+   border-top-left-radius: 5px;
+ background: white;
+cursor: pointer;
+
+}
+
+.Main .Main-inicio_cerrar_preferencias {
+     border-bottom-left-radius: 5px;
+     border-top-left-radius: 5px;
+ background: white;
+cursor: pointer;
+}
+
+.Main .Main-inicio_forgot_password {
+  cursor:pointer;
+}
+
+.Main .Main-inicio_ok_label {
+   border-bottom-left-radius: 5px;
+   border-top-right-radius: 5px;
+   background: #61B329;
+   color: white;
+}
+
+.Main .Main-inicio_bad_label {
+   border-bottom-left-radius: 5px;
+   border-top-right-radius: 5px;
+   background: #EEAD0E;
+   color: white;
+}
+
+.Main .Main-inicio_boton_actualiza {
+   background: #4D90FE;
+   background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+   background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+   background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+   background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+   color: #FFFFFF;
+   border: 1px solid #3079ED;
+   text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+   cursor: pointer;
+   border-radius: 2px 2px 2px 2px;
+   -moz-transition: all 0.218s ease 0s;
+   border-bottom-left-radius: 10px;
+   border-top-right-radius: 10px;
+}
+
+.Main .Main-inscalumasigDataGrid1 {
+   cursor: pointer;
+}
+
+.Main .Main-inicio_boton_cancelar {
+   color: #FFFFFF;
+   border: 1px solid #3079ED;
+   text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+   cursor: pointer;
+   border-radius: 2px 2px 2px 2px;
+   -moz-transition: all 0.218s ease 0s;
+   border-bottom-left-radius: 10px;
+   border-top-right-radius: 10px;
+}
+
+.Main .Main-inicio_abrir_preferencias1 {
+     border-bottom-left-radius: 5px;
+     border-top-left-radius: 5px;
+ background: white;
+cursor: pointer;
+}
+
+.Main .Main-inicio_filtros_claves {
+     border-bottom-left-radius: 5px;
+     border-top-left-radius: 5px;
+}
+
+
+.Main .Main-reportes_graficos_listado_reportes {
+  cursor: pointer;
+}
+
+.Main .Main-reportes_graficos_listado_reportes .dojoxGrid .dojoxGrid-header .dojoxGrid-cell {
+    background: #a62121;
+    border-color: #a62121 #a62121 #a62121 #a62121;
+    border-style: solid;
+    border-width: 1px;
+    color: white;
+    font-weight: normal;
+    padding-bottom: 2px;
+    height: 30px;
+    border: 0px solid;
+}
+
+.Main .Main-reportes_graficos_listado_reportes .dojoxGrid .dojoxGrid-row {
+    position: relative;
+    width: 9000em;
+    padding: 4px;
+}
+
+
+.Main .Main-reportes_graficos_listado_reportes .dojoxGrid .dojoxGrid-header{
+    height: 30px;   
+}
+
+.Main .Main-reportes_graficos_listado_reportes .dojoxGrid .dojoxGrid-row-selected {
+    background-color: #4D90FE;
+    color: white;
+}
+
+.Main .Main-reportes_graficos_listado_reportes .dojoxGrid .dojoxGrid-row-table{
+    background-color: rgba(0,0,0,.2);
+   /* background: #4D90FE;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#4D90FE),to(#2169DF));
+    background-image: -webkit-linear-gradient(top,#4D90FE,#2169DF);
+    background-image: -moz-linear-gradient(top,#4D90FE,#2169DF);
+    background-image: -ms-linear-gradient(top,#4D90FE,#2169DF);
+    background-image: -o-linear-gradient(top,#4D90FE,#2169DF);
+    background-image: linear-gradient(top,#4D90FE,#2169DF);*/
+    color: black;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+      -ms-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+      -o-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 13px;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+    height: 30px;
+}
+
+.Main .Main-reportes_graficos_listado_reportes .dojoxGrid .dojoxGrid-cell {
+    border: 0px solid;
+    border-color: white;
+    padding: 3px 3px 3px 3px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.Main .Main-reports_open_report_window {
+  background-color: #f8f8f8;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#f1f1f1));
+background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+background-image: linear-gradient(top,#f8f8f8,#f1f1f1);
+border: 1px solid #c6c6c6;
+color: #222;
+font-family: arial,sans-serif;
+font-size: 11px;
+font-weight: bold;
+height: 27px;
+line-height: 27px;
+margin: 2px 0;
+min-width: 54px;
+padding: 0 8px;
+text-align: center;border-top-left-radius: 5px;
+border-bottom-right-radius: 5px;
+cursor: pointer;
+}
+
+.Main .Main-uctualizar_reportes_descripcion {
+  background: #D14130;
+  background: -webkit-linear-gradient(top, #DC4A38, #C53727);
+background: -moz-linear-gradient(top, #DC4A38, #C53727);
+background: -ms-linear-gradient(top, #DC4A38, #C53727);
+background: -o-linear-gradient(top, #DC4A38, #C53727);
+border: 1px solid #B0281A !important;
+color: #ffffff;
+font-family: arial,sans-serif;
+font-size: 11px;
+font-weight: bold;
+height: 27px;
+line-height: 27px;
+margin: 2px 0;
+min-width: 54px;
+padding: 0 8px;
+text-align: center;border-top-left-radius: 5px;
+border-bottom-right-radius: 5px;
+cursor: pointer;
+
+
+}
+
+.Main .Main-calf_panel_encabezado_principal {
+  background: #F1F1F1;
+  padding: 11px;
+border: 1px solid #D2D2D2;
+margin-bottom: 20px;
+}
+
+.Main .Main-calf_panel_encabezado_opciones {
+  background: #F1F1F1;
+  padding: 11px;
+border: 1px solid #D2D2D2;
+margin-bottom: 20px;
+}.Main .Main-calif_alumnos_panel_panel1 {
+    background: #F1F1F1;
+    padding: 11px;
+border: 1px solid #D2D2D2;
+margin-bottom: 20px;
+}
+
+.Main .Main-lastAccess_Label {
+  background-color: #271770;
+  border-radius: 2px;
+color: white;
+}
+
+.Main .Main-logout_picture {
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.Main .Main-cur_metas_encabezado_butt_crear_meta {
+      background: #F3F3F3;
+      background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -webkit-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -moz-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  background-image: -o-linear-gradient(center top , #F3F3F3, #F3F3F3);
+  color: #000000;
+  border: solid 1px #D9D9D9;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.Main .Main-calif_contenedor_cadena_curriculo {
+  color: #000000;
+    border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}.Main .Main-comentarios_estudiantes {
+      background: #CD3333;
+      background-image: -moz-linear-gradient(center top , #CD3333, #CD3333);
+  background-image: -webkit-linear-gradient(center top , #CD3333, #CD3333);
+  background-image: -moz-linear-gradient(center top , #CD3333, #CD3333);
+  background-image: -o-linear-gradient(center top , #CD3333, #CD3333);
+  color: #ffffff;
+  border: 1px solid #3079ED;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 0px 2px 2px 0px;
+  -moz-transition: all 0.218s ease 0s;
+}
+
+.Main .Main-activitiesDataGrid {
+  cursor: pointer;
+}
+
+.Main .Main-inscalumactividadDataGrid1 {
+  cursor: pointer;
+}
+
+.Main .Main-activities_studentsDataGrid {
+  cursor: pointer;
+}
+
+.Main .Main-calificaTodos {
+    color: #fff;
+    background-color: #4D90FE !important;
+border-color: #357ebd !important;
+padding: 10px 16px;
+line-height: 1.33;
+border-radius: 6px;
+cursor: pointer;
+}
+
+.Main .Main-panel14 {
+  background-color: #4D90FE;
+}
+
+.Main .Main-actividad_form_label1 {
+    background-color: #4D90FE;
+}
+

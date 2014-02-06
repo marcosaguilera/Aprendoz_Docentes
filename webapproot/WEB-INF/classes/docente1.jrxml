@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="docente1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" isDefault="false" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" isDefault="false" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" isDefault="false" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" isDefault="false" fontName="Arial" fontSize="12"/>
+	<parameter name="idasig" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     Insc_Alum_Asig.`Id_Insc_Alum_Asig` AS Insc_Alum_Asig_Id_Insc_Alum_Asig,
+     Insc_Alum_Asig.`Persona_Id_Persona` AS Insc_Alum_Asig_Persona_Id_Persona,
+     Insc_Alum_Asig.`Asignatura_Id_Asignatura` AS Insc_Alum_Asig_Asignatura_Id_Asignatura,
+     Insc_Alum_Asig.`Periodo_Id_Periodo` AS Insc_Alum_Asig_Periodo_Id_Periodo,
+     Insc_Alum_Asig.`Calificacion` AS Insc_Alum_Asig_Calificacion,
+     Insc_Alum_Asig.`Porcentaje` AS Insc_Alum_Asig_Porcentaje,
+     Insc_Alum_Asig.`esperados` AS Insc_Alum_Asig_esperados,
+     Insc_Alum_Asig.`logrados` AS Insc_Alum_Asig_logrados,
+     Insc_Alum_Asig.`calif_char` AS Insc_Alum_Asig_calif_char,
+     asignatura.`Id_Asignatura` AS asignatura_Id_Asignatura,
+     asignatura.`Asignatura` AS asignatura_Asignatura,
+     PERSONA.`Apellido1` AS PERSONA_Apellido1,
+     PERSONA.`Apellido2` AS PERSONA_Apellido2,
+     PERSONA.`Nombre2` AS PERSONA_Nombre2,
+     PERSONA.`Nombre1` AS PERSONA_Nombre1,
+     Insc_Alum_Curso.`Id_Insc_Alum_Curso` AS Insc_Alum_Curso_Id_Insc_Alum_Curso,
+     Insc_Alum_Curso.`Curso_Id_Curso` AS Insc_Alum_Curso_Curso_Id_Curso,
+     Insc_Alum_Curso.`Persona_Id_Persona` AS Insc_Alum_Curso_Persona_Id_Persona,
+     Insc_Alum_Curso.`SY_Id_SY` AS Insc_Alum_Curso_SY_Id_SY,
+     Curso.`Id_Curso` AS Curso_Id_Curso,
+     Curso.`Curso` AS Curso_Curso,
+     Curso.`Grado_Id_Grado` AS Curso_Grado_Id_Grado,
+     PERSONA.`Id_Persona` AS PERSONA_Id_Persona,
+     asignatura.`SY_Id_SY` AS asignatura_SY_Id_SY
+FROM
+     `PERSONA` PERSONA INNER JOIN `Insc_Alum_Asig` Insc_Alum_Asig ON PERSONA.`Id_Persona` = Insc_Alum_Asig.`Persona_Id_Persona`
+     INNER JOIN `asignatura` asignatura ON Insc_Alum_Asig.`Asignatura_Id_Asignatura` = asignatura.`Id_Asignatura`
+     INNER JOIN `Insc_Alum_Curso` Insc_Alum_Curso ON PERSONA.`Id_Persona` = Insc_Alum_Curso.`Persona_Id_Persona`
+     INNER JOIN `Curso` Curso ON Insc_Alum_Curso.`Curso_Id_Curso` = Curso.`Id_Curso`
+WHERE
+     asignatura.`Id_Asignatura` = $P{idasig}
+     and Insc_Alum_Curso.`SY_Id_SY` = 2
+     and Insc_Alum_Asig.`Periodo_Id_Periodo` = 4
+ORDER BY
+     Curso.`Id_Curso` ASC,
+     PERSONA.`Apellido1` ASC,
+     PERSONA.`Apellido2` ASC,
+     PERSONA.`Nombre2` ASC,
+     PERSONA.`Nombre1` ASC]]>
+	</queryString>
+	<field name="Insc_Alum_Asig_Id_Insc_Alum_Asig" class="java.lang.Integer"/>
+	<field name="Insc_Alum_Asig_Persona_Id_Persona" class="java.lang.Integer"/>
+	<field name="Insc_Alum_Asig_Asignatura_Id_Asignatura" class="java.lang.Integer"/>
+	<field name="Insc_Alum_Asig_Periodo_Id_Periodo" class="java.lang.Integer"/>
+	<field name="Insc_Alum_Asig_Calificacion" class="java.math.BigDecimal"/>
+	<field name="Insc_Alum_Asig_Porcentaje" class="java.math.BigDecimal"/>
+	<field name="Insc_Alum_Asig_esperados" class="java.lang.Integer"/>
+	<field name="Insc_Alum_Asig_logrados" class="java.lang.Integer"/>
+	<field name="Insc_Alum_Asig_calif_char" class="java.lang.String"/>
+	<field name="asignatura_Id_Asignatura" class="java.lang.Integer"/>
+	<field name="asignatura_Asignatura" class="java.lang.String"/>
+	<field name="PERSONA_Apellido1" class="java.lang.String"/>
+	<field name="PERSONA_Apellido2" class="java.lang.String"/>
+	<field name="PERSONA_Nombre2" class="java.lang.String"/>
+	<field name="PERSONA_Nombre1" class="java.lang.String"/>
+	<field name="Insc_Alum_Curso_Id_Insc_Alum_Curso" class="java.lang.Integer"/>
+	<field name="Insc_Alum_Curso_Curso_Id_Curso" class="java.lang.Integer"/>
+	<field name="Insc_Alum_Curso_Persona_Id_Persona" class="java.lang.Integer"/>
+	<field name="Insc_Alum_Curso_SY_Id_SY" class="java.lang.Integer"/>
+	<field name="Curso_Id_Curso" class="java.lang.Integer"/>
+	<field name="Curso_Curso" class="java.lang.String"/>
+	<field name="Curso_Grado_Id_Grado" class="java.lang.Integer"/>
+	<field name="PERSONA_Id_Persona" class="java.lang.Integer"/>
+	<field name="asignatura_SY_Id_SY" class="java.lang.Integer"/>
+	<group name="asignatura_Id_Asignatura">
+		<groupExpression><![CDATA[$F{asignatura_Id_Asignatura}]]></groupExpression>
+		<groupHeader>
+			<band height="23">
+				<textField>
+					<reportElement x="4" y="1" width="69" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font size="11" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Integer"><![CDATA[$F{asignatura_Id_Asignatura}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="82" y="1" width="264" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font size="11" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{asignatura_Asignatura}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="400" y="1" width="35" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="5" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Porcentaje]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="442" y="1" width="30" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="5" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Esperados]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="478" y="1" width="30" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="5" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Logrados]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="513" y="1" width="40" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="5" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Calificacion]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="4"/>
+		</groupFooter>
+	</group>
+	<group name="Curso_Group">
+		<groupExpression><![CDATA[$F{Insc_Alum_Curso_Curso_Id_Curso}]]></groupExpression>
+		<groupHeader>
+			<band height="29">
+				<textField>
+					<reportElement x="4" y="6" width="342" height="20"/>
+					<textElement>
+						<font isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{Curso_Curso}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="48" splitType="Stretch">
+			<image>
+				<reportElement x="435" y="3" width="120" height="45"/>
+				<imageExpression class="java.lang.String"><![CDATA["logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="123" y="3" width="295" height="39"/>
+				<textElement textAlignment="Center">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DETALLES DE CALIFICACIONES
+ POR CURSO Y ASIGNATURA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField>
+				<reportElement x="57" y="3" width="158" height="13"/>
+				<textElement>
+					<font fontName="Arial" size="10" pdfFontName="Courier-Bold" pdfEncoding="Cp1252"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{PERSONA_Apellido1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="217" y="3" width="150" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{PERSONA_Nombre1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="513" y="3" width="42" height="13"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9" isBold="false" pdfFontName="Courier-BoldOblique" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Insc_Alum_Asig_calif_char}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="418" y="3" width="17" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="4" y="3" width="53" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{PERSONA_Id_Persona}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="3" width="47" height="13"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Insc_Alum_Asig_Porcentaje}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="442" y="3" width="30" height="13"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{Insc_Alum_Asig_esperados}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="3" width="30" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{Insc_Alum_Asig_logrados}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="5" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

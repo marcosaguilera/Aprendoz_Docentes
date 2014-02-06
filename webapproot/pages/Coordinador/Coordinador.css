@@ -1,0 +1,19 @@
+.Coordinador .Coordinador-alumnos_curso_listado {
+	cursor: pointer;
+}
+
+.Coordinador .Coordinador-insccomentariosalumnosLiveForm1 {
+	font-size: 12px !important;
+}
+
+.Coordinador .Coordinador-comentarios {
+	color: #fff;
+	background-color: #428bca !important;
+border-color: #357ebd;
+border-radius: 3px 3px 0px 0px;
+}
+
+.Coordinador .Coordinador-insccomentariosalumnosDataGrid1 {
+	cursor: pointer;
+}
+

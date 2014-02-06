@@ -1,0 +1,9 @@
+{
+	"methods": [{
+		"name": "getReport",
+		"parameters": null,
+		"returnType": "com.wavemaker.runtime.server.DownloadResponse"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "s315.json"
+}

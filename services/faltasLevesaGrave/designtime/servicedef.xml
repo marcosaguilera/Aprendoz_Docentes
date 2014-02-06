@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" springFile="faltasLevesaGrave.spring.xml" type="JavaService" CRUDService="false" class="faltasLevesaGrave" id="faltasLevesaGrave">
+    <operation name="faltasLeves">
+        <parameter isList="false" typeRef="java.lang.Integer" name="persona"/>
+        <parameter isList="false" typeRef="java.sql.Date" name="fecha"/>
+        <parameter isList="false" typeRef="java.lang.Integer" name="tipo"/>
+        <return isList="false" typeRef="java.lang.Integer"/>
+    </operation>
+    <dataobjects>
+        <dataobject supportsQuickData="false" name="Date" javaType="java.sql.Date">
+            <element allowNull="false" isList="false" typeRef="int" name="date"/>
+            <element allowNull="false" isList="false" typeRef="int" name="day"/>
+            <element allowNull="false" isList="false" typeRef="int" name="hours"/>
+            <element allowNull="false" isList="false" typeRef="int" name="minutes"/>
+            <element allowNull="false" isList="false" typeRef="int" name="month"/>
+            <element allowNull="false" isList="false" typeRef="int" name="seconds"/>
+            <element allowNull="false" isList="false" typeRef="long" name="time"/>
+            <element allowNull="false" isList="false" typeRef="int" name="timezoneOffset"/>
+            <element allowNull="false" isList="false" typeRef="int" name="year"/>
+        </dataobject>
+    </dataobjects>
+</service>

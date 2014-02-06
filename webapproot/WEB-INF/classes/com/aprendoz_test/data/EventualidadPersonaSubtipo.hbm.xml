@@ -1,0 +1,15 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.aprendoz_test.data.EventualidadPersonaSubtipo" table="eventualidad_persona_subtipo" catalog="aprendoz_desarrollo" dynamic-insert="false" dynamic-update="false">
+        <id name="idPersonaEventualidadSubtipoEventualidad" type="integer">
+            <column name="id_persona_eventualidad_subtipo_eventualidad"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one name="subtipoEventualidad" class="com.aprendoz_test.data.SubtipoEventualidad" cascade="none">
+            <column name="subtipo_eventualidad_eventualidad" not-null="true"/>
+        </many-to-one>
+        <many-to-one name="eventualidadPersonas" class="com.aprendoz_test.data.EventualidadPersonas" cascade="none">
+            <column name="eventualidad_persona_id_eventualidad_persona" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" springFile="EnviarMail.spring.xml" type="JavaService" CRUDService="false" class="EnviarMail" id="EnviarMail">
+    <operation name="sendEmailNotification">
+        <parameter isList="false" typeRef="java.lang.String" name="lugar"/>
+        <parameter isList="false" typeRef="java.lang.String" name="alumnos"/>
+        <parameter isList="false" typeRef="java.lang.String" name="correocoordinador"/>
+        <parameter isList="false" typeRef="java.lang.String" name="correodirector"/>
+        <parameter isList="false" typeRef="java.lang.String" name="profesorRemitente"/>
+        <parameter isList="false" typeRef="java.util.Date" name="fechaEventualidad"/>
+        <parameter isList="false" typeRef="java.lang.String" name="eventualidad"/>
+        <parameter isList="false" typeRef="java.lang.String" name="subtipoEventualidad"/>
+        <parameter isList="false" typeRef="java.lang.String" name="cursos"/>
+        <return isList="false" typeRef="java.lang.String"/>
+    </operation>
+    <dataobjects/>
+</service>

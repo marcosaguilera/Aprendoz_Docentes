@@ -1,0 +1,49 @@
+{
+	"methods": [{
+		"name": "enviarNotificacionFaltaGrave",
+		"operationType": null,
+		"parameters": [{
+			"name": "alumno",
+			"type": "java.lang.String"
+		}, {
+			"name": "nombrepadre",
+			"type": "java.lang.String"
+		}, {
+			"name": "correopadre",
+			"type": "java.lang.String"
+		}, {
+			"name": "nombremadre",
+			"type": "java.lang.String"
+		}, {
+			"name": "correomadre",
+			"type": "java.lang.String"
+		}, {
+			"name": "subtipoEventualidad",
+			"type": "java.lang.String"
+		}, {
+			"name": "curso",
+			"type": "java.lang.String"
+		}, {
+			"name": "fechaCita",
+			"type": "java.lang.String"
+		}, {
+			"name": "horaCita",
+			"type": "java.lang.String"
+		}, {
+			"name": "dnipap",
+			"type": "java.lang.String"
+		}, {
+			"name": "dnimam",
+			"type": "java.lang.String"
+		}, {
+			"name": "correocoordinador",
+			"type": "java.lang.String"
+		}, {
+			"name": "correodirector",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "enviarNotificacionFaltaGrave.json"
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" springFile="sp_actividad_curso.spring.xml" type="JavaService" CRUDService="false" class="sp_actividad_curso" id="sp_actividad_curso">
+    <operation name="corre_proc_act_cur">
+        <parameter isList="false" typeRef="java.lang.Integer" name="Pr_Id_Curso"/>
+        <parameter isList="false" typeRef="java.lang.Integer" name="Pr_Id_Actividad"/>
+        <parameter isList="false" typeRef="java.util.Date" name="P_Fecha"/>
+        <parameter isList="false" typeRef="java.lang.String" name="Pr_Comentario"/>
+        <parameter isList="false" typeRef="boolean" name="Pr_Logrado"/>
+        <return isList="false" typeRef="java.lang.Integer"/>
+    </operation>
+    <dataobjects>
+        <dataobject supportsQuickData="false" name="Date" javaType="java.util.Date">
+            <element allowNull="false" isList="false" typeRef="int" name="date"/>
+            <element allowNull="false" isList="false" typeRef="int" name="day"/>
+            <element allowNull="false" isList="false" typeRef="int" name="hours"/>
+            <element allowNull="false" isList="false" typeRef="int" name="minutes"/>
+            <element allowNull="false" isList="false" typeRef="int" name="month"/>
+            <element allowNull="false" isList="false" typeRef="int" name="seconds"/>
+            <element allowNull="false" isList="false" typeRef="long" name="time"/>
+            <element allowNull="false" isList="false" typeRef="int" name="timezoneOffset"/>
+            <element allowNull="false" isList="false" typeRef="int" name="year"/>
+        </dataobject>
+    </dataobjects>
+</service>

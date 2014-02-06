@@ -1,0 +1,16 @@
+{
+	"methods": [{
+		"name": "corre_proc_calcula_calif_est",
+		"operationType": null,
+		"parameters": [{
+			"name": "Pr_Id_Persona",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "Pr_Id_Aprendizaje",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "java.lang.Integer"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "actualiza_calif.json"
+}

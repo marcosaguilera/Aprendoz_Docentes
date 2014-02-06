@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" springFile="gInteligencia.spring.xml" type="JavaService" CRUDService="false" class="gInteligencia" id="gInteligencia">
+    <operation name="getReport">
+        <parameter isList="false" typeRef="java.lang.String" name="idnivel"/>
+        <parameter isList="false" typeRef="java.lang.String" name="idgrado"/>
+        <parameter isList="false" typeRef="java.lang.String" name="idasignatura"/>
+        <return isList="false" typeRef="com.wavemaker.runtime.server.DownloadResponse"/>
+    </operation>
+    <dataobjects/>
+</service>

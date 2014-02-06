@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- 
+
+@design.default-queries: Marks this file as default file for user queries.
+
+-->
+
+<hibernate-mapping>
+<!-- 
+
+Asigna actividades
+
+-->
+    <sql-query
+    	name = "AsignaActividadCurso"
+    	callable = "true"
+    	comment = "Llamada al procedimiento de Aprendoz_Desarrollo califica_actividad_curso">
+    	<!-- parametros que contiene el Store Procedure-->
+    	<query-param name="C_Id_Curso" type="java.lang.Integer"/>
+    	<query-param name="A_Id_Actividad" type="java.lang.Integer"/>
+    	<query-param name="P_Fecha" type="java.lang.String"/> 
+    	<query-param name="P_Comentario" type="java.lang.String"/> 
+    	<query-param name="P_Logrado" type="java.lang.Integer"/> 
+    	<![CDATA[
+            { call califica_actividad_curso(:C_Id_Curso, :A_Id_Actividad, :P_Fecha, :P_Comentario, :P_Logrado)}
+    	]]>
+    </sql-query>	
+<!-- 
+
+Calcula la calificación final
+
+-->
+    <sql-query
+    	name = "CalculaAprendizajeEstudiante"
+    	callable = "true"
+    	comment = "Llamada al procedimiento de Aprendoz_Desarrollo Calif_Final_est_param">
+    	<!-- parametros que contiene el Stored Procedure-->
+    	<query-param name="P_PERSONA" type="java.lang.Integer"/>
+    	<query-param name="P_APRENDIZAJE" type="java.lang.Integer"/>
+    	<![CDATA[
+            { call calif_final_aprend_est_param(:P_PERSONA, :P_APRENDIZAJE)}
+    	]]>
+    </sql-query>		
+
+</hibernate-mapping>

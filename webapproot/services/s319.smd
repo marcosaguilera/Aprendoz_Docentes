@@ -1,0 +1,18 @@
+{
+	"methods": [{
+		"name": "getReport",
+		"parameters": [{
+			"name": "c1",
+			"type": "java.lang.String"
+		}, {
+			"name": "c2",
+			"type": "java.lang.String"
+		}, {
+			"name": "idp",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.wavemaker.runtime.server.DownloadResponse"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "s319.json"
+}

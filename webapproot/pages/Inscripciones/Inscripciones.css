@@ -1,0 +1,49 @@
+.Inscripciones .Inscripciones-subjectsLabel {
+  background-color: #465BA3;
+  color: #fff;
+}
+
+.Inscripciones .Inscripciones-estudiantesCurso {
+	  color: #fff;
+	  background-color: #5cb85c !important;
+  border-color: #4cae4c;
+  font-size: 9px;
+
+}
+
+.Inscripciones .Inscripciones-alumnosInscritos {
+  background-color: #C1272D;
+  color: #fff;
+}
+
+.Inscripciones .Inscripciones-estudiantesDojoGrid {
+  cursor: pointer;
+}
+
+.Inscripciones .Inscripciones-estudiantesInscritosAsignatura {
+  cursor: pointer;
+}
+
+.Inscripciones .Inscripciones-showMe {
+  cursor: pinter;
+}
+
+.Inscripciones .Inscripciones-inscribirEstudiantes {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  font-size: 9px;
+}
+
+.Inscripciones .Inscripciones-retirarEstudiantes {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  font-size: 9px;
+}
+
+.Inscripciones .Inscripciones-showSubjectsButton {
+  color: #FFFFFF;
+  background: #3d80df;
+}
+

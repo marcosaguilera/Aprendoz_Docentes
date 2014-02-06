@@ -1,0 +1,16 @@
+{
+	"methods": [{
+		"name": "getReport",
+		"operationType": null,
+		"parameters": [{
+			"name": "fecha1",
+			"type": "java.lang.String"
+		}, {
+			"name": "fecha2",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.wavemaker.runtime.server.DownloadResponse"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "Totalizador.json"
+}

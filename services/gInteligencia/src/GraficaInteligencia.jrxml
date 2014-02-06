@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="GraficaInteligencia"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="612"
+		 pageHeight="792"
+		 columnWidth="552"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="nivel" isForPrompting="true" class="java.lang.Integer"/>
+	<parameter name="grado" isForPrompting="true" class="java.lang.Integer"/>
+	<parameter name="asignatura" isForPrompting="true" class="java.lang.Integer"/>
+	<queryString><![CDATA[SELECT N.NIVEL, G.GRADO, C.CURSO, ASI.ID_ASIGNATURA, ASI.ASIGNATURA, U.ID_UNIDAD, U.UNIDAD, S.ID_SUBTOPICO, S.SUBTOPICO
+       , A.APRENDIZAJE , I.ID_INTELIGENCIA, I.INTELIGENCIA, COUNT('X')
+    FROM NIVEL N, GRADO G, CURSO C, ASIGNATURA ASI, INSC_CURSO_ASIG ICA,
+  	 UNIDAD U, SUBTOPICO S, APRENDIZAJE A, INTELIGENCIA I
+   WHERE N.ID_NIVEL = G.NIVEL_ID_NIVEL
+  	 AND G.ID_GRADO = C.GRADO_ID_GRADO
+  	 AND C.ID_CURSO = ICA.CURSO_ID_CURSO
+  	 AND ASI.ID_ASIGNATURA = ICA.ASIGNATURA_ID_ASIGNATURA
+  	 AND ASI.ID_ASIGNATURA = U.ASIGNATURA_ID_ASIGNATURA
+  	 AND U.ID_UNIDAD = S.UNIDAD_ID_UNIDAD
+  	 AND S.ID_SUBTOPICO = A.SUBTOPICO_ID_SUBTOPICO
+  	 AND A.INTELIGENCIA_ID_INTELIGENCIA = I.ID_INTELIGENCIA
+  	 AND G.NIVEL_ID_NIVEL = IFNULL($P{nivel}, G.NIVEL_ID_NIVEL)
+  	 AND G.ID_GRADO = IFNULL($P{grado}, G.ID_GRADO)
+  	 AND ASI.ID_ASIGNATURA = IFNULL($P{asignatura}, ASI.ID_ASIGNATURA)
+GROUP BY I.ID_INTELIGENCIA, I.INTELIGENCIA
+ORDER BY COUNT('X')]]></queryString>
+
+	<field name="NIVEL" class="java.lang.String"/>
+	<field name="GRADO" class="java.lang.String"/>
+	<field name="CURSO" class="java.lang.String"/>
+	<field name="ID_ASIGNATURA" class="java.lang.Integer"/>
+	<field name="ASIGNATURA" class="java.lang.String"/>
+	<field name="ID_UNIDAD" class="java.lang.Integer"/>
+	<field name="UNIDAD" class="java.lang.String"/>
+	<field name="ID_SUBTOPICO" class="java.lang.Integer"/>
+	<field name="SUBTOPICO" class="java.lang.String"/>
+	<field name="APRENDIZAJE" class="java.lang.String"/>
+	<field name="ID_INTELIGENCIA" class="java.lang.Integer"/>
+	<field name="INTELIGENCIA" class="java.lang.String"/>
+	<field name="COUNT('X')" class="java.lang.Long"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="106"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="29"
+						width="552"
+						height="24"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[GRÁFICAS DE DIMENSION CURRICULAR]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3"
+						y="66"
+						width="168"
+						height="18"
+						key="textField-1"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{grado}.equals(null)?"":"Grado: "+$F{GRADO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3"
+						y="48"
+						width="168"
+						height="18"
+						key="textField-2"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{nivel}.equals(null)?"":"Nivel: "+$F{NIVEL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3"
+						y="83"
+						width="168"
+						height="18"
+						key="textField-3"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{asignatura}.equals(null)?"":"Asignatura: "+$F{ASIGNATURA}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="103"
+						width="552"
+						height="0"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="22"
+						width="552"
+						height="0"
+						key="line-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy h:mm a" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="365"
+						y="1"
+						width="185"
+						height="18"
+						key="textField-4"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="516"  isSplitAllowed="true" >
+				<bar3DChart>
+					<chart  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="42"
+						width="552"
+						height="241"
+						key="element-2"/>
+					<box></box>
+						<chartLegend textColor="#000000" backgroundColor="#FFFFFF" >
+					</chartLegend>
+					</chart>
+					<categoryDataset>
+						<dataset >
+						</dataset>
+						<categorySeries>
+							<seriesExpression><![CDATA[$F{INTELIGENCIA}]]></seriesExpression>
+							<categoryExpression><![CDATA[$F{INTELIGENCIA}+" ("+$F{COUNT('X')}+")"]]></categoryExpression>
+							<valueExpression><![CDATA[$F{COUNT('X')}]]></valueExpression>
+							<labelExpression><![CDATA[$F{INTELIGENCIA}]]></labelExpression>
+				<itemHyperlink >
+				</itemHyperlink>
+						</categorySeries>
+					</categoryDataset>
+					<bar3DPlot >
+						<plot orientation="Horizontal" />
+						<categoryAxisFormat>
+							<axisFormat >
+							</axisFormat>
+						</categoryAxisFormat>
+						<valueAxisFormat>
+							<axisFormat >
+							</axisFormat>
+						</valueAxisFormat>
+					</bar3DPlot>
+				</bar3DChart>
+				<pie3DChart>
+					<chart  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="323"
+						width="552"
+						height="193"
+						key="element-3"/>
+					<box></box>
+						<chartLegend textColor="#000000" backgroundColor="#FFFFFF" >
+					</chartLegend>
+					</chart>
+					<pieDataset>
+						<dataset >
+						</dataset>
+						<keyExpression><![CDATA[$F{INTELIGENCIA}+" ("+$F{COUNT('X')}+")"]]></keyExpression>
+						<valueExpression><![CDATA[$F{COUNT('X')}]]></valueExpression>
+						<labelExpression><![CDATA[$F{INTELIGENCIA}+" ("+$F{COUNT('X')}+")"]]></labelExpression>
+				<sectionHyperlink >
+				</sectionHyperlink>
+					</pieDataset>
+					<pie3DPlot >
+						<plot />
+					</pie3DPlot>
+				</pie3DChart>
+			</band>
+		</summary>
+</jasperReport>

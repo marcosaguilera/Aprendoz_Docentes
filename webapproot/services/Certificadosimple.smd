@@ -1,0 +1,21 @@
+{
+	"methods": [{
+		"name": "getReport",
+		"parameters": [{
+			"name": "idPersonacs",
+			"type": "java.lang.String"
+		}, {
+			"name": "sycs",
+			"type": "java.lang.String"
+		}, {
+			"name": "com1",
+			"type": "java.lang.String"
+		}, {
+			"name": "com2",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.wavemaker.runtime.server.DownloadResponse"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "Certificadosimple.json"
+}

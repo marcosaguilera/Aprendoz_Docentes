@@ -1,0 +1,37 @@
+{
+	"methods": [{
+		"name": "sendEmailNotification",
+		"operationType": null,
+		"parameters": [{
+			"name": "lugar",
+			"type": "java.lang.String"
+		}, {
+			"name": "alumnos",
+			"type": "java.lang.String"
+		}, {
+			"name": "correocoordinador",
+			"type": "java.lang.String"
+		}, {
+			"name": "correodirector",
+			"type": "java.lang.String"
+		}, {
+			"name": "profesorRemitente",
+			"type": "java.lang.String"
+		}, {
+			"name": "fechaEventualidad",
+			"type": "java.util.Date"
+		}, {
+			"name": "eventualidad",
+			"type": "java.lang.String"
+		}, {
+			"name": "subtipoEventualidad",
+			"type": "java.lang.String"
+		}, {
+			"name": "cursos",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "EnviarMail.json"
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" springFile="EnviarMailAcumulado.spring.xml" type="JavaService" CRUDService="false" class="EnviarMailAcumulado" id="EnviarMailAcumulado">
+    <operation name="sendEmailNotification">
+        <parameter isList="false" typeRef="java.lang.String" name="alumno"/>
+        <parameter isList="false" typeRef="java.lang.String" name="correocoordinador"/>
+        <parameter isList="false" typeRef="java.lang.String" name="correodirector"/>
+        <parameter isList="false" typeRef="java.lang.String" name="profesorRemitente"/>
+        <parameter isList="false" typeRef="java.lang.String" name="fecha"/>
+        <parameter isList="false" typeRef="java.lang.String" name="curso"/>
+        <parameter isList="false" typeRef="java.lang.Integer" name="id"/>
+        <return isList="false" typeRef="java.lang.String"/>
+    </operation>
+    <dataobjects/>
+</service>

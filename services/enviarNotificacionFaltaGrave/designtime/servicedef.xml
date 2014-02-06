@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" springFile="enviarNotificacionFaltaGrave.spring.xml" type="JavaService" CRUDService="false" class="enviarNotificacionFaltaGrave" id="enviarNotificacionFaltaGrave">
+    <operation name="enviarNotificacionFaltaGrave">
+        <parameter isList="false" typeRef="java.lang.String" name="alumno"/>
+        <parameter isList="false" typeRef="java.lang.String" name="nombrepadre"/>
+        <parameter isList="false" typeRef="java.lang.String" name="correopadre"/>
+        <parameter isList="false" typeRef="java.lang.String" name="nombremadre"/>
+        <parameter isList="false" typeRef="java.lang.String" name="correomadre"/>
+        <parameter isList="false" typeRef="java.lang.String" name="subtipoEventualidad"/>
+        <parameter isList="false" typeRef="java.lang.String" name="curso"/>
+        <parameter isList="false" typeRef="java.lang.String" name="fechaCita"/>
+        <parameter isList="false" typeRef="java.lang.String" name="horaCita"/>
+        <parameter isList="false" typeRef="java.lang.String" name="dnipap"/>
+        <parameter isList="false" typeRef="java.lang.String" name="dnimam"/>
+        <parameter isList="false" typeRef="java.lang.String" name="correocoordinador"/>
+        <parameter isList="false" typeRef="java.lang.String" name="correodirector"/>
+        <return isList="false" typeRef="java.lang.String"/>
+    </operation>
+    <dataobjects/>
+</service>

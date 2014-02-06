@@ -1,0 +1,60 @@
+.Reportes .Reportes-alumnosDojoGrid {
+	cursor: pointer;
+}
+
+.Reportes .Reportes-layers7 {
+	background-color: #CAE1FF;
+}
+
+.Reportes .Reportes-limpiar_butt {
+	background-color: #f8f8f8;
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#f1f1f1));
+background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+background-image: linear-gradient(top,#f8f8f8,#f1f1f1);
+border: 1px solid #c6c6c6;
+color: #222;
+font-family: arial,sans-serif;
+font-size: 11px;
+font-weight: bold;
+height: 27px;
+line-height: 27px;
+margin: 2px 0;
+min-width: 54px;
+padding: 0 8px;
+text-align: center;
+border-top-left-radius: 5px;
+border-bottom-right-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-left-radius: 5px;
+text-align: center;
+cursor: pointer;
+}
+
+.Reportes .Reportes-generar_butt {
+	background: #D14130;
+	background: -webkit-linear-gradient(top, #DC4A38, #C53727);
+background: -moz-linear-gradient(top, #DC4A38, #C53727);
+background: -ms-linear-gradient(top, #DC4A38, #C53727);
+background: -o-linear-gradient(top, #DC4A38, #C53727);
+border: 1px solid #B0281A !important;
+color: #ffffff;
+font-family: arial,sans-serif;
+font-size: 11px;
+font-weight: bold;
+height: 27px;
+line-height: 27px;
+margin: 2px 0;
+min-width: 54px;
+padding: 0 8px;
+text-align: center;border-top-left-radius: 5px;
+border-bottom-right-radius: 5px;
+cursor: pointer;
+
+border-top-left-radius: 5px;
+border-bottom-right-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-left-radius: 5px;
+text-align: center;
+cursor: pointer;
+}
+

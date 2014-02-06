@@ -1,0 +1,25 @@
+{
+	"methods": [{
+		"name": "corre_proc_act_cur",
+		"operationType": null,
+		"parameters": [{
+			"name": "Pr_Id_Curso",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "Pr_Id_Actividad",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "P_Fecha",
+			"type": "java.util.Date"
+		}, {
+			"name": "Pr_Comentario",
+			"type": "java.lang.String"
+		}, {
+			"name": "Pr_Logrado",
+			"type": "boolean"
+		}],
+		"returnType": "java.lang.Integer"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "sp_actividad_curso.json"
+}

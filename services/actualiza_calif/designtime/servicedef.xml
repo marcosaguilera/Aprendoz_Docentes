@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" springFile="actualiza_calif.spring.xml" type="JavaService" CRUDService="false" class="actualiza_calif" id="actualiza_calif">
+    <operation name="corre_proc_calcula_calif_est">
+        <parameter isList="false" typeRef="java.lang.Integer" name="Pr_Id_Persona"/>
+        <parameter isList="false" typeRef="java.lang.Integer" name="Pr_Id_Aprendizaje"/>
+        <return isList="false" typeRef="java.lang.Integer"/>
+    </operation>
+    <dataobjects/>
+</service>

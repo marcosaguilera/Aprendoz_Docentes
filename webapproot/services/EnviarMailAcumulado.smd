@@ -1,0 +1,31 @@
+{
+	"methods": [{
+		"name": "sendEmailNotification",
+		"operationType": null,
+		"parameters": [{
+			"name": "alumno",
+			"type": "java.lang.String"
+		}, {
+			"name": "correocoordinador",
+			"type": "java.lang.String"
+		}, {
+			"name": "correodirector",
+			"type": "java.lang.String"
+		}, {
+			"name": "profesorRemitente",
+			"type": "java.lang.String"
+		}, {
+			"name": "fecha",
+			"type": "java.lang.String"
+		}, {
+			"name": "curso",
+			"type": "java.lang.String"
+		}, {
+			"name": "id",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "java.lang.String"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "EnviarMailAcumulado.json"
+}

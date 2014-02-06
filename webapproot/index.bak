@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<meta http-equiv="x-UA-compatible" content="IE=8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="cache-control" content="must-revalidate" />
+<meta name="generator" content="WaveMaker Visual Ajax Studio" />
+<title>Colegio Rochester | Aprendoz Docentes | Versión 0.8.1</title>
+<link rel="shortcut icon" href="http://www.rochester.edu.co/public/template/img/favicon.ico" />
+<style type="text/css">
+@import "/wavemaker/lib/boot/boot.css";
+@import "app.css";
+#wavemakerNode {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+/*#main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 textarea, #main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 .dijitComboBox, .dijitTextBox {
+    background: none repeat scroll 0 0 transparent !important;
+    border: 2px solid #C3C3C3 !important;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 1px 1px 2px #4D4D4D;
+    float: left !important;
+    padding: 0 1px;
+    position: relative !important;
+    width: 96% !important;
+}
+#main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 .wmcontainer {
+    float: left !important;
+    left: 0 !important;
+    overflow: visible !important;
+    position: relative !important;
+    width: 100% !important;
+}
+#main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 .wmlabel {
+    color: #C33538 !important;
+    display: block !important;
+    float: left !important;
+    position: relative !important;
+    width: 130px !important;
+}
+#main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 .wmeditor > div {
+    display: block !important;
+    float: left !important;
+    left: 0 !important;
+    max-width: 250px !important;
+    overflow: visible !important;
+    position: relative !important;
+}
+#main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 #main_registro_eventualidades_reg_eventualidades_panel5 {
+    bottom: 0 !important;
+    display: block !important;
+    height: 36px !important;
+    left: 0 !important;
+    margin: 20px 0 0 !important;
+    padding: 0 !important;
+    top: 0 !important;
+}
+#main_registro_eventualidades_reg_eventualidades_panel5 .wmeditor {
+    left: 0 !important;
+    width: 320px !important;
+}
+#main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 > .wmcontainer:not(#main_registro_eventualidades_reg_eventualidades_panel5):not(#main_registro_eventualidades_reg_eventualidades_fechaIngresoEditor1):not(#main_registro_eventualidades_reg_eventualidades_panel12):not(#main_registro_eventualidades_reg_eventualidades_layers1):not(#main_registro_eventualidades_reg_eventualidades_panel10):not(#main_registro_eventualidades_reg_eventualidades_layers3):not(#main_registro_eventualidades_reg_eventualidades_subtipo_eventualidad):not(#main_registro_eventualidades_reg_eventualidades_tipo_eventualidad_select) {
+    margin: 0 !important;
+    min-height: 28px;
+    padding: 0 !important;
+    top: 0 !important;
+    width: 429px !important;
+	display: block !important;
+}
+#main_registro_eventualidades_reg_eventualidades_panel4, #main_registro_eventualidades_reg_eventualidades_panel10{
+    left: 0 !important;
+    display: block !important;
+    float: left !important;
+    position: relative !important;
+    width: 100% !important;
+}
+#main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 #main_registro_eventualidades_reg_eventualidades_pregunta1, #main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 #main_registro_eventualidades_reg_eventualidades_pregunta2, #main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 #main_registro_eventualidades_reg_eventualidades_pregunta3, #main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 #main_registro_eventualidades_reg_eventualidades_pregunta4, 
+#main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 #main_registro_eventualidades_reg_eventualidades_descripcion {
+    min-height: 140px !important;
+}
+#main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 #main_registro_eventualidades_reg_eventualidades_autoevaluacion{
+	height: 140px !important;
+}
+#main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 #main_registro_eventualidades_reg_eventualidades_panel12 {
+    display: block !important;
+    float: left !important;
+    height: 38px !important;
+    left: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    width: 977px !important;
+}
+#main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 #main_registro_eventualidades_reg_eventualidades_layers1:before {
+    background-color: #C33538;
+    color: white;
+    content: "Involucrados";
+    display: block !important;
+    float: left !important;
+    font-weight: bold;
+    height: 27px !important;
+    padding: 0;
+    position: relative !important;
+    width: 977px !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 18px;
+}
+#main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 #main_registro_eventualidades_reg_eventualidades_layers1 {
+    background-color: #CCCCCC;
+    border-bottom: 3px solid #333333 !important;
+    border-top: 3px solid #333333 !important;
+    display: block !important;
+    float: left !important;
+    height: 411px !important;
+    left: 0 !important;
+    margin: 8px 0 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    width: 977px !important;
+}
+#main_registro_eventualidades_reg_eventualidades_tabla_buscar_persona, #main_registro_eventualidades_reg_eventualidades_eventualidadPersonasDataGrid, #main_registro_eventualidades_reg_eventualidades_layers3 {
+    display: block !important;
+    float: left !important;
+    height: 147px !important;
+    left: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    width: 977px !important;
+}
+#main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 #main_registro_eventualidades_reg_eventualidades_panel10, #main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 #main_registro_eventualidades_reg_eventualidades_layers3, #main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 #main_registro_eventualidades_reg_eventualidades_panel7 {
+    height: 43px !important;
+    left: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+    padding: 0;
+    position: relative !important;
+    top: 0 !important;
+    width: 977px !important;
+}
+#main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 #main_registro_eventualidades_reg_eventualidades_tipo_eventualidad_select, #main_registro_eventualidades_reg_eventualidades_eventualidadesLiveForm1 #main_registro_eventualidades_reg_eventualidades_subtipo_eventualidad{
+    height: 30px !important;
+    left: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+    padding: 0;
+    position: relative !important;
+    top: 0 !important;
+    width: 480px !important;
+}*/
+</style>
+
+<!-- Boot Wavemaker -->
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="/wavemaker/lib/boot/boot.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script src="resources/javascript/jquery.fileDownload.js"></script>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/cupertino/jquery-ui.css" type="text/css" />
+
+<!-- google charts api -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+      google.load('visualization', '1',   {'packages':['gauge']});
+      // Set a callback to run when the Google Visualization API is loaded.
+      var chartIsLoadedFunc = function() {
+            window.googleChartLibIsLoaded = true; // use this in your page code to determine if you can draw or not
+      }
+      google.setOnLoadCallback(chartIsLoadedFunc);
+    </script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the gauge
+      google.load('visualization', '1',   {'packages':['gauge']});
+      //google.load('visualization', '1.0', {'packages':['corechart']});
+      // Set a callback to run when the Google Visualization API is loaded.
+      var chartIsLoadedFunc = function() {
+            window.googleChartLibIsLoaded = true; // use this in your page code to determine if you can draw or not
+      }
+      google.setOnLoadCallback(chartIsLoadedFunc);
+    </script>
+<!-- end google charts api  -->
+
+</head>
+<body class="tundra">
+	<!-- Begin aprendoz -->
+	<div id="wavemakerNode">
+		<div id="_wm_googleChromeDialog" class='chromeFramePrompt'>
+			<div style='float:right' onclick='closeChromeFramePrompt()'>
+				<img src='/wavemaker/images/delete_24.png' style='cursor:pointer;'>
+			</div>
+			<table><tr><td><div id='googleChromeFrameDiv' style='z-index:999;'></div></td></tr></table>
+		</div>
+		<div id="_wm_loading" style="z-index: 100;">
+			<table><tr><td><img alt="Loading" src="/wavemaker/lib/boot/images/loader.gif" />&nbsp;&nbsp;Cargando información. Espere por favor...</td></tr></table>
+		</div>
+	</div>
+	<script type="text/javascript" src="/wavemaker/lib/runtimeLoader.js"></script>
+	<script type="text/javascript" src="lib_project.js"></script>
+	<script type="text/javascript" src="types.js"></script>
+	<script type="text/javascript" src="Aprendoz_Docentes.js"></script>
+	<script type="text/javascript">
+		function promptGoogleFrame()
+		{
+			dojo.byId('_wm_googleChromeDialog').style.display = 'block';
+			//alert('Please install Google Chrome Frame');
+		}
+
+		function closeChromeFramePrompt()
+		{
+			dojo.byId('_wm_googleChromeDialog').style.display = 'none';
+			dojo.cookie("stopChromeFramePrompt",true,{expires: 365});
+		}
+
+		if (wm.checkGoogleFrame && !dojo.cookie("stopChromeFramePrompt"))
+		{
+			CFInstall.check({node:'googleChromeFrameDiv', preventPrompt:false, onmissing: dojo.hitch(window, 'promptGoogleFrame')});
+		}
+
+		new Aprendoz_Docentes({domNode: "wavemakerNode"}).run();
+	</script>
+	<!-- End aprendoz -->
+</body>
+</html>

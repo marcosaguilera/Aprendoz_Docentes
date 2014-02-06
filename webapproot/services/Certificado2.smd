@@ -1,0 +1,21 @@
+{
+	"methods": [{
+		"name": "getReport",
+		"parameters": [{
+			"name": "idPersona",
+			"type": "java.lang.String"
+		}, {
+			"name": "sy",
+			"type": "java.lang.String"
+		}, {
+			"name": "coment1",
+			"type": "java.lang.String"
+		}, {
+			"name": "coment2",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.wavemaker.runtime.server.DownloadResponse"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "Certificado2.json"
+}

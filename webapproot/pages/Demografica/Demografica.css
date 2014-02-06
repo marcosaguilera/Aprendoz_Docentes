@@ -1,0 +1,102 @@
+.wmlabel.wmeditor-caption{
+  font-family: Tahoma;
+  font-weight: normal !important;
+  color: #333333;
+  padding: 4px 8px 4px 4px;
+}
+
+.Demografica .Demografica-personaDataGrid1 {
+  cursor: pointer;
+}
+
+.Demografica .Demografica-panel_filtros{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+ 
+}
+
+.Demografica .Demografica-panel_grupo_familiar{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+ 
+}
+
+
+.Demografica .Demografica-personaGridPanel{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+ 
+}
+
+.Demografica .Demografica-boton_buscar{
+  border-top-left-radius:      3px;
+  border-top-right-radius:     3px;
+  border-bottom-left-radius:   3px;
+  border-bottom-right-radius:  3px;
+  
+}
+
+.Demografica .Demografica-boton_limpiar{
+  border-top-left-radius:      3px;
+  border-top-right-radius:     3px;
+  border-bottom-left-radius:   3px;
+  border-bottom-right-radius:  3px;
+  
+}
+
+.Demografica .Demografica-boton_detalles{
+  border-top-left-radius:      3px;
+  border-top-right-radius:     3px;
+  border-bottom-left-radius:   3px;
+  border-bottom-right-radius:  3px;
+  
+}
+
+
+
+.Demografica .Demografica-inscalumasigGridPanel{
+  background: #4D90FE;
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+ 
+}
+
+.Demografica .Demografica-Tabla_personas_docentes {
+  cursor: pointer;
+}
+
+.Demografica .Demografica-student_pic {
+  width: 300px;
+                 height: 300px;
+               -webkit-border-radius: 150px;
+               -moz-border-radius: 150px;
+               -ms-border-radius: 150px;
+               -o-border-radius: 150px;
+                border-radius: 150px;
+}.Demografica .Demografica-clear_button_demograp {
+   background: #4D90FE;
+    background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
