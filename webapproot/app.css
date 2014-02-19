@@ -1,1 +1,55 @@
-@import "/wavemaker/lib/wm/base/widget/themes/wm_notheme/theme.css";
+html.WMApp body .nuevoButtons {
+    background: none;
+    background-color: rgb(99, 187, 0);   
+    color: #fff;
+    border: 0px !important;
+}
+
+html.WMApp body .nuevoButtons:hover {
+    background: none;
+    background-color: rgb(99, 187, 0);   
+    color: #fff;
+    border: 0px !important;
+}
+
+html.WMApp body .Modificar {
+    background: none;
+    background-color: rgb(54, 82, 164); 
+    color: #fff;
+    border: 0px !important;
+}
+
+html.WMApp body .Modificar:hover {
+    background: none;
+    background-color: rgb(54, 82, 164);  
+    color: #fff;
+    border: 0px !important;
+}
+
+html.WMApp body .eliminar {
+    background: none;
+    background-color: rgb(197, 53, 57);
+    color: #fff;
+    border: 0px !important;
+}
+
+html.WMApp body .eliminar:hover {
+    background: none;
+    background-color: rgb(197, 53, 57);
+    color: #fff;
+    border: 0px !important;
+}
+
+html.WMApp body .gridscss {
+    cursor: pointer;
+}html.WMApp body .blue_button {
+    background-color: #1125b2 !important;
+    border: none !important;
+    background: none;
+    color: #fff !important;
+    border-left: 4px solid #fff !important;
+}html.WMApp body .profile_img {
+    border-radius: 50% 50% !important;
+}html.WMApp body .lastAccess {
+    background-color: rgb(163, 163, 163);
+}

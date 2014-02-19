@@ -11322,23 +11322,6 @@ wm.types = {
 			"liveService": true,
 			"service": "aprendoz_test"
 		},
-		"com.aprendoz_test.data.InscAlumExtraCurricular": {
-			"fields": {
-				"inscAlumExtraCurricularId": {
-					"exclude": ["insert"],
-					"fieldOrder": 0,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Integer"
-				}
-			},
-			"internal": false,
-			"liveService": true,
-			"service": "aprendoz_test"
-		},
 		"com.aprendoz_test.data.InscComentariosAlumnos": {
 			"fields": {
 				"comentario": {
@@ -13465,7 +13448,7 @@ wm.types = {
 			"fields": {
 				"accStudentCards": {
 					"exclude": [],
-					"fieldOrder": 71,
+					"fieldOrder": 72,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13485,7 +13468,7 @@ wm.types = {
 				},
 				"actualizacionDatosPersonas": {
 					"exclude": [],
-					"fieldOrder": 80,
+					"fieldOrder": 81,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13515,7 +13498,7 @@ wm.types = {
 				},
 				"asistencias": {
 					"exclude": [],
-					"fieldOrder": 74,
+					"fieldOrder": 75,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13535,7 +13518,7 @@ wm.types = {
 				},
 				"calificacionFinals": {
 					"exclude": [],
-					"fieldOrder": 65,
+					"fieldOrder": 66,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13635,7 +13618,7 @@ wm.types = {
 				},
 				"coordinacionDeGrupos": {
 					"exclude": [],
-					"fieldOrder": 72,
+					"fieldOrder": 73,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13645,7 +13628,7 @@ wm.types = {
 				},
 				"coordinacions": {
 					"exclude": [],
-					"fieldOrder": 92,
+					"fieldOrder": 93,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13655,7 +13638,7 @@ wm.types = {
 				},
 				"coordinadoreses": {
 					"exclude": [],
-					"fieldOrder": 86,
+					"fieldOrder": 87,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13735,7 +13718,7 @@ wm.types = {
 				},
 				"eventualidadPersonases": {
 					"exclude": [],
-					"fieldOrder": 70,
+					"fieldOrder": 71,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13775,7 +13758,7 @@ wm.types = {
 				},
 				"fichaMedicas": {
 					"exclude": [],
-					"fieldOrder": 81,
+					"fieldOrder": 82,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13825,7 +13808,7 @@ wm.types = {
 				},
 				"inscAlumActividads": {
 					"exclude": [],
-					"fieldOrder": 67,
+					"fieldOrder": 68,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13835,7 +13818,7 @@ wm.types = {
 				},
 				"inscAlumAprendizajes": {
 					"exclude": [],
-					"fieldOrder": 63,
+					"fieldOrder": 64,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13845,7 +13828,7 @@ wm.types = {
 				},
 				"inscAlumAsigCopies": {
 					"exclude": [],
-					"fieldOrder": 85,
+					"fieldOrder": 86,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13855,7 +13838,7 @@ wm.types = {
 				},
 				"inscAlumAsigCopy2s": {
 					"exclude": [],
-					"fieldOrder": 91,
+					"fieldOrder": 92,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13865,7 +13848,7 @@ wm.types = {
 				},
 				"inscAlumAsigs": {
 					"exclude": [],
-					"fieldOrder": 89,
+					"fieldOrder": 90,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13875,7 +13858,7 @@ wm.types = {
 				},
 				"inscAlumCostos": {
 					"exclude": [],
-					"fieldOrder": 90,
+					"fieldOrder": 91,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13895,7 +13878,7 @@ wm.types = {
 				},
 				"inscAlumCursos": {
 					"exclude": [],
-					"fieldOrder": 73,
+					"fieldOrder": 74,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13905,7 +13888,7 @@ wm.types = {
 				},
 				"inscComentariosAlumnoses": {
 					"exclude": [],
-					"fieldOrder": 66,
+					"fieldOrder": 67,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13915,7 +13898,7 @@ wm.types = {
 				},
 				"inscCoordinadoresCursos": {
 					"exclude": [],
-					"fieldOrder": 75,
+					"fieldOrder": 76,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13925,7 +13908,7 @@ wm.types = {
 				},
 				"inscCursoAsigs": {
 					"exclude": [],
-					"fieldOrder": 79,
+					"fieldOrder": 80,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13935,7 +13918,7 @@ wm.types = {
 				},
 				"inscDirectorNivels": {
 					"exclude": [],
-					"fieldOrder": 68,
+					"fieldOrder": 69,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13945,7 +13928,7 @@ wm.types = {
 				},
 				"inscPersonaEduComs": {
 					"exclude": [],
-					"fieldOrder": 87,
+					"fieldOrder": 88,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13955,7 +13938,7 @@ wm.types = {
 				},
 				"inscPersonaGrupoFamiliars": {
 					"exclude": [],
-					"fieldOrder": 69,
+					"fieldOrder": 70,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13965,7 +13948,7 @@ wm.types = {
 				},
 				"logDocenteses": {
 					"exclude": [],
-					"fieldOrder": 83,
+					"fieldOrder": 84,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13975,7 +13958,7 @@ wm.types = {
 				},
 				"logIngresoCarnes": {
 					"exclude": [],
-					"fieldOrder": 77,
+					"fieldOrder": 78,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13985,7 +13968,7 @@ wm.types = {
 				},
 				"logeventosaprendozs": {
 					"exclude": [],
-					"fieldOrder": 76,
+					"fieldOrder": 77,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -14045,7 +14028,7 @@ wm.types = {
 				},
 				"matriculas": {
 					"exclude": [],
-					"fieldOrder": 88,
+					"fieldOrder": 89,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -14185,7 +14168,7 @@ wm.types = {
 				},
 				"personaCarnes": {
 					"exclude": [],
-					"fieldOrder": 84,
+					"fieldOrder": 85,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -14215,7 +14198,7 @@ wm.types = {
 				},
 				"promocions": {
 					"exclude": [],
-					"fieldOrder": 78,
+					"fieldOrder": 79,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -14262,6 +14245,16 @@ wm.types = {
 					"noChange": [],
 					"required": false,
 					"type": "java.lang.String"
+				},
+				"seguridadPersonasAccesoses": {
+					"exclude": [],
+					"fieldOrder": 63,
+					"fieldSubType": null,
+					"include": [],
+					"isList": true,
+					"noChange": [],
+					"required": false,
+					"type": "com.aprendoz_test.data.SeguridadPersonasAccesos"
 				},
 				"sexo": {
 					"exclude": [],
@@ -14365,7 +14358,7 @@ wm.types = {
 				},
 				"transporteInscAlumTransportes": {
 					"exclude": [],
-					"fieldOrder": 64,
+					"fieldOrder": 65,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -14375,7 +14368,7 @@ wm.types = {
 				},
 				"transporteNovedadeses": {
 					"exclude": [],
-					"fieldOrder": 82,
+					"fieldOrder": 83,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -14849,15 +14842,15 @@ wm.types = {
 		},
 		"com.aprendoz_test.data.Recurso": {
 			"fields": {
-				"documento": {
+				"fileName": {
 					"exclude": [],
-					"fieldOrder": 2,
+					"fieldOrder": 3,
 					"fieldSubType": null,
 					"include": [],
-					"isList": true,
+					"isList": false,
 					"noChange": [],
 					"required": false,
-					"type": "byte"
+					"type": "java.lang.String"
 				},
 				"idRecurso": {
 					"exclude": ["insert"],
@@ -14867,16 +14860,6 @@ wm.types = {
 					"isList": false,
 					"noChange": ["delete", "read", "update"],
 					"required": true,
-					"type": "java.lang.Integer"
-				},
-				"idSyIdIdSy": {
-					"exclude": [],
-					"fieldOrder": 4,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
 					"type": "java.lang.Integer"
 				},
 				"recurso": {
@@ -14891,7 +14874,7 @@ wm.types = {
 				},
 				"subtopico": {
 					"exclude": [],
-					"fieldOrder": 5,
+					"fieldOrder": 4,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -14901,7 +14884,7 @@ wm.types = {
 				},
 				"tipoRecurso": {
 					"exclude": [],
-					"fieldOrder": 6,
+					"fieldOrder": 5,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -14911,7 +14894,7 @@ wm.types = {
 				},
 				"ubicacion": {
 					"exclude": [],
-					"fieldOrder": 3,
+					"fieldOrder": 2,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -15183,6 +15166,73 @@ wm.types = {
 					"noChange": [],
 					"required": false,
 					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.SeguridadPersonasAccesos": {
+			"fields": {
+				"accesoTemp": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Byte"
+				},
+				"asignadoPor": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"createdDate": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.util.Date"
+				},
+				"idSeguridadPersonasAccesos": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"persona": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "com.aprendoz_test.data.Persona"
+				},
+				"updatedDate": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.util.Date"
 				}
 			},
 			"internal": false,
@@ -23019,6 +23069,16 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.String"
 				},
+				"codigo": {
+					"exclude": [],
+					"fieldOrder": 10,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
 				"idpersona": {
 					"exclude": [],
 					"fieldOrder": 2,
@@ -23031,7 +23091,7 @@ wm.types = {
 				},
 				"idtipo": {
 					"exclude": [],
-					"fieldOrder": 11,
+					"fieldOrder": 12,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -23091,7 +23151,7 @@ wm.types = {
 				},
 				"tipoPersona": {
 					"exclude": [],
-					"fieldOrder": 10,
+					"fieldOrder": 11,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -23479,7 +23539,7 @@ wm.types = {
 				},
 				"idsy": {
 					"exclude": [],
-					"fieldOrder": 5,
+					"fieldOrder": 8,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -23497,6 +23557,36 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.String"
 				},
+				"subarea1": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"subarea2": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"subarea3": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
 				"subject": {
 					"exclude": [],
 					"fieldOrder": 4,
@@ -23509,7 +23599,7 @@ wm.types = {
 				},
 				"year": {
 					"exclude": [],
-					"fieldOrder": 6,
+					"fieldOrder": 9,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -23843,9 +23933,9 @@ dojo.declare("Aprendoz_Docentes", wm.Application, {
 	"name": "", 
 	"phoneGapLoginPage": "Login", 
 	"phoneMain": "", 
-	"projectSubVersion": 3, 
+	"projectSubVersion": 5, 
 	"projectVersion": 1, 
-	"sessionExpirationHandler": undefined, 
+	"sessionExpirationHandler": "nothing", 
 	"studioVersion": "6.6.0.RELEASE", 
 	"tabletMain": "", 
 	"theme": "wm.base.widget.themes.wm_notheme", 
@@ -24294,5 +24384,53 @@ dojo.declare("Aprendoz_Docentes", wm.Application, {
 Aprendoz_Docentes.extend({
 
 	_end: 0});
-Aprendoz_Docentes.prototype._css = '@import "/wavemaker/lib/wm/base/widget/themes/wm_notheme/theme.css";\
+Aprendoz_Docentes.prototype._css = 'html.WMApp body .nuevoButtons {\
+background: none;\
+background-color: rgb(99, 187, 0);\
+color: #fff;\
+border: 0px !important;\
+}\
+html.WMApp body .nuevoButtons:hover {\
+background: none;\
+background-color: rgb(99, 187, 0);\
+color: #fff;\
+border: 0px !important;\
+}\
+html.WMApp body .Modificar {\
+background: none;\
+background-color: rgb(54, 82, 164);\
+color: #fff;\
+border: 0px !important;\
+}\
+html.WMApp body .Modificar:hover {\
+background: none;\
+background-color: rgb(54, 82, 164);\
+color: #fff;\
+border: 0px !important;\
+}\
+html.WMApp body .eliminar {\
+background: none;\
+background-color: rgb(197, 53, 57);\
+color: #fff;\
+border: 0px !important;\
+}\
+html.WMApp body .eliminar:hover {\
+background: none;\
+background-color: rgb(197, 53, 57);\
+color: #fff;\
+border: 0px !important;\
+}\
+html.WMApp body .gridscss {\
+cursor: pointer;\
+}html.WMApp body .blue_button {\
+background-color: #1125b2 !important;\
+border: none !important;\
+background: none;\
+color: #fff !important;\
+border-left: 4px solid #fff !important;\
+}html.WMApp body .profile_img {\
+border-radius: 50% 50% !important;\
+}html.WMApp body .lastAccess {\
+background-color: rgb(163, 163, 163);\
+}\
 ';

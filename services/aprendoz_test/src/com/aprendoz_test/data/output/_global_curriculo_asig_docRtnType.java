@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "_global_curriculo_asig_doc" on 02/05/2014 12:53:31
+ * Generated for query "_global_curriculo_asig_doc" on 02/18/2014 09:31:11
  * 
  */
 public class _global_curriculo_asig_docRtnType {
@@ -14,6 +14,9 @@ public class _global_curriculo_asig_docRtnType {
     private Integer idasignatura;
     private String asignatura;
     private String subject;
+    private Integer subarea1;
+    private Integer subarea2;
+    private Integer subarea3;
     private Integer idsy;
     private String year;
 
@@ -55,6 +58,30 @@ public class _global_curriculo_asig_docRtnType {
 
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+
+    public Integer getSubarea1() {
+        return subarea1;
+    }
+
+    public void setSubarea1(Integer subarea1) {
+        this.subarea1 = subarea1;
+    }
+
+    public Integer getSubarea2() {
+        return subarea2;
+    }
+
+    public void setSubarea2(Integer subarea2) {
+        this.subarea2 = subarea2;
+    }
+
+    public Integer getSubarea3() {
+        return subarea3;
+    }
+
+    public void setSubarea3(Integer subarea3) {
+        this.subarea3 = subarea3;
     }
 
     public Integer getIdsy() {

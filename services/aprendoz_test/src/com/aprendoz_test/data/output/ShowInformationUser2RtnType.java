@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "showInformationUser2" on 02/05/2014 12:53:31
+ * Generated for query "showInformationUser2" on 02/18/2014 09:31:11
  * 
  */
 public class ShowInformationUser2RtnType {
@@ -19,6 +19,7 @@ public class ShowInformationUser2RtnType {
     private String usuario;
     private String clave;
     private String sexo;
+    private String codigo;
     private String tipoPersona;
     private Integer idtipo;
 
@@ -100,6 +101,14 @@ public class ShowInformationUser2RtnType {
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public String getTipoPersona() {

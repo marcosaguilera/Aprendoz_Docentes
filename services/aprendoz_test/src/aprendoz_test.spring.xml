@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Generated 02/05/2014 11:42:48
+<!-- Generated 02/14/2014 15:15:08
 
 Configuration for 'aprendoz_test' database service
 
@@ -153,6 +153,7 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/TransporteNovedades.hbm.xml</value>
 <value>com/aprendoz_test/data/Actividad.hbm.xml</value>
 <value>com/aprendoz_test/data/ReporteDavivienda.hbm.xml</value>
+<value>com/aprendoz_test/data/SeguridadPersonasAccesos.hbm.xml</value>
 <value>com/aprendoz_test/data/TransporteInscAlumTransporte.hbm.xml</value>
 <value>com/aprendoz_test/data/GrupoFamiliar.hbm.xml</value>
 <value>com/aprendoz_test/data/Formulario5a.hbm.xml</value>
@@ -220,7 +221,6 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/Vistaasistencia.hbm.xml</value>
 <value>com/aprendoz_test/data/Matricula.hbm.xml</value>
 <value>com/aprendoz_test/data/TipoEps.hbm.xml</value>
-<value>com/aprendoz_test/data/InscAlumExtraCurricular.hbm.xml</value>
 <value>com/aprendoz_test/data/BusRoute.hbm.xml</value>
 <value>com/aprendoz_test/data/TmpEnrLog.hbm.xml</value>
 <value>com/aprendoz_test/data/ImportacionCarteraCopy.hbm.xml</value>

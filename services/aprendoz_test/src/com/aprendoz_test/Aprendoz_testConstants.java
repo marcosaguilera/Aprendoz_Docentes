@@ -5,11 +5,13 @@ package com.aprendoz_test;
 
 /**
  *  Query names for service "aprendoz_test"
- *  02/05/2014 12:53:33
+ *  02/18/2014 09:31:15
  * 
  */
 public class Aprendoz_testConstants {
 
+    public final static String _global_curriculo_asig_docQueryName = "_global_curriculo_asig_doc";
+    public final static String _global_getSyByCurDateQueryName = "_global_getSyByCurDate";
     public final static String a_getCursoProcesoSVQueryName = "a_getCursoProcesoSV";
     public final static String actualizarClaveQueryName = "actualizarClave";
     public final static String crearPlanQueryName = "crearPlan";
@@ -48,7 +50,5 @@ public class Aprendoz_testConstants {
     public final static String showInformationUser2QueryName = "showInformationUser2";
     public final static String studentsByCurseBySubjectQueryName = "studentsByCurseBySubject";
     public final static String subjectsBySyAndStudentQueryName = "subjectsBySyAndStudent";
-    public final static String _global_curriculo_asig_docQueryName = "_global_curriculo_asig_doc";
-    public final static String _global_getSyByCurDateQueryName = "_global_getSyByCurDate";
 
 }

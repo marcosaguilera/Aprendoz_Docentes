@@ -8,7 +8,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Persona
- *  02/05/2014 11:42:57
+ *  02/14/2014 15:15:13
  * 
  */
 public class Persona {
@@ -76,6 +76,7 @@ public class Persona {
     private Integer inscAlumCursoIdInscAlumCurso;
     private String paisDomicilio;
     private String codigoPostal;
+    private Set<com.aprendoz_test.data.SeguridadPersonasAccesos> seguridadPersonasAccesoses = new HashSet<com.aprendoz_test.data.SeguridadPersonasAccesos>();
     private Set<com.aprendoz_test.data.InscAlumAprendizaje> inscAlumAprendizajes = new HashSet<com.aprendoz_test.data.InscAlumAprendizaje>();
     private Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportes = new HashSet<com.aprendoz_test.data.TransporteInscAlumTransporte>();
     private Set<com.aprendoz_test.data.CalificacionFinal> calificacionFinals = new HashSet<com.aprendoz_test.data.CalificacionFinal>();
@@ -609,6 +610,14 @@ public class Persona {
 
     public void setCodigoPostal(String codigoPostal) {
         this.codigoPostal = codigoPostal;
+    }
+
+    public Set<com.aprendoz_test.data.SeguridadPersonasAccesos> getSeguridadPersonasAccesoses() {
+        return seguridadPersonasAccesoses;
+    }
+
+    public void setSeguridadPersonasAccesoses(Set<com.aprendoz_test.data.SeguridadPersonasAccesos> seguridadPersonasAccesoses) {
+        this.seguridadPersonasAccesoses = seguridadPersonasAccesoses;
     }
 
     public Set<com.aprendoz_test.data.InscAlumAprendizaje> getInscAlumAprendizajes() {

@@ -1,55 +1,28 @@
-/*********************************************
- *Esquema de colores Aprendoz
- *Colores basados en el escudo e imagen institucional
- *  Azul oscuro: #281d73
- *  Azul claro:  #5c548c
- *  Rojo Oscuro: #a62121
- *  Rojo Claro:  #bf5e5e
- *  Blanco:      #f2f2f2
- *
- *  ***Esquema alterno***
- *  Rojo Vino:       #690011
- *  Rojo:            #bf0426
- *  Rojo claro:      #bf0426
- *  Amarillo claro:  #f2d99c
- *  Amarrillo:       #e5b96f
- *********************************************/
- .wmlabel.wmeditor-caption{
-  font-family: Tahoma;
-  font-weight: normal !important;
-  color: #333333;
-  padding: 4px 8px 4px 4px;
-}
-#main_MAIN .wmtablayers-tabbar {
-    background: #ffffff url(images/sb_bar_bg.png) repeat-x;
-    border-bottom: 1px solid #939fb6;
-    background-repeat: repeat-x;
-    overflow: visible !important;
-    padding-top: 6px;
-    /*top: 0px !important;*/
+/*init css new version*/
+
+#main_menu_profile_img {
+    border-radius: 50% 50% !important;
+    height: 76px !important;
+    width: 75px !important;
+    margin-left: 19% !important;
 }
 
-/*.Main .Main-wmcontainer.wmpanel.wm.TabLayers-client{
-    position: absolute;
-    margin: 0px;
-    padding: 0px;
-    border: 0px solid rgb(240, 240, 240);
-    overflow: hidden;
-    left: 10px;
-    top: 48px;
-    width: 1259px;
-    height: 1376px;
-    line-height: normal;
-}*/
+#main_menu_inicio_butt {
+    background-color: #1125b2;
+    border: none !important;
+    background: none;
+    color: #fff !important;
+}
 
-/*#main_MAIN_client {
-top: 52px !important;
-}*/
 
-/*.wmtablayers-tab {
-height: 36px !important;
-width: 106px !important;
-}*/
+#main_menu_curriculo_butt {
+    background-color: #a3a3a3;
+    border: none !important;
+    background: none;
+    color: #fff !important;
+}
+
+/*new version css*/
 
 
 .wmgrid-disabled .dojoxGrid-cell {
@@ -1248,22 +1221,6 @@ background-color: VeryLightGray;
   cursor: pointer;
   border-radius: 2px 2px 2px 2px;
 cursor: pointer;
-}
-
-.Main .Main-button2 {
-     background: #B8B8B8;
-      background-image: -moz-linear-gradient(center top , #B8B8B8, #B8B8B8);
-  background-image: -webkit-linear-gradient(center top , #B8B8B8, #B8B8B8);
-  background-image: -moz-linear-gradient(center top , #B8B8B8, #B8B8B8);
-  background-image: -o-linear-gradient(center top , #B8B8B8, #B8B8B8);
-  color: #FFFFFF;
-  border: #FFCC00;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 2px 2px 2px 2px;
-cursor: pointer;
-
 }
 
 .Main .Main-unidadDetalles {
