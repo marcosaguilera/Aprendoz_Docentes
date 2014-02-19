@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "getSubjectsByProfileGrouped" on 02/05/2014 12:53:31
+ * Generated for query "getSubjectsByProfileGrouped" on 02/18/2014 09:31:11
  * 
  */
 public class GetSubjectsByProfileGroupedRtnType {

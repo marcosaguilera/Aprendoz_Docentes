@@ -191,6 +191,12 @@
         <many-to-one name="grupoFamiliar" class="com.aprendoz_test.data.GrupoFamiliar">
             <column name="Grupo_Familiar_ID_Grupo_Familiar" not-null="true"/>
         </many-to-one>
+        <set name="seguridadPersonasAccesoses" inverse="true" cascade="">
+            <key>
+                <column name="persona_id_persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.SeguridadPersonasAccesos"/>
+        </set>
         <set name="inscAlumAprendizajes" inverse="true" cascade="">
             <key>
                 <column name="Persona_Id_Persona" not-null="true"/>

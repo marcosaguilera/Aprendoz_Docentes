@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 
 
 /**
- * Generated for query "dash_no_calificados" on 02/05/2014 12:53:31
+ * Generated for query "dash_no_calificados" on 02/18/2014 09:31:11
  * 
  */
 public class Dash_no_calificadosRtnType {

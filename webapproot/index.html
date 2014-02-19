@@ -36,6 +36,41 @@ var wmChromeFramePath = "http://google.com/chrome";
 
 <!-- Boot Wavemaker -->
 <script type="text/javascript" src="config.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script src="resources/javascript/jquery.fileDownload.js"></script>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/cupertino/jquery-ui.css" type="text/css" />
+
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic|Noto+Sans:400,700,400italic|Quattrocento+Sans:400,700' rel='stylesheet' type='text/css'>
+
+<!-- google charts api -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+      google.load('visualization', '1',   {'packages':['gauge']});
+      // Set a callback to run when the Google Visualization API is loaded.
+      var chartIsLoadedFunc = function() {
+            window.googleChartLibIsLoaded = true; // use this in your page code to determine if you can draw or not
+      }
+      google.setOnLoadCallback(chartIsLoadedFunc);
+    </script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the gauge
+      google.load('visualization', '1',   {'packages':['gauge']});
+      //google.load('visualization', '1.0', {'packages':['corechart']});
+      // Set a callback to run when the Google Visualization API is loaded.
+      var chartIsLoadedFunc = function() {
+            window.googleChartLibIsLoaded = true; // use this in your page code to determine if you can draw or not
+      }
+      google.setOnLoadCallback(chartIsLoadedFunc);
+    </script>
+<!-- end google charts api  -->
+
 </head>
 <body class="tundra">
 	<!-- Begin Aprendoz_Docentes -->

@@ -49,7 +49,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
- *  02/05/2014 12:53:33
+ *  02/18/2014 09:31:15
  * 
  */
 @SuppressWarnings("unchecked")
@@ -59,6 +59,14 @@ public class Aprendoz_test
 
     private DataServiceManager dsMgr;
     private TaskManager taskMgr;
+
+    public List<_global_curriculo_asig_docRtnType> _global_curriculo_asig_doc(String nickname, Integer idsyr, PagingOptions pagingOptions) {
+        return ((List<_global_curriculo_asig_docRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants._global_curriculo_asig_docQueryName), nickname, idsyr, pagingOptions));
+    }
+
+    public List<_global_getSyByCurDateRtnType> _global_getSyByCurDate(Date f1, PagingOptions pagingOptions) {
+        return ((List<_global_getSyByCurDateRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants._global_getSyByCurDateQueryName), f1, pagingOptions));
+    }
 
     public List<A_getCursoProcesoSVRtnType> a_getCursoProcesoSV(Integer ppersona, PagingOptions pagingOptions) {
         return ((List<A_getCursoProcesoSVRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.a_getCursoProcesoSVQueryName), ppersona, pagingOptions));
@@ -240,14 +248,6 @@ public class Aprendoz_test
 
     public List<SubjectsBySyAndStudentRtnType> subjectsBySyAndStudent(Integer idpersona, Integer idsyp, PagingOptions pagingOptions) {
         return ((List<SubjectsBySyAndStudentRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.subjectsBySyAndStudentQueryName), idpersona, idsyp, pagingOptions));
-    }
-
-    public List<_global_curriculo_asig_docRtnType> _global_curriculo_asig_doc(String nickname, Integer idsyr, PagingOptions pagingOptions) {
-        return ((List<_global_curriculo_asig_docRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants._global_curriculo_asig_docQueryName), nickname, idsyr, pagingOptions));
-    }
-
-    public List<_global_getSyByCurDateRtnType> _global_getSyByCurDate(Date f1, PagingOptions pagingOptions) {
-        return ((List<_global_getSyByCurDateRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants._global_getSyByCurDateQueryName), f1, pagingOptions));
     }
 
     public Object insert(Object o) {

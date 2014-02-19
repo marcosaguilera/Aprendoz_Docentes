@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.VistaAlumnosActivosId
- *  02/05/2014 11:42:57
+ *  02/14/2014 15:15:13
  * 
  */
 public class VistaAlumnosActivosId
