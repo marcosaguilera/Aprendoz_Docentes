@@ -935,6 +935,8 @@ Main.widgets = {
 						templateLeft: ["wm.Panel", {"_classes":{"domNode":["template-left"]},"height":"100%","horizontalAlign":"left","lock":true,"showing":false,"verticalAlign":"top","width":"24px"}, {}],
 						templateContent: ["wm.Panel", {"_classes":{"domNode":["template-content"]},"height":"100%","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
 							main_menu: ["wm.Panel", {"border":"4","height":"100%","horizontalAlign":"center","styles":{"backgroundColor":"#a3a3a3"},"verticalAlign":"top","width":"135px"}, {}, {
+								spacer1: ["wm.Spacer", {"height":"37px","width":"96px"}, {}],
+								menu_logo: ["wm.Picture", {"aspect":"v","height":"35px","source":"resources/images/news_icons/logo_aprendoz.png","width":"120px"}, {}],
 								menu_bienvenida: ["wm.Label", {"align":"center","caption":"Bienvenido,","padding":"4","styles":{"color":"#fff"},"width":"100%"}, {}],
 								menu_profile_img: ["wm.Picture", {"aspect":"v","borderColor":"#fff","margin":"8","source":"http://www.techrepublic.com/ad46b354f483c59220d84065b1e151daf95e069b/bundles/techrepubliccore/images/icons/standard/icon-user-default.png","styles":{"borderRadius":"0px"},"width":"100%"}, {}],
 								menu_rol: ["wm.Label", {"align":"center","caption":"Rol","padding":"4","styles":{"color":"#fff"},"width":"100%"}, {}],
