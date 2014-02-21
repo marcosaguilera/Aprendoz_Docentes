@@ -79,6 +79,12 @@
 		"parameters": [{
 			"name": "usuario",
 			"type": "java.lang.String"
+		}, {
+			"name": "f1",
+			"type": "java.util.Date"
+		}, {
+			"name": "f2",
+			"type": "java.util.Date"
 		}],
 		"returnType": "[com.aprendoz_test.data.output.Dash_logDocentesRtnType]"
 	}, {

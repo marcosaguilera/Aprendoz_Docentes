@@ -24,6 +24,9 @@
 
 /*new version css*/
 
+.dojoxGridMasterHeader {
+    height: 33px !important;
+}
 
 .wmgrid-disabled .dojoxGrid-cell {
 color: Gray;
@@ -1317,7 +1320,7 @@ margin-right: 20px;
 border-radius: 5px;
 }
 
-.Main .Main-button3 {
+.Main .Main-menu_horarios_butt {
     color: #FFFFFF;
     cursor: pointer;
 }
@@ -1415,48 +1418,18 @@ cursor: pointer;
 }
 
 .Main .Main-inicio_ok_label {
-   border-bottom-left-radius: 5px;
-   border-top-right-radius: 5px;
    background: #61B329;
    color: white;
 }
 
 .Main .Main-inicio_bad_label {
-   border-bottom-left-radius: 5px;
-   border-top-right-radius: 5px;
    background: #EEAD0E;
    color: white;
 }
 
-.Main .Main-inicio_boton_actualiza {
-   background: #4D90FE;
-   background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
-   background-image: -webkit-linear-gradient(center top , #4D90FE, #4787ED);
-   background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
-   background-image: -o-linear-gradient(center top , #4D90FE, #4787ED);
-   color: #FFFFFF;
-   border: 1px solid #3079ED;
-   text-shadow: 0 1px rgba(0, 0, 0, 0.1);
-   cursor: pointer;
-   border-radius: 2px 2px 2px 2px;
-   -moz-transition: all 0.218s ease 0s;
-   border-bottom-left-radius: 10px;
-   border-top-right-radius: 10px;
-}
 
 .Main .Main-inscalumasigDataGrid1 {
    cursor: pointer;
-}
-
-.Main .Main-inicio_boton_cancelar {
-   color: #FFFFFF;
-   border: 1px solid #3079ED;
-   text-shadow: 0 1px rgba(0, 0, 0, 0.1);
-   cursor: pointer;
-   border-radius: 2px 2px 2px 2px;
-   -moz-transition: all 0.218s ease 0s;
-   border-bottom-left-radius: 10px;
-   border-top-right-radius: 10px;
 }
 
 .Main .Main-inicio_abrir_preferencias1 {

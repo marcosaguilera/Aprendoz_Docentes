@@ -52,4 +52,9 @@ html.WMApp body .gridscss {
     border-radius: 50% 50% !important;
 }html.WMApp body .lastAccess {
     background-color: rgb(163, 163, 163);
+}html.WMApp body .MenuButtons {
+    background-color: #a3a3a3;
+    border: none !important;
+    background: none;
+    color: #fff !important;
 }

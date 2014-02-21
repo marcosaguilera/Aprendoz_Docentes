@@ -22200,7 +22200,7 @@ wm.types = {
 		},
 		"com.aprendoz_test.data.output.Last_accessHQLRtnType": {
 			"fields": {
-				"lastdate": {
+				"date": {
 					"exclude": [],
 					"fieldOrder": 0,
 					"fieldSubType": null,
@@ -22209,6 +22209,16 @@ wm.types = {
 					"noChange": [],
 					"required": true,
 					"type": "java.lang.String"
+				},
+				"timeLoged": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.util.Date"
 				}
 			},
 			"internal": false,
@@ -23614,7 +23624,7 @@ wm.types = {
 		},
 		"com.aprendoz_test.data.output._global_getSyByCurDateRtnType": {
 			"fields": {
-				"c2": {
+				"fechaDesde": {
 					"exclude": [],
 					"fieldOrder": 2,
 					"fieldSubType": null,
@@ -23624,7 +23634,7 @@ wm.types = {
 					"required": true,
 					"type": "java.util.Date"
 				},
-				"c3": {
+				"fechaHasta": {
 					"exclude": [],
 					"fieldOrder": 3,
 					"fieldSubType": null,
@@ -24432,5 +24442,10 @@ border-left: 4px solid #fff !important;\
 border-radius: 50% 50% !important;\
 }html.WMApp body .lastAccess {\
 background-color: rgb(163, 163, 163);\
+}html.WMApp body .MenuButtons {\
+background-color: #a3a3a3;\
+border: none !important;\
+background: none;\
+color: #fff !important;\
 }\
 ';
