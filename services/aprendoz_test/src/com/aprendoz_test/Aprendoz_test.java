@@ -49,7 +49,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
- *  02/18/2014 09:31:15
+ *  02/19/2014 15:37:29
  * 
  */
 @SuppressWarnings("unchecked")
@@ -98,8 +98,8 @@ public class Aprendoz_test
         return ((List<Dash_getAsigByDocenteRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.dash_getAsigByDocenteQueryName), usuario, pagingOptions));
     }
 
-    public List<Dash_logDocentesRtnType> dash_logDocentes(String usuario, PagingOptions pagingOptions) {
-        return ((List<Dash_logDocentesRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.dash_logDocentesQueryName), usuario, pagingOptions));
+    public List<Dash_logDocentesRtnType> dash_logDocentes(String usuario, Date f1, Date f2, PagingOptions pagingOptions) {
+        return ((List<Dash_logDocentesRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.dash_logDocentesQueryName), usuario, f1, f2, pagingOptions));
     }
 
     public List<Dash_no_calificadosRtnType> dash_no_calificados(Integer idasignatura, PagingOptions pagingOptions) {

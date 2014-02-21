@@ -251,8 +251,8 @@ WHERE e.idEventualidad=:ide
         SELECT
 sy.idSy as idsy,
 sy.schoolYear as sy,
-DATE(sy.fechaDesde),
-DATE(sy.fechaHasta)
+DATE(sy.fechaDesde) as fechaDesde,
+DATE(sy.fechaHasta) as fechaHasta
 FROM Sy sy
 WHERE :f1 BETWEEN sy.fechaDesde AND sy.fechaHasta
     </query>
@@ -415,13 +415,15 @@ CONCAT(p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;
     </query>
     <query name="dash_logDocentes" comment="Numero de ingresos por docente">
         <query-param name="usuario" type="java.lang.String"/>
+        <query-param name="f1" type="java.util.Date"/>
+        <query-param name="f2" type="java.util.Date"/>
         SELECT
 p.nombreLdap as usuario,
 MONTHNAME(log.fechaIngreso) as mes,
 COUNT(log.fechaIngreso) as totalingresos,
 YEAR(log.fechaIngreso) as sy
 FROM LogDocentes log INNER JOIN log.persona p
-WHERE p.nombreLdap=:usuario
+WHERE p.nombreLdap=:usuario AND log.fechaIngreso&gt;=:f1 AND log.fechaIngreso&lt;=:f2
 GROUP BY p.nombreLdap, MONTHNAME(log.fechaIngreso), YEAR(log.fechaIngreso)
 ORDER BY YEAR(log.fechaIngreso), MONTH(log.fechaIngreso)
     </query>
@@ -452,7 +454,8 @@ WHERE g.idGrado=:pgrado AND c.idCurso&gt;=10101 AND c.idCurso&lt;=40403
     </query>
     <query name="last_accessHQL" comment="Here we get the login people access to Aprendoz">
         <query-param name="user" type="java.lang.String"/>
-        SELECT MAX(CONCAT(ld.fechaIngreso,&apos; &apos;,ld.horaIngreso)) as lastdate
+        SELECT MAX(CONCAT(ld.fechaIngreso)) as date,
+ld.horaIngreso as timeLoged
 FROM LogDocentes ld INNER JOIN ld.persona usuario
 WHERE usuario.nombreLdap=:user and
 ld.idLogDocentes &lt; (SELECT MAX(ld.idLogDocentes) from LogDocentes ld where usuario.nombreLdap=:user)

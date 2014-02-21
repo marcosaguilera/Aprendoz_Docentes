@@ -76,21 +76,7 @@ dojo.declare("Main", wm.Page, {
     } 
   },*/
 
-  calif_alumnos_panel1_butt_limpiarClick: function(inSender, inEvent) {
-    try {
-     this.calif_alumnos_panel1_sel_sy.clear();
-     this.calif_alumnos_panel1_sel_grado.clear();
-      this.calif_alumnos_panel1_sel_curso.clear();
-      this.l_calif_alumnos_alumnosCursos.clearData();
-      this.l_calif_alumnos_alumnos_asignaturas.clearData();
-      this.l_calif_alumnos_aprendizajes.clearData();
-      this.l_calif_alumnos_datagrids_inscalumaprendizajeLiveVariable1.clearData();
-      this.l_calif_alumnos_calificaciones_finales.clearData();
-      
-    } catch(e) {
-      console.error('ERROR IN calif_alumnos_panel1_butt_limpiarClick: ' + e); 
-    } 
-  },
+  
   
   button12Click: function(inSender, inEvent) {
     try {
@@ -374,7 +360,7 @@ dojo.declare("Main", wm.Page, {
       var json= main.a_cursy.getItem(0);
       var sy= json.data.sy;
       var idsy= json.data.idsy;
-      var user= main.a_getUserName.getData().dataValue;
+      var user= main.global_username.getData().dataValue;
       this.sy_activities.setDataValue(sy);
       this.activitiesGetSubjectsByUser.input.setValue("sy",idsy);
       this.activitiesGetSubjectsByUser.input.setValue("usuario",user);
@@ -767,8 +753,6 @@ dojo.declare("Main", wm.Page, {
     } 
   },
 
-  
-  
   calif_asig_datag_asignaturasDataGrid1Deselected: function(inSender, inIndex) {
     try {
   if(this.calif_asig_datag_asignaturasDataGrid1.getEmptySelection()== true || this.calif_encabezado_opciones_sel_curso.getDataValue()== null){
@@ -781,7 +765,6 @@ dojo.declare("Main", wm.Page, {
     } 
   },
   
- 
   promocionLiveForm1BeginInsert: function(inSender) {
     try {
       this.personaLookup2.setValue("dataValue", this.promocion_container_datag_personas_x_curso.selectedItem.getData().id.idPersona);
@@ -800,7 +783,6 @@ dojo.declare("Main", wm.Page, {
   *inicio detalles acciones promociones
   */
   aprobadoEditor1Change: function(inSender, inDisplayValue, inDataValue) {
-    try {
       if(this.aprobadoEditor1.dataValue== true){
         this.promovidoEditor1.enable();
         this.commentpromovidoEditor1.enable();
@@ -809,47 +791,32 @@ dojo.declare("Main", wm.Page, {
         this.promovidoEditor1.disable();
         this.commentpromovidoEditor1.disable();
       }
-      
-    } catch(e) {
-      console.error('ERROR IN aprobadoEditor1Change: ' + e); 
-    } 
   },
   promocion_butt_limpiarClick: function(inSender, inEvent) {
-    try {
       this.promocion_sel_ao_escolar.setDataValue(2);
       this.promocion_sel_grado.clear();
       this.promocion_sel_curso.clear();
       this.l_promocion_insc_alum_curso.clearData();
       this.l_promocion_promocionLiveVariable1.clearData();
-      
-    } catch(e) {
-      console.error('ERROR IN promocion_butt_limpiarClick: ' + e); 
-    } 
   },
-  a_lista_sySuccess: function(inSender, inDeprecated) {
-    try {
-      this.promocion_sel_ao_escolar.setDataValue(2);
-      
-    } catch(e) {
-      console.error('ERROR IN a_lista_sySuccess: ' + e); 
-    } 
-  },
-  getUserNameSuccess: function(inSender, inDeprecated) {
-      //anotaciones username
-      var _usuario= main.getUserName.getData().dataValue;
+  global_usernameSuccess: function(inSender, inDeprecated) {
+      var _usuario= main.global_username.data.dataValue;      
       this.a_informacionUsuario.input.setValue("user", _usuario);     
-      this.dash_dash_lv1.input.setValue("usuario", _usuario);      
-      this.a_getLastAccess.input.setValue("usuario", _usuario);
-      this.a_informacionUsuario.update();
-      this.dash_dash_lv1.update();
+      this.a_getLastAccess.input.setValue("user", _usuario);
+      this.global_cursy.update();
+      this.a_informacionUsuario.update();    
       this.a_getLastAccess.update();
-      //this.a_getTipoPersona.update();
-      /*this.a_informacionUsuario2.update();    
-      
-      
-      this.dash_asig_doc.input.setValue("usuario", _usuario);
+  },
+  // onSuccess global sy
+  global_cursySuccess: function(inSender, inDeprecated) {
+      var _usuario= main.global_username.getData().dataValue;
+      var syJson= main.global_cursy.getItem(0);
+      var fechaInicio= syJson.data.fechaDesde;
+      var fechaFinal= syJson.data.fechaHasta; 
+      this.dash_dash_lv1.input.setValue("usuario", _usuario);  
+      this.dash_dash_lv1.input.setValue("f1", fechaInicio);
+      this.dash_dash_lv1.input.setValue("f2", fechaFinal);
       this.dash_dash_lv1.update();
-      this.dash_asig_doc.update();*/
   },
   //  on-a_informacionUsuario 
   a_informacionUsuarioSuccess: function(inSender, inDeprecated) {      
@@ -857,33 +824,34 @@ dojo.declare("Main", wm.Page, {
        var codigo= json.data.codigo;
        var usuario= json.data.usuario;
        var tipo= json.data.tipoPersona;
+       var nombre1= json.data.nombre1;
+       var nombre2= json.data.nombre2;
+       var apellido1= json.data.apellido1;
+       var apellido2= json.data.apellido2;
+       var nodoc= json.data.numeroDocumento;
+       var sexo= json.data.sexo;       
+       var fullname= nombre1+" "+nombre2+" "+apellido1+" "+apellido2; 
+       this.profile_button.setCaption(usuario);
+       this.menu_rol.setCaption(tipo);
        this.menu_profile_img.setSource("http://www.rochester.edu.co/fotosempleados/"+codigo+".Jpeg");
        this.configuracion_profile_image.setSource("http://www.rochester.edu.co/fotosempleados/"+codigo+".Jpeg");
        this.menu_bienvenida.setCaption("Bienvenid@, "+usuario);
-       this.configuracion_detalles.setCaption(usuario);
-       this.profile_button.setCaption(usuario);
-       this.menu_rol.setCaption(tipo);
-       
-       /*var tipoPersona= this.a_informacionUsuario.getData().tipoPersona;       
-       var nombres= this.a_informacionUsuario.getData().nombre1+" "+this.a_informacionUsuario.getData().nombre2;
-       var apellidos= this.a_informacionUsuario.getData().apellido1+" "+this.a_informacionUsuario.getData().apellido2;
-       var usuario= this.a_informacionUsuario.getData().usuario;
-       var clave= this.a_informacionUsuario.getData().clave;
-       var idp = this.a_informacionUsuario.getData().idpersona;*/      
-       /*this.inicio_box_tipo_persona.setDataValue(tipoPersona);
-       this.inicio_box_nombre.setDataValue(nombres);
-       this.inicio_box_apellido.setDataValue(apellidos);
+       this.configuracion_detalles.setCaption(fullname+"<br>Sexo: "+sexo+"<br>No. documento: "+nodoc+"<br>"+tipo);
+
+       var idp = main.a_informacionUsuario.getItem(0).data.idpersona;   
+       var today= new Date().getTime();
+       var clave= main.a_informacionUsuario.getItem(0).data.clave; 
        this.inicio_box_usuario.setDataValue(usuario);
        this.inicio_box_clave.setDataValue(clave);
        this.inicio_box_reclave.setDataValue(clave);
-       this.inicio_box_id_persona.setDataValue(idp);      
-       if( main.a_isAuthenticated.getData().dataValue == true){
-         this.a_logInsertRecords.setValue("persona.idPersona", this.inicio_box_id_persona.getDataValue());
-         this.a_logInsertRecords.setValue("fechaIngreso", this.inicio_box_fecha.getDataValue());
-         this.a_logInsertRecords.setValue("horaIngreso", this.inicio_box_hora.getDataValue());
+ 
+       //if( main.a_isAuthenticated.getData().dataValue == true){
+         this.a_logInsertRecords.setValue("persona.idPersona", idp);
+         this.a_logInsertRecords.setValue("fechaIngreso", today);
+         this.a_logInsertRecords.setValue("horaIngreso", today);
          this.logForm.setDataSet(this.a_logInsertRecords); 
-         this.logForm.insertData();         
-       } */  
+         this.logForm.insertData(); 
+      // }   
   },
   promocionDataGrid1Selected: function(inSender, inIndex) {
     try {
@@ -986,91 +954,14 @@ dojo.declare("Main", wm.Page, {
       this.inicio_filtros_claves.hide();   
   },
   
-  //
-  inicio_forgot_passwordClick: function(inSender, inEvent) {
-    try {
-      this.inicio_panel_boton_actualizar.show();
-      this.inicio_box_clave.setReadonly(false);
-      this.inicio_box_reclave.setReadonly(false);
-      this.inicio_boton_actualiza.disable();
-       
-    } catch(e) {
-      console.error('ERROR IN label1Click: ' + e); 
-    } 
-  },
   
-  inicio_box_claveChange: function(inSender, inDisplayValue, inDataValue) {
-    try {
-       if(this.inicio_box_clave.dataValue == this.inicio_box_reclave.dataValue){
-          //alert("si son iguales");
-          this.inicio_bad_label.hide();
-          this.inicio_ok_label.show();
-          this.inicio_boton_actualiza.enable();
-      }
-       else if(this.inicio_box_clave.dataValue != this.inicio_box_reclave.dataValue){  
-          this.inicio_ok_label.hide();
-          this.inicio_bad_label.show();
-          this.inicio_boton_actualiza.disable();
-      }
-      
-    } catch(e) {
-      console.error('ERROR IN inicio_box_claveChange: ' + e); 
-    } 
-  },
-  
-  inicio_box_reclaveChange: function(inSender, inDisplayValue, inDataValue) {
-    try {
-       if(this.inicio_box_clave.dataValue == this.inicio_box_reclave.dataValue){
-          this.inicio_bad_label.hide();
-          this.inicio_ok_label.show();
-          this.inicio_boton_actualiza.enable();
-      }
-       else if(this.inicio_box_clave.dataValue != this.inicio_box_reclave.dataValue){  
-          this.inicio_ok_label.hide();
-          this.inicio_bad_label.show();
-          this.inicio_boton_actualiza.disable();
-      }
-
-    } catch(e) {
-      console.error('ERROR IN inicio_box_reclaveChange: ' + e); 
-    } 
-  },
-  
-  a_actualizaClaveSuccess: function(inSender, inDeprecated) {
-    try {
-      alert("Su contraseña ha sido actualizada exitosamente.");
-      this.inicio_box_clave.setReadonly(true);
-      this.inicio_box_reclave.setReadonly(true);
-      
-    } catch(e) {
-      console.error('ERROR IN a_actualizaClaveSuccess: ' + e); 
-    } 
-  },
-  a_actualizaClaveError: function(inSender, inError) {
-    try {
-      alert("No ha sido posible realizar la operación.");
-      
-    } catch(e) {
-      console.error('ERROR IN a_actualizaClaveError: ' + e); 
-    } 
-  },
-  
+  //   
   inscalumasigLiveForm1CancelEdit: function(inSender) {
-    try {
       this.inscripcion_asignatura.setDisabled(false);
       this.inscripcion_estudiante.setDisabled(false);
-      
-    } catch(e) {
-      console.error('ERROR IN inscalumasigLiveForm1CancelEdit: ' + e); 
-    } 
   },
   inscripcion_asignaturaSelectionChanged: function(inSender) {
-    try {
       this.editPanel7.cancelEdit();
-      
-    } catch(e) {
-      console.error('ERROR IN inscripcion_asignaturaSelectionChanged: ' + e); 
-    } 
   },
   inscripcion_estudianteSelectionChanged: function(inSender) {
     try {
@@ -1801,14 +1692,10 @@ dojo.declare("Main", wm.Page, {
   },
 
   a_getLastAccessSuccess: function(inSender, inDeprecated) {
-    try {
       var json= main.a_getLastAccess.getItem(0);
-      var fechaUltimoAcceso= json.data.lastdate;
+      var fechaUltimoAcceso= json.data.date;
+      var horaUltimoAcceso= json.data.timeLoged;
       this.lastAccess_Label.setCaption("Último acceso: <br/>"+fechaUltimoAcceso);
-      
-    } catch(e) {
-      console.error('ERROR IN a_getLastAccessSuccess: ' + e); 
-    } 
   },
   
   /*
@@ -1879,8 +1766,7 @@ dojo.declare("Main", wm.Page, {
       console.error('ERROR IN calif_alumnos_datagrids_datag_alumnos_asignaturasSelected: ' + e); 
     } 
   },
-  
-  
+
   subjects_activitiesChange: function(inSender, inDisplayValue, inDataValue) {
      var idcurso= this.subjects_activities.getDataValue();
      var cadena=  this.subjects_activities.getDisplayValue();
@@ -1958,7 +1844,6 @@ dojo.declare("Main", wm.Page, {
    },
     
    activitiesDataGridCellClick: function(inSender, inEvent) {
-        try {
          var idcurso= this.subjects_activities.getDataValue();
          var cadena=  this.subjects_activities.getDisplayValue();
          var idasignatura= cadena.substring(0,6);
@@ -1969,10 +1854,6 @@ dojo.declare("Main", wm.Page, {
          this.actividad_estudiantes.filter.setValue("curso.idCurso", idcurso);
          this.actividad_estudiantes.filter.setValue("sy.idSy", idsy);
          this.actividad_estudiantes.update(); 
-          
-         } catch(e) {
-           console.error('ERROR IN activitiesDataGridCellClick: ' + e); 
-         } 
     },
     // filtering unidades by subject selected
     curriculo_grid_docentes_asignaturasSelect: function(inSender) {
@@ -2128,7 +2009,7 @@ dojo.declare("Main", wm.Page, {
         this.recursoLiveVariable1.clearData();
         this.actividadLiveVariable2.clearData();
 	},
-
+    // tipo recurso 
 	tipoRecursoLookup1Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
 		var tiporecurso= main.tipoRecursoLookup1.getDataValue().idTipoRecurso;
         if(tiporecurso===7){
@@ -2149,6 +2030,120 @@ dojo.declare("Main", wm.Page, {
 	menu_curriculo_buttClick4: function(inSender) {		
         this.inicio_big_panel.hide();
         this.curriculo_big_panel.show();
+	},
+    //
+    inicio_forgot_passwordClick: function(inSender, inEvent) {
+        this.inicio_panel_boton_actualizar.show();
+        this.inicio_box_clave.setReadonly(false);
+        this.inicio_box_reclave.setReadonly(false);
+        this.inicio_boton_actualiza.disable();
+    },
+    inicio_box_claveChange: function(inSender, inDisplayValue, inDataValue) {
+        if(this.inicio_box_clave.dataValue == this.inicio_box_reclave.dataValue){
+          //alert("si son iguales");
+          this.inicio_bad_label.hide();
+          this.inicio_ok_label.show();
+          this.inicio_boton_actualiza.enable();
+        }
+        else if(this.inicio_box_clave.dataValue != this.inicio_box_reclave.dataValue){  
+          this.inicio_ok_label.hide();
+          this.inicio_bad_label.show();
+          this.inicio_boton_actualiza.disable();
+        }
+    },
+  
+    inicio_box_reclaveChange: function(inSender, inDisplayValue, inDataValue) {
+       if(this.inicio_box_clave.dataValue == this.inicio_box_reclave.dataValue){
+          this.inicio_bad_label.hide();
+          this.inicio_ok_label.show();
+          this.inicio_boton_actualiza.enable();
+       }
+       else if(this.inicio_box_clave.dataValue != this.inicio_box_reclave.dataValue){  
+          this.inicio_ok_label.hide();
+          this.inicio_bad_label.show();
+          this.inicio_boton_actualiza.disable();
+       }
+    },
+    // onActualizaClave success
+    a_actualizaClaveSuccess: function(inSender, inDeprecated) {
+          alert("Su contraseña ha sido actualizada exitosamente.");
+          this.inicio_box_clave.setReadonly(true);
+          this.inicio_box_reclave.setReadonly(true);
+          this.inicio_panel_boton_actualizar.hide();
+          this.inicio_ok_label.hide();
+    },   
+    // onActualizaClave error
+    a_actualizaClaveError: function(inSender, inError) {
+          alert("No ha sido posible realizar la operación.");
+    },
+    // reRender lineChart
+	menu_inicio_buttClick2: function(inSender) {
+		this.renderChart_dash1();
+	},
+	unidadDojoGridSelect1: function(inSender) {
+		this.subtopicoNewButton.enable();
+        this.aprendizajeNewButton.disable();
+        this.otrasmetasNewButton.disable();
+        this.recursoNewButton.disable();
+        this.actividadNewButton1.disable();
+	},
+	subtopicoDojoGridSelect5: function(inSender) {
+		this.aprendizajeNewButton.enable();
+        this.otrasmetasNewButton.enable();
+        this.recursoNewButton.enable();
+        this.actividadNewButton1.enable();
+	},
+	curriculo_grid_docentes_asignaturasSelect2: function(inSender) {
+		this.unidadNewButton.enable();
+        this.subtopicoNewButton.disable();
+	},
+	menu_curriculo_buttClick5: function(inSender) {
+		var count= this.curriculo_tipo_desempeno.getCount();
+        if(count===0){
+           this.curriculo_tipo_desempeno.update(); 
+        }else{/*nothing happens*/}
+	},
+	menu_curriculo_buttClick6: function(inSender) {
+		var count= this.curriculo_tipo_valoracion.getCount();
+        if(count===0){
+           this.curriculo_tipo_valoracion.update(); 
+        }else{/*nothing happens*/}
+	},
+	menu_curriculo_buttClick7: function(inSender) {
+		var count= this.curriculo_tipo_actividad.getCount();
+        if(count===0){
+           this.curriculo_tipo_actividad.update(); 
+        }else{/*nothing happens*/}
+	},
+	lookup3Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+		var tipo= main.lookup3.getDataValue().idTipoActividad;
+        if(tipo===1){
+            this.lookup2.enable();
+            this.lookup1.disable();
+            this.lookup1.setDisplayValue("No aplica");
+        }else{
+            this.lookup1.enable();
+            this.lookup2.disable();
+            this.lookup2.setDisplayValue("No aplica");
+        }
+	},
+	actividadLiveForm3Success1: function(inSender, inData) {
+		main.actividadDojoGrid1.setSelectedItem(false);
+	},
+	recursoLiveForm1Success1: function(inSender, inData) {
+        main.recursoDojoGrid.setSelectedItem(false);		
+	},
+	otrasmetasLiveForm2Success1: function(inSender, inData) {
+        main.otrasmetasDojoGrid.setSelectedItem(false);		
+	},
+	aprendizajeLiveForm2Success1: function(inSender, inData) {
+		main.aprendizajeDojoGrid.setSelectedItem(false);    
+	},
+	subtopicoLiveForm2Success1: function(inSender, inData) {
+		main.subtopicoDojoGrid.setSelectedItem(false); 
+	},
+	unidadLiveForm2Success1: function(inSender, inData) {
+		main.unidadDojoGrid.setSelectedItem(false); 
 	},
 	_end: 0
 });

@@ -5,15 +5,15 @@ import java.util.Date;
 
 
 /**
- * Generated for query "_global_getSyByCurDate" on 02/18/2014 09:31:11
+ * Generated for query "_global_getSyByCurDate" on 02/19/2014 15:37:27
  * 
  */
 public class _global_getSyByCurDateRtnType {
 
     private Integer idsy;
     private String sy;
-    private Date c2;
-    private Date c3;
+    private Date fechaDesde;
+    private Date fechaHasta;
 
     public Integer getIdsy() {
         return idsy;
@@ -31,20 +31,20 @@ public class _global_getSyByCurDateRtnType {
         this.sy = sy;
     }
 
-    public Date getC2() {
-        return c2;
+    public Date getFechaDesde() {
+        return fechaDesde;
     }
 
-    public void setC2(Date c2) {
-        this.c2 = c2;
+    public void setFechaDesde(Date fechaDesde) {
+        this.fechaDesde = fechaDesde;
     }
 
-    public Date getC3() {
-        return c3;
+    public Date getFechaHasta() {
+        return fechaHasta;
     }
 
-    public void setC3(Date c3) {
-        this.c3 = c3;
+    public void setFechaHasta(Date fechaHasta) {
+        this.fechaHasta = fechaHasta;
     }
 
 }

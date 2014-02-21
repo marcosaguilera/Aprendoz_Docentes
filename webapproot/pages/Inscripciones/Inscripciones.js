@@ -1,4 +1,5 @@
 dojo.declare("Inscripciones", wm.Page, {
+	"preferredDevice": "desktop",
   start: function() {
     
   },
