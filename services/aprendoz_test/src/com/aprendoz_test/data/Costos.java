@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Costos
- *  02/14/2014 15:15:13
+ *  07/28/2014 09:52:25
  * 
  */
 public class Costos {
@@ -26,6 +26,7 @@ public class Costos {
     private Integer tipoCosto;
     private Set<com.aprendoz_test.data.InscAlumCosto> inscAlumCostos = new HashSet<com.aprendoz_test.data.InscAlumCosto>();
     private Set<com.aprendoz_test.data.Educom> educoms = new HashSet<com.aprendoz_test.data.Educom>();
+    private Set<com.aprendoz_test.data.InscAlumCostoCopy> inscAlumCostoCopies = new HashSet<com.aprendoz_test.data.InscAlumCostoCopy>();
 
     public Integer getIdCosto() {
         return idCosto;
@@ -137,6 +138,14 @@ public class Costos {
 
     public void setEducoms(Set<com.aprendoz_test.data.Educom> educoms) {
         this.educoms = educoms;
+    }
+
+    public Set<com.aprendoz_test.data.InscAlumCostoCopy> getInscAlumCostoCopies() {
+        return inscAlumCostoCopies;
+    }
+
+    public void setInscAlumCostoCopies(Set<com.aprendoz_test.data.InscAlumCostoCopy> inscAlumCostoCopies) {
+        this.inscAlumCostoCopies = inscAlumCostoCopies;
     }
 
 }

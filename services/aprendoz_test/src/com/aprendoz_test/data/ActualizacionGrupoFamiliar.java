@@ -6,13 +6,14 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.ActualizacionGrupoFamiliar
- *  02/14/2014 15:15:13
+ *  07/28/2014 09:52:25
  * 
  */
 public class ActualizacionGrupoFamiliar {
 
     private Integer idActualizacionGrupoFamiliar;
     private GrupoFamiliar grupoFamiliar;
+    private Date fechaCreacion;
     private Date fecha;
     private Byte actualizado;
 
@@ -30,6 +31,14 @@ public class ActualizacionGrupoFamiliar {
 
     public void setGrupoFamiliar(GrupoFamiliar grupoFamiliar) {
         this.grupoFamiliar = grupoFamiliar;
+    }
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 
     public Date getFecha() {

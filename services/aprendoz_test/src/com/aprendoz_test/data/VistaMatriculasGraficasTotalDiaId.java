@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.VistaMatriculasGraficasTotalDiaId
- *  02/14/2014 15:15:13
+ *  07/28/2014 09:52:24
  * 
  */
 public class VistaMatriculasGraficasTotalDiaId

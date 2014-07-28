@@ -14,17 +14,17 @@
         <property name="fechaHasta" type="date">
             <column name="fecha_hasta" length="10"/>
         </property>
-        <set name="promocions" inverse="true" cascade="">
-            <key>
-                <column name="SY_Id_Sy" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.Promocion"/>
-        </set>
         <set name="inscAlumCostos" inverse="true" cascade="">
             <key>
                 <column name="SY_Id_SY" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.InscAlumCosto"/>
+        </set>
+        <set name="promocions" inverse="true" cascade="">
+            <key>
+                <column name="SY_Id_Sy" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.Promocion"/>
         </set>
         <set name="inscCoordinadoresCursos" inverse="true" cascade="">
             <key>
@@ -68,17 +68,35 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.InscComentariosAlumnos"/>
         </set>
+        <set name="inscAlumCostoCopies" inverse="true" cascade="">
+            <key>
+                <column name="SY_Id_SY" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.InscAlumCostoCopy"/>
+        </set>
         <set name="horarios" inverse="true" cascade="">
             <key>
                 <column name="sy_id_sy" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.Horario"/>
         </set>
+        <set name="asignaturaCopies" inverse="true" cascade="">
+            <key>
+                <column name="SY_Id_SY" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.AsignaturaCopy"/>
+        </set>
         <set name="periodos" inverse="true" cascade="">
             <key>
                 <column name="SY_Id_SY" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.Periodo"/>
+        </set>
+        <set name="costosAnualesCopies" inverse="true" cascade="">
+            <key>
+                <column name="SY_Id_SY" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.CostosAnualesCopy"/>
         </set>
         <set name="asignaturas" inverse="true" cascade="">
             <key>
@@ -116,11 +134,29 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.SesionNivel"/>
         </set>
+        <set name="secretariaEquivalenciaNotases" inverse="true" cascade="">
+            <key>
+                <column name="sy_id_sy" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.SecretariaEquivalenciaNotas"/>
+        </set>
         <set name="coordinacions" inverse="true" cascade="">
             <key>
                 <column name="SY_Id_SY" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.Coordinacion"/>
+        </set>
+        <set name="costosAnualeses" inverse="true" cascade="">
+            <key>
+                <column name="SY_Id_SY" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.CostosAnuales"/>
+        </set>
+        <set name="promocionCopies" inverse="true" cascade="">
+            <key>
+                <column name="SY_Id_Sy" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.PromocionCopy"/>
         </set>
     </class>
 </hibernate-mapping>

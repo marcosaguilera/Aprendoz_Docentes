@@ -18,6 +18,7 @@
 
 
 dojo.declare("Login", wm.Page, {
+	"preferredDevice": "desktop",
   start: function() {
     this.connect(this.domNode, "keydown", this, "keydown");
     this.usernameInput.setDataValue(dojo.cookie("user") || "");

@@ -17,6 +17,18 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.TransporteRutas"/>
         </set>
+        <set name="actualizacionGrupoFamiliarCopies" inverse="true" cascade="">
+            <key>
+                <column name="grupo_familiar_id_grupo_familiar" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.ActualizacionGrupoFamiliarCopy"/>
+        </set>
+        <set name="personaCopies" inverse="true" cascade="">
+            <key>
+                <column name="Grupo_Familiar_ID_Grupo_Familiar" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.PersonaCopy"/>
+        </set>
         <set name="personas" inverse="true" cascade="">
             <key>
                 <column name="Grupo_Familiar_ID_Grupo_Familiar" not-null="true"/>
@@ -28,6 +40,12 @@
                 <column name="Grupo_familiar_Id_Grupo_Familiar" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.InscPersonaGrupoFamiliar"/>
+        </set>
+        <set name="gestionEncuestasGrupoFamiliars" inverse="true" cascade="">
+            <key>
+                <column name="grupo_familiar_id_grupo_familiar" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.GestionEncuestasGrupoFamiliar"/>
         </set>
         <set name="actualizacionGrupoFamiliars" inverse="true" cascade="">
             <key>

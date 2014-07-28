@@ -802,10 +802,10 @@ dojo.declare("Main", wm.Page, {
   global_usernameSuccess: function(inSender, inDeprecated) {
       var _usuario= main.global_username.data.dataValue;      
       this.a_informacionUsuario.input.setValue("user", _usuario);     
-      this.a_getLastAccess.input.setValue("user", _usuario);
+     // this.a_getLastAccess.input.setValue("user", _usuario);
       this.global_cursy.update();
       this.a_informacionUsuario.update();    
-      this.a_getLastAccess.update();
+     // this.a_getLastAccess.update();
   },
   // onSuccess global sy
   global_cursySuccess: function(inSender, inDeprecated) {
@@ -2137,13 +2137,47 @@ dojo.declare("Main", wm.Page, {
         main.otrasmetasDojoGrid.setSelectedItem(false);		
 	},
 	aprendizajeLiveForm2Success1: function(inSender, inData) {
-		main.aprendizajeDojoGrid.setSelectedItem(false);    
+        main.aprendizajesAsignaturasGrid1.hide();
+        main.aprendizajes_grupo2.show();
+		main.aprendizajeDojoGrid.setSelectedItem(false);         
 	},
 	subtopicoLiveForm2Success1: function(inSender, inData) {
 		main.subtopicoDojoGrid.setSelectedItem(false); 
 	},
 	unidadLiveForm2Success1: function(inSender, inData) {
 		main.unidadDojoGrid.setSelectedItem(false); 
+	},
+	curriculo_grid_docentes_asignaturasSelect3: function(inSender) {
+		var idasignatura= this.curriculo_grid_docentes_asignaturas.selectedItem.getData().idasignatura;
+        main.curriculo_aprendizajes_asignaturasLiveVariable.filter.setValue("asignatura.idAsignatura", idasignatura);
+        main.curriculo_aprendizajes_asignaturasLiveVariable.update();
+	},	
+	aprendizajesAsignaturasGrid1Select: function(inSender) {
+		var aprendizaje= main.aprendizajesAsignaturasGrid1.selectedItem.getData().aprendizaje;
+        var learning= main.aprendizajesAsignaturasGrid1.selectedItem.getData().learning;
+        var peso= main.aprendizajesAsignaturasGrid1.selectedItem.getData().peso;
+        var eje1= main.aprendizajesAsignaturasGrid1.selectedItem.getData().ejeIdEje;
+        var eje2= main.aprendizajesAsignaturasGrid1.selectedItem.getData().eje2IdEje;
+        var eje3= main.aprendizajesAsignaturasGrid1.selectedItem.getData().eje3IdEje;
+        var inteligencia= main.aprendizajesAsignaturasGrid1.selectedItem.getData().inteligencia.inteligencia;
+        var dcomprension= main.aprendizajesAsignaturasGrid1.selectedItem.getData().dimensionComprension.dimensionComprension;
+        var dcurricular= main.aprendizajesAsignaturasGrid1.selectedItem.getData().dimensionCurricular.dimensionCurricular;
+        var nivel= main.aprendizajesAsignaturasGrid1.selectedItem.getData().nivelEsperado.nivelEsperado;
+        
+        this.aprendizajeEditor2.setDataValue(aprendizaje);
+        this.learningEditor2.setDataValue(learning);
+        this.numeroAprendizajeSelectMenu1.setDataValue(peso);
+        this.ejeSelect1.setDataValue(eje1);
+        this.ejeSelect2.setDataValue(eje2);
+        this.ejeSelect3.setDataValue(eje3);
+        this.dimensionComprensionLookup2.setDisplayValue(dcomprension);
+        this.dimensionCurricularLookup2.setDisplayValue(dcurricular);
+        this.inteligenciaLookup2.setDisplayValue(inteligencia);
+        this.nivelEsperadoLookup2.setDisplayValue(nivel);
+	},
+	aprendizajeLiveForm2BeginInsert1: function(inSender) {
+		this.aprendizajes_grupo2.hide();
+        main.aprendizajesAsignaturasGrid1.show();
 	},
 	_end: 0
 });

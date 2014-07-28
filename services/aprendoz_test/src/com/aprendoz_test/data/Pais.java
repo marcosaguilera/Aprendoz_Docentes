@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Pais
- *  02/14/2014 15:15:13
+ *  07/28/2014 09:52:25
  * 
  */
 public class Pais {
@@ -16,6 +16,7 @@ public class Pais {
     private String pais;
     private Set<com.aprendoz_test.data.EstadoDepartamento> estadoDepartamentos = new HashSet<com.aprendoz_test.data.EstadoDepartamento>();
     private Set<com.aprendoz_test.data.Persona> personas = new HashSet<com.aprendoz_test.data.Persona>();
+    private Set<com.aprendoz_test.data.PersonaCopy> personaCopies = new HashSet<com.aprendoz_test.data.PersonaCopy>();
 
     public Integer getIdPais() {
         return idPais;
@@ -47,6 +48,14 @@ public class Pais {
 
     public void setPersonas(Set<com.aprendoz_test.data.Persona> personas) {
         this.personas = personas;
+    }
+
+    public Set<com.aprendoz_test.data.PersonaCopy> getPersonaCopies() {
+        return personaCopies;
+    }
+
+    public void setPersonaCopies(Set<com.aprendoz_test.data.PersonaCopy> personaCopies) {
+        this.personaCopies = personaCopies;
     }
 
 }

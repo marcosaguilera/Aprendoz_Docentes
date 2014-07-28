@@ -7,6 +7,10 @@
     margin-left: 19% !important;
 }
 
+#main_aprendizajesAsignaturasGrid1{
+    cursor: pointer;
+}
+
 #main_menu_inicio_butt {
     background-color: #1125b2;
     border: none !important;

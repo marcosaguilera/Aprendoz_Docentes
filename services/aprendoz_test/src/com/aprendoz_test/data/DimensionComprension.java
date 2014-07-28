@@ -7,13 +7,14 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.DimensionComprension
- *  02/14/2014 15:15:13
+ *  07/28/2014 09:52:24
  * 
  */
 public class DimensionComprension {
 
     private Integer idDimension;
     private String dimensionComprension;
+    private Set<com.aprendoz_test.data.AprendizajesAsignaturas> aprendizajesAsignaturases = new HashSet<com.aprendoz_test.data.AprendizajesAsignaturas>();
     private Set<com.aprendoz_test.data.Aprendizaje> aprendizajes = new HashSet<com.aprendoz_test.data.Aprendizaje>();
 
     public Integer getIdDimension() {
@@ -30,6 +31,14 @@ public class DimensionComprension {
 
     public void setDimensionComprension(String dimensionComprension) {
         this.dimensionComprension = dimensionComprension;
+    }
+
+    public Set<com.aprendoz_test.data.AprendizajesAsignaturas> getAprendizajesAsignaturases() {
+        return aprendizajesAsignaturases;
+    }
+
+    public void setAprendizajesAsignaturases(Set<com.aprendoz_test.data.AprendizajesAsignaturas> aprendizajesAsignaturases) {
+        this.aprendizajesAsignaturases = aprendizajesAsignaturases;
     }
 
     public Set<com.aprendoz_test.data.Aprendizaje> getAprendizajes() {

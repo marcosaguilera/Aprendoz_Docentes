@@ -128,6 +128,14 @@
 		}],
 		"returnType": "[com.aprendoz_test.data.output.GetCurseByidGradeRtnType]"
 	}, {
+		"name": "getDimensionCurricularById",
+		"operationType": "hqlquery",
+		"parameters": [{
+			"name": "id",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "com.aprendoz_test.data.DimensionCurricular"
+	}, {
 		"name": "getInformacionValiosa",
 		"operationType": "hqlquery",
 		"parameters": [{

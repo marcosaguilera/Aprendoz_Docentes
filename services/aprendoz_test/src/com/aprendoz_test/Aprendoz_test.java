@@ -49,7 +49,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
- *  02/19/2014 15:37:29
+ *  07/28/2014 09:52:55
  * 
  */
 @SuppressWarnings("unchecked")
@@ -125,6 +125,15 @@ public class Aprendoz_test
 
     public List<GetCurseByidGradeRtnType> getCurseByidGrade(Integer pgrado, PagingOptions pagingOptions) {
         return ((List<GetCurseByidGradeRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getCurseByidGradeQueryName), pgrado, pagingOptions));
+    }
+
+    public com.aprendoz_test.data.DimensionCurricular getDimensionCurricularById(Integer id, PagingOptions pagingOptions) {
+        List<com.aprendoz_test.data.DimensionCurricular> rtn = ((List<com.aprendoz_test.data.DimensionCurricular> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getDimensionCurricularByIdQueryName), id, pagingOptions));
+        if (rtn.isEmpty()) {
+            return null;
+        } else {
+            return rtn.get(0);
+        }
     }
 
     public com.aprendoz_test.data.output.GetInformacionValiosaRtnType getInformacionValiosa(String usuario, PagingOptions pagingOptions) {

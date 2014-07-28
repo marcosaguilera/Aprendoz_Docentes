@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Grado
- *  02/14/2014 15:15:13
+ *  07/28/2014 09:52:25
  * 
  */
 public class Grado {
@@ -17,10 +17,13 @@ public class Grado {
     private String grado;
     private String grade;
     private String gradoSapiens;
+    private Set<com.aprendoz_test.data.CostosAnualesCopy> costosAnualesCopies = new HashSet<com.aprendoz_test.data.CostosAnualesCopy>();
     private Set<com.aprendoz_test.data.Asignatura> asignaturas = new HashSet<com.aprendoz_test.data.Asignatura>();
     private Set<com.aprendoz_test.data.Costos> costoses = new HashSet<com.aprendoz_test.data.Costos>();
+    private Set<com.aprendoz_test.data.AsignaturaCopy> asignaturaCopies = new HashSet<com.aprendoz_test.data.AsignaturaCopy>();
     private Set<com.aprendoz_test.data.AccAuthorization> accAuthorizations = new HashSet<com.aprendoz_test.data.AccAuthorization>();
     private Set<com.aprendoz_test.data.Curso> cursos = new HashSet<com.aprendoz_test.data.Curso>();
+    private Set<com.aprendoz_test.data.CostosAnuales> costosAnualeses = new HashSet<com.aprendoz_test.data.CostosAnuales>();
 
     public Integer getIdGrado() {
         return idGrado;
@@ -62,6 +65,14 @@ public class Grado {
         this.gradoSapiens = gradoSapiens;
     }
 
+    public Set<com.aprendoz_test.data.CostosAnualesCopy> getCostosAnualesCopies() {
+        return costosAnualesCopies;
+    }
+
+    public void setCostosAnualesCopies(Set<com.aprendoz_test.data.CostosAnualesCopy> costosAnualesCopies) {
+        this.costosAnualesCopies = costosAnualesCopies;
+    }
+
     public Set<com.aprendoz_test.data.Asignatura> getAsignaturas() {
         return asignaturas;
     }
@@ -78,6 +89,14 @@ public class Grado {
         this.costoses = costoses;
     }
 
+    public Set<com.aprendoz_test.data.AsignaturaCopy> getAsignaturaCopies() {
+        return asignaturaCopies;
+    }
+
+    public void setAsignaturaCopies(Set<com.aprendoz_test.data.AsignaturaCopy> asignaturaCopies) {
+        this.asignaturaCopies = asignaturaCopies;
+    }
+
     public Set<com.aprendoz_test.data.AccAuthorization> getAccAuthorizations() {
         return accAuthorizations;
     }
@@ -92,6 +111,14 @@ public class Grado {
 
     public void setCursos(Set<com.aprendoz_test.data.Curso> cursos) {
         this.cursos = cursos;
+    }
+
+    public Set<com.aprendoz_test.data.CostosAnuales> getCostosAnualeses() {
+        return costosAnualeses;
+    }
+
+    public void setCostosAnualeses(Set<com.aprendoz_test.data.CostosAnuales> costosAnualeses) {
+        this.costosAnualeses = costosAnualeses;
     }
 
 }

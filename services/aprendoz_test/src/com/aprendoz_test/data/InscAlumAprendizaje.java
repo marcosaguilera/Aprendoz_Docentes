@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.InscAlumAprendizaje
- *  02/14/2014 15:15:13
+ *  07/28/2014 09:52:25
  * 
  */
 public class InscAlumAprendizaje {
@@ -19,6 +19,7 @@ public class InscAlumAprendizaje {
     private Float calificacionNum;
     private String comentario;
     private Date fechaIngreso;
+    private String usuario;
 
     public Integer getIdInscAlumAprendizaje() {
         return idInscAlumAprendizaje;
@@ -82,6 +83,14 @@ public class InscAlumAprendizaje {
 
     public void setFechaIngreso(Date fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
 }

@@ -1,39 +1,39 @@
 Login.widgets = {
-	layoutBox: ["wm.Layout", {"height":"100%","width":"649px"}, {}, {
-		spacer2: ["wm.Spacer", {"height":"80px","width":"96px"}, {}],
-		panel1: ["wm.Panel", {"height":"136px","horizontalAlign":"center","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
-			panel_image: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","horizontalAlign":"center","width":"450px","verticalAlign":"middle","padding":"0","margin":"0"}, {}, {
-				picture1: ["wm.Picture", {"source":"resources/images/logos/LOGO%20APRENDOZ.jpg","height":"131px","border":"0","width":"330px"}, {}]
+	layoutBox: ["wm.Layout", {"width":"649px"}, {}, {
+		spacer2: ["wm.Spacer", {"height":"100%","styles":{},"width":"96px"}, {}],
+		panel1: ["wm.Panel", {"height":"80px","horizontalAlign":"center","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
+			panel_image: ["wm.Panel", {"height":"100%","horizontalAlign":"center","styles":{},"verticalAlign":"middle","width":"350px"}, {}, {
+				picture1: ["wm.Picture", {"aspect":"v","height":"52px","source":"http://aprendoz.rochester.edu.co/recursos/logo_aprendoz_nuevo.png","styles":{},"width":"244px"}, {}]
 			}]
 		}],
 		loginMainPanel: ["wm.Panel", {"height":"280px","layoutKind":"left-to-right"}, {}, {
 			spacer5: ["wm.Spacer", {"width":"100%"}, {}],
-			loginInputPanel: ["wm.Panel", {"_classes":{"domNode":["wm_Border_StyleFirefoxCurved4px","wm_Border_StyleSolid","wm_Border_Size1px","wm_Border_ColorLightGray","wm_FontSizePx_14px","wm_BackgroundColor_White"]},"width":"450px","padding":"5,55,10,55","borderColor":"#ffffff"}, {}, {
-				label2: ["wm.Label", {"caption":"Aprendoz Docentes","height":"48px","width":"96px","border":"0","align":"center"}, {}, {
+			loginInputPanel: ["wm.Panel", {"borderColor":"#ffffff","padding":"10","styles":{},"width":"350px"}, {}, {
+				label2: ["wm.Label", {"align":"center","caption":"Aprendoz Docentes","height":"48px","padding":"4","styles":{},"width":"96px"}, {}, {
 					format: ["wm.DataFormatter", {}, {}]
 				}],
-				usernameInput: ["wm.Editor", {"caption":"Usuario","height":"40px","captionSize":"100px"}, {}, {
+				usernameInput: ["wm.Editor", {"caption":"Usuario","captionSize":"100px","height":"40px","padding":"2","styles":{},"width":"130px"}, {}, {
 					editor: ["wm._TextEditor", {}, {}]
 				}],
-				passwordInput: ["wm.Editor", {"caption":"Contraseña","height":"40px","captionSize":"100px"}, {}, {
+				passwordInput: ["wm.Editor", {"caption":"Contraseña","captionSize":"100px","height":"40px","padding":"2","styles":{}}, {}, {
 					editor: ["wm._TextEditor", {"password":true}, {}]
 				}],
-				loginButtonPanel: ["wm.Panel", {"height":"44px","horizontalAlign":"right","padding":"4","layoutKind":"left-to-right"}, {}, {
-					passObject1: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_12px"]},"caption":"¿No puedes acceder a tu cuenta?","height":"32px","width":"100%","border":"0","align":"center","link":"http://aprendoz.rochester.edu.co/forgot-password"}, {}, {
+				loginButtonPanel: ["wm.Panel", {"height":"44px","horizontalAlign":"right","layoutKind":"left-to-right","padding":"4"}, {}, {
+					passObject1: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_12px"]},"align":"center","caption":"¿No puedes acceder a tu cuenta?","height":"32px","link":"http://aprendoz.rochester.edu.co/forgot-password","padding":"4","width":"100%"}, {}, {
 						format: ["wm.DataFormatter", {}, {}]
 					}],
-					loginButton: ["wm.Button", {"_classes":{"domNode":["wm_Border_TopStyleCurved4px","wm_Border_BottomStyleCurved4px","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"height":"100%","width":"110px","caption":"Acceder","border":"0","margin":"0","borderColor":"#aaa","iconUrl":"resources/images/buttons/login.png","iconHeight":"20px","iconMargin":"0 -20px 0 0"}, {"onclick":"loginButtonClick"}]
+					loginButton: ["wm.Button", {"_classes":{"domNode":["wm_Border_TopStyleCurved4px","wm_Border_BottomStyleCurved4px","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"border":"0","borderColor":"#aaa","caption":"Acceder","height":"100%","iconHeight":"20px","iconMargin":"0 -20px 0 0","iconUrl":"resources/images/buttons/login.png","iconWidth":"40px","margin":"0","width":"110px"}, {"onclick":"loginButtonClick"}]
 				}],
 				spacer3: ["wm.Spacer", {"height":"11px"}, {}],
-				loginErrorMsg: ["wm.Label", {"caption":" ","height":"100%","border":"0","align":"center"}, {}, {
+				loginErrorMsg: ["wm.Label", {"align":"center","caption":" ","height":"100%","padding":"4","styles":{}}, {}, {
 					format: ["wm.DataFormatter", {}, {}]
 				}]
 			}],
-			spacer4: ["wm.Spacer", {"width":"100%"}, {}]
+			spacer4: ["wm.Spacer", {"styles":{},"width":"100%"}, {}]
 		}],
-		spacer1: ["wm.Spacer", {"height":"513px","width":"96px"}, {}],
-		panel2: ["wm.Panel", {"_classes":{"domNode":["wm_Border_TopStyleCurved12px","wm_BackgroundColor_White"]},"height":"48px","horizontalAlign":"center","width":"100%","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
-			label1: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_16px"]},"caption":"Colegio Rochester  • Aprendoz © Versión 0.0.8 ● 2013","height":"48px","width":"513px","border":"0","align":"center"}, {}, {
+		spacer1: ["wm.Spacer", {"height":"100%","styles":{},"width":"96px"}, {}],
+		panel2: ["wm.Panel", {"height":"48px","horizontalAlign":"center","layoutKind":"left-to-right","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
+			label1: ["wm.Label", {"align":"center","caption":"Colegio Rochester  - Aprendoz - 2014-2015","height":"48px","padding":"4","styles":{"fontSize":"12px"},"width":"513px"}, {}, {
 				format: ["wm.DataFormatter", {}, {}]
 			}]
 		}]

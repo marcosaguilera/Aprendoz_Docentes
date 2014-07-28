@@ -17,6 +17,9 @@
         <property name="email" type="string">
             <column name="email" length="65535"/>
         </property>
+        <property name="matriculado" type="boolean">
+            <column name="matriculado"/>
+        </property>
         <property name="activoRetirado" type="boolean">
             <column name="Activo_Retirado"/>
         </property>
@@ -33,19 +36,10 @@
             <column name="Nombre2" length="45"/>
         </property>
         <property name="nivelAcademico" type="string">
-            <column name="Nivel_Academico" length="45"/>
+            <column name="Nivel_Academico" length="500"/>
         </property>
         <property name="fechaNacimiento" type="date">
             <column name="Fecha_Nacimiento" length="10"/>
-        </property>
-        <property name="lugarNacimientoMunicipio" type="string">
-            <column name="Lugar_Nacimiento_Municipio" length="45"/>
-        </property>
-        <property name="lugarNacimientoDepartamento" type="string">
-            <column name="Lugar_Nacimiento_Departamento" length="45"/>
-        </property>
-        <property name="nacionalidad" type="string">
-            <column name="Nacionalidad" length="45"/>
         </property>
         <property name="direccionResidencia" type="string">
             <column name="Direccion_Residencia" length="500"/>
@@ -65,14 +59,29 @@
         <property name="noDocumento" type="string">
             <column name="No_Documento" length="45"/>
         </property>
+        <property name="nacionalidad" type="string">
+            <column name="Nacionalidad" length="45"/>
+        </property>
+        <property name="lugarNacimientoDepartamento" type="string">
+            <column name="Lugar_Nacimiento_Departamento" length="45"/>
+        </property>
+        <property name="lugarNacimientoMunicipio" type="string">
+            <column name="Lugar_Nacimiento_Municipio" length="45"/>
+        </property>
         <property name="lugarExpedicionMunicipio" type="string">
             <column name="Lugar_Expedicion_Municipio" length="45"/>
         </property>
         <property name="lugarExpedicionDepartamento" type="string">
             <column name="Lugar_Expedicion_Departamento" length="45"/>
         </property>
+        <property name="paisDomicilio" type="string">
+            <column name="pais_domicilio" length="45"/>
+        </property>
         <property name="barrio" type="string">
             <column name="Barrio" length="200"/>
+        </property>
+        <property name="codigoPostal" type="string">
+            <column name="codigo_postal" length="8"/>
         </property>
         <property name="municipio" type="string">
             <column name="Municipio" length="45"/>
@@ -81,10 +90,10 @@
             <column name="Departamento" length="45"/>
         </property>
         <property name="saludPrepagada" type="string">
-            <column name="Salud_Prepagada" length="45"/>
+            <column name="Salud_Prepagada" length="500"/>
         </property>
         <property name="eps" type="string">
-            <column name="EPS" length="45"/>
+            <column name="EPS" length="500"/>
         </property>
         <property name="numeroContratoSalud" type="string">
             <column name="Numero_Contrato_Salud" length="45"/>
@@ -93,7 +102,7 @@
             <column name="Clinica_Emergencia" length="45"/>
         </property>
         <property name="viveCon" type="string">
-            <column name="Vive_Con" length="45"/>
+            <column name="Vive_Con" length="500"/>
         </property>
         <property name="tipoSangre" type="string">
             <column name="Tipo_Sangre" length="45"/>
@@ -131,14 +140,17 @@
         <property name="promocion" type="string">
             <column name="Promocion" length="45"/>
         </property>
+        <property name="numeroTarjetaCredito" type="string">
+            <column name="numero_tarjeta_credito"/>
+        </property>
         <property name="profesion" type="string">
-            <column name="Profesion" length="45"/>
+            <column name="Profesion" length="500"/>
         </property>
         <property name="empresa" type="string">
-            <column name="Empresa" length="45"/>
+            <column name="Empresa" length="500"/>
         </property>
         <property name="cargo" type="string">
-            <column name="Cargo" length="45"/>
+            <column name="Cargo" length="500"/>
         </property>
         <property name="celular" type="string">
             <column name="Celular" length="45"/>
@@ -170,17 +182,8 @@
         <property name="noPlaqueta" type="string">
             <column name="No_Plaqueta" length="45"/>
         </property>
-        <property name="matriculado" type="boolean">
-            <column name="matriculado"/>
-        </property>
         <property name="inscAlumCursoIdInscAlumCurso" type="integer">
             <column name="Insc_Alum_Curso_Id_Insc_Alum_Curso"/>
-        </property>
-        <property name="paisDomicilio" type="string">
-            <column name="pais_domicilio" length="45"/>
-        </property>
-        <property name="codigoPostal" type="string">
-            <column name="codigo_postal" length="8"/>
         </property>
         <many-to-one name="pais" class="com.aprendoz_test.data.Pais">
             <column name="PAIS_NAC_ID" not-null="true"/>
@@ -203,17 +206,17 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.InscAlumAprendizaje"/>
         </set>
+        <set name="promocionCopies" inverse="true" cascade="">
+            <key>
+                <column name="Persona_Id_Persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.PromocionCopy"/>
+        </set>
         <set name="transporteInscAlumTransportes" inverse="true" cascade="">
             <key>
                 <column name="Persona_Id_Persona" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.TransporteInscAlumTransporte"/>
-        </set>
-        <set name="calificacionFinals" inverse="true" cascade="">
-            <key>
-                <column name="Persona_Id_Persona"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.CalificacionFinal"/>
         </set>
         <set name="inscComentariosAlumnoses" inverse="true" cascade="">
             <key>
@@ -221,11 +224,11 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.InscComentariosAlumnos"/>
         </set>
-        <set name="inscAlumActividads" inverse="true" cascade="">
+        <set name="calificacionFinals" inverse="true" cascade="">
             <key>
-                <column name="Persona_Id_Persona" not-null="true"/>
+                <column name="Persona_Id_Persona"/>
             </key>
-            <one-to-many class="com.aprendoz_test.data.InscAlumActividad"/>
+            <one-to-many class="com.aprendoz_test.data.CalificacionFinal"/>
         </set>
         <set name="inscDirectorNivels" inverse="true" cascade="">
             <key>
@@ -233,11 +236,23 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.InscDirectorNivel"/>
         </set>
+        <set name="inscAlumActividads" inverse="true" cascade="">
+            <key>
+                <column name="Persona_Id_Persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.InscAlumActividad"/>
+        </set>
         <set name="inscPersonaGrupoFamiliars" inverse="true" cascade="">
             <key>
                 <column name="Persona_Id_Persona" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.InscPersonaGrupoFamiliar"/>
+        </set>
+        <set name="actualizacionDatosPersonaCopies" inverse="true" cascade="">
+            <key>
+                <column name="persona_id_persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.ActualizacionDatosPersonaCopy"/>
         </set>
         <set name="eventualidadPersonases" inverse="true" cascade="">
             <key>
@@ -299,6 +314,18 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.InscCursoAsig"/>
         </set>
+        <set name="inscCursoAsigCopies" inverse="true" cascade="">
+            <key>
+                <column name="Persona_Id_Persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.InscCursoAsigCopy"/>
+        </set>
+        <set name="inscAlumCostoCopies" inverse="true" cascade="">
+            <key>
+                <column name="Persona_Id_Persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.InscAlumCostoCopy"/>
+        </set>
         <set name="actualizacionDatosPersonas" inverse="true" cascade="">
             <key>
                 <column name="persona_id_persona" not-null="true"/>
@@ -335,11 +362,11 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.InscAlumAsigCopy"/>
         </set>
-        <set name="coordinadoreses" inverse="true" cascade="">
+        <set name="perfilPersonaImgs" inverse="true" cascade="">
             <key>
-                <column name="Persona_Id_Persona" not-null="true"/>
+                <column name="persona_id_persona" not-null="true"/>
             </key>
-            <one-to-many class="com.aprendoz_test.data.Coordinadores"/>
+            <one-to-many class="com.aprendoz_test.data.PerfilPersonaImg"/>
         </set>
         <set name="inscPersonaEduComs" inverse="true" cascade="">
             <key>
@@ -347,17 +374,35 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.InscPersonaEduCom"/>
         </set>
+        <set name="coordinadoreses" inverse="true" cascade="">
+            <key>
+                <column name="Persona_Id_Persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.Coordinadores"/>
+        </set>
         <set name="matriculas" inverse="true" cascade="">
             <key>
                 <column name="Persona_Id_Persona" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.Matricula"/>
         </set>
+        <set name="inscAlumAsigCopy3s" inverse="true" cascade="">
+            <key>
+                <column name="Persona_Id_Persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.InscAlumAsigCopy3"/>
+        </set>
         <set name="inscAlumAsigs" inverse="true" cascade="">
             <key>
                 <column name="Persona_Id_Persona" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.InscAlumAsig"/>
+        </set>
+        <set name="gestionEncuestases" inverse="true" cascade="">
+            <key>
+                <column name="persona_id_persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.GestionEncuestas"/>
         </set>
         <set name="inscAlumCostos" inverse="true" cascade="">
             <key>
