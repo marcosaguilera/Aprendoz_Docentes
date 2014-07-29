@@ -1382,19 +1382,19 @@ border-radius: 5px;
 
 .Main .Main-logo_aprendoz {
   background: white;
-    border-top-left-radius: 50px;
-border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 .Main .Main-label_bienvenida {
-   border: 1px solid #B0281A;
-       color: #b22418;
-   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  border: 1px solid #B0281A;
+  color: #b22418;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 }
 
 .Main .Main-label_nombreCompleto {
   color: #B22418;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-size: 20px !important;
 }
 
 .Main .Main-timeEditor1 {
@@ -1406,24 +1406,23 @@ border-bottom-right-radius: 50px;
 }
 
 .Main .Main-inicio_panel_opciones {
-    background: white;
-    border-bottom-left-radius: 10px;
-    color: #a62121;
+  background: white;
+  border-bottom-left-radius: 10px;
+  color: #a62121;
 }
 
 .Main .Main-inicio_abrir_preferencias {
-   border-bottom-left-radius: 5px;
-   border-top-left-radius: 5px;
- background: white;
-cursor: pointer;
-
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  background: white;
+  cursor: pointer;
 }
 
 .Main .Main-inicio_cerrar_preferencias {
-     border-bottom-left-radius: 5px;
-     border-top-left-radius: 5px;
- background: white;
-cursor: pointer;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  background: white;
+  cursor: pointer;
 }
 
 .Main .Main-inicio_forgot_password {
