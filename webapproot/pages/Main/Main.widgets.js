@@ -544,6 +544,9 @@ Main.widgets = {
 ]}, {}]
 	}],
 	logCurriculoDocentes: ["wm.Variable", {"type":"com.aprendoz_test.data.LogAccionesDocentes"}, {}],
+	asignaturas_estudiantes_asignaturas_ServiceVariable: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"asignatura_alumnos_asignatura","service":"aprendoz_test"}, {}, {
+		input: ["wm.ServiceInput", {"type":"asignatura_alumnos_asignaturaInputs"}, {}]
+	}],
 	unidadDialog: ["wm.DesignableDialog", {"buttonBarId":"buttonBar1","containerWidgetId":"containerWidget1","styles":{"backgroundColor":"#ebebeb","color":"#0e0c0c"},"title":"Formulario Unidades","width":"500px"}, {}, {
 		containerWidget1: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
 			unidadLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"304px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"unidadLiveForm2BeginInsert","onBeginUpdate":"unidadLiveForm2BeginUpdate","onSuccess":"unidadLivePanel1.popupLiveFormSuccess","onSuccess1":"unidadLiveForm2Success1","onInsertData":"unidadLiveForm2InsertData","onUpdateData":"unidadLiveForm2UpdateData","onDeleteData":"unidadLiveForm2DeleteData"}, {
@@ -1013,7 +1016,7 @@ Main.widgets = {
 {"show":false,"field":"subarea2","title":"Subarea2","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":false,"field":"subarea1","title":"Subarea1","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":false,"field":"subarea3","title":"Subarea3","width":"100%","align":"left","formatFunc":"","mobileColumn":false}
-],"dsType":"com.aprendoz_test.data.output._global_curriculo_asig_docRtnType","height":"210px","localizationStructure":{},"margin":"0","minDesktopHeight":60,"singleClickEdit":true,"styles":{"fontSize":"11px","backgroundColor":"#ffffff"}}, {"onSelect":"curriculo_grid_docentes_asignaturasSelect","onSelect1":"curriculo_grid_docentes_asignaturasSelect1","onSelect2":"curriculo_grid_docentes_asignaturasSelect2","onSelect3":"curriculo_grid_docentes_asignaturasSelect3","onSelectionChange":"curriculo_grid_docentes_asignaturasSelectionChange","onSelectionChange1":"curriculo_grid_docentes_asignaturasSelectionChange1"}, {
+],"dsType":"com.aprendoz_test.data.output._global_curriculo_asig_docRtnType","height":"210px","localizationStructure":{},"margin":"0","minDesktopHeight":60,"singleClickEdit":true,"styles":{"fontSize":"11px","backgroundColor":"#ffffff"}}, {"onSelect":"curriculo_grid_docentes_asignaturasSelect","onSelect1":"curriculo_grid_docentes_asignaturasSelect1","onSelect2":"curriculo_grid_docentes_asignaturasSelect2","onSelect3":"curriculo_grid_docentes_asignaturasSelect3","onSelectionChange":"curriculo_grid_docentes_asignaturasSelectionChange","onSelectionChange1":"curriculo_grid_docentes_asignaturasSelectionChange1","onCellDblClick":"curriculo_grid_docentes_asignaturasCellDblClick"}, {
 										binding: ["wm.Binding", {}, {}, {
 											wire: ["wm.Wire", {"expression":undefined,"source":"global_docentes_asignaturas","targetProperty":"dataSet"}, {}]
 										}]
@@ -1245,7 +1248,24 @@ Main.widgets = {
 									}],
 									dash_chart1: ["wm.Panel", {"height":"276px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{},"verticalAlign":"top","width":"100%"}, {}]
 								}],
-								asignatura_big_panel: ["wm.Panel", {"height":"100%","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}]
+								asignatura_big_panel: ["wm.Panel", {"height":"100%","horizontalAlign":"center","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
+									asignatura_header_panel: ["wm.Panel", {"height":"48px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#f2f2f2"},"verticalAlign":"top","width":"100%"}, {}],
+									asignatura_dojogrid_panel: ["wm.DojoGrid", {"columns":[
+{"show":true,"field":"codigo","title":"Código<br>Estudiante","width":"100px","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"idpersona","title":"Idpersona","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"nombres","title":"Nombres","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"apellidos","title":"Apellidos","width":"100%","align":"left","formatFunc":"","editorProps":null,"mobileColumn":false},
+{"show":true,"field":"asignatura","title":"Asignatura","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"puntaje","title":"Puntaje","width":"100px","align":"left","formatFunc":"","editorProps":null,"mobileColumn":false},
+{"show":true,"field":"calificacion","title":"Calificación","width":"100px","align":"left","formatFunc":"","editorProps":null,"mobileColumn":false},
+{"show":false,"field":"idasignatura","title":"Idasignatura","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Código<br>Estudiante: \" + ${codigo} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Nombres: \" + ${nombres}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Apellidos: \" + ${apellidos}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Asignatura: \" + ${asignatura}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Puntaje: \" + ${puntaje}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Calificación: \" + ${calificacion}\n + \"</div>\"\n\n","mobileColumn":true}
+],"dsType":"com.aprendoz_test.data.output.Asignatura_alumnos_asignaturaRtnType","height":"588px","margin":"4","minDesktopHeight":60,"singleClickEdit":true,"styles":{"fontSize":"10px"}}, {}, {
+										binding: ["wm.Binding", {}, {}, {
+											wire: ["wm.Wire", {"expression":undefined,"source":"asignaturas_estudiantes_asignaturas_ServiceVariable","targetProperty":"dataSet"}, {}]
+										}]
+									}]
+								}]
 							}],
 							main: ["wm.TabLayers", {"padding":"10","showing":false,"styles":{}}, {}, {
 								horarios: ["wm.Layer", {"caption":"Horarios","horizontalAlign":"left","lock":true,"margin":"2,0,2,0","roles":["4","5","6","7","8","9","10","11","13","14","15","16","17","18","19","20","21","22","23","24"],"verticalAlign":"top"}, {}, {

@@ -554,4 +554,19 @@ p.idPersona=:idpersona AND sy.idSy=:idsyp
 ORDER BY
 a.asignatura
     </query>
+    <query name="asignatura_alumnos_asignatura">
+        <query-param name="pasig" type="java.lang.Integer"/>
+        SELECT
+p.idPersona as idpersona,
+p.codigo as codigo,
+CONCAT(p.nombre1,&apos; &apos;,p.nombre2) as nombres,
+CONCAT(p.apellido1,&apos; &apos;,p.apellido2) as apellidos,
+a.idAsignatura as idasignatura,
+a.asignatura as asignatura,
+iaa.califChar as calificacion,
+iaa.calificacion as puntaje
+FROM InscAlumAsig iaa INNER JOIN iaa.persona p INNER JOIN  iaa.asignatura a INNER JOIN iaa.periodo per
+WHERE a.idAsignatura=:pasig
+ORDER BY  p.apellido1, p.apellido2, p.nombre1, p.nombre2
+    </query>
 </hibernate-mapping>

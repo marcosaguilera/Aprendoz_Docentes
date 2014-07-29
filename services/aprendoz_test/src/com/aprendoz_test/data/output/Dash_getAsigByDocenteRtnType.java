@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "dash_getAsigByDocente" on 07/28/2014 09:52:49
+ * Generated for query "dash_getAsigByDocente" on 07/29/2014 14:45:26
  * 
  */
 public class Dash_getAsigByDocenteRtnType {

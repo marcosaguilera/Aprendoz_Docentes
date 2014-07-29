@@ -2517,5 +2517,14 @@ dojo.declare("Main", wm.Page, {
 		var sy= main.global_cursy.getItem(0).data.sy;
         main.top_select_sy.setDisplayValue(sy)
 	},
+	curriculo_grid_docentes_asignaturasCellDblClick: function(inSender, evt, selectedItem, rowId, fieldId, rowNode, cellNode) {
+		var idasignatura= main.curriculo_grid_docentes_asignaturas.selectedItem.getData().idasignatura;
+        main.asignaturas_estudiantes_asignaturas_ServiceVariable.input.setValue("pasig",idasignatura);
+        main.asignaturas_estudiantes_asignaturas_ServiceVariable.update();
+        this.curriculo_big_panel.hide();
+        this.how_to_start.hide();
+        this.inicio_big_panel.hide();
+        this.asignatura_big_panel.show();
+	},
 	_end: 0
 });

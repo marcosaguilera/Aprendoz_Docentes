@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "hql_tipo_eventualidad" on 07/28/2014 09:52:49
+ * Generated for query "hql_tipo_eventualidad" on 07/29/2014 14:45:26
  * 
  */
 public class Hql_tipo_eventualidadRtnType {
