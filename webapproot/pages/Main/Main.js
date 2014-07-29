@@ -238,28 +238,13 @@ dojo.declare("Main", wm.Page, {
   },
   
   button36Click: function(inSender, inEvent) {
-    try {
       this.inscalumactividadLiveVariable1.clearData();
-        this.ACTIVIDADESLV3.clearData();
-          this.INSALUCUR.clearData();
-            this.asignaturaLV1.clearData();
-              this.selectEditor19.clear();
-                this.selectEditor18.clear();
-                  this.selectEditor17.clear();
-      
-    } catch(e) {
-      console.error('ERROR IN button36Click: ' + e); 
-    } 
-  },
-  
-  
-  picture7Click: function(inSender) {
-    try {
-       window.print();
-      
-    } catch(e) {
-      console.error('ERROR IN picture7Click: ' + e); 
-    } 
+      this.ACTIVIDADESLV3.clearData();
+      this.INSALUCUR.clearData();
+      this.asignaturaLV1.clearData();
+      this.selectEditor19.clear();
+      this.selectEditor18.clear();
+      this.selectEditor17.clear();
   },
 
   aux25Change: function(inSender, inDisplayValue, inDataValue) {
@@ -836,7 +821,7 @@ dojo.declare("Main", wm.Page, {
        this.menu_profile_img.setSource("http://www.rochester.edu.co/fotosempleados/"+codigo+".Jpeg");
        this.configuracion_profile_image.setSource("http://www.rochester.edu.co/fotosempleados/"+codigo+".Jpeg");
        this.menu_bienvenida.setCaption("Bienvenid@, "+usuario);
-       this.configuracion_detalles.setCaption(fullname+"<br>Sexo: "+sexo+"<br>No. documento: "+nodoc+"<br>"+tipo);
+       this.configuracion_detalles.setCaption(fullname+"<br>Sexo: "+sexo+"<br>No. documento: "+nodoc+"<br><br>"+tipo);
 
        var idp = main.a_informacionUsuario.getItem(0).data.idpersona;   
        var today= new Date().getTime();
@@ -1980,7 +1965,7 @@ dojo.declare("Main", wm.Page, {
 		var objectFileUploaded = this.dojoFileUpload1.variable.getItemData(0);
         var name= objectFileUploaded.name;
         this.fileNameEditor2.setDataValue(name);
-        this.ubicacionEditor1.setDataValue("http://rochester.edu.co/resources/"+name);
+        this.ubicacionEditor1.setDataValue("http://aprendoz.rochester.edu.co/resources/data/"+name);
 	},
     // update actividad
 	actividadLiveForm3BeginInsert: function(inSender) {
@@ -2178,6 +2163,32 @@ dojo.declare("Main", wm.Page, {
 	aprendizajeLiveForm2BeginInsert1: function(inSender) {
 		this.aprendizajes_grupo2.hide();
         main.aprendizajesAsignaturasGrid1.show();
+	},
+	top_select_syChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+		var idsy=  main.top_select_sy.getDataValue().idSy;
+        var user=  main.global_username.getData().dataValue;
+        this.global_docentes_asignaturas.input.setValue("idsyr", idsy);
+        this.global_docentes_asignaturas.input.setValue("nickname", user);
+        this.global_docentes_asignaturas.update();
+	},
+	actividadLiveForm3InsertData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idactividad= main.idActividadEditor3.getDataValue();
+        var idsubtopico = main.idSubtopicoEditor5.getDataValue();
+        var fecha= main.fechaEditor6.getDisplayValue();
+        var actividad = main.actividadEditor3.getDataValue();
+        var requerido= main.requeridoAlternativoEditor3.getDataValue();
+        var tipo_actividad= main.lookup3.getDisplayValue();
+        var retro = main.lookup1.getDisplayValue();
+        var desempeno = main.lookup2.getDisplayValue();
+        var accion= "docentes-actividad -> accion: actualizar "+" ->idactividad: "+idactividad+" ->idSubtopico: "+idsubtopico+" ->detalles: "+actividad+" ->fecha: "+fecha+" ->requerido: "+requerido+" ->tipo_actividad: "+tipo_actividad+" ->retroalimentacio: "+retro+" ->desempeno: "+desempeno;          
+        var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","Actividad");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData(); 
 	},
 	_end: 0
 });

@@ -7,6 +7,15 @@
     margin-left: 19% !important;
 }
 
+#main_profile_image {
+    background-color: #FAFAFA !important;
+}
+
+div#main_configuracion_detalles {
+    font-size: 11px !important;
+    text-rendering: optimizeLegibility;
+}
+
 #main_aprendizajesAsignaturasGrid1{
     cursor: pointer;
 }
