@@ -238,28 +238,13 @@ dojo.declare("Main", wm.Page, {
   },
   
   button36Click: function(inSender, inEvent) {
-    try {
       this.inscalumactividadLiveVariable1.clearData();
-        this.ACTIVIDADESLV3.clearData();
-          this.INSALUCUR.clearData();
-            this.asignaturaLV1.clearData();
-              this.selectEditor19.clear();
-                this.selectEditor18.clear();
-                  this.selectEditor17.clear();
-      
-    } catch(e) {
-      console.error('ERROR IN button36Click: ' + e); 
-    } 
-  },
-  
-  
-  picture7Click: function(inSender) {
-    try {
-       window.print();
-      
-    } catch(e) {
-      console.error('ERROR IN picture7Click: ' + e); 
-    } 
+      this.ACTIVIDADESLV3.clearData();
+      this.INSALUCUR.clearData();
+      this.asignaturaLV1.clearData();
+      this.selectEditor19.clear();
+      this.selectEditor18.clear();
+      this.selectEditor17.clear();
   },
 
   aux25Change: function(inSender, inDisplayValue, inDataValue) {
@@ -278,12 +263,12 @@ dojo.declare("Main", wm.Page, {
     } 
   },
 
-  inscalumactividadLiveForm1BeginInsert: function(inSender) {
+  /*inscalumactividadLiveForm1BeginInsert: function(inSender) {
       var idactividad= this.activitiesDataGrid.selectedItem.getData().idActividad;
       var idpersona= this.activities_studentsDataGrid.selectedItem.getData().persona.idPersona;
       this.actividadLookup1.setDataValue(idactividad);
       this.personaLookup4.setDataValue(idpersona);
-  },
+  },*/
   
   asistenciaShow: function(inSender) {
     try {
@@ -812,7 +797,7 @@ dojo.declare("Main", wm.Page, {
       var _usuario= main.global_username.getData().dataValue;
       var syJson= main.global_cursy.getItem(0);
       var fechaInicio= syJson.data.fechaDesde;
-      var fechaFinal= syJson.data.fechaHasta; 
+      var fechaFinal= syJson.data.fechaHasta;       
       this.dash_dash_lv1.input.setValue("usuario", _usuario);  
       this.dash_dash_lv1.input.setValue("f1", fechaInicio);
       this.dash_dash_lv1.input.setValue("f2", fechaFinal);
@@ -836,7 +821,7 @@ dojo.declare("Main", wm.Page, {
        this.menu_profile_img.setSource("http://www.rochester.edu.co/fotosempleados/"+codigo+".Jpeg");
        this.configuracion_profile_image.setSource("http://www.rochester.edu.co/fotosempleados/"+codigo+".Jpeg");
        this.menu_bienvenida.setCaption("Bienvenid@, "+usuario);
-       this.configuracion_detalles.setCaption(fullname+"<br>Sexo: "+sexo+"<br>No. documento: "+nodoc+"<br>"+tipo);
+       this.configuracion_detalles.setCaption(fullname+"<br>Sexo: "+sexo+"<br>No. documento: "+nodoc+"<br><br>"+tipo);
 
        var idp = main.a_informacionUsuario.getItem(0).data.idpersona;   
        var today= new Date().getTime();
@@ -844,7 +829,7 @@ dojo.declare("Main", wm.Page, {
        this.inicio_box_usuario.setDataValue(usuario);
        this.inicio_box_clave.setDataValue(clave);
        this.inicio_box_reclave.setDataValue(clave);
- 
+       
        //if( main.a_isAuthenticated.getData().dataValue == true){
          this.a_logInsertRecords.setValue("persona.idPersona", idp);
          this.a_logInsertRecords.setValue("fechaIngreso", today);
@@ -1980,7 +1965,7 @@ dojo.declare("Main", wm.Page, {
 		var objectFileUploaded = this.dojoFileUpload1.variable.getItemData(0);
         var name= objectFileUploaded.name;
         this.fileNameEditor2.setDataValue(name);
-        this.ubicacionEditor1.setDataValue("http://rochester.edu.co/resources/"+name);
+        this.ubicacionEditor1.setDataValue("http://aprendoz.rochester.edu.co/resources/data/"+name);
 	},
     // update actividad
 	actividadLiveForm3BeginInsert: function(inSender) {
@@ -2178,6 +2163,359 @@ dojo.declare("Main", wm.Page, {
 	aprendizajeLiveForm2BeginInsert1: function(inSender) {
 		this.aprendizajes_grupo2.hide();
         main.aprendizajesAsignaturasGrid1.show();
+	},
+	top_select_syChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+		var idsy=  main.top_select_sy.getDataValue().idSy;
+        var user=  main.global_username.getData().dataValue;
+        this.global_docentes_asignaturas.input.setValue("idsyr", idsy);
+        this.global_docentes_asignaturas.input.setValue("nickname", user);
+        this.global_docentes_asignaturas.update();
+	},
+	unidadLiveForm2InsertData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idunidad= main.idUnidadEditor2.getDataValue();
+        var idasignatura= main.idAsignaturaEditor1.getDataValue();
+        var unidad= main.unidadEditor2.getDataValue();
+        var unit= main.unitEditor2.getDataValue();
+        var finicio= main.fechaInicioEditor3.getDisplayValue();
+        var ffinal= main.fechaFinEditor3.getDisplayValue();
+        var nounidad= main.numeroUnidadselect1.getDataValue();
+        var accion= "v2-docentes-unidad -> accion: crear "+" ->idUnidad: "+idunidad+" ->idAsignatura: "+idasignatura+" ->detalles: "+unidad+"-"+unit+" ->finicio: "+finicio+" ->ffinal: "+ffinal+" >no_unidad: "+nounidad;          
+        var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","Unidad");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData();  
+	},
+	unidadLiveForm2UpdateData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idunidad= main.idUnidadEditor2.getDataValue();
+        var idasignatura= main.idAsignaturaEditor1.getDataValue();
+        var unidad= main.unidadEditor2.getDataValue();
+        var unit= main.unitEditor2.getDataValue();
+        var finicio= main.fechaInicioEditor3.getDisplayValue();
+        var ffinal= main.fechaFinEditor3.getDisplayValue();
+        var nounidad= main.numeroUnidadselect1.getDataValue();
+        var accion= "v2-docentes-unidad -> accion: actualizar "+" ->idUnidad: "+idunidad+" ->idAsignatura: "+idasignatura+" ->detalles: "+unidad+"-"+unit+" ->finicio: "+finicio+" ->ffinal: "+ffinal+" >no_unidad: "+nounidad;          
+        var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","Unidad");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData();
+	},
+	unidadLiveForm2DeleteData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idunidad= main.idUnidadEditor2.getDataValue();
+        var idasignatura= main.idAsignaturaEditor1.getDataValue();
+        var unidad= main.unidadEditor2.getDataValue();
+        var unit= main.unitEditor2.getDataValue();
+        var finicio= main.fechaInicioEditor3.getDisplayValue();
+        var ffinal= main.fechaFinEditor3.getDisplayValue();
+        var nounidad= main.numeroUnidadselect1.getDataValue();
+        var accion= "v2-docentes-unidad -> accion: borrar "+" ->idUnidad: "+idunidad+" ->idAsignatura: "+idasignatura+" ->detalles: "+unidad+"-"+unit+" ->finicio: "+finicio+" ->ffinal: "+ffinal+" >no_unidad: "+nounidad;          
+        var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","Unidad");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData();
+	},
+	subtopicoLiveForm2InsertData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idsubtopico = main.idSubtopicoEditor2.getDataValue();
+        var idunidad = main.idUnidadEditor1.getDataValue();
+        var subtopico = main.subtopicoEditor2.getDataValue();
+        var subtopic = main.subtopicEditor2.getDataValue();
+        var finicio = main.date1.getDisplayValue();
+        var ffin = main.date2.getDisplayValue();
+        var no_subtopico = main.numeroSubtopicoSelect1.getDataValue();
+        var accion = "v2-docentes-subtopico -> accion: crear " + " ->idsubtopico: " + idsubtopico + " ->idUnidad: " + idunidad + " ->detalles: " + subtopico + "-" + subtopic + " ->finicio: " + finicio + " ->ffinal: " + ffin + " >no_unidad: " + no_subtopico;
+        var now = new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada", accion);
+        this.logCurriculoDocentes.setValue("fechaCreacion", now);
+        this.logCurriculoDocentes.setValue("tablaAfectada", "Subtopico");
+        this.logCurriculoDocentes.setValue("usuario", user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
+        this.logDocentesliveForm.insertData();
+	},
+	subtopicoLiveForm2UpdateData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idsubtopico = main.idSubtopicoEditor2.getDataValue();
+        var idunidad = main.idUnidadEditor1.getDataValue();
+        var subtopico = main.subtopicoEditor2.getDataValue();
+        var subtopic = main.subtopicEditor2.getDataValue();
+        var finicio = main.date1.getDisplayValue();
+        var ffin = main.date2.getDisplayValue();
+        var no_subtopico = main.numeroSubtopicoSelect1.getDataValue();
+        var accion = "v2-docentes-subtopico -> accion: actualizar " + " ->idsubtopico: " + idsubtopico + " ->idUnidad: " + idunidad + " ->detalles: " + subtopico + "-" + subtopic + " ->finicio: " + finicio + " ->ffinal: " + ffin + " >no_unidad: " + no_subtopico;
+        var now = new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada", accion);
+        this.logCurriculoDocentes.setValue("fechaCreacion", now);
+        this.logCurriculoDocentes.setValue("tablaAfectada", "Subtopico");
+        this.logCurriculoDocentes.setValue("usuario", user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
+        this.logDocentesliveForm.insertData();
+	},
+	subtopicoLiveForm2DeleteData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idsubtopico = main.idSubtopicoEditor2.getDataValue();
+        var idunidad = main.idUnidadEditor1.getDataValue();
+        var subtopico = main.subtopicoEditor2.getDataValue();
+        var subtopic = main.subtopicEditor2.getDataValue();
+        var finicio = main.date1.getDisplayValue();
+        var ffin = main.date2.getDisplayValue();
+        var no_subtopico = main.numeroSubtopicoSelect1.getDataValue();
+        var accion = "v2-docentes-subtopico -> accion: borrar " + " ->idsubtopico: " + idsubtopico + " ->idUnidad: " + idunidad + " ->detalles: " + subtopico + "-" + subtopic + " ->finicio: " + finicio + " ->ffinal: " + ffin + " >no_unidad: " + no_subtopico;
+        var now = new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada", accion);
+        this.logCurriculoDocentes.setValue("fechaCreacion", now);
+        this.logCurriculoDocentes.setValue("tablaAfectada", "Subtopico");
+        this.logCurriculoDocentes.setValue("usuario", user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
+        this.logDocentesliveForm.insertData();
+	},
+	aprendizajeLiveForm2InsertData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idaprendizaje = main.idAprendizajeEditor2.getDataValue();
+        var idsubtopico = main.idSubtopicoEditor1.getDataValue();
+        var fesperada= main.fechaEsperadaEditor2.getDisplayValue();
+        var aprendizaje= main.aprendizajeEditor2.getDataValue();
+        var learning= main.learningEditor2.getDataValue();
+        var peso= main.numeroAprendizajeSelectMenu1.getDataValue();
+        var eje1 = main.ejeSelect1.getDisplayValue();
+        var eje2 = main.ejeSelect2.getDisplayValue();
+        var eje3 = main.ejeSelect3.getDisplayValue();
+        var nivel= main.nivelEsperadoLookup2.getDisplayValue();
+        var dcomprension = main.dimensionComprensionLookup2.getDisplayValue();
+        var dcurricular = main.dimensionCurricularLookup2.getDisplayValue();
+        var inteligencia= main.inteligenciaLookup2.getDisplayValue();
+        var accion= "v2-docentes-aprendizaje -> accion: crear "+" ->idAprendizaje: "+idaprendizaje+" ->idSubtopico: "+idsubtopico+" ->detalles: "+aprendizaje+" - "+learning+" ->fesperada: "+fesperada+" ->peso: "+peso+" ->eje1: "+eje1+" ->eje2: "+eje2+" ->eje3: "+eje3+" ->nivel: "+nivel+" ->dcomprension: "+dcomprension+" ->dcurricular: "+dcurricular+" ->inteligencia: "+inteligencia;          var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","Aprendizaje");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData();
+	},
+	aprendizajeLiveForm2UpdateData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idaprendizaje = main.idAprendizajeEditor2.getDataValue();
+        var idsubtopico = main.idSubtopicoEditor1.getDataValue();
+        var fesperada= main.fechaEsperadaEditor2.getDisplayValue();
+        var aprendizaje= main.aprendizajeEditor2.getDataValue();
+        var learning= main.learningEditor2.getDataValue();
+        var peso= main.numeroAprendizajeSelectMenu1.getDataValue();
+        var eje1 = main.ejeSelect1.getDisplayValue();
+        var eje2 = main.ejeSelect2.getDisplayValue();
+        var eje3 = main.ejeSelect3.getDisplayValue();
+        var nivel= main.nivelEsperadoLookup2.getDisplayValue();
+        var dcomprension = main.dimensionComprensionLookup2.getDisplayValue();
+        var dcurricular = main.dimensionCurricularLookup2.getDisplayValue();
+        var inteligencia= main.inteligenciaLookup2.getDisplayValue();
+        var accion= "v2-docentes-aprendizaje -> accion: actualizar "+" ->idAprendizaje: "+idaprendizaje+" ->idSubtopico: "+idsubtopico+" ->detalles: "+aprendizaje+" - "+learning+" ->fesperada: "+fesperada+" ->peso: "+peso+" ->eje1: "+eje1+" ->eje2: "+eje2+" ->eje3: "+eje3+" ->nivel: "+nivel+" ->dcomprension: "+dcomprension+" ->dcurricular: "+dcurricular+" ->inteligencia: "+inteligencia;          var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","Aprendizaje");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData();
+	},
+	aprendizajeLiveForm2DeleteData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idaprendizaje = main.idAprendizajeEditor2.getDataValue();
+        var idsubtopico = main.idSubtopicoEditor1.getDataValue();
+        var fesperada= main.fechaEsperadaEditor2.getDisplayValue();
+        var aprendizaje= main.aprendizajeEditor2.getDataValue();
+        var learning= main.learningEditor2.getDataValue();
+        var peso= main.numeroAprendizajeSelectMenu1.getDataValue();
+        var eje1 = main.ejeSelect1.getDisplayValue();
+        var eje2 = main.ejeSelect2.getDisplayValue();
+        var eje3 = main.ejeSelect3.getDisplayValue();
+        var nivel= main.nivelEsperadoLookup2.getDisplayValue();
+        var dcomprension = main.dimensionComprensionLookup2.getDisplayValue();
+        var dcurricular = main.dimensionCurricularLookup2.getDisplayValue();
+        var inteligencia= main.inteligenciaLookup2.getDisplayValue();
+        var accion= "v2-docentes-aprendizaje -> accion: borrar "+" ->idAprendizaje: "+idaprendizaje+" ->idSubtopico: "+idsubtopico+" ->detalles: "+aprendizaje+" - "+learning+" ->fesperada: "+fesperada+" ->peso: "+peso+" ->eje1: "+eje1+" ->eje2: "+eje2+" ->eje3: "+eje3+" ->nivel: "+nivel+" ->dcomprension: "+dcomprension+" ->dcurricular: "+dcurricular+" ->inteligencia: "+inteligencia;          var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","Aprendizaje");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData();
+	},
+	otrasmetasLiveForm2InsertData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idmeta= main.idOtraMetaEditor2.getDataValue();
+        var idsubtopico= main.idSubtopicoEditor3.getDataValue();
+        var meta= main.metaEditor2.getDataValue();
+        var fecha= main.fechaEditorDate1.getDisplayValue();
+        var logrado= main.logradoEditor3.getDataValue();
+        var accion= "v2-docentes-metas -> accion: crear "+" ->idmeta: "+idmeta+" ->idSubtopico: "+idsubtopico+" ->detalles: "+meta+" ->fecha: "+fecha+" ->logrado: "+logrado;          
+        var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","OtrasMetas");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData();
+	},
+	otrasmetasLiveForm2UpdateData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idmeta= main.idOtraMetaEditor2.getDataValue();
+        var idsubtopico= main.idSubtopicoEditor3.getDataValue();
+        var meta= main.metaEditor2.getDataValue();
+        var fecha= main.fechaEditorDate1.getDisplayValue();
+        var logrado= main.logradoEditor3.getDataValue();
+        var accion= "v2-docentes-metas -> accion: actualizar "+" ->idmeta: "+idmeta+" ->idSubtopico: "+idsubtopico+" ->detalles: "+meta+" ->fecha: "+fecha+" ->logrado: "+logrado;          
+        var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","OtrasMetas");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData();
+	},
+	otrasmetasLiveForm2DeleteData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idmeta= main.idOtraMetaEditor2.getDataValue();
+        var idsubtopico= main.idSubtopicoEditor3.getDataValue();
+        var meta= main.metaEditor2.getDataValue();
+        var fecha= main.fechaEditorDate1.getDisplayValue();
+        var logrado= main.logradoEditor3.getDataValue();
+        var accion= "v2-docentes-metas -> accion: borrar "+" ->idmeta: "+idmeta+" ->idSubtopico: "+idsubtopico+" ->detalles: "+meta+" ->fecha: "+fecha+" ->logrado: "+logrado;          
+        var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","OtrasMetas");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData();
+	},
+	recursoLiveForm1InsertData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idrecurso= main.idRecursoEditor1.getDataValue();
+        var idsubtopico= main.idSubtopicoEditor4.getDataValue();
+        var recurso= main.recursoTextEditor1.getDataValue();
+        var direccion = main.ubicacionEditor1.getDataValue();
+        var tipo = main.tipoRecursoLookup1.getDisplayValue();
+        var accion= "v2-docentes-recurso -> accion: crear "+" ->idrecurso: "+idrecurso+" ->idSubtopico: "+idsubtopico+" ->detalles: "+recurso+" ->direccion: "+direccion+"->tipo: "+tipo;          
+        var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","Recurso");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData();
+	},
+	recursoLiveForm1UpdateData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idrecurso= main.idRecursoEditor1.getDataValue();
+        var idsubtopico= main.idSubtopicoEditor4.getDataValue();
+        var recurso= main.recursoTextEditor1.getDataValue();
+        var direccion = main.ubicacionEditor1.getDataValue();
+        var tipo = main.tipoRecursoLookup1.getDisplayValue();
+        var accion= "v2-docentes-recurso -> accion: actualizar "+" ->idrecurso: "+idrecurso+" ->idSubtopico: "+idsubtopico+" ->detalles: "+recurso+" ->direccion: "+direccion+"->tipo: "+tipo;          
+        var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","Recurso");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData();
+	},
+	recursoLiveForm1DeleteData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idrecurso= main.idRecursoEditor1.getDataValue();
+        var idsubtopico= main.idSubtopicoEditor4.getDataValue();
+        var recurso= main.recursoTextEditor1.getDataValue();
+        var direccion = main.ubicacionEditor1.getDataValue();
+        var tipo = main.tipoRecursoLookup1.getDisplayValue();
+        var accion= "v2-docentes-recurso -> accion: borrar "+" ->idrecurso: "+idrecurso+" ->idSubtopico: "+idsubtopico+" ->detalles: "+recurso+" ->direccion: "+direccion+"->tipo: "+tipo;          
+        var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","Recurso");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData();
+	},
+	actividadLiveForm3InsertData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idactividad= main.idActividadEditor3.getDataValue();
+        var idsubtopico = main.idSubtopicoEditor5.getDataValue();
+        var fecha= main.fechaEditor6.getDisplayValue();
+        var actividad = main.actividadEditor3.getDataValue();
+        var requerido= main.requeridoAlternativoEditor3.getDataValue();
+        var tipo_actividad= main.lookup3.getDisplayValue();
+        var retro = main.lookup1.getDisplayValue();
+        var desempeno = main.lookup2.getDisplayValue();
+        var accion= "v2-docentes-actividad -> accion: crear "+" ->idactividad: "+idactividad+" ->idSubtopico: "+idsubtopico+" ->detalles: "+actividad+" ->fecha: "+fecha+" ->requerido: "+requerido+" ->tipo_actividad: "+tipo_actividad+" ->retroalimentacio: "+retro+" ->desempeno: "+desempeno;          
+        var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","Actividad");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData();
+	},
+	actividadLiveForm3UpdateData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idactividad= main.idActividadEditor3.getDataValue();
+        var idsubtopico = main.idSubtopicoEditor5.getDataValue();
+        var fecha= main.fechaEditor6.getDisplayValue();
+        var actividad = main.actividadEditor3.getDataValue();
+        var requerido= main.requeridoAlternativoEditor3.getDataValue();
+        var tipo_actividad= main.lookup3.getDisplayValue();
+        var retro = main.lookup1.getDisplayValue();
+        var desempeno = main.lookup2.getDisplayValue();
+        var accion= "v2-docentes-actividad -> accion: actualizar "+" ->idactividad: "+idactividad+" ->idSubtopico: "+idsubtopico+" ->detalles: "+actividad+" ->fecha: "+fecha+" ->requerido: "+requerido+" ->tipo_actividad: "+tipo_actividad+" ->retroalimentacio: "+retro+" ->desempeno: "+desempeno;          
+        var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","Actividad");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData();
+	},
+	actividadLiveForm3DeleteData: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var idactividad= main.idActividadEditor3.getDataValue();
+        var idsubtopico = main.idSubtopicoEditor5.getDataValue();
+        var fecha= main.fechaEditor6.getDisplayValue();
+        var actividad = main.actividadEditor3.getDataValue();
+        var requerido= main.requeridoAlternativoEditor3.getDataValue();
+        var tipo_actividad= main.lookup3.getDisplayValue();
+        var retro = main.lookup1.getDisplayValue();
+        var desempeno = main.lookup2.getDisplayValue();
+        var accion= "v2-docentes-actividad -> accion: borrar "+" ->idactividad: "+idactividad+" ->idSubtopico: "+idsubtopico+" ->detalles: "+actividad+" ->fecha: "+fecha+" ->requerido: "+requerido+" ->tipo_actividad: "+tipo_actividad+" ->retroalimentacio: "+retro+" ->desempeno: "+desempeno;          
+        var now= new Date().getTime();
+        this.logCurriculoDocentes.setValue("accionRealizada",accion);   
+        this.logCurriculoDocentes.setValue("fechaCreacion",now);    
+        this.logCurriculoDocentes.setValue("tablaAfectada","Actividad");    
+        this.logCurriculoDocentes.setValue("usuario",user);
+        this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);          
+        this.logDocentesliveForm.insertData();
+	},
+	top_select_syChange1: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+		main.unidadLiveVariable1.clearData();
+        main.subtopicoLiveVariable1.clearData();
+        main.aprendizajeLiveVariable1.clearData();
+        main.otrasmetasLiveVariable1.clearData();
+        main.recursoLiveVariable1.clearData();
+        main.actividadLiveVariable2.clearData();
+	},
+	curriculo_grid_docentes_asignaturasSelectionChange1: function(inSender) {
+		//calling top_select_syChange1() function
+        this.top_select_syChange1();
+	},
+	a_lista_sySuccess: function(inSender, inDeprecated) {
+		var sy= main.global_cursy.getItem(0).data.sy;
+        main.top_select_sy.setDisplayValue(sy)
 	},
 	_end: 0
 });

@@ -87,7 +87,7 @@ public class FileUploadDownload extends JavaServiceSuperClass {
      String uploadDir = "";
 protected File getUploadDir() {
     if (uploadDir.length() == 0) {
-        //uploadDir = RuntimeAccess.getInstance().getSession().getServletContext().getRealPath("./Users/rochester/uploadshere");
+        //uploadDir = RuntimeAccess.getInstance().getSession().getServletContext().getRealPath("resources/data");
         uploadDir = RuntimeAccess.getInstance().getSession().getServletContext().getRealPath("../../../../../../WebServer/Production/resources/data");
     }
     File f = new File(uploadDir);
