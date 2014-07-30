@@ -4,6 +4,7 @@ package com.aprendoz_test;
 import java.util.Date;
 import java.util.List;
 import com.aprendoz_test.data.output.A_getCursoProcesoSVRtnType;
+import com.aprendoz_test.data.output.Asignatura_alumnos_asignaturaRtnType;
 import com.aprendoz_test.data.output.Dash_aprendizajesRtnType;
 import com.aprendoz_test.data.output.Dash_getAsigByDocenteRtnType;
 import com.aprendoz_test.data.output.Dash_logDocentesRtnType;
@@ -18,6 +19,7 @@ import com.aprendoz_test.data.output.GetSubjectsByProfileRtnType;
 import com.aprendoz_test.data.output.GetSyByCurDateRtnType;
 import com.aprendoz_test.data.output.GetSyByCurDate_RtnType;
 import com.aprendoz_test.data.output.GetTipoEventualidadByIdSubTipoRtnType;
+import com.aprendoz_test.data.output.Getting_subjects_studentsRtnType;
 import com.aprendoz_test.data.output.HQLlsCursosRtnType;
 import com.aprendoz_test.data.output.HQLlsGradoRtnType;
 import com.aprendoz_test.data.output.HQLlsPeriodoRtnType;
@@ -49,7 +51,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
- *  07/28/2014 09:52:55
+ *  07/30/2014 08:56:29
  * 
  */
 @SuppressWarnings("unchecked")
@@ -79,6 +81,10 @@ public class Aprendoz_test
         } else {
             return rtn.get(0);
         }
+    }
+
+    public List<Asignatura_alumnos_asignaturaRtnType> asignatura_alumnos_asignatura(Integer pasig, PagingOptions pagingOptions) {
+        return ((List<Asignatura_alumnos_asignaturaRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.asignatura_alumnos_asignaturaQueryName), pasig, pagingOptions));
     }
 
     public Integer crearPlan(String p1, String p2, String p3, Integer id, Date fecha_plan, PagingOptions pagingOptions) {
@@ -180,6 +186,10 @@ public class Aprendoz_test
 
     public List<GetTipoEventualidadByIdSubTipoRtnType> getTipoEventualidadByIdSubTipo(Integer id, PagingOptions pagingOptions) {
         return ((List<GetTipoEventualidadByIdSubTipoRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getTipoEventualidadByIdSubTipoQueryName), id, pagingOptions));
+    }
+
+    public List<Getting_subjects_studentsRtnType> getting_subjects_students(Integer pasig, PagingOptions pagingOptions) {
+        return ((List<Getting_subjects_studentsRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getting_subjects_studentsQueryName), pasig, pagingOptions));
     }
 
     public List<HQLlsCursosRtnType> hQLlsCursos(PagingOptions pagingOptions) {

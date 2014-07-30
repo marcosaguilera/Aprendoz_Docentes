@@ -38,6 +38,14 @@
 		}],
 		"returnType": "java.lang.Integer"
 	}, {
+		"name": "asignatura_alumnos_asignatura",
+		"operationType": "hqlquery",
+		"parameters": [{
+			"name": "pasig",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.Asignatura_alumnos_asignaturaRtnType]"
+	}, {
 		"name": "crearPlan",
 		"operationType": "hqlquery",
 		"parameters": [{
@@ -219,6 +227,14 @@
 			"type": "java.lang.Integer"
 		}],
 		"returnType": "[com.aprendoz_test.data.output.GetTipoEventualidadByIdSubTipoRtnType]"
+	}, {
+		"name": "getting_subjects_students",
+		"operationType": "hqlquery",
+		"parameters": [{
+			"name": "pasig",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.Getting_subjects_studentsRtnType]"
 	}, {
 		"name": "hQLlsCursos",
 		"operationType": "hqlquery",

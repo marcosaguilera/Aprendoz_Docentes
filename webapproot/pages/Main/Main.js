@@ -2517,5 +2517,26 @@ dojo.declare("Main", wm.Page, {
 		var sy= main.global_cursy.getItem(0).data.sy;
         main.top_select_sy.setDisplayValue(sy)
 	},
+	asignaturas_vista_asignaturas_estudiantes_svSuccess: function(inSender, inDeprecated) {
+		var count= main.asignaturas_vista_asignaturas_estudiantes_sv.getCount();
+        this.asignatura_footer_counter_label.setCaption("  Total alumnos en la asignatura: "+count);
+	},
+	curriculo_detalles_estudiantes_buttClick: function(inSender) {
+		var idasignatura= main.curriculo_grid_docentes_asignaturas.selectedItem.getData().idasignatura;
+        var asignatura= main.curriculo_grid_docentes_asignaturas.selectedItem.getData().asignatura;
+        main.asignaturas_vista_asignaturas_estudiantes_sv.input.setValue("pasig", idasignatura)
+        this.asignaturas_vista_asignaturas_estudiantes_sv.update();
+        this.asignatura_titulo.setCaption("   &NestedGreaterGreater; "+asignatura);
+        this.curriculo_big_panel.hide();
+        this.how_to_start.hide();
+        this.inicio_big_panel.hide();
+        this.asignatura_big_panel.show();
+	},
+	curriculo_grid_docentes_asignaturasSelect4: function(inSender) {
+		this.curriculo_detalles_estudiantes_butt.enable();
+	},
+	asignatura_detalles_alumnoClick: function(inSender) {
+		
+	},
 	_end: 0
 });
