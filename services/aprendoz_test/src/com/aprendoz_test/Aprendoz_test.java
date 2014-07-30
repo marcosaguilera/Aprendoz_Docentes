@@ -19,6 +19,7 @@ import com.aprendoz_test.data.output.GetSubjectsByProfileRtnType;
 import com.aprendoz_test.data.output.GetSyByCurDateRtnType;
 import com.aprendoz_test.data.output.GetSyByCurDate_RtnType;
 import com.aprendoz_test.data.output.GetTipoEventualidadByIdSubTipoRtnType;
+import com.aprendoz_test.data.output.Getting_subjects_studentsRtnType;
 import com.aprendoz_test.data.output.HQLlsCursosRtnType;
 import com.aprendoz_test.data.output.HQLlsGradoRtnType;
 import com.aprendoz_test.data.output.HQLlsPeriodoRtnType;
@@ -50,7 +51,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
- *  07/29/2014 14:45:30
+ *  07/30/2014 08:56:29
  * 
  */
 @SuppressWarnings("unchecked")
@@ -185,6 +186,10 @@ public class Aprendoz_test
 
     public List<GetTipoEventualidadByIdSubTipoRtnType> getTipoEventualidadByIdSubTipo(Integer id, PagingOptions pagingOptions) {
         return ((List<GetTipoEventualidadByIdSubTipoRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getTipoEventualidadByIdSubTipoQueryName), id, pagingOptions));
+    }
+
+    public List<Getting_subjects_studentsRtnType> getting_subjects_students(Integer pasig, PagingOptions pagingOptions) {
+        return ((List<Getting_subjects_studentsRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getting_subjects_studentsQueryName), pasig, pagingOptions));
     }
 
     public List<HQLlsCursosRtnType> hQLlsCursos(PagingOptions pagingOptions) {

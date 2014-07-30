@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 /**
- * Generated for query "SeachEventualidadHQL" on 07/29/2014 14:45:26
+ * Generated for query "SeachEventualidadHQL" on 07/30/2014 08:56:25
  * 
  */
 public class SeachEventualidadHQLRtnType {

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Generated 07/28/2014 09:52:16
+<!-- Generated 07/29/2014 15:25:05
 
 Configuration for 'aprendoz_test' database service
 
@@ -195,7 +195,6 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/Salon.hbm.xml</value>
 <value>com/aprendoz_test/data/AccStudentCardAuthorization.hbm.xml</value>
 <value>com/aprendoz_test/data/VistaEventualidadesNotificacionesFamilia.hbm.xml</value>
-<value>com/aprendoz_test/data/ImportacionDaviviendaFaltantes.hbm.xml</value>
 <value>com/aprendoz_test/data/VistaPersonasGrupoFamiliar.hbm.xml</value>
 <value>com/aprendoz_test/data/InscAlumActividad.hbm.xml</value>
 <value>com/aprendoz_test/data/InscCoordinadoresCurso.hbm.xml</value>
@@ -208,6 +207,7 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/DocentesVistaInscAlumnAsigDemografica.hbm.xml</value>
 <value>com/aprendoz_test/data/GestionEncuestas.hbm.xml</value>
 <value>com/aprendoz_test/data/BusBus.hbm.xml</value>
+<value>com/aprendoz_test/data/FeedbackReportes.hbm.xml</value>
 <value>com/aprendoz_test/data/ImportacionAlumnosTransporte.hbm.xml</value>
 <value>com/aprendoz_test/data/CostosAnuales.hbm.xml</value>
 <value>com/aprendoz_test/data/CoordinacionDeGrupo.hbm.xml</value>
@@ -279,6 +279,7 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/LogMatriculasAccionesUsuarios.hbm.xml</value>
 <value>com/aprendoz_test/data/InscAlumAsig.hbm.xml</value>
 <value>com/aprendoz_test/data/OtrasMetas.hbm.xml</value>
+<value>com/aprendoz_test/data/VistaAsignaturaEstudiantes.hbm.xml</value>
 <value>com/aprendoz_test/data/VistaEnvioCorreo.hbm.xml</value>
 <value>com/aprendoz_test/data/TipoPersona.hbm.xml</value>
 <value>com/aprendoz_test/data/Logeventosaprendoz.hbm.xml</value>
@@ -286,7 +287,6 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/Curso.hbm.xml</value>
 <value>com/aprendoz_test/data/CalifEstCopy.hbm.xml</value>
 <value>com/aprendoz_test/data/InscripcionesVistaInscAlumnCurso.hbm.xml</value>
-<value>com/aprendoz_test/data/DaviviendaCopy.hbm.xml</value>
 <value>com/aprendoz_test/data/Grado.hbm.xml</value>
 <value>com/aprendoz_test/data/CafeteriaGartinuras.hbm.xml</value>
 <value>com/aprendoz_test/data/SecretariaRetiroEstudiantes.hbm.xml</value>
