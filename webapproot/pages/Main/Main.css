@@ -10,11 +10,20 @@
 #main_profile_image {
     background-color: #FAFAFA !important;
 }
-
 #main_details_estudiante {
     border-radius: 0 5px 5px 0;
 }
-
+#main_dojoGrid1 {
+    cursor: pointer;
+}
+#main_estudiante_foto_perfil {
+    box-shadow: 3px 3px 3px darkgrey;
+}
+#main_estudiante_nombre_perfil {
+    background-color: #bbb;
+    color: #fff;
+    height: 60px !important;
+}
 #main_left_panel {
     z-index: 1;
     box-shadow: 12px 0 15px -4px #BABABA, 0px 0 8px -4px rgba(31, 73, 125, 0.8);
@@ -23,7 +32,6 @@
     margin: 50px;
     background: white;
 }
-
 #main_estudiante_foto_perfil {
     width: 110px !important;
     height: 110px !important;

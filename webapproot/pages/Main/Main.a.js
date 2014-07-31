@@ -1844,6 +1844,7 @@ menu_inicio_buttClick1: function(inSender) {
 this.curriculo_big_panel.hide();
 this.how_to_start.hide();
 this.asignatura_big_panel.hide();
+this.estudiante_big_panel.hide();
 this.inicio_big_panel.show();
 },
 // hide home panel and show curriculo
@@ -2384,6 +2385,7 @@ menu_asignatura_buttClick1: function(inSender) {
 this.curriculo_big_panel.hide();
 this.how_to_start.hide();
 this.inicio_big_panel.hide();
+this.estudiante_big_panel.hide();
 this.asignatura_big_panel.show();
 },
 curriculo_detalles_estudiantes_buttClick1: function(inSender) {
@@ -2400,15 +2402,59 @@ var idasignatura = main.dojoGrid1.selectedItem.getData().idasignatura;
 var codigo= main.dojoGrid1.selectedItem.getData().codigo;
 var nombre= main.dojoGrid1.selectedItem.getData().nombres;
 var asig= main.dojoGrid1.selectedItem.getData().asignatura;
+var std_nombre= main.dojoGrid1.selectedItem.getData().nombres;
+var std_apellido= main.dojoGrid1.selectedItem.getData().apellidos;
+var curso= main.dojoGrid1.selectedItem.getData().curso;
 this.estudiante_foto_perfil.setSource("http://www.rochester.edu.co/fotosestudiantes/"+codigo+".Jpeg");
 this.estudiante_demografica_butt.setCaption("&NestedGreaterGreater; "+nombre);
 this.estudiante_asignatura_butt.setCaption("&NestedGreaterGreater; "+asig);
+this.estudiante_nombre_perfil.setCaption(std_nombre+"<br>"+std_apellido+"<br><br>"+curso);
 main.estudiantes_detalles_curriculo.input.setValue("pidasignatura",idasignatura);
 main.estudiantes_detalles_curriculo.input.setValue("pidpersona",idpersona);
 main.estudiantes_detalles_curriculo.update();
 },
+// hightlight the button when detalles_alumnos pressed!
 asignatura_detalles_alumnoClick2: function(inSender) {
-//var id
+$('#main_menu_estudiante_butt')
+.css('background-color', '#1125b2');
+$('#main_menu_asignatura_butt')
+.css('background-color', '#a3a3a3');
+$('#main_menu_curriculo_butt')
+.css('background-color', '#a3a3a3');
+$('#main_menu_inicio_butt')
+.css('background-color', '#a3a3a3');
+},
+menu_estudiante_buttClick1: function(inSender) {
+this.curriculo_big_panel.hide();
+this.how_to_start.hide();
+this.inicio_big_panel.hide();
+this.asignatura_big_panel.hide();
+this.estudiante_big_panel.show();
+},
+estudiante_asignatura_buttClick: function(inSender) {
+$('#main_menu_asignatura_butt')
+.css('background-color', '#1125b2');
+$('#main_menu_curriculo_butt')
+.css('background-color', '#a3a3a3');
+$('#main_menu_inicio_butt')
+.css('background-color', '#a3a3a3');
+$('#main_menu_estudiante_butt')
+.css('background-color', '#a3a3a3');
+},
+estudiante_asignatura_buttClick1: function(inSender) {
+this.curriculo_big_panel.hide();
+this.how_to_start.hide();
+this.inicio_big_panel.hide();
+this.estudiante_big_panel.hide();
+this.asignatura_big_panel.show();
+},
+curriculo_grid_docentes_asignaturasCellDblClick: function(inSender, evt, selectedItem, rowId, fieldId, rowNode, cellNode) {
+this.curriculo_detalles_estudiantes_buttClick(); //makes the same button ver estudiantes
+},
+aprendizajeLiveForm2BeginInsert2: function(inSender) {
+/*var idasignatura= this.curriculo_grid_docentes_asignaturas.selectedItem.getData().idasignatura;
+main.curriculo_aprendizajes_asignaturasLiveVariable.filter.setValue("asignatura.idAsignatura", idasignatura);
+main.curriculo_aprendizajes_asignaturasLiveVariable.update();*/
 },
 _end: 0
 });
@@ -3093,7 +3139,7 @@ subtopicoCancelButton: ["wm.Button", {"_classes":{"domNode":["eliminar"]},"capti
 }],
 aprendizajeDialog: ["wm.DesignableDialog", {"buttonBarId":"buttonBar3","containerWidgetId":"containerWidget3","desktopHeight":"565px","height":"565px","styles":{"backgroundColor":"#ebebeb","color":"#050505"},"title":"Formulario de Aprendizaje","width":"550px"}, {}, {
 containerWidget3: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
-aprendizajeLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"482px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"aprendizajeLiveForm2BeginInsert","onBeginInsert1":"aprendizajeLiveForm2BeginInsert1","onBeginUpdate":"aprendizajeLiveForm2BeginUpdate","onDeleteData":"aprendizajeLiveForm2DeleteData","onInsertData":"aprendizajeLiveForm2InsertData","onSuccess":"aprendizajeLivePanel1.popupLiveFormSuccess","onSuccess1":"aprendizajeLiveForm2Success1","onUpdateData":"aprendizajeLiveForm2UpdateData"}, {
+aprendizajeLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"482px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"aprendizajeLiveForm2BeginInsert","onBeginInsert1":"aprendizajeLiveForm2BeginInsert1","onBeginUpdate":"aprendizajeLiveForm2BeginUpdate","onDeleteData":"aprendizajeLiveForm2DeleteData","onInsertData":"aprendizajeLiveForm2InsertData","onSuccess":"aprendizajeLivePanel1.popupLiveFormSuccess","onSuccess1":"aprendizajeLiveForm2Success1","onUpdateData":"aprendizajeLiveForm2UpdateData","onBeginInsert2":"aprendizajeLiveForm2BeginInsert2"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"aprendizajeDojoGrid.selectedItem","targetProperty":"dataSet"}, {}],
 wire1: ["wm.Wire", {"expression":undefined,"source":"relatedEditor3.dataOutput","targetProperty":"dataOutput.subtopico"}, {}]
@@ -3319,7 +3365,7 @@ wire: ["wm.Wire", {"source":"actividadLiveForm3.invalid","targetId":null,"target
 actividadCancelButton1: ["wm.Button", {"_classes":{"domNode":["eliminar"]},"caption":"Cancelar","margin":"4","styles":{}}, {"onclick":"actividadDialog1.hide","onclick1":"actividadLiveForm3.cancelEdit"}]
 }]
 }],
-settingsUser: ["wm.DesignableDialog", {"buttonBarId":"buttonBar7","containerWidgetId":"containerWidget7","styles":{"backgroundColor":"#1125b2","color":"#ffffff"},"title":"Configuración"}, {}, {
+settingsUser: ["wm.DesignableDialog", {"buttonBarId":"buttonBar7","containerWidgetId":"containerWidget7","styles":{"backgroundColor":"#1125b2","color":"#ffffff"},"title":"Perfil"}, {}, {
 containerWidget7: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","layoutKind":"left-to-right","padding":"5","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"middle","width":"100%"}, {}, {
 profile_image: ["wm.Panel", {"border":"3","borderColor":"#f2f2f4","height":"100%","horizontalAlign":"center","padding":"20,0,0,0","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top","width":"266px"}, {}, {
 configuracion_profile_image: ["wm.Picture", {"_classes":{"domNode":["profile_img"]},"aspect":"v","height":"150px","link":undefined,"source":"http://www.rochester.edu.co/fotosempleados/343225.Jpeg","styles":{},"width":"150px"}, {}],
@@ -3427,14 +3473,14 @@ menu_spacer2: ["wm.Spacer", {"height":"20px","styles":{},"width":"100%"}, {}],
 menu_inicio_butt: ["wm.Button", {"border":"0","caption":" Inicio","desktopHeight":"48px","height":"48px","iconHeight":"24px","iconUrl":"resources/images/icon_set/home.png","iconWidth":"25px","margin":"0","styles":{"backgroundColor":"#1125b2"},"width":"100%"}, {"onclick":"menu_inicio_buttClick","onclick1":"menu_inicio_buttClick1","onclick2":"menu_inicio_buttClick2"}],
 menu_curriculo_butt: ["wm.Button", {"_classes":{"domNode":["MenuButtons"]},"border":"0","caption":" Curriculo","desktopHeight":"48px","height":"48px","iconHeight":"37px","iconMargin":"0 0px 0 0","iconUrl":"resources/images/icon_set/curriculo_white.png","iconWidth":"25px","margin":"0","styles":{},"width":"100%"}, {"onclick":"menu_curriculo_buttClick","onclick1":"menu_curriculo_buttClick1","onclick3":"menu_curriculo_buttClick3","onclick4":"menu_curriculo_buttClick4","onclick5":"menu_curriculo_buttClick5","onclick6":"menu_curriculo_buttClick6","onclick7":"menu_curriculo_buttClick7"}],
 menu_asignatura_butt: ["wm.Button", {"_classes":{"domNode":["MenuButtons"]},"caption":"Asignatura","desktopHeight":"48px","height":"48px","iconHeight":"22px","iconUrl":"resources/images/icon_set/board.png","iconWidth":"22px","margin":"0","styles":{},"width":"100%"}, {"onclick":"menu_asignatura_buttClick","onclick1":"menu_asignatura_buttClick1"}],
-menu_estudiante_butt: ["wm.Button", {"_classes":{"domNode":["MenuButtons"]},"caption":"Estudiante","desktopHeight":"48px","height":"48px","iconHeight":"22px","iconUrl":"resources/images/icon_set/student.png","iconWidth":"22px","margin":"0","styles":{},"width":"100%"}, {"onclick":"menu_estudiante_buttClick"}],
+menu_estudiante_butt: ["wm.Button", {"_classes":{"domNode":["MenuButtons"]},"caption":"Estudiante","desktopHeight":"48px","height":"48px","iconHeight":"22px","iconUrl":"resources/images/icon_set/student.png","iconWidth":"22px","margin":"0","styles":{},"width":"100%"}, {"onclick":"menu_estudiante_buttClick","onclick1":"menu_estudiante_buttClick1"}],
 menu_coordinator: ["wm.Button", {"desktopHeight":"65px","height":"65px","margin":"0","showing":false,"styles":{},"width":"100%"}, {}],
 menu_calificaciones_butt: ["wm.Button", {"_classes":{"domNode":["MenuButtons"]},"border":"0","caption":"Calificaciones","desktopHeight":"48px","height":"48px","margin":"0","showing":false,"styles":{},"width":"100%"}, {}],
 menu_cafemu_butt: ["wm.Button", {"_classes":{"domNode":["MenuButtons"]},"border":"0","caption":"Cafe-Mu","desktopHeight":"48px","height":"48px","margin":"0","showing":false,"styles":{},"width":"100%"}, {}],
 menu_horarios_butt: ["wm.Button", {"_classes":{"domNode":["MenuButtons"]},"border":"0","caption":"Horarios","desktopHeight":"48px","height":"48px","margin":"0","showing":false,"styles":{},"width":"100%"}, {}],
 menu_demografica_butt: ["wm.Button", {"_classes":{"domNode":["MenuButtons"]},"border":"0","caption":"Demográfica","desktopHeight":"48px","height":"48px","margin":"0","showing":false,"styles":{},"width":"100%"}, {}],
 menu_spacer: ["wm.Spacer", {"height":"100%","styles":{},"width":"96px"}, {}],
-menu_feedback_butt: ["wm.Button", {"_classes":{"domNode":["eliminar"]},"border":"0","caption":"Feedback","desktopHeight":"40px","height":"40px","margin":"0","showing":false,"styles":{},"width":"100%"}, {}]
+menu_feedback_butt: ["wm.Button", {"_classes":{"domNode":["eliminar"]},"border":"0","caption":"Feedback","desktopHeight":"40px","height":"40px","iconHeight":"22px","iconUrl":"resources/images/icon_set/feedback.png","iconWidth":"22px","margin":"0","styles":{},"width":"100%"}, {}]
 }],
 contaniner_panels: ["wm.Panel", {"height":"100%","horizontalAlign":"left","padding":"5,10,10,10","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 top_notification_panel: ["wm.Panel", {"height":"48px","horizontalAlign":"right","layoutKind":"left-to-right","lock":true,"margin":"0,0,0,0","padding":"0,5,0,0","styles":{"backgroundColor":"#a3a3a3"},"verticalAlign":"middle","width":"100%"}, {}, {
@@ -3446,7 +3492,7 @@ wire: ["wm.Wire", {"expression":undefined,"source":"a_lista_sy","targetProperty"
 spacer2: ["wm.Spacer", {"height":"48px","width":"100%"}, {}],
 profile_button: ["wm.Button", {"_classes":{"domNode":["blue_button"]},"border":"0","caption":" ","iconHeight":"24px","iconMargin":"0 5px 0 0","iconUrl":"resources/images/icon_set/settings.png","iconWidth":"24px","margin":"0","styles":{},"width":"110px"}, {"onclick":"settingsUser.show"}]
 }],
-curriculo_big_panel: ["wm.Panel", {"height":"1264px","horizontalAlign":"left","lock":true,"showing":false,"styles":{},"verticalAlign":"top","width":"100%"}, {}, {
+curriculo_big_panel: ["wm.Panel", {"height":"1264px","horizontalAlign":"left","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 curriculo_action_panel: ["wm.Panel", {"height":"32px","horizontalAlign":"right","layoutKind":"left-to-right","styles":{"backgroundColor":"#f2f2f2"},"verticalAlign":"top","width":"100%"}, {}, {
 curriculo_detalles_estudiantes_butt: ["wm.Button", {"_classes":{"domNode":["nuevoButtons"]},"caption":"Ver estudiantes","disabled":true,"margin":"4","styles":{},"width":"138px"}, {"onclick":"curriculo_detalles_estudiantes_buttClick","onclick1":"curriculo_detalles_estudiantes_buttClick1"}]
 }],
@@ -3723,10 +3769,10 @@ asignatura_footer_tabla: ["wm.Panel", {"_classes":{"domNode":["nuevoButtons"]},"
 asignatura_footer_counter_label: ["wm.Label", {"align":"right","caption":"Total alumnos en la asignatura:  ","height":"100%","padding":"4","width":"300px"}, {}]
 }]
 }],
-estudiante_big_panel: ["wm.Panel", {"height":"100%","horizontalAlign":"left","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
+estudiante_big_panel: ["wm.Panel", {"height":"100%","horizontalAlign":"left","lock":true,"showing":false,"styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 estudiante_header_detalles: ["wm.Panel", {"height":"48px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#f2f2f2"},"verticalAlign":"middle","width":"100%"}, {}, {
-estudiante_demografica_butt: ["wm.Button", {"_classes":{"domNode":["nuevoButtons"]},"caption":"Demográfica","desktopHeight":"34px","height":"34px","iconHeight":"22px","iconUrl":"resources/images/icon_set/demo.png","iconWidth":"22px","margin":"4","styles":{},"width":"252px"}, {}],
-estudiante_asignatura_butt: ["wm.Button", {"_classes":{"domNode":["nuevoButtons"]},"caption":"Asignatura","desktopHeight":"34px","height":"34px","iconHeight":"22px","iconUrl":"resources/images/icon_set/board.png","iconWidth":"22px","margin":"4","styles":{},"width":"312px"}, {}]
+estudiante_demografica_butt: ["wm.Button", {"_classes":{"domNode":["nuevoButtons"]},"caption":"Demográfica","desktopHeight":"34px","disabled":true,"height":"34px","iconHeight":"22px","iconUrl":"resources/images/icon_set/demo.png","iconWidth":"22px","margin":"4","styles":{},"width":"252px"}, {}],
+estudiante_asignatura_butt: ["wm.Button", {"_classes":{"domNode":["nuevoButtons"]},"caption":"Asignatura","desktopHeight":"34px","height":"34px","iconHeight":"22px","iconUrl":"resources/images/icon_set/board.png","iconWidth":"22px","margin":"4","styles":{},"width":"312px"}, {"onclick":"estudiante_asignatura_buttClick","onclick1":"estudiante_asignatura_buttClick1"}]
 }],
 estudiante_detalles_curriculo: ["wm.Panel", {"height":"450px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 left_panel: ["wm.Panel", {"height":"100%","horizontalAlign":"left","styles":{},"verticalAlign":"top","width":"80%"}, {}, {
@@ -3751,10 +3797,15 @@ wire: ["wm.Wire", {"expression":undefined,"source":"estudiantes_detalles_curricu
 }]
 }],
 right_panel: ["wm.Panel", {"height":"100%","horizontalAlign":"left","styles":{"backgroundColor":"#f2f2f2"},"verticalAlign":"middle","width":"20%"}, {}, {
-details_estudiante: ["wm.Panel", {"height":"90%","horizontalAlign":"center","layoutKind":"left-to-right","styles":{"backgroundColor":"#d3d3d3"},"verticalAlign":"middle","width":"90%"}, {}, {
-estudiante_foto_perfil: ["wm.Picture", {"aspect":"v","border":"3","height":"110px","styles":{},"width":"110px"}, {}]
+details_estudiante: ["wm.Panel", {"height":"90%","horizontalAlign":"center","styles":{"backgroundColor":"#d3d3d3"},"verticalAlign":"middle","width":"90%"}, {}, {
+estudiante_foto_perfil: ["wm.Picture", {"aspect":"v","border":"3","height":"110px","styles":{},"width":"110px"}, {}],
+spacer4: ["wm.Spacer", {"height":"10px","width":"96px"}, {}],
+estudiante_nombre_perfil: ["wm.Label", {"align":"center","caption":"Estudiante","height":"55px","padding":"4","singleLine":false,"width":"200%"}, {}]
 }]
 }]
+}],
+estudiante_footer_detalles: ["wm.Panel", {"height":"48px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#f2f2f2"},"verticalAlign":"middle","width":"100%"}, {}, {
+estudiante_calif_estudiante_butt: ["wm.Button", {"_classes":{"domNode":["blue_button"]},"caption":"Calificar estudiante","desktopHeight":"34px","disabled":true,"height":"34px","iconHeight":"22px","iconUrl":"resources/images/icon_set/score.png","iconWidth":"22px","margin":"4","styles":{},"width":"180px"}, {}]
 }]
 }]
 }],
@@ -4101,6 +4152,17 @@ background-color: #FAFAFA !important;\
 }\
 #main_details_estudiante {\
 border-radius: 0 5px 5px 0;\
+}\
+#main_dojoGrid1 {\
+cursor: pointer;\
+}\
+#main_estudiante_foto_perfil {\
+box-shadow: 3px 3px 3px darkgrey;\
+}\
+#main_estudiante_nombre_perfil {\
+background-color: #bbb;\
+color: #fff;\
+height: 60px !important;\
 }\
 #main_left_panel {\
 z-index: 1;\

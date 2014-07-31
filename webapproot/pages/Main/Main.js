@@ -1853,7 +1853,7 @@ dojo.declare("Main", wm.Page, {
    },
  
    pestana_curriculoShow1: function(inSender) {
-     this.curriculo_grid_docentes_asignaturas.setSortIndex(0);
+        this.curriculo_grid_docentes_asignaturas.setSortIndex(0);
    },
     
    activitiesDataGridCellClick: function(inSender, inEvent) {
@@ -2039,6 +2039,7 @@ dojo.declare("Main", wm.Page, {
 		this.curriculo_big_panel.hide();
         this.how_to_start.hide();
         this.asignatura_big_panel.hide();
+        this.estudiante_big_panel.hide();
         this.inicio_big_panel.show();
 	},
     // hide home panel and show curriculo
@@ -2581,6 +2582,7 @@ dojo.declare("Main", wm.Page, {
 		this.curriculo_big_panel.hide();
         this.how_to_start.hide();
         this.inicio_big_panel.hide();
+        this.estudiante_big_panel.hide();
         this.asignatura_big_panel.show();        
 	},
 	curriculo_detalles_estudiantes_buttClick1: function(inSender) {
@@ -2597,15 +2599,59 @@ dojo.declare("Main", wm.Page, {
         var codigo= main.dojoGrid1.selectedItem.getData().codigo;
         var nombre= main.dojoGrid1.selectedItem.getData().nombres;
         var asig= main.dojoGrid1.selectedItem.getData().asignatura;
+        var std_nombre= main.dojoGrid1.selectedItem.getData().nombres;
+        var std_apellido= main.dojoGrid1.selectedItem.getData().apellidos;
+        var curso= main.dojoGrid1.selectedItem.getData().curso;
         this.estudiante_foto_perfil.setSource("http://www.rochester.edu.co/fotosestudiantes/"+codigo+".Jpeg");
         this.estudiante_demografica_butt.setCaption("&NestedGreaterGreater; "+nombre);
         this.estudiante_asignatura_butt.setCaption("&NestedGreaterGreater; "+asig);
+        this.estudiante_nombre_perfil.setCaption(std_nombre+"<br>"+std_apellido+"<br><br>"+curso);
         main.estudiantes_detalles_curriculo.input.setValue("pidasignatura",idasignatura);
         main.estudiantes_detalles_curriculo.input.setValue("pidpersona",idpersona);
         main.estudiantes_detalles_curriculo.update();
 	},
+    // hightlight the button when detalles_alumnos pressed!
 	asignatura_detalles_alumnoClick2: function(inSender) {
-		//var id
+		$('#main_menu_estudiante_butt')
+            .css('background-color', '#1125b2');
+        $('#main_menu_asignatura_butt')
+            .css('background-color', '#a3a3a3');        
+        $('#main_menu_curriculo_butt')
+            .css('background-color', '#a3a3a3'); 
+        $('#main_menu_inicio_butt')
+            .css('background-color', '#a3a3a3');
+	},
+	menu_estudiante_buttClick1: function(inSender) {
+		this.curriculo_big_panel.hide();
+        this.how_to_start.hide();
+        this.inicio_big_panel.hide();
+        this.asignatura_big_panel.hide();
+        this.estudiante_big_panel.show();
+	},
+	estudiante_asignatura_buttClick: function(inSender) {
+		$('#main_menu_asignatura_butt')
+            .css('background-color', '#1125b2');
+        $('#main_menu_curriculo_butt')
+            .css('background-color', '#a3a3a3'); 
+        $('#main_menu_inicio_butt')
+            .css('background-color', '#a3a3a3');
+        $('#main_menu_estudiante_butt')
+            .css('background-color', '#a3a3a3');
+	},
+	estudiante_asignatura_buttClick1: function(inSender) {
+		this.curriculo_big_panel.hide();
+        this.how_to_start.hide();
+        this.inicio_big_panel.hide();
+        this.estudiante_big_panel.hide();
+        this.asignatura_big_panel.show();   
+	},
+	curriculo_grid_docentes_asignaturasCellDblClick: function(inSender, evt, selectedItem, rowId, fieldId, rowNode, cellNode) {
+		this.curriculo_detalles_estudiantes_buttClick(); //makes the same button ver estudiantes
+	},
+	aprendizajeLiveForm2BeginInsert2: function(inSender) {
+		/*var idasignatura= this.curriculo_grid_docentes_asignaturas.selectedItem.getData().idasignatura;
+        main.curriculo_aprendizajes_asignaturasLiveVariable.filter.setValue("asignatura.idAsignatura", idasignatura);
+        main.curriculo_aprendizajes_asignaturasLiveVariable.update();*/
 	},
 	_end: 0
 });
