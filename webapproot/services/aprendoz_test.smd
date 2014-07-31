@@ -120,6 +120,17 @@
 		}],
 		"returnType": "[com.aprendoz_test.data.output.EnviarMailEventualidadesRtnType]"
 	}, {
+		"name": "estudiantes_listado_curriculo",
+		"operationType": "hqlquery",
+		"parameters": [{
+			"name": "pidasignatura",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "pidpersona",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.Estudiantes_listado_curriculoRtnType]"
+	}, {
 		"name": "eventualitiesByDate",
 		"operationType": "hqlquery",
 		"parameters": [{

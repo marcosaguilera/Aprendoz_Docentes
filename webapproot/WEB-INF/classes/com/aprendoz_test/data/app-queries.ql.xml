@@ -587,4 +587,24 @@ vae.id.curso as curso
 FROM VistaAsignaturaEstudiantes vae
 WHERE vae.id.idAsignatura=:pasig
     </query>
+    <query name="estudiantes_listado_curriculo">
+        <query-param name="pidasignatura" type="java.lang.Integer"/>
+        <query-param name="pidpersona" type="java.lang.Integer"/>
+        SELECT
+a.idAsignatura as idasignatura,
+p.idPersona as idpersona,
+u.idUnidad as idunidad,
+u.unidad as unidad,
+u.numeroUnidad as numerounidad,
+s.idSubtopico as idsubtopico,
+s.subtopico as subtopico,
+s.numeroSubtopico as numerosubtopico,
+apr.idAprendizaje as idaprendizaje,
+apr.aprendizaje as aprendizaje,
+apr.fechaEsperada as fechaesperada,
+apr.peso as peso
+FROM InscAlumAsig iaa INNER JOIN iaa.asignatura a INNER JOIN a.unidads u INNER JOIN u.subtopicos s INNER JOIN s.aprendizajes apr INNER JOIN iaa.persona p
+WHERE p.idPersona=:pidpersona AND a.idAsignatura=:pidasignatura
+ORDER BY apr.fechaEsperada asc, u.numeroUnidad asc, s.numeroSubtopico asc
+    </query>
 </hibernate-mapping>

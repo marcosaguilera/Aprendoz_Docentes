@@ -5,7 +5,7 @@ package com.aprendoz_test;
 
 /**
  *  Query names for service "aprendoz_test"
- *  07/30/2014 08:56:29
+ *  07/30/2014 20:46:00
  * 
  */
 public class Aprendoz_testConstants {
@@ -22,6 +22,7 @@ public class Aprendoz_testConstants {
     public final static String dash_no_calificadosQueryName = "dash_no_calificados";
     public final static String deleteEventualidadPersonaQueryName = "deleteEventualidadPersona";
     public final static String enviarMailEventualidadesQueryName = "enviarMailEventualidades";
+    public final static String estudiantes_listado_curriculoQueryName = "estudiantes_listado_curriculo";
     public final static String eventualitiesByDateQueryName = "eventualitiesByDate";
     public final static String getCurseByidGradeQueryName = "getCurseByidGrade";
     public final static String getDimensionCurricularByIdQueryName = "getDimensionCurricularById";

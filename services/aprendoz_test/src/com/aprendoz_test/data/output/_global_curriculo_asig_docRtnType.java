@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "_global_curriculo_asig_doc" on 07/30/2014 08:56:25
+ * Generated for query "_global_curriculo_asig_doc" on 07/30/2014 20:45:54
  * 
  */
 public class _global_curriculo_asig_docRtnType {
