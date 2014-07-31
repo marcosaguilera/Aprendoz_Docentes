@@ -2647,11 +2647,45 @@ dojo.declare("Main", wm.Page, {
 	},
 	curriculo_grid_docentes_asignaturasCellDblClick: function(inSender, evt, selectedItem, rowId, fieldId, rowNode, cellNode) {
 		this.curriculo_detalles_estudiantes_buttClick(); //makes the same button ver estudiantes
+        this.curriculo_detalles_estudiantes_buttClick1();
 	},
 	aprendizajeLiveForm2BeginInsert2: function(inSender) {
 		/*var idasignatura= this.curriculo_grid_docentes_asignaturas.selectedItem.getData().idasignatura;
         main.curriculo_aprendizajes_asignaturasLiveVariable.filter.setValue("asignatura.idAsignatura", idasignatura);
         main.curriculo_aprendizajes_asignaturasLiveVariable.update();*/
+	},
+	feedback_enviarClick: function(inSender) {
+		var user= main.global_username.getData().dataValue;
+        var now= new Date().getTime();
+        var tipo= this.feedback_tipo_feedback.getDataValue();
+        var titulo= this.feedback_titulo.getDataValue();
+        var comentario= this.feedback_comentario.getDataValue();
+        this.feedback_sendFeedBack.setValue("usuario",user);
+        this.feedback_sendFeedBack.setValue("titulo",titulo);
+        this.feedback_sendFeedBack.setValue("comentario",comentario);
+        this.feedback_sendFeedBack.setValue("fechaCreacion",now);
+        this.feedback_sendFeedBack.setValue("fechaActualizacion",now);
+        this.feedback_sendFeedBack.setValue("tipoFeedback",tipo);
+        this.feedback_liveForm.setDataSet(this.feedback_sendFeedBack);          
+        this.feedback_liveForm.insertData();
+	},
+	feedback_liveFormSuccess: function(inSender, inData) {
+		this.feedback_tipo_feedback.clear();
+        this.feedback_titulo.clear();
+        this.feedback_comentario.clear();
+	},
+	feedback_cancelarClick: function(inSender) {
+		this.feedback_tipo_feedback.clear();
+        this.feedback_titulo.clear();
+        this.feedback_comentario.clear();
+	},
+	dojoGrid1CellDblClick: function(inSender, evt, selectedItem, rowId, fieldId, rowNode, cellNode) {
+        this.asignatura_detalles_alumnoClick();
+		this.asignatura_detalles_alumnoClick1();
+        this.asignatura_detalles_alumnoClick2();
+	},
+	dojoGrid1Select: function(inSender) {
+		this.asignatura_detalles_alumno.enable();
 	},
 	_end: 0
 });

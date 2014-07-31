@@ -5,7 +5,7 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.TablaDescuentos
- *  07/29/2014 15:25:16
+ *  07/31/2014 10:31:31
  * 
  */
 public class TablaDescuentos {

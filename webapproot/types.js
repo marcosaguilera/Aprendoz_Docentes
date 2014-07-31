@@ -1884,7 +1884,7 @@ wm.types = {
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.lang.Float"
 				},
 				"ihA2": {
@@ -1894,7 +1894,7 @@ wm.types = {
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.lang.Float"
 				},
 				"ihA3": {
@@ -1904,7 +1904,7 @@ wm.types = {
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.lang.Float"
 				},
 				"inscAlumAsigCopies": {
@@ -7833,12 +7833,12 @@ wm.types = {
 			"fields": {
 				"comentario": {
 					"exclude": [],
-					"fieldOrder": 4,
+					"fieldOrder": 5,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.lang.String"
 				},
 				"fechaActualizacion": {
@@ -7871,9 +7871,19 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.Integer"
 				},
-				"tipoReporte": {
+				"tipoFeedback": {
 					"exclude": [],
-					"fieldOrder": 5,
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"titulo": {
+					"exclude": [],
+					"fieldOrder": 4,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,

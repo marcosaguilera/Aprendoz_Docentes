@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.FeedbackReportes
- *  07/29/2014 15:25:16
+ *  07/31/2014 10:31:31
  * 
  */
 public class FeedbackReportes {
@@ -15,8 +15,9 @@ public class FeedbackReportes {
     private Date fechaCreacion;
     private Date fechaActualizacion;
     private String usuario;
+    private String titulo;
     private String comentario;
-    private String tipoReporte;
+    private String tipoFeedback;
 
     public Integer getIdfeedbackReportes() {
         return idfeedbackReportes;
@@ -50,6 +51,14 @@ public class FeedbackReportes {
         this.usuario = usuario;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
     public String getComentario() {
         return comentario;
     }
@@ -58,12 +67,12 @@ public class FeedbackReportes {
         this.comentario = comentario;
     }
 
-    public String getTipoReporte() {
-        return tipoReporte;
+    public String getTipoFeedback() {
+        return tipoFeedback;
     }
 
-    public void setTipoReporte(String tipoReporte) {
-        this.tipoReporte = tipoReporte;
+    public void setTipoFeedback(String tipoFeedback) {
+        this.tipoFeedback = tipoFeedback;
     }
 
 }

@@ -14,11 +14,14 @@
         <property name="usuario" type="string">
             <column name="usuario" length="25" not-null="true"/>
         </property>
-        <property name="comentario" type="string">
-            <column name="comentario" length="65535" not-null="true"/>
+        <property name="titulo" type="string">
+            <column name="titulo" length="65535" not-null="true"/>
         </property>
-        <property name="tipoReporte" type="string">
-            <column name="tipo_reporte" length="25" not-null="true"/>
+        <property name="comentario" type="string">
+            <column name="comentario" length="65535"/>
+        </property>
+        <property name="tipoFeedback" type="string">
+            <column name="tipo_feedback" length="25" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

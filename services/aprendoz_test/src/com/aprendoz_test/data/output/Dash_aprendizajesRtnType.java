@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "dash_aprendizajes" on 07/30/2014 20:45:54
+ * Generated for query "dash_aprendizajes" on 07/31/2014 10:31:51
  * 
  */
 public class Dash_aprendizajesRtnType {
