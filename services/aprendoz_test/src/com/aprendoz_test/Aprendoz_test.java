@@ -10,6 +10,7 @@ import com.aprendoz_test.data.output.Dash_getAsigByDocenteRtnType;
 import com.aprendoz_test.data.output.Dash_logDocentesRtnType;
 import com.aprendoz_test.data.output.Dash_no_calificadosRtnType;
 import com.aprendoz_test.data.output.EnviarMailEventualidadesRtnType;
+import com.aprendoz_test.data.output.Estudiantes_listado_curriculoRtnType;
 import com.aprendoz_test.data.output.EventualitiesByDateRtnType;
 import com.aprendoz_test.data.output.GetCurseByidGradeRtnType;
 import com.aprendoz_test.data.output.GetListStudentsByCurseRtnType;
@@ -51,7 +52,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
- *  07/30/2014 08:56:29
+ *  07/30/2014 20:46:00
  * 
  */
 @SuppressWarnings("unchecked")
@@ -123,6 +124,10 @@ public class Aprendoz_test
 
     public List<EnviarMailEventualidadesRtnType> enviarMailEventualidades(Integer ide, PagingOptions pagingOptions) {
         return ((List<EnviarMailEventualidadesRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.enviarMailEventualidadesQueryName), ide, pagingOptions));
+    }
+
+    public List<Estudiantes_listado_curriculoRtnType> estudiantes_listado_curriculo(Integer pidasignatura, Integer pidpersona, PagingOptions pagingOptions) {
+        return ((List<Estudiantes_listado_curriculoRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.estudiantes_listado_curriculoQueryName), pidasignatura, pidpersona, pagingOptions));
     }
 
     public List<EventualitiesByDateRtnType> eventualitiesByDate(Date pfecha, PagingOptions pagingOptions) {
