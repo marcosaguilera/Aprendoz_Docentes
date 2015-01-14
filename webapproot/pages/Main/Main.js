@@ -20,7 +20,7 @@ dojo.declare("Main", wm.Page, {
   "preferredDevice": "desktop",
  
   mySessionExpiredMethod: function() {
-      alert("Aviso importante: Sesión expirada \n\n"+"Su sesión ha excedido el tiempo de inactividad permitido en la aplicación. Por favor ingrese nuevamente.");
+      //alert("Aviso importante: Sesión expirada \n\n"+"Su sesión ha excedido el tiempo de inactividad permitido en la aplicación. Por favor ingrese nuevamente.");
       window.location.reload();
   },  
 
@@ -75,33 +75,21 @@ dojo.declare("Main", wm.Page, {
       console.error('ERROR IN inscalumaprendizajeLiveForm2BeginInsert: ' + e); 
     } 
   },*/
-
-  
   
   button12Click: function(inSender, inEvent) {
-    try {
       this.calf_panel_encabezado_opciones.hide();
       this.calif_panel_contenedor_promocion.hide();
       this.actividades.hide();
       this.calif_panel_contenedor_aprendizaje.hide();
       this.calif_panel_contenedor_alumnos.show();
-      
-    } catch(e) {
-      console.error('ERROR IN button12Click: ' + e); 
-    } 
   },
   
   l_calif_alumnos_panel1_butt_cambiarPanelClick: function(inSender, inEvent) {
-    try {
       this.calif_panel_contenedor_alumnos.hide();
       this.calif_panel_contenedor_promocion.hide();
       this.actividades.hide();
       this.calf_panel_encabezado_opciones.show();
       this.calif_panel_contenedor_aprendizaje.show();
-   
-    } catch(e) {
-      console.error('ERROR IN button14Click: ' + e); 
-    } 
   },
   
   calif_alumnos_datagrids_datag_alumnos_cursosSelected: function(inSender, inIndex) {
@@ -248,7 +236,6 @@ dojo.declare("Main", wm.Page, {
   },
 
   aux25Change: function(inSender, inDisplayValue, inDataValue) {
-    try {
        if(this.aux25.dataValue=1){
             //formulario unidades
              main.operationPanel4.setShowing(false);
@@ -257,10 +244,6 @@ dojo.declare("Main", wm.Page, {
              //formulario unidades
              main.operationPanel4.setShowing(true);
          }
-      
-    } catch(e) {
-      console.error('ERROR IN numberEditor2Change: ' + e); 
-    } 
   },
 
   /*inscalumactividadLiveForm1BeginInsert: function(inSender) {
@@ -283,17 +266,17 @@ dojo.declare("Main", wm.Page, {
   calificacionEditor2Change: function(inSender, inDisplayValue, inDataValue) {
     try {
       if(this.calificacionEditor2.dataValue=="En Progreso"){
-            this.calificacionNumEditor2.setValue("dataValue", "0.3")
-           }     
-        if(this.calificacionEditor2.dataValue=="Competente"){
-             this.calificacionNumEditor2.setValue("dataValue", "1")
-            }     
-            if(this.calificacionEditor2.dataValue=="Avanzado"){
-                this.calificacionNumEditor2.setValue("dataValue", "1.3")
-             }     
-              if(this.calificacionEditor2.dataValue=="Magistral"){
-                   this.calificacionNumEditor2.setValue("dataValue", "1.6")
-               }     
+          this.calificacionNumEditor2.setValue("dataValue", "0.3")
+      }     
+      if(this.calificacionEditor2.dataValue=="Competente"){
+          this.calificacionNumEditor2.setValue("dataValue", "1")
+      }     
+      if(this.calificacionEditor2.dataValue=="Avanzado"){
+          this.calificacionNumEditor2.setValue("dataValue", "1.3")
+      }     
+      if(this.calificacionEditor2.dataValue=="Magistral"){
+          this.calificacionNumEditor2.setValue("dataValue", "1.6")
+      }     
       
     } catch(e) {
       console.error('ERROR IN calificacionEditor2Change: ' + e); 
@@ -312,10 +295,10 @@ dojo.declare("Main", wm.Page, {
   
   GradoChange: function(inSender, inDisplayValue, inDataValue) {
     try {
-     this.l_inscrip_panel_lista_cursos.update();
-     this.l_inscrip_panel_VistaAsignaturas.update();
-     this.inscalumasigLiveVariable1.clearData();
-     this.estudiantesInscAsig.clearData();
+         this.l_inscrip_panel_lista_cursos.update();
+         this.l_inscrip_panel_VistaAsignaturas.update();
+         this.inscalumasigLiveVariable1.clearData();
+         this.estudiantesInscAsig.clearData();
       
     } catch(e) {
       console.error('ERROR IN GradoChange: ' + e); 
@@ -362,12 +345,8 @@ dojo.declare("Main", wm.Page, {
   },
  
   informes_fuckersShow: function(inSender) {
-     try {
       this.RLVGrados.update(); 
-      
-    } catch(e) {
-      console.error('ERROR IN layer16Show: ' + e); 
-    }}, 
+  }, 
     
   calificaTodosClick: function(inSender, inEvent) {  
       var fecha= this.fechaEditor3.getDataValue();
@@ -414,15 +393,10 @@ dojo.declare("Main", wm.Page, {
     } 
   },
   inscalumaprendizajeLiveForm1Success: function(inSender, inData) {
-    try {
      this.l_calif_contenedor_tablas_inscalumaprendizajeLiveVariable2.update();
      this.l_calif_contenedor_tablas_calificacion_final.update();
      this.calif_asig_datag_aprendizajesDataGrid1.setDisabled(false);
      this.calif_alumnos_curso_datag_alumnosDataGrid1.setDisabled(false);
-
-    } catch(e) {
-      console.error('ERROR IN inscalumaprendizajeLiveForm1Success: ' + e); 
-    } 
   },
   
   inscalumaprendizajeLiveForm1DeleteData: function(inSender) {
@@ -535,8 +509,7 @@ dojo.declare("Main", wm.Page, {
     try {
       if(this.ausencias_select2.dataValue=="1"){
            this.layerGrado.hide();
-           this.layerCursos.show();
-            
+           this.layerCursos.show();          
         }
           if(this.ausencias_select2.dataValue=="2"){
             this.layerCursos.hide();
@@ -787,24 +760,24 @@ dojo.declare("Main", wm.Page, {
   global_usernameSuccess: function(inSender, inDeprecated) {
       var _usuario= main.global_username.data.dataValue;      
       this.a_informacionUsuario.input.setValue("user", _usuario);     
-     // this.a_getLastAccess.input.setValue("user", _usuario);
       this.global_cursy.update();
-      this.a_informacionUsuario.update();    
-     // this.a_getLastAccess.update();
+      //this.a_informacionUsuario.update();    
   },
-  // onSuccess global sy
+
   global_cursySuccess: function(inSender, inDeprecated) {
       var _usuario= main.global_username.getData().dataValue;
       var syJson= main.global_cursy.getItem(0);
       var fechaInicio= syJson.data.fechaDesde;
-      var fechaFinal= syJson.data.fechaHasta;       
+      var fechaFinal= syJson.data.fechaHasta;          
+      
       this.dash_dash_lv1.input.setValue("usuario", _usuario);  
       this.dash_dash_lv1.input.setValue("f1", fechaInicio);
       this.dash_dash_lv1.input.setValue("f2", fechaFinal);
+      this.a_informacionUsuario.update();  
       this.dash_dash_lv1.update();
   },
-  //  on-a_informacionUsuario 
-  a_informacionUsuarioSuccess: function(inSender, inDeprecated) {      
+
+  a_informacionUsuarioSuccess: function(inSender, inDeprecated) {  
        var json=  main.a_informacionUsuario.getItem(0);
        var codigo= json.data.codigo;
        var usuario= json.data.usuario;
@@ -826,21 +799,39 @@ dojo.declare("Main", wm.Page, {
        var idp = main.a_informacionUsuario.getItem(0).data.idpersona;   
        var today= new Date().getTime();
        var clave= main.a_informacionUsuario.getItem(0).data.clave; 
+       
+       var json= main.global_cursy.getItem(0);
+       var idsy= json.data.idsy;
+        
        this.inicio_box_usuario.setDataValue(usuario);
        this.inicio_box_clave.setDataValue(clave);
        this.inicio_box_reclave.setDataValue(clave);
+         
+       this.muestraCoordinadorCurso.input.setValue("pidpersona", idp);
+       this.muestraCoordinadorCurso.input.setValue("pidsy", idsy);
+       this.muestraCoordinadorSubArea.input.setValue("ppersona", idp);
+       this.muestraCoordinadorSubArea.input.setValue("pidy", idsy);
+       this.dashboard_faltas_graves.filter.setValue("id.idPersona", idp);
+       this.dashboard_calificacion_estudiantes.filter.setValue("id.directorId", idp);
+
+       this.asignaturasPorDocente.input.setValue("usuario",usuario);
+       this.asignaturasPorDocente.input.setValue("sy",idsy);
+
+       this.dashboard_faltas_graves.update();
+       this.dashboard_calificacion_estudiantes.update();
+
+       this.asignaturasPorDocente.update();
+       this.muestraCoordinadorCurso.update();
+       this.muestraCoordinadorSubArea.update();
        
-       //if( main.a_isAuthenticated.getData().dataValue == true){
-         this.a_logInsertRecords.setValue("persona.idPersona", idp);
-         this.a_logInsertRecords.setValue("fechaIngreso", today);
-         this.a_logInsertRecords.setValue("horaIngreso", today);
-         this.logForm.setDataSet(this.a_logInsertRecords); 
-         this.logForm.insertData(); 
-      // }   
+       this.a_logInsertRecords.setValue("persona.idPersona", idp);
+       this.a_logInsertRecords.setValue("fechaIngreso", today);
+       this.a_logInsertRecords.setValue("horaIngreso", today);
+       this.logForm.setDataSet(this.a_logInsertRecords); 
+       this.logForm.insertData();
   },
   promocionDataGrid1Selected: function(inSender, inIndex) {
-    try {
-       if(this.aprobadoEditor1.dataValue== true){
+      if(this.aprobadoEditor1.dataValue == true){
         this.promovidoEditor1.enable();
         this.commentpromovidoEditor1.enable();
       }
@@ -848,10 +839,6 @@ dojo.declare("Main", wm.Page, {
         this.promovidoEditor1.disable();
         this.commentpromovidoEditor1.disable();
       }
-      
-    } catch(e) {
-      console.error('ERROR IN promocionDataGrid1Selected: ' + e); 
-    } 
   },
   promocionLiveForm1BeginUpdate: function(inSender) {
     try {
@@ -863,13 +850,8 @@ dojo.declare("Main", wm.Page, {
     } 
   },
   promocionLiveForm1UpdateData: function(inSender) {
-    try {
       this.promocion_container_datag_personas_x_curso.setDisabled(false);
       this.promocionDataGrid1.setDisabled(false);
-      
-    } catch(e) {
-      console.error('ERROR IN promocionLiveForm1UpdateData: ' + e); 
-    } 
   },
   promocionLiveForm1CancelEdit: function(inSender) {
     try {
@@ -938,9 +920,7 @@ dojo.declare("Main", wm.Page, {
       this.inicio_panel_opciones.hide();
       this.inicio_filtros_claves.hide();   
   },
-  
-  
-  //   
+
   inscalumasigLiveForm1CancelEdit: function(inSender) {
       this.inscripcion_asignatura.setDisabled(false);
       this.inscripcion_estudiante.setDisabled(false);
@@ -991,680 +971,9 @@ dojo.declare("Main", wm.Page, {
       console.error('ERROR IN pestana_reportes_seguimientoShow: ' + e); 
     } 
   },
-
-  reports_open_report_windowClick: function(inSender, inEvent) {
-    try {
-     app.pageDialog.showPage("Reportes", false, 790, 600);
-      var descripcion= main.reportes_graficos_listado_reportes.selectedItem.getData().id.reporte;
-      var codigoRep = main.reportes_graficos_listado_reportes.selectedItem.getData().id.codigo;
-      app.pageDialog.page.reporte_descrip_general.setCaption("<b>DETALLES DEL REPORTE SELECCIONADO</b>"+"<br/>CODIGO REPORTE: "+codigoRep+"<br/>"+descripcion);
-      
-      if(codigoRep=="REC001"){ 
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.sy_box.hide();
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.idp_box.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.nivel_box.hide();
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.numero_mes.hide();   
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(false);  
-      app.pageDialog.page.num_asig_bajo.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.p2.show();
-      app.pageDialog.page.p1.show();
-      app.pageDialog.page.f1_label.setCaption("Fecha inicial");
-      app.pageDialog.page.f2_label.setCaption("Fecha final");
-      app.pageDialog.page.fecha1_dt.show();
-      app.pageDialog.page.fecha2_dt.show();
-
-      }
-      if(codigoRep=="REC002"){
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide(); 
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.fecha2_dt.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.numero_mes.hide();   
-      app.pageDialog.page.nivel_box.hide();
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.idp_box.hide();
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.num_asig_bajo.hide();
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(false);  
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.sy_box.show();
-      }
-      
-      if(codigoRep=="REC003"){ 
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.fecha2_dt.hide();
-      app.pageDialog.page.nivel_box.hide();
-      app.pageDialog.page.numero_mes.hide();   
-      app.pageDialog.page.idp_box.hide();
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.num_asig_bajo.hide();
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(false);  
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.sy_box.show();
-      }
-      
-      if(codigoRep=="REC004"){ 
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.nivel_box.hide();
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.numero_mes.hide();   
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.num_asig_bajo.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide(); 
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.semana_box.hide();  
-      app.pageDialog.page.search_user_complex_box.show();
-      app.pageDialog.page.alumnosDataGrid.setShowing(true);  
-      app.pageDialog.page.sy_box.show();
-      app.pageDialog.page.idp_box.show();
-      app.pageDialog.page.fecha1_dt.show();
-      app.pageDialog.page.fecha2_dt.show();
-      app.pageDialog.page.alumnosDataGrid.setShowing(true);  
-      }
-      
-      if(codigoRep=="REC005"){ 
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.fecha2_dt.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.numero_mes.hide();   
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.idp_box.hide();
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(false);  
-      app.pageDialog.page.num_asig_bajo.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.sy_box.show();
-      app.pageDialog.page.nivel_box.show();
-      }
-      
-      if(codigoRep=="REC006"){
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.fecha2_dt.hide();
-      app.pageDialog.page.nivel_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.numero_mes.hide();   
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.num_asig_bajo.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(true);  
-      app.pageDialog.page.idp_box.show();
-      app.pageDialog.page.sy_box.show();
-      app.pageDialog.page.search_user_complex_box.show();
-      app.pageDialog.page.alumnosDataGrid.setShowing(true);  
-      }
-
-      if(codigoRep=="REC007"){ 
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.fecha2_dt.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.numero_mes.hide();   
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.idp_box.hide();
-      app.pageDialog.page.sy_box.hide();
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(false);  
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.periodo_box.show();
-      app.pageDialog.page.num_asig_bajo.show();
-      app.pageDialog.page.nivel_box.show();
-      }
-      
-      if(codigoRep=="REC008"){ 
-      app.pageDialog.page.fechaBimestre.hide();  
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.fecha2_dt.hide();
-      app.pageDialog.page.nivel_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.numero_mes.hide();   
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.idp_box.hide();
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.sy_box.hide();
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(false);     
-      app.pageDialog.page.num_asig_bajo.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.periodo_box.show();
-      app.pageDialog.page.desde_curso_box.show();
-      app.pageDialog.page.hasta_curso_box.show();
-     
-      }
-
-      if(codigoRep=="REC009"){
-      app.pageDialog.page.fechaBimestre.hide();  
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.fecha2_dt.hide();
-      app.pageDialog.page.nivel_box.hide(); 
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.numero_mes.hide();   
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.idp_box.hide();
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.sy_box.hide();
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(false);     
-      app.pageDialog.page.num_asig_bajo.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.periodo_box.show();
-      app.pageDialog.page.grado_box.show();
-      
-     
-      }
-      
-      if(codigoRep=="REC010"){ 
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.fecha2_dt.hide();    
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.idp_box.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.numero_mes.hide();  
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide(); 
-      app.pageDialog.page.sy_box.hide();
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(false);      
-      app.pageDialog.page.num_asig_bajo.hide();
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.periodo_box.show();
-      app.pageDialog.page.nivel_box.show(); 
-     
-      }
-      
-      if(codigoRep=="REC012"){ 
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.fecha2_dt.hide();    
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.idp_box.hide();
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();      
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(false);     
-      app.pageDialog.page.num_asig_bajo.hide();   
-      app.pageDialog.page.numero_mes.hide();    
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.nivel_box.hide(); 
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.sy_box.show();
-      app.pageDialog.page.grado_box.show();
-     
-      }
-      
-      if(codigoRep=="REC013"){ 
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.fecha2_dt.hide();    
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.idp_box.hide();      
-       app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(false);      
-      app.pageDialog.page.num_asig_bajo.hide(); 
-      app.pageDialog.page.numero_mes.hide();      
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.nivel_box.hide(); 
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.sy_box.show();
-      
-      } 
-      
-      if(codigoRep=="REC014"){ 
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.fecha2_dt.hide();    
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.idp_box.hide();      
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(false);      
-      app.pageDialog.page.num_asig_bajo.hide();    
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.numero_mes.hide();   
-      app.pageDialog.page.nivel_box.hide(); 
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.sy_box.show();
-      
-      } 
-      
-      if(codigoRep=="REC015"){ 
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.fecha2_dt.hide();    
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.idp_box.hide();      
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(false);    
-      app.pageDialog.page.num_asig_bajo.hide();    
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.numero_mes.hide();   
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.nivel_box.hide(); 
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.sy_box.show();
-      
-      } 
-      
-      if(codigoRep=="REC024"){ 
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha2_dt.hide();    
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.idp_box.hide();      
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(false);    
-      app.pageDialog.page.num_asig_bajo.hide();    
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.nivel_box.hide(); 
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.numero_mes.hide(); 
-      app.pageDialog.page.sy_box.hide();
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.desde_curso_box.hide(); 
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.show();
-      app.pageDialog.page.f1_label.setCaption("Aprendizajes con fecha esperada antes o igual a");
-      app.pageDialog.page.f1_label.show();
-      app.pageDialog.page.nivel_esperado.show(); 
-      app.pageDialog.page.fecha1_dt.show();           
-      app.pageDialog.page.peso_aprendizaje.show(); 
-      app.pageDialog.page.a_grado.update();    
-      } 
-      
-      if(codigoRep=="REC025"){ 
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha2_dt.hide();    
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.idp_box.hide();      
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(false);    
-      app.pageDialog.page.num_asig_bajo.hide();    
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.nivel_box.hide(); 
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.numero_mes.hide(); 
-      app.pageDialog.page.sy_box.hide();
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.fecha1_dt.hide();      
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      } 
-      
-      if(codigoRep=="REC026"){ 
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide(); 
-      app.pageDialog.page.fecha2_dt.hide();    
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.idp_box.hide();      
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.alumnosDataGrid.setShowing(false);    
-      app.pageDialog.page.num_asig_bajo.hide();    
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.nivel_box.hide(); 
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.numero_mes.hide(); 
-      app.pageDialog.page.fecha1_dt.hide();      
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.sy_box.show();
-      app.pageDialog.page.grado_box.show();
-      } 
-
-      if(codigoRep=="REC027"){ 
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha2_dt.hide();    
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.idp_box.hide();      
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();     
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.sy_box.hide();      
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.fecha1_dt.hide();      
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.alumnosDataGrid.setShowing(false); 
-      app.pageDialog.page.idp_box.hide(); 
-      app.pageDialog.page.numero_mes.hide(); 
-      app.pageDialog.page.search_user_complex_box.hide();
-      app.pageDialog.page.puntaje.show();
-      app.pageDialog.page.num_asig_bajo.show();  
-      app.pageDialog.page.nivel_box.show(); 
-      app.pageDialog.page.periodo_box.show(); 
-      } 
-
-      if(codigoRep=="REC028"){ 
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha2_dt.hide();    
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.idp_box.hide();      
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();   
-      app.pageDialog.page.num_asig_bajo.hide();    
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.nivel_box.hide(); 
-      app.pageDialog.page.nivel_esperado.hide();
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.sy_box.hide();
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.fecha1_dt.hide();      
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.numero_mes.show(); 
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.alumnosDataGrid.setShowing(true); 
-      app.pageDialog.page.idp_box.show();
-      app.pageDialog.page.search_user_complex_box.show();
-      } 
-      
-      if(codigoRep=="DOC001"){ 
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.fecha2_dt.hide();    
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.idp_box.hide();    
-      app.pageDialog.page.numero_mes.hide();   
-      app.pageDialog.page.search_user_complex_box.hide();      
-      app.pageDialog.page.alumnosDataGrid.hide();    
-      app.pageDialog.page.num_asig_bajo.hide();    
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();     
-      app.pageDialog.page.nivel_box.hide(); 
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.sy_box.show();
-      app.pageDialog.page.semana_box.show();
-      app.pageDialog.page.desde_curso_box.show();
-      app.pageDialog.page.hasta_curso_box.show();
-      app.pageDialog.page.fechaBimestre.hide();
-      
-      }
-
-      if(codigoRep=="EVE002"){ 
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();   
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.fecha2_dt.hide();    
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.idp_box.hide();     
-      app.pageDialog.page.numero_mes.hide();    
-      app.pageDialog.page.search_user_complex_box.hide();         
-      app.pageDialog.page.alumnosDataGrid.hide();      
-      app.pageDialog.page.num_asig_bajo.hide();         
-      app.pageDialog.page.periodo_box.hide();   
-      app.pageDialog.page.nivel_esperado.hide();     
-      app.pageDialog.page.nivel_box.hide();       
-      app.pageDialog.page.p2.hide();    
-      app.pageDialog.page.p1.hide();      
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.sy_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.show();
-      
-      }
-      if(codigoRep=="EVE003"){ 
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.fecha2_dt.hide();    
-      app.pageDialog.page.curso_box.hide();   
-      app.pageDialog.page.numero_mes.hide();        
-      app.pageDialog.page.num_asig_bajo.hide();    
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();     
-      app.pageDialog.page.nivel_box.hide(); 
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.sy_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.search_user_complex_box.show();      
-      app.pageDialog.page.alumnosDataGrid.show();
-      app.pageDialog.page.idp_box.show();   
-      
-      }
-      if(codigoRep=="EVE004"){ 
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.fecha2_dt.hide();    
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.numero_mes.hide();   
-      app.pageDialog.page.search_user_complex_box.hide();      
-      app.pageDialog.page.alumnosDataGrid.hide();    
-      app.pageDialog.page.num_asig_bajo.hide();    
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();     
-      app.pageDialog.page.nivel_box.hide(); 
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.sy_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.tipoeventualidad.show();
-      app.pageDialog.page.numero_eventualidades.show();
-      app.pageDialog.page.idp_box.hide();  
-      
-      }
-      if(codigoRep=="EVE005"){ 
-      app.pageDialog.page.tipoeventualidad.hide();
-      app.pageDialog.page.numero_eventualidades.hide();
-      app.pageDialog.page.fecha1_dt.hide();
-      app.pageDialog.page.fecha2_dt.hide();    
-      app.pageDialog.page.curso_box.hide();
-      app.pageDialog.page.idp_box.hide();    
-      app.pageDialog.page.numero_mes.hide();   
-      app.pageDialog.page.search_user_complex_box.hide();      
-      app.pageDialog.page.alumnosDataGrid.hide();    
-      app.pageDialog.page.num_asig_bajo.hide();    
-      app.pageDialog.page.periodo_box.hide();
-      app.pageDialog.page.nivel_esperado.hide();     
-      app.pageDialog.page.nivel_box.hide(); 
-      app.pageDialog.page.p2.hide();
-      app.pageDialog.page.p1.hide();
-      app.pageDialog.page.grado_box.hide();
-      app.pageDialog.page.peso_aprendizaje.hide(); 
-      app.pageDialog.page.puntaje.hide(); 
-      app.pageDialog.page.sy_box.hide();
-      app.pageDialog.page.semana_box.hide();
-      app.pageDialog.page.fechaBimestre.hide();
-      app.pageDialog.page.desde_curso_box.hide();
-      app.pageDialog.page.hasta_curso_box.hide();
-      
-      }
-      
-    } catch(e) {
-      console.error('ERROR IN reports_open_report_windowClick: ' + e); 
-    }},
   
   reportes_graficos_listado_reportesSelected: function(inSender, inIndex) {
-    try {
      this.reports_open_report_window.enable();
-      
-    } catch(e) {
-      console.error('ERROR IN reportes_graficos_listado_reportesSelected: ' + e); 
-    } 
   },
   
   reportes_graficos_listado_reportesDeselected: function(inSender, inIndex) {
@@ -1906,7 +1215,7 @@ dojo.declare("Main", wm.Page, {
 	},
     // renderin' grid styles
 	global_docentes_asignaturasResult: function(inSender, inDeprecated) {
-		this.curriculo_grid_docentes_asignaturas.setSortIndex(0);
+		//this.curriculo_grid_docentes_asignaturas.setSortIndex(0);
 	},
     // renderin' grid style
 	unidadLiveVariable1Result: function(inSender, inDeprecated) {
@@ -2686,6 +1995,115 @@ dojo.declare("Main", wm.Page, {
 	},
 	dojoGrid1Select: function(inSender) {
 		this.asignatura_detalles_alumno.enable();
+	},   
+	
+	muestraCoordinadorCursoSuccess: function(inSender, inDeprecated) {
+		var count = main.muestraCoordinadorCurso.getCount();
+        if(count > 0){
+            this.panelCoordinadorCurso.show();
+            this.dashboard_chart4();
+            this.dashboard_chart6();
+        }else{
+            this.panelCoordinadorCurso.hide();
+        }
+	},
+	muestraCoordinadorSubAreaSuccess: function(inSender, inDeprecated) {
+		var count = main.muestraCoordinadorSubArea.getCount();
+        if(count > 0){
+            this.panelCoordinadorCurricular.show();
+        }else{
+            this.panelCoordinadorCurricular.hide();
+        }
+	},
+    //chart4
+    dashboard_chart4: function() {
+        var porc_faltas = main.dashboard_faltas_graves.getItem(0).data.id.data.porcentajeFaltasGraves;
+        var curso       = main.dashboard_faltas_graves.getItem(0).data.id.data.curso;
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          [curso, porc_faltas]
+        ]);
+
+        var options = {
+            width: 230, height: 230,
+            redFrom: 0, redTo: 90,
+            yellowFrom:90, yellowTo: 95,
+            greenFrom:95, greenTo: 100, 
+            minorTicks: 10,
+            max: 100
+        };
+        var chart = this._chart = new google.visualization.Gauge(this.chart4.domNode);
+        chart.draw(data, options);
+	},
+    //chart5
+    dashboard_chart5: function(){
+        var score = main.dashboard_puntaje_asig_global.getItem(0).data.id.data.avgPuntaje;
+        var subject = main.dashboard_puntaje_asig_global.getItem(0).data.id.data.asignatura;
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Puntaje', score]
+        ]);
+
+        var options = {
+            width: 230, height: 200,
+            redFrom: 0, redTo: 82,
+            yellowFrom:82, yellowTo: 107,
+            yellowColor: '#F27D1B',
+            yellowFrom:107, yellowTo: 137,
+            greenFrom:137, greenTo: 160, 
+            minorTicks: 10,
+            max: 160
+        };
+
+        var chart = this._chart = new google.visualization.Gauge(this.chart5.domNode);
+        chart.draw(data, options);     
+    },
+    //chart6
+    dashboard_chart6: function(){
+        var length = main.dashboard_calificacion_estudiantes.getCount();
+        var result = [];
+        var mydata = main.dashboard_calificacion_estudiantes.getData();
+        for(var i = 0 ;  i < mydata.length ; i++){
+            console.log(i);
+            var base   = mydata[i];
+            console.log(base);
+            var std    = base.id.alumnoApellido1;
+            var score  = base.id.puntaje;
+            result.push([std, score]);    
+        }        
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Estudiantes');
+        data.addColumn('number', 'Puntaje');
+        data.addRows(result);
+        
+          var view = new google.visualization.DataView(data);
+          /*view.setColumns([0, 1,
+                           { calc: "stringify",
+                             sourceColumn: 1,
+                             type: "string",
+                             role: "annotation" },
+                           2]);*/
+    
+          var options = {
+            title: "PUNTAJE DE ESTUDIANTES POR CURSO",
+            width: 800,
+            height: 400,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+          };
+          var chart = new google.visualization.ColumnChart(this.chart6.domNode);
+          chart.draw(view, options);
+    },
+	button3Click: function(inSender) {
+		this.dashboard_calificacion_general.filter.setValue("id.directorId", idp);
+	},
+	asignaturaCoordinadorSelectChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {	
+        var idasignatura = main.asignaturaCoordinadorSelect.getDataValue();
+        main.dashboard_puntaje_asig_global.filter.setValue("id.idAsignatura", idasignatura);
+        main.dashboard_puntaje_asig_global.update();
+	},
+	dashboard_puntaje_asig_globalSuccess: function(inSender, inDeprecated) {
+		this.dashboard_chart5();
 	},
 	_end: 0
 });

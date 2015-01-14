@@ -1,0 +1,37 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.aprendoz_test.data.VistaDashboardAsignaturaGlobal" table="vista_dashboard_asignatura_global" catalog="aprendoz_desarrollo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.aprendoz_test.data.VistaDashboardAsignaturaGlobalId">
+            <key-property name="directorId" type="integer">
+                <column name="director_id"/>
+            </key-property>
+            <key-property name="directorApellido1" type="string">
+                <column name="director_apellido1" length="45"/>
+            </key-property>
+            <key-property name="directorApellido2" type="string">
+                <column name="director_apellido2" length="45"/>
+            </key-property>
+            <key-property name="curso" type="string">
+                <column name="Curso" length="45"/>
+            </key-property>
+            <key-property name="apellido1" type="string">
+                <column name="Apellido1" length="45"/>
+            </key-property>
+            <key-property name="apellido2" type="string">
+                <column name="Apellido2" length="45"/>
+            </key-property>
+            <key-property name="asignatura" type="string">
+                <column name="Asignatura" length="300"/>
+            </key-property>
+            <key-property name="avgPuntaje" type="big_decimal">
+                <column name="avg_puntaje" precision="10"/>
+            </key-property>
+            <key-property name="avgCalificacion" type="string">
+                <column name="avg_calificacion" length="10"/>
+            </key-property>
+            <key-property name="idAsignatura" type="integer">
+                <column name="Id_Asignatura"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

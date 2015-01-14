@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Grado
- *  07/31/2014 10:31:31
+ *  01/13/2015 09:58:57
  * 
  */
 public class Grado {
@@ -19,6 +19,7 @@ public class Grado {
     private String gradoSapiens;
     private Set<com.aprendoz_test.data.CostosAnualesCopy> costosAnualesCopies = new HashSet<com.aprendoz_test.data.CostosAnualesCopy>();
     private Set<com.aprendoz_test.data.Asignatura> asignaturas = new HashSet<com.aprendoz_test.data.Asignatura>();
+    private Set<com.aprendoz_test.data.CostosCopy> costosCopies = new HashSet<com.aprendoz_test.data.CostosCopy>();
     private Set<com.aprendoz_test.data.Costos> costoses = new HashSet<com.aprendoz_test.data.Costos>();
     private Set<com.aprendoz_test.data.AsignaturaCopy> asignaturaCopies = new HashSet<com.aprendoz_test.data.AsignaturaCopy>();
     private Set<com.aprendoz_test.data.AccAuthorization> accAuthorizations = new HashSet<com.aprendoz_test.data.AccAuthorization>();
@@ -79,6 +80,14 @@ public class Grado {
 
     public void setAsignaturas(Set<com.aprendoz_test.data.Asignatura> asignaturas) {
         this.asignaturas = asignaturas;
+    }
+
+    public Set<com.aprendoz_test.data.CostosCopy> getCostosCopies() {
+        return costosCopies;
+    }
+
+    public void setCostosCopies(Set<com.aprendoz_test.data.CostosCopy> costosCopies) {
+        this.costosCopies = costosCopies;
     }
 
     public Set<com.aprendoz_test.data.Costos> getCostoses() {

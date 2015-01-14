@@ -57,4 +57,11 @@ html.WMApp body .gridscss {
     border: none !important;
     background: none;
     color: #fff !important;
+}html.WMApp body .dashboard_headers_labels {
+    background-color: #DBDBDB;
+    color: #474747;
+    font-size: 14px;
+    text-align: center;
 }
+
+

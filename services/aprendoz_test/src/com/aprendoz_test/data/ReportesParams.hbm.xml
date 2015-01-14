@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.aprendoz_test.data.ReportesParams" table="reportes_params" catalog="aprendoz_desarrollo" dynamic-insert="false" dynamic-update="false">
+        <id name="idReportesParams" type="integer">
+            <column name="id_reportes_params"/>
+            <generator class="identity"/>
+        </id>
+        <property name="syIdSy" type="integer">
+            <column name="sy_id_sy"/>
+        </property>
+        <property name="codigo" type="string">
+            <column name="codigo" length="10"/>
+        </property>
+        <property name="param1" type="string">
+            <column name="param1" length="50"/>
+        </property>
+        <property name="param2" type="string">
+            <column name="param2" length="50"/>
+        </property>
+        <property name="param3" type="string">
+            <column name="param3" length="50"/>
+        </property>
+        <property name="param4" type="string">
+            <column name="param4" length="50"/>
+        </property>
+        <property name="param5" type="string">
+            <column name="param5" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

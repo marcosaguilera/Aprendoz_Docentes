@@ -16,6 +16,17 @@
 #main_dojoGrid1 {
     cursor: pointer;
 }
+
+#main_wizardLayers1_wizardWrapper {
+    margin-top: 20px !important;
+    background-color: blueviolet;
+}
+
+#main_wizardLayers1_tabsControl {
+    height: 40px !important;
+    background-color: red;
+}
+
 #main_estudiante_foto_perfil {
     box-shadow: 3px 3px 3px darkgrey;
 }
@@ -1675,7 +1686,7 @@ border-radius: 6px;
 cursor: pointer;
 }
 
-.Main .Main-panel14 {
+.Main .Main-chart2 {
   background-color: #4D90FE;
 }
 

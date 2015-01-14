@@ -1,0 +1,31 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.aprendoz_test.data.VistaDashboardCalificacionEstudiantes" table="vista_dashboard_calificacion_estudiantes" catalog="aprendoz_desarrollo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.aprendoz_test.data.VistaDashboardCalificacionEstudiantesId">
+            <key-property name="directorId" type="integer">
+                <column name="director_id"/>
+            </key-property>
+            <key-property name="directorApellido1" type="string">
+                <column name="director_apellido1" length="45"/>
+            </key-property>
+            <key-property name="directorApellido2" type="string">
+                <column name="director_apellido2" length="45"/>
+            </key-property>
+            <key-property name="curso" type="string">
+                <column name="curso" length="45"/>
+            </key-property>
+            <key-property name="alumnoApellido1" type="string">
+                <column name="alumno_apellido1" length="45"/>
+            </key-property>
+            <key-property name="alumnoApellido2" type="string">
+                <column name="alumno_apellido2" length="45"/>
+            </key-property>
+            <key-property name="puntaje" type="double">
+                <column name="puntaje" precision="11"/>
+            </key-property>
+            <key-property name="calificacion" type="string">
+                <column name="calificacion" length="10"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

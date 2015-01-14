@@ -8,7 +8,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Sy
- *  07/31/2014 10:31:32
+ *  01/13/2015 09:58:57
  * 
  */
 public class Sy {
@@ -26,7 +26,6 @@ public class Sy {
     private Set<com.aprendoz_test.data.Cronograma> cronogramas = new HashSet<com.aprendoz_test.data.Cronograma>();
     private Set<com.aprendoz_test.data.Semana> semanas = new HashSet<com.aprendoz_test.data.Semana>();
     private Set<com.aprendoz_test.data.InscComentariosAlumnos> inscComentariosAlumnoses = new HashSet<com.aprendoz_test.data.InscComentariosAlumnos>();
-    private Set<com.aprendoz_test.data.InscAlumCostoCopy> inscAlumCostoCopies = new HashSet<com.aprendoz_test.data.InscAlumCostoCopy>();
     private Set<com.aprendoz_test.data.Horario> horarios = new HashSet<com.aprendoz_test.data.Horario>();
     private Set<com.aprendoz_test.data.AsignaturaCopy> asignaturaCopies = new HashSet<com.aprendoz_test.data.AsignaturaCopy>();
     private Set<com.aprendoz_test.data.Periodo> periodos = new HashSet<com.aprendoz_test.data.Periodo>();
@@ -34,6 +33,7 @@ public class Sy {
     private Set<com.aprendoz_test.data.Asignatura> asignaturas = new HashSet<com.aprendoz_test.data.Asignatura>();
     private Set<com.aprendoz_test.data.Educom> educoms = new HashSet<com.aprendoz_test.data.Educom>();
     private Set<com.aprendoz_test.data.Coordinadores> coordinadoreses = new HashSet<com.aprendoz_test.data.Coordinadores>();
+    private Set<com.aprendoz_test.data.CostosCopy> costosCopies = new HashSet<com.aprendoz_test.data.CostosCopy>();
     private Set<com.aprendoz_test.data.Costos> costoses = new HashSet<com.aprendoz_test.data.Costos>();
     private Set<com.aprendoz_test.data.Matricula> matriculas = new HashSet<com.aprendoz_test.data.Matricula>();
     private Set<com.aprendoz_test.data.SesionNivel> sesionNivels = new HashSet<com.aprendoz_test.data.SesionNivel>();
@@ -146,14 +146,6 @@ public class Sy {
         this.inscComentariosAlumnoses = inscComentariosAlumnoses;
     }
 
-    public Set<com.aprendoz_test.data.InscAlumCostoCopy> getInscAlumCostoCopies() {
-        return inscAlumCostoCopies;
-    }
-
-    public void setInscAlumCostoCopies(Set<com.aprendoz_test.data.InscAlumCostoCopy> inscAlumCostoCopies) {
-        this.inscAlumCostoCopies = inscAlumCostoCopies;
-    }
-
     public Set<com.aprendoz_test.data.Horario> getHorarios() {
         return horarios;
     }
@@ -208,6 +200,14 @@ public class Sy {
 
     public void setCoordinadoreses(Set<com.aprendoz_test.data.Coordinadores> coordinadoreses) {
         this.coordinadoreses = coordinadoreses;
+    }
+
+    public Set<com.aprendoz_test.data.CostosCopy> getCostosCopies() {
+        return costosCopies;
+    }
+
+    public void setCostosCopies(Set<com.aprendoz_test.data.CostosCopy> costosCopies) {
+        this.costosCopies = costosCopies;
     }
 
     public Set<com.aprendoz_test.data.Costos> getCostoses() {

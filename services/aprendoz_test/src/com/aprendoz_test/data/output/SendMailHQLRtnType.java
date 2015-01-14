@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 /**
- * Generated for query "sendMailHQL" on 07/31/2014 10:31:51
+ * Generated for query "sendMailHQL" on 01/13/2015 09:59:27
  * 
  */
 public class SendMailHQLRtnType {

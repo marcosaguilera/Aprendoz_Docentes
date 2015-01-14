@@ -1209,6 +1209,63 @@ wm.types = {
 			"liveService": true,
 			"service": "aprendoz_test"
 		},
+		"com.aprendoz_test.data.Anticiposfact050814": {
+			"fields": {
+				"alimentacion": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Double"
+				},
+				"codigo": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"pension": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Double"
+				},
+				"totalAnticipos": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Double"
+				},
+				"transporte": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Double"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
 		"com.aprendoz_test.data.Anuncio": {
 			"fields": {
 				"anuncio": {
@@ -1550,7 +1607,7 @@ wm.types = {
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": false,
+					"required": true,
 					"type": "com.aprendoz_test.data.Asignatura"
 				},
 				"dimensionComprension": {
@@ -1729,7 +1786,7 @@ wm.types = {
 			"fields": {
 				"aprendizajesAsignaturases": {
 					"exclude": [],
-					"fieldOrder": 31,
+					"fieldOrder": 29,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -1907,39 +1964,9 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.Float"
 				},
-				"inscAlumAsigCopies": {
-					"exclude": [],
-					"fieldOrder": 25,
-					"fieldSubType": null,
-					"include": [],
-					"isList": true,
-					"noChange": [],
-					"required": false,
-					"type": "com.aprendoz_test.data.InscAlumAsigCopy"
-				},
-				"inscAlumAsigCopy2s": {
-					"exclude": [],
-					"fieldOrder": 32,
-					"fieldSubType": null,
-					"include": [],
-					"isList": true,
-					"noChange": [],
-					"required": false,
-					"type": "com.aprendoz_test.data.InscAlumAsigCopy2"
-				},
-				"inscAlumAsigCopy3s": {
-					"exclude": [],
-					"fieldOrder": 26,
-					"fieldSubType": null,
-					"include": [],
-					"isList": true,
-					"noChange": [],
-					"required": false,
-					"type": "com.aprendoz_test.data.InscAlumAsigCopy3"
-				},
 				"inscAlumAsigs": {
 					"exclude": [],
-					"fieldOrder": 27,
+					"fieldOrder": 25,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -1949,7 +1976,7 @@ wm.types = {
 				},
 				"inscCursoAsigCopies": {
 					"exclude": [],
-					"fieldOrder": 29,
+					"fieldOrder": 27,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -2009,7 +2036,7 @@ wm.types = {
 				},
 				"sesions": {
 					"exclude": [],
-					"fieldOrder": 28,
+					"fieldOrder": 26,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -2049,7 +2076,7 @@ wm.types = {
 				},
 				"unidads": {
 					"exclude": [],
-					"fieldOrder": 30,
+					"fieldOrder": 28,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -2437,6 +2464,73 @@ wm.types = {
 					"noChange": [],
 					"required": true,
 					"type": "com.aprendoz_test.data.Sy"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.BisEventlog": {
+			"fields": {
+				"addressTag": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"eventCreationTime": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.util.Date"
+				},
+				"eventValueName": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"id": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"stateName": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"stringValue": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
 				}
 			},
 			"internal": false,
@@ -4293,6 +4387,53 @@ wm.types = {
 			"liveService": true,
 			"service": "aprendoz_test"
 		},
+		"com.aprendoz_test.data.CertificadosFirmas": {
+			"fields": {
+				"firmaDirector": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"firmaSecretario": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"idCertificadosFirmas": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"syIdSy": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
 		"com.aprendoz_test.data.Coordinacion": {
 			"fields": {
 				"curso": {
@@ -4677,16 +4818,6 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.Integer"
 				},
-				"inscAlumCostoCopies": {
-					"exclude": [],
-					"fieldOrder": 14,
-					"fieldSubType": null,
-					"include": [],
-					"isList": true,
-					"noChange": [],
-					"required": false,
-					"type": "com.aprendoz_test.data.InscAlumCostoCopy"
-				},
 				"inscAlumCostos": {
 					"exclude": [],
 					"fieldOrder": 12,
@@ -4964,6 +5095,133 @@ wm.types = {
 				"tipoCosto": {
 					"exclude": [],
 					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
+				},
+				"valor": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Double"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.CostosCopy": {
+			"fields": {
+				"anual": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"codigo": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"descripcion": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"grado": {
+					"exclude": [],
+					"fieldOrder": 10,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "com.aprendoz_test.data.Grado"
+				},
+				"idCosto": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"nombreProducto": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nuevo": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"obligatorio": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"positivo": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"sy": {
+					"exclude": [],
+					"fieldOrder": 11,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "com.aprendoz_test.data.Sy"
+				},
+				"tipoCosto": {
+					"exclude": [],
+					"fieldOrder": 9,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -8628,7 +8886,7 @@ wm.types = {
 			"fields": {
 				"accAuthorizations": {
 					"exclude": [],
-					"fieldOrder": 9,
+					"fieldOrder": 10,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -8638,7 +8896,7 @@ wm.types = {
 				},
 				"asignaturaCopies": {
 					"exclude": [],
-					"fieldOrder": 8,
+					"fieldOrder": 9,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -8668,7 +8926,7 @@ wm.types = {
 				},
 				"costosAnualeses": {
 					"exclude": [],
-					"fieldOrder": 11,
+					"fieldOrder": 12,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -8676,9 +8934,19 @@ wm.types = {
 					"required": false,
 					"type": "com.aprendoz_test.data.CostosAnuales"
 				},
-				"costoses": {
+				"costosCopies": {
 					"exclude": [],
 					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": [],
+					"isList": true,
+					"noChange": [],
+					"required": false,
+					"type": "com.aprendoz_test.data.CostosCopy"
+				},
+				"costoses": {
+					"exclude": [],
+					"fieldOrder": 8,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -8688,7 +8956,7 @@ wm.types = {
 				},
 				"cursos": {
 					"exclude": [],
-					"fieldOrder": 10,
+					"fieldOrder": 11,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -8743,7 +9011,7 @@ wm.types = {
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": false,
+					"required": true,
 					"type": "com.aprendoz_test.data.Nivel"
 				}
 			},
@@ -8802,7 +9070,7 @@ wm.types = {
 				},
 				"actualizacionGrupoFamiliars": {
 					"exclude": [],
-					"fieldOrder": 9,
+					"fieldOrder": 8,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -8812,7 +9080,7 @@ wm.types = {
 				},
 				"gestionEncuestasGrupoFamiliars": {
 					"exclude": [],
-					"fieldOrder": 8,
+					"fieldOrder": 7,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -8852,7 +9120,7 @@ wm.types = {
 				},
 				"inscPersonaGrupoFamiliars": {
 					"exclude": [],
-					"fieldOrder": 7,
+					"fieldOrder": 6,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -8860,19 +9128,9 @@ wm.types = {
 					"required": false,
 					"type": "com.aprendoz_test.data.InscPersonaGrupoFamiliar"
 				},
-				"personaCopies": {
-					"exclude": [],
-					"fieldOrder": 5,
-					"fieldSubType": null,
-					"include": [],
-					"isList": true,
-					"noChange": [],
-					"required": false,
-					"type": "com.aprendoz_test.data.PersonaCopy"
-				},
 				"personas": {
 					"exclude": [],
-					"fieldOrder": 6,
+					"fieldOrder": 5,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -9200,6 +9458,93 @@ wm.types = {
 			"service": "aprendoz_test"
 		},
 		"com.aprendoz_test.data.ImportacionCartera": {
+			"fields": {
+				"alumno": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"codigo": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"concepto": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"curso": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"idImportacionCartera": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"mensualidad": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"numeroMes": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
+				},
+				"valor": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Float"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.ImportacionCarteraCopy": {
 			"fields": {
 				"alumno": {
 					"exclude": [],
@@ -11715,297 +12060,6 @@ wm.types = {
 			"liveService": true,
 			"service": "aprendoz_test"
 		},
-		"com.aprendoz_test.data.InscAlumAsigCopy": {
-			"fields": {
-				"asignatura": {
-					"exclude": [],
-					"fieldOrder": 6,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.Asignatura"
-				},
-				"califChar": {
-					"exclude": [],
-					"fieldOrder": 5,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"calificacion": {
-					"exclude": [],
-					"fieldOrder": 1,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.math.BigDecimal"
-				},
-				"esperados": {
-					"exclude": [],
-					"fieldOrder": 3,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Integer"
-				},
-				"idInscAlumAsig": {
-					"exclude": ["insert"],
-					"fieldOrder": 0,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Integer"
-				},
-				"logrados": {
-					"exclude": [],
-					"fieldOrder": 4,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Integer"
-				},
-				"periodo": {
-					"exclude": [],
-					"fieldOrder": 8,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.Periodo"
-				},
-				"persona": {
-					"exclude": [],
-					"fieldOrder": 7,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.Persona"
-				},
-				"porcentaje": {
-					"exclude": [],
-					"fieldOrder": 2,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.math.BigDecimal"
-				}
-			},
-			"internal": false,
-			"liveService": true,
-			"service": "aprendoz_test"
-		},
-		"com.aprendoz_test.data.InscAlumAsigCopy2": {
-			"fields": {
-				"asignatura": {
-					"exclude": [],
-					"fieldOrder": 6,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.Asignatura"
-				},
-				"califChar": {
-					"exclude": [],
-					"fieldOrder": 5,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"calificacion": {
-					"exclude": [],
-					"fieldOrder": 1,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.math.BigDecimal"
-				},
-				"esperados": {
-					"exclude": [],
-					"fieldOrder": 3,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Integer"
-				},
-				"idInscAlumAsig": {
-					"exclude": ["insert"],
-					"fieldOrder": 0,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Integer"
-				},
-				"logrados": {
-					"exclude": [],
-					"fieldOrder": 4,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Integer"
-				},
-				"periodo": {
-					"exclude": [],
-					"fieldOrder": 8,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.Periodo"
-				},
-				"persona": {
-					"exclude": [],
-					"fieldOrder": 7,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.Persona"
-				},
-				"porcentaje": {
-					"exclude": [],
-					"fieldOrder": 2,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.math.BigDecimal"
-				}
-			},
-			"internal": false,
-			"liveService": true,
-			"service": "aprendoz_test"
-		},
-		"com.aprendoz_test.data.InscAlumAsigCopy3": {
-			"fields": {
-				"asignatura": {
-					"exclude": [],
-					"fieldOrder": 6,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.Asignatura"
-				},
-				"califChar": {
-					"exclude": [],
-					"fieldOrder": 5,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"calificacion": {
-					"exclude": [],
-					"fieldOrder": 1,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.math.BigDecimal"
-				},
-				"esperados": {
-					"exclude": [],
-					"fieldOrder": 3,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Integer"
-				},
-				"idInscAlumAsig": {
-					"exclude": ["insert"],
-					"fieldOrder": 0,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Integer"
-				},
-				"logrados": {
-					"exclude": [],
-					"fieldOrder": 4,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Integer"
-				},
-				"periodo": {
-					"exclude": [],
-					"fieldOrder": 8,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.Periodo"
-				},
-				"persona": {
-					"exclude": [],
-					"fieldOrder": 7,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.Persona"
-				},
-				"porcentaje": {
-					"exclude": [],
-					"fieldOrder": 2,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.math.BigDecimal"
-				}
-			},
-			"internal": false,
-			"liveService": true,
-			"service": "aprendoz_test"
-		},
 		"com.aprendoz_test.data.InscAlumAsigCurso": {
 			"fields": {
 				"id": {
@@ -12391,123 +12445,6 @@ wm.types = {
 			"liveService": true,
 			"service": "aprendoz_test"
 		},
-		"com.aprendoz_test.data.InscAlumCostoCopy": {
-			"fields": {
-				"costos": {
-					"exclude": [],
-					"fieldOrder": 10,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.Costos"
-				},
-				"descuentoPorcentaje": {
-					"exclude": [],
-					"fieldOrder": 2,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.math.BigDecimal"
-				},
-				"descuentoValor": {
-					"exclude": [],
-					"fieldOrder": 3,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.Double"
-				},
-				"fechaFin": {
-					"exclude": [],
-					"fieldOrder": 6,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.util.Date"
-				},
-				"fechaInicio": {
-					"exclude": [],
-					"fieldOrder": 5,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.util.Date"
-				},
-				"idInscAlumCosto": {
-					"exclude": ["insert"],
-					"fieldOrder": 0,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Integer"
-				},
-				"inscrito": {
-					"exclude": [],
-					"fieldOrder": 1,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.Boolean"
-				},
-				"observacion": {
-					"exclude": [],
-					"fieldOrder": 7,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"persona": {
-					"exclude": [],
-					"fieldOrder": 9,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.Persona"
-				},
-				"sy": {
-					"exclude": [],
-					"fieldOrder": 8,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.Sy"
-				},
-				"valorFinalDescuento": {
-					"exclude": [],
-					"fieldOrder": 4,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.Double"
-				}
-			},
-			"internal": false,
-			"liveService": true,
-			"service": "aprendoz_test"
-		},
 		"com.aprendoz_test.data.InscAlumCurso": {
 			"fields": {
 				"califChar": {
@@ -12528,7 +12465,7 @@ wm.types = {
 					"isList": false,
 					"noChange": [],
 					"required": false,
-					"type": "java.lang.Integer"
+					"type": "java.lang.Double"
 				},
 				"curso": {
 					"exclude": [],
@@ -12703,6 +12640,83 @@ wm.types = {
 					"noChange": [],
 					"required": true,
 					"type": "com.aprendoz_test.data.Sy"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.InscCoordinadoresSubarea": {
+			"fields": {
+				"activo": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
+				},
+				"fechaActualizacion": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"fechaCreacion": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"idCoordinadorSubarea": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"personaIdPersona": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
+				},
+				"subareaIdSubarea": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
+				},
+				"syIdSy": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
 				}
 			},
 			"internal": false,
@@ -13356,6 +13370,63 @@ wm.types = {
 			"liveService": true,
 			"service": "aprendoz_test"
 		},
+		"com.aprendoz_test.data.LogAccionesPadres": {
+			"fields": {
+				"accionRealizada": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"fechaCreacion": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.util.Date"
+				},
+				"idLogAccionesPadres": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"tablaAfectada": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"usuario": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
 		"com.aprendoz_test.data.LogDocentes": {
 			"fields": {
 				"fechaIngreso": {
@@ -13848,6 +13919,43 @@ wm.types = {
 			"liveService": true,
 			"service": "aprendoz_test"
 		},
+		"com.aprendoz_test.data.Meses": {
+			"fields": {
+				"id": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"mes": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"mesnumero": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
 		"com.aprendoz_test.data.Nacionalidades": {
 			"fields": {
 				"idNacionalidad": {
@@ -14054,6 +14162,428 @@ wm.types = {
 			},
 			"internal": false,
 			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.PadresCorreoCoordinador": {
+			"fields": {
+				"id": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "com.aprendoz_test.data.PadresCorreoCoordinadorId"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.PadresCorreoCoordinadorId": {
+			"fields": {
+				"apellido1": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"apellido2": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"curso": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"email": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"idCurso": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"nombre1": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nombre2": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nombreLdap": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"personaIdPersona": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.PadresCorreosPadres": {
+			"fields": {
+				"id": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "com.aprendoz_test.data.PadresCorreosPadresId"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.PadresCorreosPadresId": {
+			"fields": {
+				"activoRetirado": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"apellido1": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"apellido2": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"codigo": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"correoMama": {
+					"exclude": [],
+					"fieldOrder": 9,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"correoPapa": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"grupoFamiliarIdGrupoFamiliar": {
+					"exclude": [],
+					"fieldOrder": 10,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idPersona": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"matriculado": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"nombre1": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nombre2": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"syIdSy": {
+					"exclude": [],
+					"fieldOrder": 11,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.PadresTramitesTipopersona": {
+			"fields": {
+				"id": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "com.aprendoz_test.data.PadresTramitesTipopersonaId"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.PadresTramitesTipopersonaId": {
+			"fields": {
+				"accion": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"apruebaSolicita": {
+					"exclude": [],
+					"fieldOrder": 12,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"disponible": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"idAccion": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idTipoPersona": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idTipoTramite": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"notificacion": {
+					"exclude": [],
+					"fieldOrder": 13,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"requerido": {
+					"exclude": [],
+					"fieldOrder": 10,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"tipoPersona": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"tipoPersonaIdTipoPersona": {
+					"exclude": [],
+					"fieldOrder": 9,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"tipoTramiteIdTipoTramite": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"tramite": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"tramiteTipoRolId": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"valorDefecto": {
+					"exclude": [],
+					"fieldOrder": 11,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Boolean"
+				}
+			},
+			"internal": false,
+			"liveService": false,
 			"service": "aprendoz_test"
 		},
 		"com.aprendoz_test.data.PadresVistaActividades": {
@@ -14816,16 +15346,6 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.String"
 				},
-				"personaCopies": {
-					"exclude": [],
-					"fieldOrder": 4,
-					"fieldSubType": null,
-					"include": [],
-					"isList": true,
-					"noChange": [],
-					"required": false,
-					"type": "com.aprendoz_test.data.PersonaCopy"
-				},
 				"personas": {
 					"exclude": [],
 					"fieldOrder": 3,
@@ -14930,39 +15450,9 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.Integer"
 				},
-				"inscAlumAsigCopies": {
-					"exclude": [],
-					"fieldOrder": 6,
-					"fieldSubType": null,
-					"include": [],
-					"isList": true,
-					"noChange": [],
-					"required": false,
-					"type": "com.aprendoz_test.data.InscAlumAsigCopy"
-				},
-				"inscAlumAsigCopy2s": {
-					"exclude": [],
-					"fieldOrder": 7,
-					"fieldSubType": null,
-					"include": [],
-					"isList": true,
-					"noChange": [],
-					"required": false,
-					"type": "com.aprendoz_test.data.InscAlumAsigCopy2"
-				},
-				"inscAlumAsigCopy3s": {
-					"exclude": [],
-					"fieldOrder": 11,
-					"fieldSubType": null,
-					"include": [],
-					"isList": true,
-					"noChange": [],
-					"required": false,
-					"type": "com.aprendoz_test.data.InscAlumAsigCopy3"
-				},
 				"inscAlumAsigs": {
 					"exclude": [],
-					"fieldOrder": 9,
+					"fieldOrder": 7,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -14972,7 +15462,7 @@ wm.types = {
 				},
 				"inscCursoAsigCopies": {
 					"exclude": [],
-					"fieldOrder": 10,
+					"fieldOrder": 8,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -14982,7 +15472,7 @@ wm.types = {
 				},
 				"inscCursoAsigs": {
 					"exclude": [],
-					"fieldOrder": 8,
+					"fieldOrder": 6,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15059,7 +15549,7 @@ wm.types = {
 				},
 				"actualizacionDatosPersonas": {
 					"exclude": [],
-					"fieldOrder": 86,
+					"fieldOrder": 85,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15109,7 +15599,7 @@ wm.types = {
 				},
 				"calificacionFinals": {
 					"exclude": [],
-					"fieldOrder": 69,
+					"fieldOrder": 68,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15219,7 +15709,7 @@ wm.types = {
 				},
 				"coordinacions": {
 					"exclude": [],
-					"fieldOrder": 101,
+					"fieldOrder": 97,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15229,7 +15719,7 @@ wm.types = {
 				},
 				"coordinadoreses": {
 					"exclude": [],
-					"fieldOrder": 94,
+					"fieldOrder": 91,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15349,7 +15839,7 @@ wm.types = {
 				},
 				"fichaMedicas": {
 					"exclude": [],
-					"fieldOrder": 87,
+					"fieldOrder": 86,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15359,7 +15849,7 @@ wm.types = {
 				},
 				"gestionEncuestases": {
 					"exclude": [],
-					"fieldOrder": 98,
+					"fieldOrder": 95,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15409,7 +15899,7 @@ wm.types = {
 				},
 				"inscAlumActividads": {
 					"exclude": [],
-					"fieldOrder": 71,
+					"fieldOrder": 70,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15427,39 +15917,9 @@ wm.types = {
 					"required": false,
 					"type": "com.aprendoz_test.data.InscAlumAprendizaje"
 				},
-				"inscAlumAsigCopies": {
-					"exclude": [],
-					"fieldOrder": 91,
-					"fieldSubType": null,
-					"include": [],
-					"isList": true,
-					"noChange": [],
-					"required": false,
-					"type": "com.aprendoz_test.data.InscAlumAsigCopy"
-				},
-				"inscAlumAsigCopy2s": {
-					"exclude": [],
-					"fieldOrder": 100,
-					"fieldSubType": null,
-					"include": [],
-					"isList": true,
-					"noChange": [],
-					"required": false,
-					"type": "com.aprendoz_test.data.InscAlumAsigCopy2"
-				},
-				"inscAlumAsigCopy3s": {
-					"exclude": [],
-					"fieldOrder": 96,
-					"fieldSubType": null,
-					"include": [],
-					"isList": true,
-					"noChange": [],
-					"required": false,
-					"type": "com.aprendoz_test.data.InscAlumAsigCopy3"
-				},
 				"inscAlumAsigs": {
 					"exclude": [],
-					"fieldOrder": 97,
+					"fieldOrder": 94,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15467,19 +15927,9 @@ wm.types = {
 					"required": false,
 					"type": "com.aprendoz_test.data.InscAlumAsig"
 				},
-				"inscAlumCostoCopies": {
-					"exclude": [],
-					"fieldOrder": 85,
-					"fieldSubType": null,
-					"include": [],
-					"isList": true,
-					"noChange": [],
-					"required": false,
-					"type": "com.aprendoz_test.data.InscAlumCostoCopy"
-				},
 				"inscAlumCostos": {
 					"exclude": [],
-					"fieldOrder": 99,
+					"fieldOrder": 96,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15509,7 +15959,7 @@ wm.types = {
 				},
 				"inscComentariosAlumnoses": {
 					"exclude": [],
-					"fieldOrder": 68,
+					"fieldOrder": 69,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15549,7 +15999,7 @@ wm.types = {
 				},
 				"inscDirectorNivels": {
 					"exclude": [],
-					"fieldOrder": 70,
+					"fieldOrder": 71,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15559,7 +16009,7 @@ wm.types = {
 				},
 				"inscPersonaEduComs": {
 					"exclude": [],
-					"fieldOrder": 93,
+					"fieldOrder": 92,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15579,7 +16029,7 @@ wm.types = {
 				},
 				"logDocenteses": {
 					"exclude": [],
-					"fieldOrder": 89,
+					"fieldOrder": 88,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15659,7 +16109,7 @@ wm.types = {
 				},
 				"matriculas": {
 					"exclude": [],
-					"fieldOrder": 95,
+					"fieldOrder": 93,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15809,7 +16259,7 @@ wm.types = {
 				},
 				"perfilPersonaImgs": {
 					"exclude": [],
-					"fieldOrder": 92,
+					"fieldOrder": 90,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -15819,7 +16269,7 @@ wm.types = {
 				},
 				"personaCarnes": {
 					"exclude": [],
-					"fieldOrder": 90,
+					"fieldOrder": 89,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -16029,7 +16479,7 @@ wm.types = {
 				},
 				"transporteNovedadeses": {
 					"exclude": [],
-					"fieldOrder": 88,
+					"fieldOrder": 87,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -16093,653 +16543,6 @@ wm.types = {
 					"noChange": [],
 					"required": true,
 					"type": "com.aprendoz_test.data.Persona"
-				}
-			},
-			"internal": false,
-			"liveService": true,
-			"service": "aprendoz_test"
-		},
-		"com.aprendoz_test.data.PersonaCopy": {
-			"fields": {
-				"activoRetirado": {
-					"exclude": [],
-					"fieldOrder": 6,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Boolean"
-				},
-				"apellido1": {
-					"exclude": [],
-					"fieldOrder": 7,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"apellido2": {
-					"exclude": [],
-					"fieldOrder": 8,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"barrio": {
-					"exclude": [],
-					"fieldOrder": 25,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"cargo": {
-					"exclude": [],
-					"fieldOrder": 49,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"celular": {
-					"exclude": [],
-					"fieldOrder": 50,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"clave": {
-					"exclude": [],
-					"fieldOrder": 2,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"clinicaEmergencia": {
-					"exclude": [],
-					"fieldOrder": 32,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"codigo": {
-					"exclude": [],
-					"fieldOrder": 3,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"codigoFamilia": {
-					"exclude": [],
-					"fieldOrder": 36,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"codigoPostal": {
-					"exclude": [],
-					"fieldOrder": 26,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"colegioAnterior": {
-					"exclude": [],
-					"fieldOrder": 42,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"comentarioRetiro": {
-					"exclude": [],
-					"fieldOrder": 41,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"cursoIngreso": {
-					"exclude": [],
-					"fieldOrder": 39,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"departamento": {
-					"exclude": [],
-					"fieldOrder": 28,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"direccionOficina": {
-					"exclude": [],
-					"fieldOrder": 51,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"direccionResidencia": {
-					"exclude": [],
-					"fieldOrder": 13,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"email": {
-					"exclude": [],
-					"fieldOrder": 4,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"empresa": {
-					"exclude": [],
-					"fieldOrder": 48,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"eps": {
-					"exclude": [],
-					"fieldOrder": 30,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"fechaIngreso": {
-					"exclude": [],
-					"fieldOrder": 37,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.util.Date"
-				},
-				"fechaNacimiento": {
-					"exclude": [],
-					"fieldOrder": 12,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.util.Date"
-				},
-				"fechaRetiro": {
-					"exclude": [],
-					"fieldOrder": 40,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.util.Date"
-				},
-				"gradoIngreso": {
-					"exclude": [],
-					"fieldOrder": 38,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"grupoFamiliar": {
-					"exclude": [],
-					"fieldOrder": 63,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.GrupoFamiliar"
-				},
-				"hijoDeExalumno": {
-					"exclude": [],
-					"fieldOrder": 43,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Boolean"
-				},
-				"idPersona": {
-					"exclude": ["insert"],
-					"fieldOrder": 0,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Integer"
-				},
-				"inscAlumCursoIdInscAlumCurso": {
-					"exclude": [],
-					"fieldOrder": 60,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Integer"
-				},
-				"lugarExpedicionDepartamento": {
-					"exclude": [],
-					"fieldOrder": 23,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"lugarExpedicionMunicipio": {
-					"exclude": [],
-					"fieldOrder": 22,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"lugarNacimientoDepartamento": {
-					"exclude": [],
-					"fieldOrder": 20,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"lugarNacimientoMunicipio": {
-					"exclude": [],
-					"fieldOrder": 21,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"matriculado": {
-					"exclude": [],
-					"fieldOrder": 5,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Boolean"
-				},
-				"municipio": {
-					"exclude": [],
-					"fieldOrder": 27,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"nacionalidad": {
-					"exclude": [],
-					"fieldOrder": 19,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"nivelAcademico": {
-					"exclude": [],
-					"fieldOrder": 11,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"noDocumento": {
-					"exclude": [],
-					"fieldOrder": 18,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"noPlaqueta": {
-					"exclude": [],
-					"fieldOrder": 59,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"nombre1": {
-					"exclude": [],
-					"fieldOrder": 9,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"nombre2": {
-					"exclude": [],
-					"fieldOrder": 10,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"nombreLdap": {
-					"exclude": [],
-					"fieldOrder": 1,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"nombrePadreExalumno": {
-					"exclude": [],
-					"fieldOrder": 44,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"numeroContratoSalud": {
-					"exclude": [],
-					"fieldOrder": 31,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"numeroTarjetaCredito": {
-					"exclude": [],
-					"fieldOrder": 46,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"pais": {
-					"exclude": [],
-					"fieldOrder": 61,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.Pais"
-				},
-				"paisDomicilio": {
-					"exclude": [],
-					"fieldOrder": 24,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"parentesco": {
-					"exclude": [],
-					"fieldOrder": 53,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"profesion": {
-					"exclude": [],
-					"fieldOrder": 47,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"promocion": {
-					"exclude": [],
-					"fieldOrder": 45,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"religion": {
-					"exclude": [],
-					"fieldOrder": 16,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"rutaM": {
-					"exclude": [],
-					"fieldOrder": 54,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"rutaT": {
-					"exclude": [],
-					"fieldOrder": 55,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"saludPrepagada": {
-					"exclude": [],
-					"fieldOrder": 29,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"sexo": {
-					"exclude": [],
-					"fieldOrder": 35,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"telefono": {
-					"exclude": [],
-					"fieldOrder": 14,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"telefono2": {
-					"exclude": [],
-					"fieldOrder": 15,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"telefonoOficina": {
-					"exclude": [],
-					"fieldOrder": 52,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"tipoDocumento": {
-					"exclude": [],
-					"fieldOrder": 17,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"tipoPersona": {
-					"exclude": [],
-					"fieldOrder": 62,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.TipoPersona"
-				},
-				"tipoSangre": {
-					"exclude": [],
-					"fieldOrder": 34,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"tomaAlmuerzo": {
-					"exclude": [],
-					"fieldOrder": 56,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Boolean"
-				},
-				"tomaMediasNueves": {
-					"exclude": [],
-					"fieldOrder": 57,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Boolean"
-				},
-				"tomaSeguroAccidentes": {
-					"exclude": [],
-					"fieldOrder": 58,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Boolean"
-				},
-				"viveCon": {
-					"exclude": [],
-					"fieldOrder": 33,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
 				}
 			},
 			"internal": false,
@@ -16812,6 +16615,16 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.String"
 				},
+				"ccosto": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
 				"codigo": {
 					"exclude": [],
 					"fieldOrder": 0,
@@ -16855,6 +16668,670 @@ wm.types = {
 			},
 			"internal": false,
 			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.PersonalActivo": {
+			"fields": {
+				"id": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "com.aprendoz_test.data.PersonalActivoId"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.PersonalActivoId": {
+			"fields": {
+				"activoRetirado": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"apellido1": {
+					"exclude": [],
+					"fieldOrder": 9,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"apellido2": {
+					"exclude": [],
+					"fieldOrder": 10,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"barrio": {
+					"exclude": [],
+					"fieldOrder": 28,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"cargo": {
+					"exclude": [],
+					"fieldOrder": 52,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"celular": {
+					"exclude": [],
+					"fieldOrder": 53,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"clave": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"clinicaEmergencia": {
+					"exclude": [],
+					"fieldOrder": 35,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"codigo": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"codigoFamilia": {
+					"exclude": [],
+					"fieldOrder": 39,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"codigoPostal": {
+					"exclude": [],
+					"fieldOrder": 29,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"colegioAnterior": {
+					"exclude": [],
+					"fieldOrder": 45,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"comentarioRetiro": {
+					"exclude": [],
+					"fieldOrder": 44,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"cursoIngreso": {
+					"exclude": [],
+					"fieldOrder": 42,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"departamento": {
+					"exclude": [],
+					"fieldOrder": 31,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"direccionOficina": {
+					"exclude": [],
+					"fieldOrder": 54,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"direccionResidencia": {
+					"exclude": [],
+					"fieldOrder": 15,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"email": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"empresa": {
+					"exclude": [],
+					"fieldOrder": 51,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"eps": {
+					"exclude": [],
+					"fieldOrder": 33,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"fechaIngreso": {
+					"exclude": [],
+					"fieldOrder": 40,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.util.Date"
+				},
+				"fechaNacimiento": {
+					"exclude": [],
+					"fieldOrder": 14,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.util.Date"
+				},
+				"fechaRetiro": {
+					"exclude": [],
+					"fieldOrder": 43,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.util.Date"
+				},
+				"gradoIngreso": {
+					"exclude": [],
+					"fieldOrder": 41,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"grupoFamiliarIdGrupoFamiliar": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"hijoDeExalumno": {
+					"exclude": [],
+					"fieldOrder": 46,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"idPersona": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"inscAlumCursoIdInscAlumCurso": {
+					"exclude": [],
+					"fieldOrder": 63,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"lugarExpedicionDepartamento": {
+					"exclude": [],
+					"fieldOrder": 26,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"lugarExpedicionMunicipio": {
+					"exclude": [],
+					"fieldOrder": 25,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"lugarNacimientoDepartamento": {
+					"exclude": [],
+					"fieldOrder": 22,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"lugarNacimientoMunicipio": {
+					"exclude": [],
+					"fieldOrder": 23,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"matriculado": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"municipio": {
+					"exclude": [],
+					"fieldOrder": 30,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nacionalidad": {
+					"exclude": [],
+					"fieldOrder": 21,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nivelAcademico": {
+					"exclude": [],
+					"fieldOrder": 13,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"noDocumento": {
+					"exclude": [],
+					"fieldOrder": 20,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"noPlaqueta": {
+					"exclude": [],
+					"fieldOrder": 62,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nombre1": {
+					"exclude": [],
+					"fieldOrder": 11,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nombre2": {
+					"exclude": [],
+					"fieldOrder": 12,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nombreLdap": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nombrePadreExalumno": {
+					"exclude": [],
+					"fieldOrder": 47,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"numeroContratoSalud": {
+					"exclude": [],
+					"fieldOrder": 34,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"numeroTarjetaCredito": {
+					"exclude": [],
+					"fieldOrder": 49,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"paisDomicilio": {
+					"exclude": [],
+					"fieldOrder": 27,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"paisNacId": {
+					"exclude": [],
+					"fieldOrder": 24,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"parentesco": {
+					"exclude": [],
+					"fieldOrder": 56,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"profesion": {
+					"exclude": [],
+					"fieldOrder": 50,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"promocion": {
+					"exclude": [],
+					"fieldOrder": 48,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"religion": {
+					"exclude": [],
+					"fieldOrder": 18,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"rutaM": {
+					"exclude": [],
+					"fieldOrder": 57,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"rutaT": {
+					"exclude": [],
+					"fieldOrder": 58,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"saludPrepagada": {
+					"exclude": [],
+					"fieldOrder": 32,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"sexo": {
+					"exclude": [],
+					"fieldOrder": 38,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"telefono": {
+					"exclude": [],
+					"fieldOrder": 16,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"telefono2": {
+					"exclude": [],
+					"fieldOrder": 17,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"telefonoOficina": {
+					"exclude": [],
+					"fieldOrder": 55,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"tipoDocumento": {
+					"exclude": [],
+					"fieldOrder": 19,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"tipoPersonaIdTipoPersona": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"tipoSangre": {
+					"exclude": [],
+					"fieldOrder": 37,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"tomaAlmuerzo": {
+					"exclude": [],
+					"fieldOrder": 59,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"tomaMediasNueves": {
+					"exclude": [],
+					"fieldOrder": 60,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"tomaSeguroAccidentes": {
+					"exclude": [],
+					"fieldOrder": 61,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"viveCon": {
+					"exclude": [],
+					"fieldOrder": 36,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": false,
 			"service": "aprendoz_test"
 		},
 		"com.aprendoz_test.data.Promocion": {
@@ -17577,6 +18054,93 @@ wm.types = {
 					"noChange": [],
 					"required": true,
 					"type": "com.aprendoz_test.data.TipoDependencia"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.ReportesParams": {
+			"fields": {
+				"codigo": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"idReportesParams": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"param1": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"param2": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"param3": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"param4": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"param5": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"syIdSy": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
 				}
 			},
 			"internal": false,
@@ -18511,7 +19075,7 @@ wm.types = {
 			"fields": {
 				"eventualidadPersonases": {
 					"exclude": [],
-					"fieldOrder": 3,
+					"fieldOrder": 4,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -18539,9 +19103,19 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
-				"tipoEventualidad": {
+				"syIdSy": {
 					"exclude": [],
 					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
+				},
+				"tipoEventualidad": {
+					"exclude": [],
+					"fieldOrder": 3,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -18685,7 +19259,7 @@ wm.types = {
 			"fields": {
 				"asignaturaCopies": {
 					"exclude": [],
-					"fieldOrder": 15,
+					"fieldOrder": 14,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -18695,7 +19269,7 @@ wm.types = {
 				},
 				"asignaturas": {
 					"exclude": [],
-					"fieldOrder": 18,
+					"fieldOrder": 17,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -18735,7 +19309,7 @@ wm.types = {
 				},
 				"coordinadoreses": {
 					"exclude": [],
-					"fieldOrder": 20,
+					"fieldOrder": 19,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -18745,7 +19319,7 @@ wm.types = {
 				},
 				"costosAnualesCopies": {
 					"exclude": [],
-					"fieldOrder": 17,
+					"fieldOrder": 16,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -18762,6 +19336,16 @@ wm.types = {
 					"noChange": [],
 					"required": false,
 					"type": "com.aprendoz_test.data.CostosAnuales"
+				},
+				"costosCopies": {
+					"exclude": [],
+					"fieldOrder": 20,
+					"fieldSubType": null,
+					"include": [],
+					"isList": true,
+					"noChange": [],
+					"required": false,
+					"type": "com.aprendoz_test.data.CostosCopy"
 				},
 				"costoses": {
 					"exclude": [],
@@ -18785,7 +19369,7 @@ wm.types = {
 				},
 				"educoms": {
 					"exclude": [],
-					"fieldOrder": 19,
+					"fieldOrder": 18,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -18815,7 +19399,7 @@ wm.types = {
 				},
 				"horarios": {
 					"exclude": [],
-					"fieldOrder": 14,
+					"fieldOrder": 13,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -18832,16 +19416,6 @@ wm.types = {
 					"noChange": ["delete", "read", "update"],
 					"required": true,
 					"type": "java.lang.Integer"
-				},
-				"inscAlumCostoCopies": {
-					"exclude": [],
-					"fieldOrder": 13,
-					"fieldSubType": null,
-					"include": [],
-					"isList": true,
-					"noChange": [],
-					"required": false,
-					"type": "com.aprendoz_test.data.InscAlumCostoCopy"
 				},
 				"inscAlumCostos": {
 					"exclude": [],
@@ -18895,7 +19469,7 @@ wm.types = {
 				},
 				"periodos": {
 					"exclude": [],
-					"fieldOrder": 16,
+					"fieldOrder": 15,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -19251,6 +19825,63 @@ wm.types = {
 			},
 			"internal": false,
 			"liveService": false,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.Tarjetasdav050814": {
+			"fields": {
+				"ncodigo": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nnombre": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nombres": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"numidres": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"tarjedav": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": true,
 			"service": "aprendoz_test"
 		},
 		"com.aprendoz_test.data.TestPorcentajes": {
@@ -19823,19 +20454,9 @@ wm.types = {
 					"required": false,
 					"type": "com.aprendoz_test.data.InscPersonaGrupoFamiliar"
 				},
-				"personaCopies": {
-					"exclude": [],
-					"fieldOrder": 4,
-					"fieldSubType": null,
-					"include": [],
-					"isList": true,
-					"noChange": [],
-					"required": false,
-					"type": "com.aprendoz_test.data.PersonaCopy"
-				},
 				"personas": {
 					"exclude": [],
-					"fieldOrder": 5,
+					"fieldOrder": 4,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -19845,7 +20466,7 @@ wm.types = {
 				},
 				"reportesTipoPersonas": {
 					"exclude": [],
-					"fieldOrder": 6,
+					"fieldOrder": 5,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -19964,6 +20585,26 @@ wm.types = {
 		},
 		"com.aprendoz_test.data.TipoSolicitud": {
 			"fields": {
+				"disponibleAdmon": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
+				},
+				"disponiblePadres": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
+				},
 				"idTipoSolicitud": {
 					"exclude": ["insert"],
 					"fieldOrder": 0,
@@ -19986,7 +20627,7 @@ wm.types = {
 				},
 				"transporteNovedadeses": {
 					"exclude": [],
-					"fieldOrder": 2,
+					"fieldOrder": 4,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -20341,6 +20982,441 @@ wm.types = {
 			"liveService": false,
 			"service": "aprendoz_test"
 		},
+		"com.aprendoz_test.data.Tramite": {
+			"fields": {
+				"comentarios": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"fechaCreacion": {
+					"exclude": [],
+					"fieldOrder": 9,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"fechaEntrega": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"fechaEsperada": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"fechaModificacion": {
+					"exclude": [],
+					"fieldOrder": 10,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"fechaTramite": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"horaTramite": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"idReferenciado": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idSolicitante": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idTramite": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"tramiteAutorizacioneses": {
+					"exclude": [],
+					"fieldOrder": 12,
+					"fieldSubType": null,
+					"include": [],
+					"isList": true,
+					"noChange": [],
+					"required": false,
+					"type": "com.aprendoz_test.data.TramiteAutorizaciones"
+				},
+				"tramiteTipoTramite": {
+					"exclude": [],
+					"fieldOrder": 11,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "com.aprendoz_test.data.TramiteTipoTramite"
+				},
+				"urlFile": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.TramiteAccion": {
+			"fields": {
+				"accion": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"idAccion": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"tramiteTipoTramiteRols": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": true,
+					"noChange": [],
+					"required": false,
+					"type": "com.aprendoz_test.data.TramiteTipoTramiteRol"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.TramiteAutorizaciones": {
+			"fields": {
+				"aprobacion": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Boolean"
+				},
+				"comentario": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"fechaActualizacion": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"fechaCreacion": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"idAutorizacion": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"personaIdPersona": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"tramite": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "com.aprendoz_test.data.Tramite"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.TramiteTipoTramite": {
+			"fields": {
+				"disponibleUi": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Boolean"
+				},
+				"fechaActualizacion": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"fechaCreacion": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"idTipoTramite": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"tramite": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"tramiteTipoTramiteRols": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": true,
+					"noChange": [],
+					"required": false,
+					"type": "com.aprendoz_test.data.TramiteTipoTramiteRol"
+				},
+				"tramites": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": true,
+					"noChange": [],
+					"required": false,
+					"type": "com.aprendoz_test.data.Tramite"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.TramiteTipoTramiteRol": {
+			"fields": {
+				"apruebaSolicita": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Boolean"
+				},
+				"fechaActualizacion": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"fechaCreacion": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"notificacion": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Boolean"
+				},
+				"requerido": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Boolean"
+				},
+				"tipoPersonaIdTipoPersona": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"tramiteAccion": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "com.aprendoz_test.data.TramiteAccion"
+				},
+				"tramiteTipoRolId": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"tramiteTipoTramite": {
+					"exclude": [],
+					"fieldOrder": 9,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "com.aprendoz_test.data.TramiteTipoTramite"
+				},
+				"valorDefecto": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Boolean"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
 		"com.aprendoz_test.data.TransporteIngresoRutas": {
 			"fields": {
 				"accionma": {
@@ -20559,77 +21635,127 @@ wm.types = {
 			"fields": {
 				"aprobacionCoordinador": {
 					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Boolean"
+				},
+				"aprobacionDirNivel": {
+					"exclude": [],
 					"fieldOrder": 5,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.lang.Boolean"
 				},
-				"aprobacionDirNivel": {
+				"aprobacionEnfermeria": {
 					"exclude": [],
-					"fieldOrder": 4,
+					"fieldOrder": 11,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.lang.Boolean"
 				},
 				"aprobacionTransporte": {
-					"exclude": [],
-					"fieldOrder": 6,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.Boolean"
-				},
-				"fechaProgramada": {
-					"exclude": [],
-					"fieldOrder": 8,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.util.Date"
-				},
-				"fechaSolicitudFin": {
-					"exclude": [],
-					"fieldOrder": 10,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.util.Date"
-				},
-				"fechaSolicitudInicio": {
 					"exclude": [],
 					"fieldOrder": 9,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
-					"type": "java.util.Date"
+					"required": false,
+					"type": "java.lang.Boolean"
 				},
-				"horaActualSalida": {
+				"comentarioCoordinador": {
 					"exclude": [],
-					"fieldOrder": 3,
+					"fieldOrder": 8,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"comentarioDirNivel": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"comentarioEnfermeria": {
+					"exclude": [],
+					"fieldOrder": 12,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"comentarioTransporte": {
+					"exclude": [],
+					"fieldOrder": 10,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"fechaActualizacion": {
+					"exclude": [],
+					"fieldOrder": 15,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"fechaCreacion": {
+					"exclude": [],
+					"fieldOrder": 14,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"fechaSolicitudFin": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"fechaSolicitudInicio": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
 					"type": "java.util.Date"
 				},
 				"horaProgramada": {
 					"exclude": [],
-					"fieldOrder": 1,
+					"fieldOrder": 3,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -20647,49 +21773,9 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.Integer"
 				},
-				"jueves": {
-					"exclude": [],
-					"fieldOrder": 15,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.Boolean"
-				},
-				"lunes": {
-					"exclude": [],
-					"fieldOrder": 12,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.Boolean"
-				},
-				"martes": {
-					"exclude": [],
-					"fieldOrder": 13,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.Boolean"
-				},
-				"miercoles": {
-					"exclude": [],
-					"fieldOrder": 14,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.Boolean"
-				},
 				"numeroPuerta": {
 					"exclude": [],
-					"fieldOrder": 7,
+					"fieldOrder": 4,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -20699,25 +21785,15 @@ wm.types = {
 				},
 				"observaciones": {
 					"exclude": [],
-					"fieldOrder": 2,
+					"fieldOrder": 13,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.lang.String"
 				},
 				"persona": {
-					"exclude": [],
-					"fieldOrder": 19,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.Persona"
-				},
-				"sabado": {
 					"exclude": [],
 					"fieldOrder": 17,
 					"fieldSubType": null,
@@ -20725,47 +21801,27 @@ wm.types = {
 					"isList": false,
 					"noChange": [],
 					"required": true,
-					"type": "java.lang.Boolean"
+					"type": "com.aprendoz_test.data.Persona"
 				},
 				"tipoSolicitud": {
-					"exclude": [],
-					"fieldOrder": 20,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.TipoSolicitud"
-				},
-				"tipoSolicitud_1": {
-					"exclude": [],
-					"fieldOrder": 11,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.String"
-				},
-				"transporteRutas": {
 					"exclude": [],
 					"fieldOrder": 18,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
-					"type": "com.aprendoz_test.data.TransporteRutas"
+					"required": false,
+					"type": "com.aprendoz_test.data.TipoSolicitud"
 				},
-				"viernes": {
+				"transporteRutas": {
 					"exclude": [],
 					"fieldOrder": 16,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
-					"type": "java.lang.Boolean"
+					"required": false,
+					"type": "com.aprendoz_test.data.TransporteRutas"
 				}
 			},
 			"internal": false,
@@ -21126,6 +22182,274 @@ wm.types = {
 			"liveService": true,
 			"service": "aprendoz_test"
 		},
+		"com.aprendoz_test.data.VFilemakerPersonalDocente": {
+			"fields": {
+				"id": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "com.aprendoz_test.data.VFilemakerPersonalDocenteId"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.VFilemakerPersonalDocenteId": {
+			"fields": {
+				"apellido1": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"apellido2": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"idPersona": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"nombre1": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nombre2": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.VPorcentajeCalificacion": {
+			"fields": {
+				"id": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "com.aprendoz_test.data.VPorcentajeCalificacionId"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.VPorcentajeCalificacionId": {
+			"fields": {
+				"apellido1": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"apellido2": {
+					"exclude": [],
+					"fieldOrder": 9,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"asignatura": {
+					"exclude": [],
+					"fieldOrder": 13,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"curso": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"esperadosFecha": {
+					"exclude": [],
+					"fieldOrder": 14,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"grado": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"idAsignatura": {
+					"exclude": [],
+					"fieldOrder": 12,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idCurso": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idGrado": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idNivel": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idPersona": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"nameExp16": {
+					"exclude": [],
+					"fieldOrder": 15,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nivel": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nombre1": {
+					"exclude": [],
+					"fieldOrder": 10,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nombre2": {
+					"exclude": [],
+					"fieldOrder": 11,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"porcentaje": {
+					"exclude": [],
+					"fieldOrder": 16,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"schoolYear": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_test"
+		},
 		"com.aprendoz_test.data.VProfesorAsignatura": {
 			"fields": {
 				"id": {
@@ -21277,6 +22601,130 @@ wm.types = {
 			"liveService": false,
 			"service": "aprendoz_test"
 		},
+		"com.aprendoz_test.data.VProfesorAsignaturaCopy": {
+			"fields": {
+				"id": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "com.aprendoz_test.data.VProfesorAsignaturaCopyId"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.VProfesorAsignaturaCopyId": {
+			"fields": {
+				"asignatura": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"asignaturaIdAsignatura": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"gradoIdGrado": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idSubarea1": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idSubarea2": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idSubarea3": {
+					"exclude": [],
+					"fieldOrder": 9,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"nombreLdap": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"personaIdPersona": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"subject": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"syIdSy": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_test"
+		},
 		"com.aprendoz_test.data.VProfesorAsignaturaId": {
 			"fields": {
 				"asignatura": {
@@ -21378,6 +22826,110 @@ wm.types = {
 					"noChange": ["delete", "read", "update"],
 					"required": true,
 					"type": "java.lang.Integer"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.VistaActividadesPorAsignatura": {
+			"fields": {
+				"id": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "com.aprendoz_test.data.VistaActividadesPorAsignaturaId"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.VistaActividadesPorAsignaturaId": {
+			"fields": {
+				"actividad": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"fecha": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.util.Date"
+				},
+				"idActividad": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idAsignatura": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"requeridoAlternativo": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"syIdSy": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"tipoActividad": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"tipoDesempeno": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
 				}
 			},
 			"internal": false,
@@ -22302,6 +23854,140 @@ wm.types = {
 			"liveService": false,
 			"service": "aprendoz_test"
 		},
+		"com.aprendoz_test.data.VistaAprendizajesSubarea": {
+			"fields": {
+				"id": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "com.aprendoz_test.data.VistaAprendizajesSubareaId"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.VistaAprendizajesSubareaId": {
+			"fields": {
+				"grade": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"grado": {
+					"exclude": [],
+					"fieldOrder": 10,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"gradoSapiens": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"idArea": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idGrado": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idNivel": {
+					"exclude": [],
+					"fieldOrder": 9,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idSubarea": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"subarea": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"subareaGrado": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"subareaTotal": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"sy": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_test"
+		},
 		"com.aprendoz_test.data.VistaAsignaturaEstudiantes": {
 			"fields": {
 				"id": {
@@ -22466,6 +24152,130 @@ wm.types = {
 			"liveService": false,
 			"service": "aprendoz_test"
 		},
+		"com.aprendoz_test.data.VistaDashboardAsignaturaGlobal": {
+			"fields": {
+				"id": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "com.aprendoz_test.data.VistaDashboardAsignaturaGlobalId"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.VistaDashboardAsignaturaGlobalId": {
+			"fields": {
+				"apellido1": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"apellido2": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"asignatura": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"avgCalificacion": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"avgPuntaje": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.math.BigDecimal"
+				},
+				"curso": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"directorApellido1": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"directorApellido2": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"directorId": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idAsignatura": {
+					"exclude": [],
+					"fieldOrder": 9,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_test"
+		},
 		"com.aprendoz_test.data.VistaDashboardAvanzadosYMagistrales": {
 			"fields": {
 				"id": {
@@ -22564,6 +24374,378 @@ wm.types = {
 					"noChange": ["delete", "read", "update"],
 					"required": true,
 					"type": "java.lang.Long"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.VistaDashboardCalificacionEstudiantes": {
+			"fields": {
+				"id": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "com.aprendoz_test.data.VistaDashboardCalificacionEstudiantesId"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.VistaDashboardCalificacionEstudiantesId": {
+			"fields": {
+				"alumnoApellido1": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"alumnoApellido2": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"calificacion": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"curso": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"directorApellido1": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"directorApellido2": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"directorId": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"puntaje": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Double"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.VistaDashboardDirectores": {
+			"fields": {
+				"id": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "com.aprendoz_test.data.VistaDashboardDirectoresId"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.VistaDashboardDirectoresId": {
+			"fields": {
+				"apellido1": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"apellido2": {
+					"exclude": [],
+					"fieldOrder": 9,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"asignatura": {
+					"exclude": [],
+					"fieldOrder": 13,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"curso": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"esperadosFecha_asignatura_idAsignatura__20140506__": {
+					"exclude": [],
+					"fieldOrder": 14,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"grado": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"idAsignatura": {
+					"exclude": [],
+					"fieldOrder": 12,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idCurso": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idGrado": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idNivel": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idPersona": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"nameExp16": {
+					"exclude": [],
+					"fieldOrder": 15,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"nivel": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nombre1": {
+					"exclude": [],
+					"fieldOrder": 10,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"nombre2": {
+					"exclude": [],
+					"fieldOrder": 11,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"porcentaje": {
+					"exclude": [],
+					"fieldOrder": 16,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.math.BigDecimal"
+				},
+				"schoolYear": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.VistaDashboardFaltasGraves": {
+			"fields": {
+				"id": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "com.aprendoz_test.data.VistaDashboardFaltasGravesId"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.VistaDashboardFaltasGravesId": {
+			"fields": {
+				"apellido1": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"apellido2": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"curso": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"idPersona": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"porcentajeFaltasGraves": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update", "insert"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.math.BigDecimal"
 				}
 			},
 			"internal": false,
@@ -25039,6 +27221,80 @@ wm.types = {
 			"liveService": false,
 			"service": "aprendoz_test"
 		},
+		"com.aprendoz_test.data.output.GetCoordinadorCurricularInfoRtnType": {
+			"fields": {
+				"idPersona": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idsy": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.output.GetCoordinadorCursoInfoRtnType": {
+			"fields": {
+				"curso": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"idcurso": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idsy": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"sy": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_test"
+		},
 		"com.aprendoz_test.data.output.GetCurseByidGradeRtnType": {
 			"fields": {
 				"curso": {
@@ -25485,6 +27741,123 @@ wm.types = {
 			"service": "aprendoz_test"
 		},
 		"com.aprendoz_test.data.output.GetSubjectsByProfileRtnType": {
+			"fields": {
+				"asignatura": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"curso": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"grado": {
+					"exclude": [],
+					"fieldOrder": 10,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"idasignatura": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idcurso": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idgrado": {
+					"exclude": [],
+					"fieldOrder": 9,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idpersona": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idsy": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"nombre": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"sy_escolar": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"usuario": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_test"
+		},
+		"com.aprendoz_test.data.output.GetSubjectsByTeacherRtnType": {
 			"fields": {
 				"asignatura": {
 					"exclude": [],

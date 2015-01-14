@@ -139,6 +139,28 @@
 		}],
 		"returnType": "[com.aprendoz_test.data.output.EventualitiesByDateRtnType]"
 	}, {
+		"name": "getCoordinadorCurricularInfo",
+		"operationType": "hqlquery",
+		"parameters": [{
+			"name": "ppersona",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "pidy",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.GetCoordinadorCurricularInfoRtnType]"
+	}, {
+		"name": "getCoordinadorCursoInfo",
+		"operationType": "hqlquery",
+		"parameters": [{
+			"name": "pidpersona",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "pidsy",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.GetCoordinadorCursoInfoRtnType]"
+	}, {
 		"name": "getCurseByidGrade",
 		"operationType": "hqlquery",
 		"parameters": [{
@@ -214,6 +236,17 @@
 			"type": "java.lang.String"
 		}],
 		"returnType": "[com.aprendoz_test.data.output.GetSubjectsByProfileGroupedRtnType]"
+	}, {
+		"name": "getSubjectsByTeacher",
+		"operationType": "hqlquery",
+		"parameters": [{
+			"name": "usuario",
+			"type": "java.lang.String"
+		}, {
+			"name": "sy",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.GetSubjectsByTeacherRtnType]"
 	}, {
 		"name": "getSyByCurDate",
 		"operationType": "hqlquery",

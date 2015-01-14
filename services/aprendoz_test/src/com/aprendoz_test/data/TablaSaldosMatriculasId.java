@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  *  aprendoz_test.TablaSaldosMatriculasId
- *  07/31/2014 10:31:32
+ *  01/13/2015 09:58:57
  * 
  */
 public class TablaSaldosMatriculasId

@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "HQLlsPeriodo" on 07/31/2014 10:31:50
+ * Generated for query "HQLlsPeriodo" on 01/13/2015 09:59:27
  * 
  */
 public class HQLlsPeriodoRtnType {

@@ -96,10 +96,10 @@
             <column name="EPS" length="500"/>
         </property>
         <property name="numeroContratoSalud" type="string">
-            <column name="Numero_Contrato_Salud" length="45"/>
+            <column name="Numero_Contrato_Salud"/>
         </property>
         <property name="clinicaEmergencia" type="string">
-            <column name="Clinica_Emergencia" length="45"/>
+            <column name="Clinica_Emergencia"/>
         </property>
         <property name="viveCon" type="string">
             <column name="Vive_Con" length="500"/>
@@ -218,29 +218,29 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.TransporteInscAlumTransporte"/>
         </set>
-        <set name="inscComentariosAlumnoses" inverse="true" cascade="">
-            <key>
-                <column name="persona_id_persona" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.InscComentariosAlumnos"/>
-        </set>
         <set name="calificacionFinals" inverse="true" cascade="">
             <key>
                 <column name="Persona_Id_Persona"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.CalificacionFinal"/>
         </set>
-        <set name="inscDirectorNivels" inverse="true" cascade="">
+        <set name="inscComentariosAlumnoses" inverse="true" cascade="">
             <key>
                 <column name="persona_id_persona" not-null="true"/>
             </key>
-            <one-to-many class="com.aprendoz_test.data.InscDirectorNivel"/>
+            <one-to-many class="com.aprendoz_test.data.InscComentariosAlumnos"/>
         </set>
         <set name="inscAlumActividads" inverse="true" cascade="">
             <key>
                 <column name="Persona_Id_Persona" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.InscAlumActividad"/>
+        </set>
+        <set name="inscDirectorNivels" inverse="true" cascade="">
+            <key>
+                <column name="persona_id_persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.InscDirectorNivel"/>
         </set>
         <set name="inscPersonaGrupoFamiliars" inverse="true" cascade="">
             <key>
@@ -320,12 +320,6 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.InscCursoAsigCopy"/>
         </set>
-        <set name="inscAlumCostoCopies" inverse="true" cascade="">
-            <key>
-                <column name="Persona_Id_Persona" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.InscAlumCostoCopy"/>
-        </set>
         <set name="actualizacionDatosPersonas" inverse="true" cascade="">
             <key>
                 <column name="persona_id_persona" not-null="true"/>
@@ -356,23 +350,11 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.PersonaCarne"/>
         </set>
-        <set name="inscAlumAsigCopies" inverse="true" cascade="">
-            <key>
-                <column name="Persona_Id_Persona" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.InscAlumAsigCopy"/>
-        </set>
         <set name="perfilPersonaImgs" inverse="true" cascade="">
             <key>
                 <column name="persona_id_persona" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.PerfilPersonaImg"/>
-        </set>
-        <set name="inscPersonaEduComs" inverse="true" cascade="">
-            <key>
-                <column name="persona_id_persona" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.InscPersonaEduCom"/>
         </set>
         <set name="coordinadoreses" inverse="true" cascade="">
             <key>
@@ -380,17 +362,17 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.Coordinadores"/>
         </set>
+        <set name="inscPersonaEduComs" inverse="true" cascade="">
+            <key>
+                <column name="persona_id_persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.InscPersonaEduCom"/>
+        </set>
         <set name="matriculas" inverse="true" cascade="">
             <key>
                 <column name="Persona_Id_Persona" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.Matricula"/>
-        </set>
-        <set name="inscAlumAsigCopy3s" inverse="true" cascade="">
-            <key>
-                <column name="Persona_Id_Persona" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.InscAlumAsigCopy3"/>
         </set>
         <set name="inscAlumAsigs" inverse="true" cascade="">
             <key>
@@ -409,12 +391,6 @@
                 <column name="Persona_Id_Persona" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.InscAlumCosto"/>
-        </set>
-        <set name="inscAlumAsigCopy2s" inverse="true" cascade="">
-            <key>
-                <column name="Persona_Id_Persona" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.InscAlumAsigCopy2"/>
         </set>
         <set name="coordinacions" inverse="true" cascade="">
             <key>

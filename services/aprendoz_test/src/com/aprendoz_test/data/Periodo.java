@@ -8,7 +8,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Periodo
- *  07/31/2014 10:31:31
+ *  01/13/2015 09:58:57
  * 
  */
 public class Periodo {
@@ -19,12 +19,9 @@ public class Periodo {
     private String periodo;
     private Date fechaInicio;
     private Date fechaFin;
-    private Set<com.aprendoz_test.data.InscAlumAsigCopy> inscAlumAsigCopies = new HashSet<com.aprendoz_test.data.InscAlumAsigCopy>();
-    private Set<com.aprendoz_test.data.InscAlumAsigCopy2> inscAlumAsigCopy2s = new HashSet<com.aprendoz_test.data.InscAlumAsigCopy2>();
     private Set<com.aprendoz_test.data.InscCursoAsig> inscCursoAsigs = new HashSet<com.aprendoz_test.data.InscCursoAsig>();
     private Set<com.aprendoz_test.data.InscAlumAsig> inscAlumAsigs = new HashSet<com.aprendoz_test.data.InscAlumAsig>();
     private Set<com.aprendoz_test.data.InscCursoAsigCopy> inscCursoAsigCopies = new HashSet<com.aprendoz_test.data.InscCursoAsigCopy>();
-    private Set<com.aprendoz_test.data.InscAlumAsigCopy3> inscAlumAsigCopy3s = new HashSet<com.aprendoz_test.data.InscAlumAsigCopy3>();
 
     public Integer getIdPeriodo() {
         return idPeriodo;
@@ -74,22 +71,6 @@ public class Periodo {
         this.fechaFin = fechaFin;
     }
 
-    public Set<com.aprendoz_test.data.InscAlumAsigCopy> getInscAlumAsigCopies() {
-        return inscAlumAsigCopies;
-    }
-
-    public void setInscAlumAsigCopies(Set<com.aprendoz_test.data.InscAlumAsigCopy> inscAlumAsigCopies) {
-        this.inscAlumAsigCopies = inscAlumAsigCopies;
-    }
-
-    public Set<com.aprendoz_test.data.InscAlumAsigCopy2> getInscAlumAsigCopy2s() {
-        return inscAlumAsigCopy2s;
-    }
-
-    public void setInscAlumAsigCopy2s(Set<com.aprendoz_test.data.InscAlumAsigCopy2> inscAlumAsigCopy2s) {
-        this.inscAlumAsigCopy2s = inscAlumAsigCopy2s;
-    }
-
     public Set<com.aprendoz_test.data.InscCursoAsig> getInscCursoAsigs() {
         return inscCursoAsigs;
     }
@@ -112,14 +93,6 @@ public class Periodo {
 
     public void setInscCursoAsigCopies(Set<com.aprendoz_test.data.InscCursoAsigCopy> inscCursoAsigCopies) {
         this.inscCursoAsigCopies = inscCursoAsigCopies;
-    }
-
-    public Set<com.aprendoz_test.data.InscAlumAsigCopy3> getInscAlumAsigCopy3s() {
-        return inscAlumAsigCopy3s;
-    }
-
-    public void setInscAlumAsigCopy3s(Set<com.aprendoz_test.data.InscAlumAsigCopy3> inscAlumAsigCopy3s) {
-        this.inscAlumAsigCopy3s = inscAlumAsigCopy3s;
     }
 
 }

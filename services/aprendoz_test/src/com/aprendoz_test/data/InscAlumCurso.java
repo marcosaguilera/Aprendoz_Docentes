@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.InscAlumCurso
- *  07/31/2014 10:31:31
+ *  01/13/2015 09:58:57
  * 
  */
 public class InscAlumCurso {
@@ -15,7 +15,7 @@ public class InscAlumCurso {
     private Curso curso;
     private Sy sy;
     private Persona persona;
-    private Integer calificacion;
+    private Double calificacion;
     private String califChar;
     private Date fechaMatricula;
 
@@ -51,11 +51,11 @@ public class InscAlumCurso {
         this.persona = persona;
     }
 
-    public Integer getCalificacion() {
+    public Double getCalificacion() {
         return calificacion;
     }
 
-    public void setCalificacion(Integer calificacion) {
+    public void setCalificacion(Double calificacion) {
         this.calificacion = calificacion;
     }
 

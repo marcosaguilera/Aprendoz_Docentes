@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.SubtipoEventualidad
- *  07/31/2014 10:31:31
+ *  01/13/2015 09:58:57
  * 
  */
 public class SubtipoEventualidad {
@@ -15,6 +15,7 @@ public class SubtipoEventualidad {
     private Integer idSubtipoEventualidad;
     private TipoEventualidad tipoEventualidad;
     private String subtipoEventualidad;
+    private Integer syIdSy;
     private Set<com.aprendoz_test.data.EventualidadPersonas> eventualidadPersonases = new HashSet<com.aprendoz_test.data.EventualidadPersonas>();
 
     public Integer getIdSubtipoEventualidad() {
@@ -39,6 +40,14 @@ public class SubtipoEventualidad {
 
     public void setSubtipoEventualidad(String subtipoEventualidad) {
         this.subtipoEventualidad = subtipoEventualidad;
+    }
+
+    public Integer getSyIdSy() {
+        return syIdSy;
+    }
+
+    public void setSyIdSy(Integer syIdSy) {
+        this.syIdSy = syIdSy;
     }
 
     public Set<com.aprendoz_test.data.EventualidadPersonas> getEventualidadPersonases() {

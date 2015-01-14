@@ -12,11 +12,14 @@ import com.aprendoz_test.data.output.Dash_no_calificadosRtnType;
 import com.aprendoz_test.data.output.EnviarMailEventualidadesRtnType;
 import com.aprendoz_test.data.output.Estudiantes_listado_curriculoRtnType;
 import com.aprendoz_test.data.output.EventualitiesByDateRtnType;
+import com.aprendoz_test.data.output.GetCoordinadorCurricularInfoRtnType;
+import com.aprendoz_test.data.output.GetCoordinadorCursoInfoRtnType;
 import com.aprendoz_test.data.output.GetCurseByidGradeRtnType;
 import com.aprendoz_test.data.output.GetListStudentsByCurseRtnType;
 import com.aprendoz_test.data.output.GetScheduleByProfileRtnType;
 import com.aprendoz_test.data.output.GetSubjectsByProfileGroupedRtnType;
 import com.aprendoz_test.data.output.GetSubjectsByProfileRtnType;
+import com.aprendoz_test.data.output.GetSubjectsByTeacherRtnType;
 import com.aprendoz_test.data.output.GetSyByCurDateRtnType;
 import com.aprendoz_test.data.output.GetSyByCurDate_RtnType;
 import com.aprendoz_test.data.output.GetTipoEventualidadByIdSubTipoRtnType;
@@ -52,7 +55,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
- *  07/31/2014 10:31:57
+ *  01/13/2015 09:59:36
  * 
  */
 @SuppressWarnings("unchecked")
@@ -134,6 +137,14 @@ public class Aprendoz_test
         return ((List<EventualitiesByDateRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.eventualitiesByDateQueryName), pfecha, pagingOptions));
     }
 
+    public List<GetCoordinadorCurricularInfoRtnType> getCoordinadorCurricularInfo(Integer ppersona, Integer pidy, PagingOptions pagingOptions) {
+        return ((List<GetCoordinadorCurricularInfoRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getCoordinadorCurricularInfoQueryName), ppersona, pidy, pagingOptions));
+    }
+
+    public List<GetCoordinadorCursoInfoRtnType> getCoordinadorCursoInfo(Integer pidpersona, Integer pidsy, PagingOptions pagingOptions) {
+        return ((List<GetCoordinadorCursoInfoRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getCoordinadorCursoInfoQueryName), pidpersona, pidsy, pagingOptions));
+    }
+
     public List<GetCurseByidGradeRtnType> getCurseByidGrade(Integer pgrado, PagingOptions pagingOptions) {
         return ((List<GetCurseByidGradeRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getCurseByidGradeQueryName), pgrado, pagingOptions));
     }
@@ -179,6 +190,10 @@ public class Aprendoz_test
 
     public List<GetSubjectsByProfileGroupedRtnType> getSubjectsByProfileGrouped(Integer sy, String usuario, PagingOptions pagingOptions) {
         return ((List<GetSubjectsByProfileGroupedRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getSubjectsByProfileGroupedQueryName), sy, usuario, pagingOptions));
+    }
+
+    public List<GetSubjectsByTeacherRtnType> getSubjectsByTeacher(String usuario, Integer sy, PagingOptions pagingOptions) {
+        return ((List<GetSubjectsByTeacherRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getSubjectsByTeacherQueryName), usuario, sy, pagingOptions));
     }
 
     public List<GetSyByCurDateRtnType> getSyByCurDate(Date f1, PagingOptions pagingOptions) {

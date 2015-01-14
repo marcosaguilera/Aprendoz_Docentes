@@ -21,7 +21,7 @@ var wmChromeFramePath = "http://google.com/chrome";
 
 <title>Aprendoz_Docentes</title>
 <link rel="shortcut icon" href="resources/images/logos/favicon.ico" />
-<script>var wmThemeUrl = "lib/dojo/dojo/../../../lib/wm/base/widget/themes/wm_notheme//theme.css";</script>
+<script>var wmThemeUrl = "../wavemaker/lib/dojo/dojo/../../../lib/wm/base/widget/themes/wm_notheme/theme.css";</script>
 <style type="text/css">
 	#wavemakerNode {
 		height: 100%;
@@ -48,27 +48,28 @@ var wmChromeFramePath = "http://google.com/chrome";
 <!-- google charts api -->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
-
-      // Load the Visualization API and the piechart package.
+      // Load the Visualization API and the charts package.
       google.load('visualization', '1.0', {'packages':['corechart']});
       google.load('visualization', '1',   {'packages':['gauge']});
+      google.load('visualization', '1.1', {'packages':['bar']});
       // Set a callback to run when the Google Visualization API is loaded.
       var chartIsLoadedFunc = function() {
             window.googleChartLibIsLoaded = true; // use this in your page code to determine if you can draw or not
       }
       google.setOnLoadCallback(chartIsLoadedFunc);
     </script>
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
 
       // Load the Visualization API and the gauge
       google.load('visualization', '1',   {'packages':['gauge']});
+      google.load('visualization', '1.1', {'packages':['bar']});
       //google.load('visualization', '1.0', {'packages':['corechart']});
       // Set a callback to run when the Google Visualization API is loaded.
       var chartIsLoadedFunc = function() {
             window.googleChartLibIsLoaded = true; // use this in your page code to determine if you can draw or not
       }
       google.setOnLoadCallback(chartIsLoadedFunc);
-    </script>
+    </script> -->
 <!-- end google charts api  -->
 
 </head>
@@ -102,7 +103,7 @@ var wmChromeFramePath = "http://google.com/chrome";
 </script>
 <![endif]-->		
 		<div id="_wm_loading" style="z-index: 100;">
-			<table style='width:100%;height: 100%;'><tr><td align='center'><img alt="Loading" src="/wavemaker/lib/boot/images/loader.gif" />&nbsp;&nbsp;Loading...</td></tr></table>
+			<table style='width:100%;height: 100%;'><tr><td align='center'><img alt="Loading" src="/wavemaker/lib/boot/images/loader.gif" />&nbsp;&nbsp;Cargando...</td></tr></table>
 		</div>
 	</div>
 	<script type="text/javascript" src="/wavemaker/lib/runtimeLoader.js"></script>

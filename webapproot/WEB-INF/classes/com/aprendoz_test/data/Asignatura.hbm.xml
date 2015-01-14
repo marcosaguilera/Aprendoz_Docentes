@@ -83,18 +83,6 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.Horario"/>
         </set>
-        <set name="inscAlumAsigCopies" inverse="true" cascade="">
-            <key>
-                <column name="Asignatura_Id_Asignatura" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.InscAlumAsigCopy"/>
-        </set>
-        <set name="inscAlumAsigCopy3s" inverse="true" cascade="">
-            <key>
-                <column name="Asignatura_Id_Asignatura" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.InscAlumAsigCopy3"/>
-        </set>
         <set name="inscAlumAsigs" inverse="true" cascade="">
             <key>
                 <column name="Asignatura_Id_Asignatura" not-null="true"/>
@@ -121,15 +109,9 @@
         </set>
         <set name="aprendizajesAsignaturases" inverse="true" cascade="">
             <key>
-                <column name="Asignatura_Id_Asignatura"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.AprendizajesAsignaturas"/>
-        </set>
-        <set name="inscAlumAsigCopy2s" inverse="true" cascade="">
-            <key>
                 <column name="Asignatura_Id_Asignatura" not-null="true"/>
             </key>
-            <one-to-many class="com.aprendoz_test.data.InscAlumAsigCopy2"/>
+            <one-to-many class="com.aprendoz_test.data.AprendizajesAsignaturas"/>
         </set>
     </class>
 </hibernate-mapping>

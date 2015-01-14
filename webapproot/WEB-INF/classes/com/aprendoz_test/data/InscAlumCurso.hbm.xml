@@ -5,8 +5,8 @@
             <column name="Id_Insc_Alum_Curso"/>
             <generator class="identity"/>
         </id>
-        <property name="calificacion" type="integer">
-            <column name="Calificacion"/>
+        <property name="calificacion" type="double">
+            <column name="Calificacion" precision="11"/>
         </property>
         <property name="califChar" type="string">
             <column name="calif_char" length="10"/>
