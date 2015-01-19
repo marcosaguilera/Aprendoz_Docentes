@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Grado
- *  01/13/2015 09:58:57
+ *  01/19/2015 07:58:53
  * 
  */
 public class Grado {
@@ -17,9 +17,7 @@ public class Grado {
     private String grado;
     private String grade;
     private String gradoSapiens;
-    private Set<com.aprendoz_test.data.CostosAnualesCopy> costosAnualesCopies = new HashSet<com.aprendoz_test.data.CostosAnualesCopy>();
     private Set<com.aprendoz_test.data.Asignatura> asignaturas = new HashSet<com.aprendoz_test.data.Asignatura>();
-    private Set<com.aprendoz_test.data.CostosCopy> costosCopies = new HashSet<com.aprendoz_test.data.CostosCopy>();
     private Set<com.aprendoz_test.data.Costos> costoses = new HashSet<com.aprendoz_test.data.Costos>();
     private Set<com.aprendoz_test.data.AsignaturaCopy> asignaturaCopies = new HashSet<com.aprendoz_test.data.AsignaturaCopy>();
     private Set<com.aprendoz_test.data.AccAuthorization> accAuthorizations = new HashSet<com.aprendoz_test.data.AccAuthorization>();
@@ -66,28 +64,12 @@ public class Grado {
         this.gradoSapiens = gradoSapiens;
     }
 
-    public Set<com.aprendoz_test.data.CostosAnualesCopy> getCostosAnualesCopies() {
-        return costosAnualesCopies;
-    }
-
-    public void setCostosAnualesCopies(Set<com.aprendoz_test.data.CostosAnualesCopy> costosAnualesCopies) {
-        this.costosAnualesCopies = costosAnualesCopies;
-    }
-
     public Set<com.aprendoz_test.data.Asignatura> getAsignaturas() {
         return asignaturas;
     }
 
     public void setAsignaturas(Set<com.aprendoz_test.data.Asignatura> asignaturas) {
         this.asignaturas = asignaturas;
-    }
-
-    public Set<com.aprendoz_test.data.CostosCopy> getCostosCopies() {
-        return costosCopies;
-    }
-
-    public void setCostosCopies(Set<com.aprendoz_test.data.CostosCopy> costosCopies) {
-        this.costosCopies = costosCopies;
     }
 
     public Set<com.aprendoz_test.data.Costos> getCostoses() {

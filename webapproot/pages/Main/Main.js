@@ -2075,15 +2075,7 @@ dojo.declare("Main", wm.Page, {
         data.addColumn('string', 'Estudiantes');
         data.addColumn('number', 'Puntaje');
         data.addRows(result);
-        
           var view = new google.visualization.DataView(data);
-          /*view.setColumns([0, 1,
-                           { calc: "stringify",
-                             sourceColumn: 1,
-                             type: "string",
-                             role: "annotation" },
-                           2]);*/
-    
           var options = {
             title: "PUNTAJE DE ESTUDIANTES POR CURSO",
             width: 800,
@@ -2093,10 +2085,7 @@ dojo.declare("Main", wm.Page, {
           };
           var chart = new google.visualization.ColumnChart(this.chart6.domNode);
           chart.draw(view, options);
-    },
-	button3Click: function(inSender) {
-		this.dashboard_calificacion_general.filter.setValue("id.directorId", idp);
-	},
+    },	
 	asignaturaCoordinadorSelectChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {	
         var idasignatura = main.asignaturaCoordinadorSelect.getDataValue();
         main.dashboard_puntaje_asig_global.filter.setValue("id.idAsignatura", idasignatura);
@@ -2104,6 +2093,150 @@ dojo.declare("Main", wm.Page, {
 	},
 	dashboard_puntaje_asig_globalSuccess: function(inSender, inDeprecated) {
 		this.dashboard_chart5();
+	},  
+    asignaturaCoordinadorSelect2Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+        var idAsignatura = this.asignaturaCoordinadorSelect2.getDataValue();
+    	this.dashboard_malla_dimension_comprension.filter.setValue("id.idAsignatura", idAsignatura);
+        this.dashboard_malla_dimension_curricular.filter.setValue("id.idAsignatura", idAsignatura);
+        this.dashboard_malla_dimension_comprension.update(); 
+        this.dashboard_malla_dimension_curricular.update();
 	},
+	dashboard_malla_dimension_comprensionSuccess: function(inSender, inDeprecated) {
+        var mydata      = this.dashboard_malla_dimension_comprension.getData(); 
+        var dimensiones = [];
+        var data        = [];
+        for(var i = 0 ;  i < mydata.length ; i++){
+            console.log(i);
+            var base   = mydata[i];
+            console.log(base);
+            var dims    = base.id.dimensionComprension;
+            var values  = base.id.porcentaje;
+            console.log("Dimension: "+ dims + " Values: "+ values);
+            dimensiones.push(dims);   
+            data.push(values);
+            console.log(dimensiones);
+            console.log(data);
+        }
+        
+		$(function() {    	
+		    $('#main_spider_comprension').highcharts({		
+		        chart: {
+		            polar: true,
+		            type: 'line'
+		        },
+		
+    	        title: {
+		            text: 'Malla Dim. Comprensión',
+		            align: 'center'
+		        },
+		
+		        pane: {
+		            size: '80%'
+		        },
+		
+		        xAxis: {
+		            categories: dimensiones,
+		            tickmarkPlacement: 'on',
+		            lineWidth: 0
+		        },
+		
+		        yAxis: {
+		            gridLineInterpolation: 'polygon',
+		            lineWidth: 0,
+		            min: 0
+		        },
+		
+		        tooltip: {
+		            shared: true,
+		            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}%</b><br/>'
+		        },
+		
+    	        legend: {
+		            align: 'center',
+		            verticalAlign: 'bottom',
+		            layout: 'vertical'
+		        },
+		
+    	        series: [{
+		            name: 'Balance de dimensión',
+		            data: data,
+		            pointPlacement: 'on'
+		        }]
+		    });
+		});
+	},
+    
+	dashboard_malla_dimension_curricularSuccess: function(inSender, inDeprecated) {
+        var mydata      = this.dashboard_malla_dimension_curricular.getData(); 
+        var dimensiones = [];
+        var data        = [];
+        for(var i = 0 ;  i < mydata.length ; i++){
+            console.log(i);
+            var base   = mydata[i];
+            console.log(base);
+            var dims    = base.id.dimensionCurricular;
+            var values  = base.id.porcentaje;
+            console.log("Dimension: "+ dims + " Values: "+ values);
+            dimensiones.push(dims);   
+            data.push(values);
+            console.log(dimensiones);
+            console.log(data);
+        }
+        
+		$(function() {        
+		    $('#main_spider_curricular').highcharts({		
+		        chart: {
+		            polar: true,
+		            type: 'line'
+		        },
+		
+    	        title: {
+		            text: 'Malla Dim. Curricular',
+		            align: 'center'
+		        },
+		
+		        pane: {
+		            size: '80%'
+		        },
+		
+		        xAxis: {
+		            categories: dimensiones,
+		            tickmarkPlacement: 'on',
+		            lineWidth: 0
+		        },
+		
+		        yAxis: {
+		            gridLineInterpolation: 'polygon',
+		            lineWidth: 0,
+		            min: 0
+		        },
+		
+		        tooltip: {
+		            shared: true,
+		            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}%</b><br/>'
+		        },
+		
+    	        legend: {
+		            align: 'center',
+		            verticalAlign: 'bottom',
+		            layout: 'vertical'
+		        },
+		
+    	        series: [{
+		            name: 'Balance de dimensión',
+		            data: data,
+		            pointPlacement: 'on'
+		        }]
+		    });
+		});
+	},
+    asignaturasPorDocenteSuccess: function(inSender, inDeprecated) {
+    	var subjectname = main.asignaturasPorDocente.getItem(0).data.asignatura;
+        this.asignaturaCoordinadorSelect.setDisplayValue(subjectname);
+        this.asignaturaCoordinadorSelect2.setDisplayValue(subjectname);
+	},
+    //the end
+	
+	
 	_end: 0
 });

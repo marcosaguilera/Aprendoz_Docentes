@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.aprendoz_test.data.LimitesCalificaciones" table="limites_calificaciones" catalog="aprendoz_desarrollo" dynamic-insert="false" dynamic-update="false">
+        <id name="idLimitesCalificaciones" type="integer">
+            <column name="id_limites_calificaciones"/>
+            <generator class="identity"/>
+        </id>
+        <property name="syIdSy" type="integer">
+            <column name="sy_id_sy" not-null="true"/>
+        </property>
+        <property name="calificacion" type="string">
+            <column name="calificacion" length="65535" not-null="true"/>
+        </property>
+        <property name="valor" type="float">
+            <column name="valor" precision="12" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

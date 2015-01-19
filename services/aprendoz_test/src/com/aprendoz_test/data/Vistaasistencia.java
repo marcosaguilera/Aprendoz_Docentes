@@ -5,7 +5,7 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.Vistaasistencia
- *  01/13/2015 09:58:57
+ *  01/19/2015 07:58:52
  * 
  */
 public class Vistaasistencia {

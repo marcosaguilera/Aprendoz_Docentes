@@ -17,23 +17,11 @@
         <many-to-one name="nivel" class="com.aprendoz_test.data.Nivel">
             <column name="Nivel_Id_Nivel" not-null="true"/>
         </many-to-one>
-        <set name="costosAnualesCopies" inverse="true" cascade="">
-            <key>
-                <column name="Grado_Id_Grado" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.CostosAnualesCopy"/>
-        </set>
         <set name="asignaturas" inverse="true" cascade="">
             <key>
                 <column name="Grado_Id_Grado" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.Asignatura"/>
-        </set>
-        <set name="costosCopies" inverse="true" cascade="">
-            <key>
-                <column name="Grado_Id_Grado" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.CostosCopy"/>
         </set>
         <set name="costoses" inverse="true" cascade="">
             <key>

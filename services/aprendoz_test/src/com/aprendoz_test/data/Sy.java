@@ -8,7 +8,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Sy
- *  01/13/2015 09:58:57
+ *  01/19/2015 07:58:53
  * 
  */
 public class Sy {
@@ -29,11 +29,9 @@ public class Sy {
     private Set<com.aprendoz_test.data.Horario> horarios = new HashSet<com.aprendoz_test.data.Horario>();
     private Set<com.aprendoz_test.data.AsignaturaCopy> asignaturaCopies = new HashSet<com.aprendoz_test.data.AsignaturaCopy>();
     private Set<com.aprendoz_test.data.Periodo> periodos = new HashSet<com.aprendoz_test.data.Periodo>();
-    private Set<com.aprendoz_test.data.CostosAnualesCopy> costosAnualesCopies = new HashSet<com.aprendoz_test.data.CostosAnualesCopy>();
     private Set<com.aprendoz_test.data.Asignatura> asignaturas = new HashSet<com.aprendoz_test.data.Asignatura>();
     private Set<com.aprendoz_test.data.Educom> educoms = new HashSet<com.aprendoz_test.data.Educom>();
     private Set<com.aprendoz_test.data.Coordinadores> coordinadoreses = new HashSet<com.aprendoz_test.data.Coordinadores>();
-    private Set<com.aprendoz_test.data.CostosCopy> costosCopies = new HashSet<com.aprendoz_test.data.CostosCopy>();
     private Set<com.aprendoz_test.data.Costos> costoses = new HashSet<com.aprendoz_test.data.Costos>();
     private Set<com.aprendoz_test.data.Matricula> matriculas = new HashSet<com.aprendoz_test.data.Matricula>();
     private Set<com.aprendoz_test.data.SesionNivel> sesionNivels = new HashSet<com.aprendoz_test.data.SesionNivel>();
@@ -170,14 +168,6 @@ public class Sy {
         this.periodos = periodos;
     }
 
-    public Set<com.aprendoz_test.data.CostosAnualesCopy> getCostosAnualesCopies() {
-        return costosAnualesCopies;
-    }
-
-    public void setCostosAnualesCopies(Set<com.aprendoz_test.data.CostosAnualesCopy> costosAnualesCopies) {
-        this.costosAnualesCopies = costosAnualesCopies;
-    }
-
     public Set<com.aprendoz_test.data.Asignatura> getAsignaturas() {
         return asignaturas;
     }
@@ -200,14 +190,6 @@ public class Sy {
 
     public void setCoordinadoreses(Set<com.aprendoz_test.data.Coordinadores> coordinadoreses) {
         this.coordinadoreses = coordinadoreses;
-    }
-
-    public Set<com.aprendoz_test.data.CostosCopy> getCostosCopies() {
-        return costosCopies;
-    }
-
-    public void setCostosCopies(Set<com.aprendoz_test.data.CostosCopy> costosCopies) {
-        this.costosCopies = costosCopies;
     }
 
     public Set<com.aprendoz_test.data.Costos> getCostoses() {

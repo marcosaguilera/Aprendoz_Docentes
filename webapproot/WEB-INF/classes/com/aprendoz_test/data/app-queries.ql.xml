@@ -166,13 +166,6 @@ AND (papa.idPersona &lt;&gt; mama.idPersona)
 FROM Curso c
 WHERE c.idCurso &gt;= 10101 and c.idCurso &lt;=40403
     </query>
-    <query name="enviarMailEventualidades">
-        <query-param name="ide" type="java.lang.Integer"/>
-        SELECT
-n.id.idpersona as alumnoid, n.id.nombreAlumno as nombreAlumno, n.id.ideventualidad, n.id.registrante, n.id.curso as curso, n.id.userCordinador as coordinador, n.id.correoCordinador as correoCoordinador, n.id.fecha as fecha, n.id.horas as hora, n.id.lugar as lugar, n.id.tipoeventualidad as tipoeventualidad, n.id.subtipo as subtipo, n.id.correoDirector as correodirector, n.id.nombreRegistrante as docenteReg
-FROM VistaEventualidadesNotificaciones n
-WHERE n.id.ideventualidad=:ide
-    </query>
     <query name="SeachEventualidadHQL">
         <query-param name="search" type="java.lang.String"/>
         SELECT ep.idEventualidadPersonas as id, p.codigo as codigo, CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) as complex, e.fecha as fecha, e.hora as hora, e.estado as estado, e.descripcion as descripcion, t.lugar as lugar, e.idEventualidad as ideventualidad, e.confidencial as confidencial, se.idSubtipoEventualidad as idsubtipo ,se.subtipoEventualidad as subtipo, e.usuarioReg as registrante, p.idPersona as idpersona
@@ -208,6 +201,13 @@ CONCAT(p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1,&apos; &apos;
 CONCAT(p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos;
 ORDER BY
 e.idEventualidad desc, e.fecha desc, e.hora desc
+    </query>
+    <query name="enviarMailEventualidades">
+        <query-param name="ide" type="java.lang.Integer"/>
+        SELECT
+n.id.idpersona as alumnoid, n.id.nombreAlumno as nombreAlumno, n.id.ideventualidad, n.id.registrante, n.id.curso as curso, n.id.userCordinador as coordinador, n.id.correoCordinador as correoCoordinador, n.id.fecha as fecha, n.id.horas as hora, n.id.lugar as lugar, n.id.tipoeventualidad as tipoeventualidad, n.id.subtipo as subtipo, n.id.correoDirector as correodirector, n.id.nombreRegistrante as docenteReg
+FROM VistaEventualidadesNotificaciones n
+WHERE n.id.ideventualidad=:ide
     </query>
     <query name="eventualitiesByDate">
         <query-param name="pfecha" type="java.util.Date"/>
@@ -320,6 +320,25 @@ INNER JOIN p.grupoFamiliar gf
 WHERE p.idPersona=:ppersona AND (curso.idCurso&gt;=10101 AND curso.idCurso&lt;=40403) AND sy.idSy=4
 GROUP BY p.idPersona
     </query>
+    <query name="studentsByCurseBySubject">
+        <query-param name="pasignatura" type="java.lang.Integer"/>
+        <query-param name="pcurso" type="java.lang.Integer"/>
+        SELECT
+p.codigo as codigo,
+p.idPersona as idpersona,
+a.idAsignatura as idasignatura,
+a.asignatura as asignatura,
+CONCAT(p.nombre1,&apos; &apos;,p.nombre2) as nombres,
+CONCAT(p.apellido1,&apos; &apos;,p.apellido2) as apellidos,
+p.idPersona as idpersona,
+pc.idPersona as idpersonacurso,
+c.curso as curso,
+iaa.idInscAlumAsig as idaa
+FROM InscAlumAsig iaa INNER JOIN iaa.persona p INNER JOIN iaa.asignatura a INNER JOIN iaa.periodo per, InscAlumCurso iac INNER JOIN iac.persona pc INNER JOIN iac.curso c
+WHERE a.idAsignatura=:pasignatura AND c.idCurso=:pcurso AND per.idPeriodo=10 AND (p.idPersona=pc.idPersona) AND (c.idCurso&gt;=10101 AND c.idCurso&lt;=40403)
+GROUP BY a.idAsignatura, c.idCurso, p.idPersona
+ORDER BY c.idCurso desc,p.apellido1,p.apellido2,p.nombre1,p.nombre2
+    </query>
     <query name="getSubjectsByProfileGrouped">
         <query-param name="sy" type="java.lang.Integer"/>
         <query-param name="usuario" type="java.lang.String"/>
@@ -341,25 +360,6 @@ GROUP BY
 a.idAsignatura
 ORDER BY
 g.idGrado, a.idAsignatura
-    </query>
-    <query name="studentsByCurseBySubject">
-        <query-param name="pasignatura" type="java.lang.Integer"/>
-        <query-param name="pcurso" type="java.lang.Integer"/>
-        SELECT
-p.codigo as codigo,
-p.idPersona as idpersona,
-a.idAsignatura as idasignatura,
-a.asignatura as asignatura,
-CONCAT(p.nombre1,&apos; &apos;,p.nombre2) as nombres,
-CONCAT(p.apellido1,&apos; &apos;,p.apellido2) as apellidos,
-p.idPersona as idpersona,
-pc.idPersona as idpersonacurso,
-c.curso as curso,
-iaa.idInscAlumAsig as idaa
-FROM InscAlumAsig iaa INNER JOIN iaa.persona p INNER JOIN iaa.asignatura a INNER JOIN iaa.periodo per, InscAlumCurso iac INNER JOIN iac.persona pc INNER JOIN iac.curso c
-WHERE a.idAsignatura=:pasignatura AND c.idCurso=:pcurso AND per.idPeriodo=10 AND (p.idPersona=pc.idPersona) AND (c.idCurso&gt;=10101 AND c.idCurso&lt;=40403)
-GROUP BY a.idAsignatura, c.idCurso, p.idPersona
-ORDER BY c.idCurso desc,p.apellido1,p.apellido2,p.nombre1,p.nombre2
     </query>
     <query name="_global_curriculo_asig_doc">
         <query-param name="nickname" type="java.lang.String"/>
@@ -388,6 +388,10 @@ WHERE p.nombreLdap=:usuario AND sy.idSy=3
 GROUP BY a.idAsignatura
 ORDER BY pe.idPeriodo desc
     </query>
+    <query name="hql_tipo_eventualidad">
+        SELECT te.idTipoEventualidad as id, te.tipoEventualidad as tipo
+FROM TipoEventualidad te
+    </query>
     <query name="estudiantes_listado_curriculo">
         <query-param name="pidasignatura" type="java.lang.Integer"/>
         <query-param name="pidpersona" type="java.lang.Integer"/>
@@ -408,10 +412,6 @@ FROM InscAlumAsig iaa INNER JOIN iaa.asignatura a INNER JOIN a.unidads u INNER J
 WHERE p.idPersona=:pidpersona AND a.idAsignatura=:pidasignatura
 ORDER BY apr.fechaEsperada asc, u.numeroUnidad asc, s.numeroSubtopico asc
     </query>
-    <query name="hql_tipo_eventualidad">
-        SELECT te.idTipoEventualidad as id, te.tipoEventualidad as tipo
-FROM TipoEventualidad te
-    </query>
     <query name="getSyByCurDate">
         <query-param name="f1" type="java.util.Date"/>
         SELECT
@@ -421,12 +421,6 @@ DATE(sy.fechaDesde),
 DATE(sy.fechaHasta)
 FROM Sy sy
 WHERE :f1 BETWEEN sy.fechaDesde AND sy.fechaHasta
-    </query>
-    <query name="hql_ls_cursos">
-        <query-param name="idg" type="java.lang.Integer"/>
-        SELECT g.idGrado as idGrado, c.idCurso as idCurso, c.curso as curso
-FROM Curso c INNER JOIN c.grado g
-WHERE c.idCurso &gt;=10101 and c.idCurso&lt;=40403 and g.idGrado=:idg
     </query>
     <query name="dash_aprendizajes">
         <query-param name="idasignatura" type="java.lang.Integer"/>
@@ -438,6 +432,12 @@ av.id.aprAvanzado as aprAvanzado,
 av.id.aprMagistral as aprMagistral
 FROM VistaDashboardAvanzadosYMagistrales av
 WHERE av.id.idAsignatura=:idasignatura
+    </query>
+    <query name="hql_ls_cursos">
+        <query-param name="idg" type="java.lang.Integer"/>
+        SELECT g.idGrado as idGrado, c.idCurso as idCurso, c.curso as curso
+FROM Curso c INNER JOIN c.grado g
+WHERE c.idCurso &gt;=10101 and c.idCurso&lt;=40403 and g.idGrado=:idg
     </query>
     <query name="actualizarClave">
         <query-param name="usuario" type="java.lang.String"/>
@@ -504,16 +504,6 @@ FROM EventualidadPersonas ep INNER JOIN ep.persona p INNER JOIN ep.eventualidade
 WHERE e.idEventualidad=:peventualidad AND sy.idSy=4 AND curso.idCurso&gt;=10101 AND curso.idCurso&lt;=40403
 GROUP BY p.idPersona
     </query>
-    <query name="getCurseByidGrade">
-        <query-param name="pgrado" type="java.lang.Integer"/>
-        SELECT
-c.idCurso as idcurso,
-c.curso as curso,
-g.idGrado as idgrado,
-g.grado as grado
-FROM Curso c INNER JOIN c.grado g
-WHERE g.idGrado=:pgrado AND c.idCurso&gt;=10101 AND c.idCurso&lt;=40403
-    </query>
     <query name="asignatura_alumnos_asignatura">
         <query-param name="pasig" type="java.lang.Integer"/>
         SELECT
@@ -528,6 +518,16 @@ iaa.calificacion as puntaje
 FROM InscAlumAsig iaa INNER JOIN iaa.persona p INNER JOIN  iaa.asignatura a INNER JOIN iaa.periodo per
 WHERE a.idAsignatura=:pasig
 ORDER BY  p.apellido1, p.apellido2, p.nombre1, p.nombre2
+    </query>
+    <query name="getCurseByidGrade">
+        <query-param name="pgrado" type="java.lang.Integer"/>
+        SELECT
+c.idCurso as idcurso,
+c.curso as curso,
+g.idGrado as idgrado,
+g.grado as grado
+FROM Curso c INNER JOIN c.grado g
+WHERE g.idGrado=:pgrado AND c.idCurso&gt;=10101 AND c.idCurso&lt;=40403
     </query>
     <query name="last_accessHQL" comment="Here we get the login people access to Aprendoz">
         <query-param name="user" type="java.lang.String"/>
@@ -598,6 +598,10 @@ FROM Persona AS p
 INNER JOIN p.tipoPersona AS tipo
 WHERE p.nombreLdap = :user
     </query>
+    <query name="deleteEventualidadPersona">
+        <query-param name="epid" type="java.lang.Integer"/>
+        DELETE FROM EventualidadPersonas ep WHERE ep.idEventualidadPersonas=:epid
+    </query>
     <query name="getSubjectsByTeacher">
         <query-param name="usuario" type="java.lang.String"/>
         <query-param name="sy" type="java.lang.Integer"/>
@@ -619,16 +623,6 @@ GROUP BY a.idAsignatura
 ORDER BY
 a.idAsignatura, c.idCurso
     </query>
-    <query name="deleteEventualidadPersona">
-        <query-param name="epid" type="java.lang.Integer"/>
-        DELETE FROM EventualidadPersonas ep WHERE ep.idEventualidadPersonas=:epid
-    </query>
-    <query name="dash_no_calificados">
-        <query-param name="idasignatura" type="java.lang.Integer"/>
-        SELECT d.id.idAsignatura as idasignatura, d.id.asignaturasNoCalificadas as sinCalificar,d.id.totalEstudiantes as total, d.id.sy as sy, d.id.totalPorcentaje as totalporcentaje, d.id.califPorcentaje as califPorcentaje, d.id.aprProgreso as aprProgreso
-FROM VistaDashboardNoCalificados d
-WHERE d.id.idAsignatura=:idasignatura
-    </query>
     <query name="subjectsBySyAndStudent">
         <query-param name="idpersona" type="java.lang.Integer"/>
         <query-param name="idsyp" type="java.lang.Integer"/>
@@ -647,5 +641,11 @@ WHERE
 p.idPersona=:idpersona AND sy.idSy=:idsyp
 ORDER BY
 a.asignatura
+    </query>
+    <query name="dash_no_calificados">
+        <query-param name="idasignatura" type="java.lang.Integer"/>
+        SELECT d.id.idAsignatura as idasignatura, d.id.asignaturasNoCalificadas as sinCalificar,d.id.totalEstudiantes as total, d.id.sy as sy, d.id.totalPorcentaje as totalporcentaje, d.id.califPorcentaje as califPorcentaje, d.id.aprProgreso as aprProgreso
+FROM VistaDashboardNoCalificados d
+WHERE d.id.idAsignatura=:idasignatura
     </query>
 </hibernate-mapping>

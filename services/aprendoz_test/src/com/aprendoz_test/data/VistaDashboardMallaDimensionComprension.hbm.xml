@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.aprendoz_test.data.VistaDashboardMallaDimensionComprension" table="vista_dashboard_malla_dimension_comprension" catalog="aprendoz_desarrollo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.aprendoz_test.data.VistaDashboardMallaDimensionComprensionId">
+            <key-property name="idAsignatura" type="integer">
+                <column name="Id_Asignatura"/>
+            </key-property>
+            <key-property name="asignatura" type="string">
+                <column name="Asignatura" length="300"/>
+            </key-property>
+            <key-property name="dimensionComprension" type="string">
+                <column name="Dimension_Comprension" length="45"/>
+            </key-property>
+            <key-property name="porcentaje" type="big_decimal">
+                <column name="porcentaje" precision="27"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>
