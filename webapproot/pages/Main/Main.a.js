@@ -14,119 +14,12 @@ setDisabled: function(inDisabled) { dojo[inDisabled ? "addClass" : "removeClass"
 });
 },
 "preferredDevice": "desktop",
+myCurSy: function(){
+var sy= main.global_cursy.getItem(0).data.idsy;
+return sy;
+},
 mySessionExpiredMethod: function() {
-//alert("Aviso importante: Sesión expirada \n\n"+"Su sesión ha excedido el tiempo de inactividad permitido en la aplicación. Por favor ingrese nuevamente.");
 window.location.reload();
-},
-calif_encabezado_opciones_sel_gradoChange: function(inSender, inDisplayValue, inDataValue) {
-try {
-if(this.calif_encabezado_opciones_sel_grado.dataValue== null ||this.calif_encabezado_opciones_sel_grado.dataValue==405){
-this.calif_encabezado_opciones_sel_curso.disable();
-}
-else{
-this.calif_encabezado_opciones_sel_curso.enable();
-this.l_calif_encabezado_opciones_listaCurso.update();
-}
-this.l_calif_contenedor_tablas_asignaturas_docentes.update();
-this.l_calif_contenedor_tablas_aprendizajes.clearData();
-this.l_calif_contendor_tablas_Vista_Insc_Alumn_Asig_Curso.clearData();
-this.l_calif_contenedor_tablas_inscalumaprendizajeLiveVariable2.clearData();
-this.l_calif_contenedor_tablas_calificacion_final.clearData();
-} catch(e) {
-console.error('ERROR IN calif_encabezado_opciones_sel_gradoChange: ' + e);
-}
-},
-inscalumaprendizajeLiveForm1BeginInsert: function(inSender) {
-try {
-this.calif_alumnos_curso_datag_alumnosDataGrid1.setDisabled(true);
-this.calif_asig_datag_aprendizajesDataGrid1.setDisabled(true);
-this.fechaIngresoEditor2.disable();
-this.fechaIngresoEditor2.setDataValue(new Date());
-this.calificacionNumEditor2.setValue("dataValue","0");
-this.aprendizajeLookup1.setValue("dataValue",this.calif_asig_datag_aprendizajesDataGrid1.selectedItem.getData().id.idAprendizaje);
-this.personaLookup1.setValue("dataValue",this.calif_alumnos_curso_datag_alumnosDataGrid1.selectedItem.getData().id.personaIdPersona);
-} catch(e) {
-console.error('ERROR IN inscalumaprendizajeLiveForm1BeginInsert: ' + e);
-}
-},
-/* inscalumaprendizajeLiveForm2BeginInsert: function(inSender) {
-try {
-this.calif_alumnos_datagrids_datag_alumnos_asignaturas.setDisabled(true);
-this.calif_alumnos_datagrids_datag_aprendizajes_asignaturas.setDisabled(true);
-this.calif_alumnos_datagrids_datag_alumnos_cursos.setDisabled(true);
-this.fechaIngresoEditor3.setDataValue(new Date());
-this.calificacionNumEditor3.setValue("dataValue","0");
-this.aprendizajeLookup3.setValue("dataValue",this.calif_alumnos_datagrids_datag_aprendizajes_asignaturas.selectedItem.getData().id.idAprendizaje);
-this.personaLookup3.setValue("dataValue",this.calif_alumnos_datagrids_datag_alumnos_cursos.selectedItem.getData().id.idPersona);
-} catch(e) {
-console.error('ERROR IN inscalumaprendizajeLiveForm2BeginInsert: ' + e);
-}
-},*/
-button12Click: function(inSender, inEvent) {
-this.calf_panel_encabezado_opciones.hide();
-this.calif_panel_contenedor_promocion.hide();
-this.actividades.hide();
-this.calif_panel_contenedor_aprendizaje.hide();
-this.calif_panel_contenedor_alumnos.show();
-},
-l_calif_alumnos_panel1_butt_cambiarPanelClick: function(inSender, inEvent) {
-this.calif_panel_contenedor_alumnos.hide();
-this.calif_panel_contenedor_promocion.hide();
-this.actividades.hide();
-this.calf_panel_encabezado_opciones.show();
-this.calif_panel_contenedor_aprendizaje.show();
-},
-calif_alumnos_datagrids_datag_alumnos_cursosSelected: function(inSender, inIndex) {
-try {
-var idp= this.calif_alumnos_datagrids_datag_alumnos_cursos.selectedItem.getData().id.idPersona;
-var idsy= this.calif_alumnos_panel1_sel_sy.getDataValue();
-this.l_calif_alumnos_alumnos_asignaturas.input.setValue("idpersona", idp);
-this.l_calif_alumnos_alumnos_asignaturas.input.setValue("idsyp", idsy);
-this.l_calif_alumnos_alumnos_asignaturas.update();
-} catch(e) {
-console.error('ERROR IN alumnosSelected: ' + e);
-}
-},
-listaGRADO2Change: function(inSender, inDisplayValue, inDataValue) {
-try {
-this.asignaturasLV2.update();
-this.cursoslv2.update();
-} catch(e) {
-console.error('ERROR IN listaGRADO2Change: ' + e);
-}
-},
-asignaturas2Selected: function(inSender, inIndex) {
-try {
-this.asig2.setValue("dataValue",this.asignaturas2.selectedItem.getData().asignatura);
-} catch(e) {
-console.error('ERROR IN asignaturas2Selected: ' + e);
-}
-},
-curso2Selected: function(inSender, inIndex) {
-try {
-this.cursost2.setValue("dataValue",this.curso2.selectedItem.getData().curso);
-} catch(e) {
-console.error('ERROR IN curso2Selected: ' + e);
-}
-},
-layer27Show: function(inSender) {
-try {
-this.aux2.setValue(Demografica.personaDataGrid1.selectedItem.getData().codigo);
-} catch(e) {
-console.error('ERROR IN layer27Show: ' + e);
-}
-},
-button17Click: function(inSender, inEvent) {
-try {
-this.textEditor2.clear();
-this.textEditor3.clear();
-this.textEditor4.clear();
-this.asignaturaLiveVariable3.clearData();
-this.selectEditor15.clearData();
-this.selectEditor16.clearData();
-} catch(e) {
-console.error('ERROR IN button17Click: ' + e);
-}
 },
 inscalumaprendizajeDataGrid1RowDblClick: function(inSender, inEvent) {
 try {
@@ -143,77 +36,6 @@ this.fechaIngresoEditor2.setDataValue(new Date());
 } catch(e) {
 console.error('ERROR IN inscalumaprendizajeLiveForm1BeginUpdate: ' + e);
 }},
-calif_asig_datag_aprendizajesDataGrid1Selected: function(inSender, inIndex) {
-try {
-var _emptyLearning= this.calif_asig_datag_aprendizajesDataGrid1.getEmptySelection();
-var _emptyStudents= this.calif_alumnos_curso_datag_alumnosDataGrid1.getEmptySelection();
-var _unidad= this.calif_asig_datag_aprendizajesDataGrid1.selectedItem.getData().id.unidad;
-var _subtopico= this.calif_asig_datag_aprendizajesDataGrid1.selectedItem.getData().id.subtopico;
-if(_emptyLearning == true || _emptyStudents == true){
-this.blink_message.show();
-}else if(_emptyLearning == false && _emptyStudents == false){
-this.l_calif_contenedor_tablas_inscalumaprendizajeLiveVariable2.update();
-this.l_calif_contenedor_tablas_calificacion_final.update();
-this.blink_message.hide();
-}
-this.calif_contenedor_cadena_curriculo.setCaption("Unidad» "+_unidad+" | "+" Subtopico »"+_subtopico);
-} catch(e) {
-console.error('ERROR IN calif_asig_datag_aprendizajesDataGrid1Selected: ' + e);
-}},
-calif_alumnos_curso_datag_alumnosDataGrid1Selected: function(inSender, inIndex) {
-var _emptyLearning= this.calif_asig_datag_aprendizajesDataGrid1.getEmptySelection();
-var _emptyStudents= this.calif_alumnos_curso_datag_alumnosDataGrid1.getEmptySelection();
-try {
-if(_emptyLearning == true  ||  _emptyStudents == true){
-this.blink_message.show();
-}
-else if(_emptyLearning== false && _emptyStudents== false){
-this.l_calif_contenedor_tablas_inscalumaprendizajeLiveVariable2.update();
-this.l_calif_contenedor_tablas_calificacion_final.update();
-this.blink_message.hide();
-}
-} catch(e) {
-console.error('ERROR IN calif_alumnos_curso_datag_alumnosDataGrid1Selected: ' + e);
-}},
-asignaturaSelected: function(inSender, inIndex) {
-try {
-this.aux13.setValue("dataValue", this.asignatura.selectedItem.getData().asignatura.idAsignatura);
-} catch(e) {
-console.error('ERROR IN asignaturaSelected: ' + e);
-}},
-dataGrid4Selected: function(inSender, inIndex) {
-try {
-this.aux103.setValue("dataValue", this.dataGrid4.selectedItem.getData().codigo);
-this.aux104.setValue("dataValue", "1");
-} catch(e) {
-console.error('ERROR IN dataGrid4Selected: ' + e);
-}
-},
-button36Click: function(inSender, inEvent) {
-this.inscalumactividadLiveVariable1.clearData();
-this.ACTIVIDADESLV3.clearData();
-this.INSALUCUR.clearData();
-this.asignaturaLV1.clearData();
-this.selectEditor19.clear();
-this.selectEditor18.clear();
-this.selectEditor17.clear();
-},
-aux25Change: function(inSender, inDisplayValue, inDataValue) {
-if(this.aux25.dataValue=1){
-//formulario unidades
-main.operationPanel4.setShowing(false);
-}
-if (this.aux25.dataValue=2){
-//formulario unidades
-main.operationPanel4.setShowing(true);
-}
-},
-/*inscalumactividadLiveForm1BeginInsert: function(inSender) {
-var idactividad= this.activitiesDataGrid.selectedItem.getData().idActividad;
-var idpersona= this.activities_studentsDataGrid.selectedItem.getData().persona.idPersona;
-this.actividadLookup1.setDataValue(idactividad);
-this.personaLookup4.setDataValue(idpersona);
-},*/
 asistenciaShow: function(inSender) {
 try {
 app.listaSY.update();
@@ -238,114 +60,6 @@ this.calificacionNumEditor2.setValue("dataValue", "1.6")
 }
 } catch(e) {
 console.error('ERROR IN calificacionEditor2Change: ' + e);
-}
-},
-calif_contenedor_img_limpiarClick: function(inSender) {
-try {
-this.calif_contenedor_sel_Genero.clear();
-this.l_calif_contendor_tablas_Vista_Insc_Alumn_Asig_Curso.update();
-} catch(e) {
-console.error('ERROR IN picture8Click: ' + e);
-}
-},
-GradoChange: function(inSender, inDisplayValue, inDataValue) {
-try {
-this.l_inscrip_panel_lista_cursos.update();
-this.l_inscrip_panel_VistaAsignaturas.update();
-this.inscalumasigLiveVariable1.clearData();
-this.estudiantesInscAsig.clearData();
-} catch(e) {
-console.error('ERROR IN GradoChange: ' + e);
-}
-},
-inscalumasigLiveForm1BeginInsert: function(inSender) {
-try {
-this.inscripcion_asignatura.setDisabled(true);
-this.inscripcion_estudiante.setDisabled(true);
-this.calificacionEditor4.setDataValue(0);
-this.porcentajeEditor1.setDataValue(0);
-this.esperadosEditor1.setDataValue(0);
-this.logradosEditor1.setDataValue(0);
-this.califCharEditor1.setDataValue("-");
-this.periodoLookup1.setValue("displayValue", "2012-2013");
-this.asignaturaLookup5.setValue("dataValue", this.inscripcion_asignatura.selectedItem.getData().id.idAsignatura);
-this.personaLookup6.setValue("dataValue", this.inscripcion_estudiante.selectedItem.getData().id.idPersona);
-} catch(e) {
-console.error('ERROR IN inscalumasigLiveForm1BeginInsert: ' + e);
-}
-},
-button_activitiesClick: function(inSender, inEvent) {
-try {
-var json= main.a_cursy.getItem(0);
-var sy= json.data.sy;
-var idsy= json.data.idsy;
-var user= main.global_username.getData().dataValue;
-this.sy_activities.setDataValue(sy);
-this.activitiesGetSubjectsByUser.input.setValue("sy",idsy);
-this.activitiesGetSubjectsByUser.input.setValue("usuario",user);
-this.activitiesGetSubjectsByUser.update();
-this.calf_panel_encabezado_opciones.hide();
-this.calif_panel_contenedor_aprendizaje.hide();
-this.calif_panel_contenedor_alumnos.hide();
-this.calif_panel_contenedor_promocion.hide();
-this.actividades.show();
-} catch(e) {
-console.error('ERROR IN button_activitiesClick: ' + e);
-}
-},
-informes_fuckersShow: function(inSender) {
-this.RLVGrados.update();
-},
-calificaTodosClick: function(inSender, inEvent) {
-var fecha= this.fechaEditor3.getDataValue();
-var comentario= this.comentarioEditor4.getDataValue();
-var idactividad= this.activitiesDataGrid.selectedItem.getData().idActividad;
-var idcurso= this.subjects_activities.getDataValue();
-var logrado= this.logradoEditor2.getDataValue();
-this.sp_insertar_actividades.input.setValue("P_Fecha", fecha);
-this.sp_insertar_actividades.input.setValue("Pr_Comentario", comentario);
-this.sp_insertar_actividades.input.setValue("Pr_Id_Actividad", idactividad);
-this.sp_insertar_actividades.input.setValue("Pr_Id_Curso", idcurso);
-this.sp_insertar_actividades.input.setValue("Pr_Logrado", logrado);
-this.sp_insertar_actividades.update();
-this.editPanel12.cancelEdit();
-},
-picture9Click: function(inSender) {
-try {
-this.actAlumnos.clearSelection();
-this.inscalumactividadLiveVariable1.update();
-} catch(e) {
-console.error('ERROR IN picture9Click: ' + e);
-}
-},
-asignaturasShow: function(inSender) {
-try {
-this.ls_Area1.update();
-this.ls_Area2.update();
-this.ls_Area3.update();
-this.lv_subarea1.update();
-} catch(e) {
-console.error('ERROR IN layer29Show: ' + e);
-}
-},
-asignaturaDataGrid2RowDblClick: function(inSender, inEvent) {
-try {
-this.editPanel11.beginDataUpdate();
-} catch(e) {
-console.error('ERROR IN asignaturaDataGrid2RowDblClick: ' + e);
-}
-},
-inscalumaprendizajeLiveForm1Success: function(inSender, inData) {
-this.l_calif_contenedor_tablas_inscalumaprendizajeLiveVariable2.update();
-this.l_calif_contenedor_tablas_calificacion_final.update();
-this.calif_asig_datag_aprendizajesDataGrid1.setDisabled(false);
-this.calif_alumnos_curso_datag_alumnosDataGrid1.setDisabled(false);
-},
-inscalumaprendizajeLiveForm1DeleteData: function(inSender) {
-try {
-//  this.actualizacalifestuapren.update();
-} catch(e) {
-console.error('ERROR IN inscalumaprendizajeLiveForm1DeleteData: ' + e);
 }
 },
 calif_encabezado_opciones_butt_reporteClick: function(inSender, inEvent) {
@@ -373,78 +87,17 @@ console.error('ERROR IN botonReporte3Click: ' + e);
 }
 },
 calificacionEditor3Change: function(inSender, inDisplayValue, inDataValue) {
-try {
-if(this.calificacionEditor3.dataValue=="En Progreso"){
+if (this.calificacionEditor3.dataValue == "En Progreso") {
 this.calificacionNumEditor23.setValue("dataValue", "0.3");
 }
-if(this.calificacionEditor3.dataValue=="Competente"){
+if (this.calificacionEditor3.dataValue == "Competente") {
 this.calificacionNumEditor23.setValue("dataValue", "1");
 }
-if(this.calificacionEditor3.dataValue=="Avanzado"){
+if (this.calificacionEditor3.dataValue == "Avanzado") {
 this.calificacionNumEditor23.setValue("dataValue", "1.3");
 }
-if(this.calificacionEditor3.dataValue=="Magistral"){
+if (this.calificacionEditor3.dataValue == "Magistral") {
 this.calificacionNumEditor23.setValue("dataValue", "1.6");
-}
-} catch(e) {
-console.error('ERROR IN calificacionEditor3Change: ' + e);
-}
-},
-liveForm4BeginInsert: function(inSender) {
-try {
-this.unidadLookup2.setValue("dataValue",this.unidadDataGrid2.selectedItem.getData().idUnidad);
-} catch(e) {
-console.error('ERROR IN liveForm4BeginInsert: ' + e);
-}
-},
-nivel_encabezado_butt_reporte_asignaturaClick: function(inSender, inEvent) {
-try {
-url= "services/catalogoAsignaturas.download?method=getReport&ida="+this.asignaturaDataGrid4.selectedItem.getData().idAsignatura;
-window.open(url,"_BLANK");
-} catch(e) {
-console.error('ERROR IN botonRepClick: ' + e);
-}
-},
-dataGridAlumnosSelected: function(inSender, inIndex) {
-try {
-this.rep_box1.setValue("dataValue",this.dataGridAlumnos.selectedItem.getData().persona.idPersona);
-this.rep_box2.setValue("dataValue",this.dataGridAlumnos.selectedItem.getData().sy.idSy);
-} catch(e) {
-console.error('ERROR IN dataGridAlumnosSelected: ' + e);
-}},
-dataGridAlumnos1Selected: function(inSender, inIndex) {
-try {
-this.rep_box3.setValue("dataValue", this.dataGridAlumnos1.selectedItem.getData().persona.idPersona);
-} catch(e) {
-console.error('ERROR IN dataGridAlumnos1Selected: ' + e);
-}},
-calif_asig_datag_asignaturasDataGrid1Selected: function(inSender, inIndex) {
-try {
-this.l_calif_contenedor_tablas_aprendizajes.update();
-this.l_calif_contendor_tablas_Vista_Insc_Alumn_Asig_Curso.update();
-if(this.calif_asig_datag_asignaturasDataGrid1.getEmptySelection()== false && this.calif_encabezado_opciones_sel_curso.getDataValue()!== null){
-this.calif_encabezado_opciones_butt_reporte.enable();
-}
-} catch(e) {
-console.error('ERROR IN tablaAsignaturasSelected: ' + e);
-}
-},
-ausencias_select2Change: function(inSender, inDisplayValue, inDataValue) {
-try {
-if(this.ausencias_select2.dataValue=="1"){
-this.layerGrado.hide();
-this.layerCursos.show();
-}
-if(this.ausencias_select2.dataValue=="2"){
-this.layerCursos.hide();
-this.layerGrado.show();
-}
-if(this.ausencias_select2.dataValue=="3"){
-}
-if(this.ausencias_select2.dataValue=="4"){
-}
-} catch(e) {
-console.error('ERROR IN ausencias_select2Change: ' + e);
 }
 },
 inscalumaprendizajeLiveForm1CancelEdit: function(inSender) {
@@ -648,42 +301,42 @@ global_usernameSuccess: function(inSender, inDeprecated) {
 var _usuario= main.global_username.data.dataValue;
 this.a_informacionUsuario.input.setValue("user", _usuario);
 this.global_cursy.update();
-//this.a_informacionUsuario.update();
+this.a_informacionUsuario.update();
 },
 global_cursySuccess: function(inSender, inDeprecated) {
-var _usuario= main.global_username.getData().dataValue;
-var syJson= main.global_cursy.getItem(0);
-var fechaInicio= syJson.data.fechaDesde;
-var fechaFinal= syJson.data.fechaHasta;
+var _usuario      = main.global_username.getData().dataValue;
+var syJson        = main.global_cursy.getItem(0);
+var fechaInicio   = syJson.data.fechaDesde;
+var fechaFinal    = syJson.data.fechaHasta;
 this.dash_dash_lv1.input.setValue("usuario", _usuario);
 this.dash_dash_lv1.input.setValue("f1", fechaInicio);
 this.dash_dash_lv1.input.setValue("f2", fechaFinal);
-this.a_informacionUsuario.update();
+//this.a_informacionUsuario.update();
 this.dash_dash_lv1.update();
 },
-a_informacionUsuarioSuccess: function(inSender, inDeprecated) {
-var json=  main.a_informacionUsuario.getItem(0);
-var codigo= json.data.codigo;
-var usuario= json.data.usuario;
-var tipo= json.data.tipoPersona;
-var nombre1= json.data.nombre1;
-var nombre2= json.data.nombre2;
+a_informacionUsuarioSuccess: function() {
+var json     =  main.a_informacionUsuario.getItem(0);
+var codigo   = json.data.codigo;
+var usuario  = json.data.usuario;
+var tipo     = json.data.tipoPersona;
+var nombre1  = json.data.nombre1;
+var nombre2  = json.data.nombre2;
 var apellido1= json.data.apellido1;
 var apellido2= json.data.apellido2;
-var nodoc= json.data.numeroDocumento;
-var sexo= json.data.sexo;
-var fullname= nombre1+" "+nombre2+" "+apellido1+" "+apellido2;
+var nodoc    = json.data.numeroDocumento;
+var sexo     = json.data.sexo;
+var fullname = nombre1+" "+nombre2+" "+apellido1+" "+apellido2;
 this.profile_button.setCaption(usuario);
 this.menu_rol.setCaption(tipo);
 this.menu_profile_img.setSource("http://www.rochester.edu.co/fotosempleados/"+codigo+".Jpeg");
 this.configuracion_profile_image.setSource("http://www.rochester.edu.co/fotosempleados/"+codigo+".Jpeg");
 this.menu_bienvenida.setCaption("Bienvenid@, "+usuario);
 this.configuracion_detalles.setCaption(fullname+"<br>Sexo: "+sexo+"<br>No. documento: "+nodoc+"<br><br>"+tipo);
-var idp = main.a_informacionUsuario.getItem(0).data.idpersona;
-var today= new Date().getTime();
-var clave= main.a_informacionUsuario.getItem(0).data.clave;
-var json= main.global_cursy.getItem(0);
-var idsy= json.data.idsy;
+var idp      = main.a_informacionUsuario.getItem(0).data.idpersona;
+var today    = new Date().getTime();
+var clave    = main.a_informacionUsuario.getItem(0).data.clave;
+var json     = main.global_cursy.getItem(0);
+var idsy     = json.data.idsy;
 this.inicio_box_usuario.setDataValue(usuario);
 this.inicio_box_clave.setDataValue(clave);
 this.inicio_box_reclave.setDataValue(clave);
@@ -695,11 +348,18 @@ this.dashboard_faltas_graves.filter.setValue("id.idPersona", idp);
 this.dashboard_calificacion_estudiantes.filter.setValue("id.directorId", idp);
 this.asignaturasPorDocente.input.setValue("usuario",usuario);
 this.asignaturasPorDocente.input.setValue("sy",idsy);
-this.dashboard_faltas_graves.update();
-this.dashboard_calificacion_estudiantes.update();
-this.asignaturasPorDocente.update();
-this.muestraCoordinadorCurso.update();
-this.muestraCoordinadorSubArea.update();
+//this.dashboard_faltas_graves.update();
+//this.dashboard_calificacion_estudiantes.update();
+//this.asignaturasPorDocente.update();
+//this.muestraCoordinadorCurso.update();
+//this.muestraCoordinadorSubArea.update();
+//debugger;
+this.logIngresoUsuario(idp, today);
+},
+logIngresoUsuario: function(persona, fecha){
+console.log("xxxxxxxxxxxxxxxx insertado");
+var idp   = persona;
+var today = fecha;
 this.a_logInsertRecords.setValue("persona.idPersona", idp);
 this.a_logInsertRecords.setValue("fechaIngreso", today);
 this.a_logInsertRecords.setValue("horaIngreso", today);
@@ -818,7 +478,6 @@ console.error('ERROR IN inicio_abrir_preferencias1Click: ' + e);
 }
 },
 pestana_reportes_seguimientoShow: function(inSender) {
-try {
 var jsonobject= main.a_informacionUsuario2.getItem(0);
 var rol = jsonobject.data.idtipo;
 var idpersona = jsonobject.data.idpersona;
@@ -827,19 +486,12 @@ var valuePersona = idpersona;
 this.l_reportes_graficos_listado_reportes.filter.setValue("id.idTipoPersona", valueToFilter);
 this.l_reportes_graficos_listado_reportes.filter.setValue("id.idPersona", valuePersona);
 this.l_reportes_graficos_listado_reportes.update();
-} catch(e) {
-console.error('ERROR IN pestana_reportes_seguimientoShow: ' + e);
-}
 },
 reportes_graficos_listado_reportesSelected: function(inSender, inIndex) {
 this.reports_open_report_window.enable();
 },
 reportes_graficos_listado_reportesDeselected: function(inSender, inIndex) {
-try {
 this.reports_open_report_window.disable();
-} catch(e) {
-console.error('ERROR IN reportes_graficos_listado_reportesDeselected: ' + e);
-}
 },
 a_getLastAccessSuccess: function(inSender, inDeprecated) {
 var json= main.a_getLastAccess.getItem(0);
@@ -1349,8 +1001,8 @@ this.aprendizajes_grupo2.hide();
 main.aprendizajesAsignaturasGrid1.show();
 },
 top_select_syChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
-var idsy=  main.top_select_sy.getDataValue().idSy;
-var user=  main.global_username.getData().dataValue;
+var idsy =  this.myCurSy();
+var user =  main.global_username.getData().dataValue;
 this.global_docentes_asignaturas.input.setValue("idsyr", idsy);
 this.global_docentes_asignaturas.input.setValue("nickname", user);
 this.global_docentes_asignaturas.update();
@@ -1694,7 +1346,6 @@ main.recursoLiveVariable1.clearData();
 main.actividadLiveVariable2.clearData();
 },
 curriculo_grid_docentes_asignaturasSelectionChange1: function(inSender) {
-//calling top_select_syChange1() function
 this.top_select_syChange1();
 },
 a_lista_sySuccess: function(inSender, inDeprecated) {
@@ -1725,9 +1376,6 @@ this.how_to_start.hide();
 this.inicio_big_panel.hide();
 this.asignatura_big_panel.hide();
 this.estudiante_big_panel.show();
-},
-top_select_syChange2: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
-//var
 },
 menu_asignatura_buttClick1: function(inSender) {
 this.curriculo_big_panel.hide();
@@ -1860,20 +1508,112 @@ this.panelCoordinadorCurricular.hide();
 dashboard_chart4: function() {
 var porc_faltas = main.dashboard_faltas_graves.getItem(0).data.id.data.porcentajeFaltasGraves;
 var curso       = main.dashboard_faltas_graves.getItem(0).data.id.data.curso;
-var data = google.visualization.arrayToDataTable([
-['Label', 'Value'],
-[curso, porc_faltas]
-]);
-var options = {
-width: 230, height: 230,
-redFrom: 0, redTo: 90,
-yellowFrom:90, yellowTo: 95,
-greenFrom:95, greenTo: 100,
-minorTicks: 10,
-max: 100
-};
-var chart = this._chart = new google.visualization.Gauge(this.chart4.domNode);
-chart.draw(data, options);
+$(function() {
+$('#main_chart4').highcharts({
+chart: {
+type: 'gauge',
+plotBackgroundColor: null,
+plotBackgroundImage: null,
+plotBorderWidth: 0,
+plotShadow: false
+},
+title: {
+text: curso
+},
+pane: {
+startAngle: -150,
+endAngle: 150,
+background: [{
+backgroundColor: {
+linearGradient: {
+x1: 0,
+y1: 0,
+x2: 0,
+y2: 1
+},
+stops: [
+[0, '#FFF'],
+[1, '#333']
+]
+},
+borderWidth: 0,
+outerRadius: '109%'
+},
+{
+backgroundColor: {
+linearGradient: {
+x1: 0,
+y1: 0,
+x2: 0,
+y2: 1
+},
+stops: [
+[0, '#333'],
+[1, '#FFF']
+]
+},
+borderWidth: 1,
+outerRadius: '107%'
+},
+{
+// default background
+},
+{
+backgroundColor: '#DDD',
+borderWidth: 0,
+outerRadius: '105%',
+innerRadius: '103%'
+}]
+},
+// the value axis
+yAxis: {
+min: 0,
+max: 100,
+minorTickInterval: 'auto',
+minorTickWidth: 1,
+minorTickLength: 10,
+minorTickPosition: 'inside',
+minorTickColor: '#666',
+tickPixelInterval: 30,
+tickWidth: 2,
+tickPosition: 'inside',
+tickLength: 10,
+tickColor: '#666',
+labels: {
+step: 2,
+rotation: 'auto'
+},
+title: {
+text: '%'
+},
+plotBands: [{
+from: 95,
+to: 100,
+color: '#55BF3B' // green
+},
+{
+from: 90,
+to: 95,
+color: '#DDDF0D' // yellow
+},
+{
+from: 0,
+to: 90,
+color: '#DF5353' // red
+}]
+},
+series: [{
+name: 'Sin faltas graves',
+data: [porc_faltas],
+tooltip: {
+valueSuffix: ' %'
+}
+}]
+},
+// Add some life
+function(chart) {
+});
+});
 },
 //chart5
 dashboard_chart5: function(){
@@ -2609,7 +2349,7 @@ logCurriculoDocentes: ["wm.Variable", {"type":"com.aprendoz_test.data.LogAccione
 asignaturas_estudiantes_asignaturas_ServiceVariable: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"asignatura_alumnos_asignatura","service":"aprendoz_test"}, {}, {
 input: ["wm.ServiceInput", {"type":"asignatura_alumnos_asignaturaInputs"}, {}]
 }],
-asignatura_vista_estudiantesAsignatura: ["wm.LiveVariable", {"inFlightBehavior":"executeLast","type":"com.aprendoz_test.data.VistaAsignaturaEstudiantes"}, {}, {
+asignatura_vista_estudiantesAsignatura: ["wm.LiveVariable", {"autoUpdate":false,"inFlightBehavior":"executeLast","startUpdate":false,"type":"com.aprendoz_test.data.VistaAsignaturaEstudiantes"}, {}, {
 liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.VistaAsignaturaEstudiantes","related":["id"],"view":[
 {"caption":"Id","sortable":true,"dataIndex":"id","type":"com.aprendoz_test.data.VistaAsignaturaEstudiantesId","displayType":"Text","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
 {"caption":"IdAsignatura","sortable":true,"dataIndex":"id.idAsignatura","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
@@ -2686,7 +2426,7 @@ liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.VistaDashboardCali
 {"caption":"Calificacion","sortable":true,"dataIndex":"id.calificacion","type":"java.lang.String","displayType":"Text","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":2007,"subType":null,"widthUnits":"px"}
 ]}, {}]
 }],
-dashboard_calificacion_general: ["wm.LiveVariable", {"inFlightBehavior":"executeLast","type":"com.aprendoz_test.data.VistaDashboardAsignaturaGlobal"}, {}, {
+dashboard_calificacion_general: ["wm.LiveVariable", {"autoUpdate":false,"inFlightBehavior":"executeLast","startUpdate":false,"type":"com.aprendoz_test.data.VistaDashboardAsignaturaGlobal"}, {}, {
 liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.VistaDashboardAsignaturaGlobal","view":[
 {"caption":"Id","sortable":true,"dataIndex":"id","type":"com.aprendoz_test.data.VistaDashboardAsignaturaGlobalId","displayType":"Text","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
 {"caption":"DirectorId","sortable":true,"dataIndex":"id.directorId","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
@@ -2718,9 +2458,6 @@ liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.VistaDashboardAsig
 {"caption":"AvgCalificacion","sortable":true,"dataIndex":"id.avgCalificacion","type":"java.lang.String","displayType":"Text","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":8,"subType":null},
 {"caption":"IdAsignatura","sortable":true,"dataIndex":"id.idAsignatura","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":9,"subType":null}
 ]}, {}]
-}],
-liveVariable2: ["wm.LiveVariable", {"inFlightBehavior":"executeLast"}, {}, {
-liveView: ["wm.LiveView", {}, {}]
 }],
 dashboard_malla_dimension_comprension: ["wm.LiveVariable", {"autoUpdate":false,"inFlightBehavior":"executeLast","startUpdate":false,"type":"com.aprendoz_test.data.VistaDashboardMallaDimensionComprension"}, {"onSuccess":"dashboard_malla_dimension_comprensionSuccess"}, {
 liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.VistaDashboardMallaDimensionComprension","related":["id"],"view":[
@@ -3100,13 +2837,13 @@ inicio_forgot_password: ["wm.Label", {"align":"center","caption":"<u>¿Desea cam
 format: ["wm.DataFormatter", {}, {}]
 }],
 logForm: ["wm.LiveForm", {"height":"60px","horizontalAlign":"left","showing":false,"verticalAlign":"top"}, {}, {
-inicio_box_fecha: ["wm.DateEditor", {"caption":"hora","disabled":true,"displayValue":"1/19/2015","padding":"2","readonly":true,"showing":false}, {}, {
+inicio_box_fecha: ["wm.DateEditor", {"caption":"hora","disabled":true,"displayValue":"2/11/2015","padding":"2","readonly":true,"showing":false}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 }],
 editor: ["wm._DateEditor", {}, {}]
 }],
-inicio_box_hora: ["wm.TimeEditor", {"caption":"fecha","disabled":true,"displayValue":"07:24 AM","padding":"2","showing":false}, {}, {
+inicio_box_hora: ["wm.TimeEditor", {"caption":"fecha","disabled":true,"displayValue":"15:10 PM","padding":"2","showing":false}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 }],
@@ -3175,7 +2912,7 @@ panelHeader: ["wm.Panel", {"_classes":{"domNode":["template-header-panel","wm_Ba
 logo: ["wm.Picture", {"aspect":"h","height":"100%","source":"resources/images/logos/headerapp.jpg","width":"600px"}, {}],
 spacer5: ["wm.Spacer", {"height":"48px","width":"99%"}, {}],
 top_Head: ["wm.Panel", {"height":"40px","horizontalAlign":"right","layoutKind":"left-to-right","verticalAlign":"bottom","width":"100%"}, {}, {
-dateEditor1: ["wm.DateEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"captionPosition":"right","displayValue":"1/19/2015","padding":"2","readonly":true,"width":"80px"}, {}, {
+dateEditor1: ["wm.DateEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"captionPosition":"right","displayValue":"2/11/2015","padding":"2","readonly":true,"width":"80px"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 }],
@@ -3184,7 +2921,7 @@ editor: ["wm._DateEditor", {}, {}]
 label1: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_16px"]},"align":"center","caption":"|","padding":"0","width":"10px"}, {}, {
 format: ["wm.DataFormatter", {}, {}]
 }],
-timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"displayValue":"07:24 AM","padding":"2","readonly":true,"width":"76px"}, {}, {
+timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"displayValue":"15:10 PM","padding":"2","readonly":true,"width":"76px"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 }],

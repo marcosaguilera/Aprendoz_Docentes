@@ -547,7 +547,7 @@ Main.widgets = {
 	asignaturas_estudiantes_asignaturas_ServiceVariable: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"asignatura_alumnos_asignatura","service":"aprendoz_test"}, {}, {
 		input: ["wm.ServiceInput", {"type":"asignatura_alumnos_asignaturaInputs"}, {}]
 	}],
-	asignatura_vista_estudiantesAsignatura: ["wm.LiveVariable", {"inFlightBehavior":"executeLast","type":"com.aprendoz_test.data.VistaAsignaturaEstudiantes"}, {}, {
+	asignatura_vista_estudiantesAsignatura: ["wm.LiveVariable", {"autoUpdate":false,"inFlightBehavior":"executeLast","startUpdate":false,"type":"com.aprendoz_test.data.VistaAsignaturaEstudiantes"}, {}, {
 		liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.VistaAsignaturaEstudiantes","related":["id"],"view":[
 {"caption":"Id","sortable":true,"dataIndex":"id","type":"com.aprendoz_test.data.VistaAsignaturaEstudiantesId","displayType":"Text","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
 {"caption":"IdAsignatura","sortable":true,"dataIndex":"id.idAsignatura","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
@@ -624,7 +624,7 @@ Main.widgets = {
 {"caption":"Calificacion","sortable":true,"dataIndex":"id.calificacion","type":"java.lang.String","displayType":"Text","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":2007,"subType":null,"widthUnits":"px"}
 ]}, {}]
 	}],
-	dashboard_calificacion_general: ["wm.LiveVariable", {"inFlightBehavior":"executeLast","type":"com.aprendoz_test.data.VistaDashboardAsignaturaGlobal"}, {}, {
+	dashboard_calificacion_general: ["wm.LiveVariable", {"autoUpdate":false,"inFlightBehavior":"executeLast","startUpdate":false,"type":"com.aprendoz_test.data.VistaDashboardAsignaturaGlobal"}, {}, {
 		liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.VistaDashboardAsignaturaGlobal","view":[
 {"caption":"Id","sortable":true,"dataIndex":"id","type":"com.aprendoz_test.data.VistaDashboardAsignaturaGlobalId","displayType":"Text","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
 {"caption":"DirectorId","sortable":true,"dataIndex":"id.directorId","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
@@ -656,9 +656,6 @@ Main.widgets = {
 {"caption":"AvgCalificacion","sortable":true,"dataIndex":"id.avgCalificacion","type":"java.lang.String","displayType":"Text","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":8,"subType":null},
 {"caption":"IdAsignatura","sortable":true,"dataIndex":"id.idAsignatura","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":9,"subType":null}
 ]}, {}]
-	}],
-	liveVariable2: ["wm.LiveVariable", {"inFlightBehavior":"executeLast"}, {}, {
-		liveView: ["wm.LiveView", {}, {}]
 	}],
 	dashboard_malla_dimension_comprension: ["wm.LiveVariable", {"autoUpdate":false,"inFlightBehavior":"executeLast","startUpdate":false,"type":"com.aprendoz_test.data.VistaDashboardMallaDimensionComprension"}, {"onSuccess":"dashboard_malla_dimension_comprensionSuccess"}, {
 		liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.VistaDashboardMallaDimensionComprension","related":["id"],"view":[
@@ -1038,13 +1035,13 @@ Main.widgets = {
 						format: ["wm.DataFormatter", {}, {}]
 					}],
 					logForm: ["wm.LiveForm", {"height":"60px","horizontalAlign":"left","showing":false,"verticalAlign":"top"}, {}, {
-						inicio_box_fecha: ["wm.DateEditor", {"caption":"hora","disabled":true,"displayValue":"1/19/2015","padding":"2","readonly":true,"showing":false}, {}, {
+						inicio_box_fecha: ["wm.DateEditor", {"caption":"hora","disabled":true,"displayValue":"2/11/2015","padding":"2","readonly":true,"showing":false}, {}, {
 							binding: ["wm.Binding", {}, {}, {
 								wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 							}],
 							editor: ["wm._DateEditor", {}, {}]
 						}],
-						inicio_box_hora: ["wm.TimeEditor", {"caption":"fecha","disabled":true,"displayValue":"07:24 AM","padding":"2","showing":false}, {}, {
+						inicio_box_hora: ["wm.TimeEditor", {"caption":"fecha","disabled":true,"displayValue":"15:10 PM","padding":"2","showing":false}, {}, {
 							binding: ["wm.Binding", {}, {}, {
 								wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 							}],
@@ -1113,7 +1110,7 @@ Main.widgets = {
 						logo: ["wm.Picture", {"aspect":"h","height":"100%","source":"resources/images/logos/headerapp.jpg","width":"600px"}, {}],
 						spacer5: ["wm.Spacer", {"height":"48px","width":"99%"}, {}],
 						top_Head: ["wm.Panel", {"height":"40px","horizontalAlign":"right","layoutKind":"left-to-right","verticalAlign":"bottom","width":"100%"}, {}, {
-							dateEditor1: ["wm.DateEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"captionPosition":"right","displayValue":"1/19/2015","padding":"2","readonly":true,"width":"80px"}, {}, {
+							dateEditor1: ["wm.DateEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"captionPosition":"right","displayValue":"2/11/2015","padding":"2","readonly":true,"width":"80px"}, {}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 								}],
@@ -1122,7 +1119,7 @@ Main.widgets = {
 							label1: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_16px"]},"align":"center","caption":"|","padding":"0","width":"10px"}, {}, {
 								format: ["wm.DataFormatter", {}, {}]
 							}],
-							timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"displayValue":"07:24 AM","padding":"2","readonly":true,"width":"76px"}, {}, {
+							timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"displayValue":"15:10 PM","padding":"2","readonly":true,"width":"76px"}, {}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 								}],
