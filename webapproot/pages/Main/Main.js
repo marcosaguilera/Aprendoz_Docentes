@@ -20,7 +20,7 @@ dojo.declare("Main", wm.Page, {
   "preferredDevice": "desktop",
   
   myCurSy: function(){
-        var sy= main.global_cursy.getItem(0).data.idsy;
+        var sy  = main.global_cursy.getItem(0).data.idsy;
         return sy;
   },
  
@@ -1579,8 +1579,8 @@ dojo.declare("Main", wm.Page, {
             //console.log("Dimension: "+ dims + " Values: "+ values);
             dimensiones.push(dims);   
             data.push(values);
-            console.log(dimensiones);
-            console.log(data);
+            //console.log(dimensiones);
+            //console.log(data);
         }
         
 		$(function() {    	
@@ -1644,8 +1644,8 @@ dojo.declare("Main", wm.Page, {
             //console.log("Dimension: "+ dims + " Values: "+ values);
             dimensiones.push(dims);   
             data.push(values);
-            console.log(dimensiones);
-            console.log(data);
+            //console.log(dimensiones);
+            //console.log(data);
         }
         
 		$(function() {        

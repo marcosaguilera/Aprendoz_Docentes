@@ -1,9 +1,0 @@
-{
-	"methods": [{
-		"name": "sampleJavaOperation",
-		"parameters": null,
-		"returnType": "java.lang.String"
-	}],
-	"serviceType": "JSON-RPC",
-	"serviceURL": "s3117.json"
-}

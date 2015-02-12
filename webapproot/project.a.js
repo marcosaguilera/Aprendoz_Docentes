@@ -30416,7 +30416,7 @@ dojo.declare("Aprendoz_Docentes", wm.Application, {
 	"name": "", 
 	"phoneGapLoginPage": "Login", 
 	"phoneMain": "", 
-	"projectSubVersion": 19, 
+	"projectSubVersion": 20, 
 	"projectVersion": 1, 
 	"sessionExpirationHandler": "nothing", 
 	"studioVersion": "6.7.0.RELEASE", 
