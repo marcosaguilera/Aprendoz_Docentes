@@ -121,14 +121,15 @@ dojo.declare("Main", wm.Page, {
   
   //se obtiene el nombre de usuario del serviceVariable global_username
   global_usernameSuccess: function(inSender, inDeprecated) {
-      var _usuario= main.global_username.data.dataValue;      
+      var _usuario  =   main.global_username.data.dataValue;      
       this.a_informacionUsuario.input.setValue("user", _usuario);     
       this.global_cursy.update();
       this.a_informacionUsuario.update();    
   },
 
   global_cursySuccess: function(inSender, inDeprecated) {
-      var _usuario      = main.global_username.getData().dataValue;
+      //var _usuario      = main.global_username.getData().dataValue;
+      var _usuario      = main.global_username.getItem(0).data.dataValue;
       var syJson        = main.global_cursy.getItem(0);
       var fechaInicio   = syJson.data.fechaDesde;
       var fechaFinal    = syJson.data.fechaHasta;          
@@ -162,8 +163,9 @@ dojo.declare("Main", wm.Page, {
        var today    = new Date().getTime();
        var clave    = main.a_informacionUsuario.getItem(0).data.clave; 
        
-       //var json     = main.global_cursy.getItem(0);
-       var idsy     = this.myCurSy();
+       var json     = main.global_cursy.getItem(0);
+       //var idsy     = this.myCurSy();
+       var idsy     = main.global_cursy.getItem(0).data.idsy;
        console.log(idsy);
         
        this.inicio_box_usuario.setDataValue(usuario);
@@ -872,7 +874,8 @@ dojo.declare("Main", wm.Page, {
 	},
 	top_select_syChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
         var idsy =  this.myCurSy();
-        var user =  main.global_username.getData().dataValue;
+        //var user =  main.global_username.getData().dataValue;
+        var user =  main.global_username.getItem(0).data.dataValue;
         this.global_docentes_asignaturas.input.setValue("idsyr", idsy);
         this.global_docentes_asignaturas.input.setValue("nickname", user);
         this.global_docentes_asignaturas.update();
@@ -1363,13 +1366,19 @@ dojo.declare("Main", wm.Page, {
 	},   
 	
 	muestraCoordinadorCursoSuccess: function(inSender, inDeprecated) {
-		var count = main.muestraCoordinadorCurso.getCount();
-        if(count > 0){
-            //this.panelCoordinadorCurso.show();
-            this.dashboard_chart4();
-            this.dashboard_chart6();
-        }else{
-            this.panelCoordinadorCurso.hide();
+        try {
+            var count = main.muestraCoordinadorCurso.getCount();
+            if (count > 0) {
+                //this.panelCoordinadorCurso.show();
+                this.dashboard_chart4();
+                console.log("render 4 >>>>");
+            } else {
+                //this.panelCoordinadorCurso.hide();
+            }
+        } catch (e) {
+            console.log("for exception >>>>");
+            main.muestraCoordinadorCurso.update();
+            console.error('ERROR IN muestraCoordinadorCursoSuccess: ' + e);  
         }
 	},
 	muestraCoordinadorSubAreaSuccess: function(inSender, inDeprecated) {
@@ -1385,8 +1394,7 @@ dojo.declare("Main", wm.Page, {
         var porc_faltas = main.dashboard_faltas_graves.getItem(0).data.id.data.porcentajeFaltasGraves;
         var curso       = main.dashboard_faltas_graves.getItem(0).data.id.data.curso;       
         $(function() {
-            $('#main_chart4').highcharts({
-        
+            $('#main_chart4').highcharts({        
                 chart: {
                     type: 'gauge',
                     plotBackgroundColor: null,
@@ -1503,53 +1511,206 @@ dojo.declare("Main", wm.Page, {
     //chart5
     dashboard_chart5: function(){
         var score = main.dashboard_puntaje_asig_global.getItem(0).data.id.data.avgPuntaje;
-        var subject = main.dashboard_puntaje_asig_global.getItem(0).data.id.data.asignatura;
-        var data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['Puntaje', score]
-        ]);
-
-        var options = {
-            width: 230, height: 200,
-            redFrom: 0, redTo: 82,
-            yellowFrom:82, yellowTo: 107,
-            yellowColor: '#F27D1B',
-            yellowFrom:107, yellowTo: 137,
-            greenFrom:137, greenTo: 160, 
-            minorTicks: 10,
-            max: 160
-        };
-
-        var chart = this._chart = new google.visualization.Gauge(this.chart5.domNode);
-        chart.draw(data, options);     
+        var subject = main.dashboard_puntaje_asig_global.getItem(0).data.id.data.asignatura;     
+        $(function() {
+            $('#main_chart5').highcharts({        
+                chart: {
+                    type: 'gauge',
+                    plotBackgroundColor: null,
+                    plotBackgroundImage: null,
+                    plotBorderWidth: 0,
+                    plotShadow: false
+                },
+        
+                title: {
+                    text: subject,
+                    style: { "fontSize": "10px" }
+                },
+        
+                pane: {
+                    startAngle: -150,
+                    endAngle: 150,
+                    background: [{
+                        backgroundColor: {
+                            linearGradient: {
+                                x1: 0,
+                                y1: 0,
+                                x2: 0,
+                                y2: 1
+                            },
+                            stops: [
+                                [0, '#FFF'],
+                                [1, '#333']
+                            ]
+                        },
+                        borderWidth: 0,
+                        outerRadius: '109%'
+                    },
+                    {
+                        backgroundColor: {
+                            linearGradient: {
+                                x1: 0,
+                                y1: 0,
+                                x2: 0,
+                                y2: 1
+                            },
+                            stops: [
+                                [0, '#333'],
+                                [1, '#FFF']
+                            ]
+                        },
+                        borderWidth: 1,
+                        outerRadius: '107%'
+                    },
+                    {
+                        // default background
+                    },
+                    {
+                        backgroundColor: '#DDD',
+                        borderWidth: 0,
+                        outerRadius: '105%',
+                        innerRadius: '103%'
+                    }]
+                },
+        
+                // the value axis
+                yAxis: {
+                    min: 0,
+                    max: 160,
+        
+                    minorTickInterval: 'auto',
+                    minorTickWidth: 1,
+                    minorTickLength: 10,
+                    minorTickPosition: 'inside',
+                    minorTickColor: '#666',
+        
+                    tickPixelInterval: 30,
+                    tickWidth: 2,
+                    tickPosition: 'inside',
+                    tickLength: 10,
+                    tickColor: '#666',
+                    labels: {
+                        step: 2,
+                        rotation: 'auto'
+                    },
+                    title: {
+                        text: '%'
+                    },
+                    plotBands: [{
+                        from: 137,
+                        to: 160,
+                        color: '#55BF3B' // green
+                    },
+                    {
+                        from: 107,
+                        to: 137,
+                        color: '#754C78' // purple
+                    },
+                    {
+                        from: 82,
+                        to: 107,
+                        color: '#DDDF0D' // yellow
+                    },
+                    {
+                        from: 0,
+                        to: 82,
+                        color: '#DF5353' // red
+                    }]
+                },
+        
+                series: [{
+                    name: 'Puntaje',
+                    data: [score],
+                    tooltip: {
+                        valueSuffix: ' %'
+                    }
+                }]
+        
+            },
+            // Add some life
+            function(chart) {
+                
+            });
+        });
     },
+    dashboard_calificacion_estudiantesSuccess: function(inSender, inDeprecated) {
+    	this.dashboard_chart6();
+	},
     //chart6
     dashboard_chart6: function(){
-        var length = main.dashboard_calificacion_estudiantes.getCount();
-        var result = [];
-        var mydata = main.dashboard_calificacion_estudiantes.getData();
-        for(var i = 0 ;  i < mydata.length ; i++){
+        var length      = main.dashboard_calificacion_estudiantes.getCount();
+        var result      = [];
+        var mydata      = main.dashboard_calificacion_estudiantes.getData();
+        var stdArray      = [];
+        var scoreArray    = [];
+        for (var i = 0; i < mydata.length; i++) {
             //console.log(i);
-            var base   = mydata[i];
+            var base = mydata[i];
             //console.log(base);
-            var std    = base.id.alumnoApellido1;
-            var score  = base.id.puntaje;
-            result.push([std, score]);    
-        }        
-        var data = new google.visualization.DataTable();
+            var std = base.id.alumnoApellido1;
+            var score = base.id.puntaje;
+            result.push([std, score]);
+            stdArray.push([std]);
+            scoreArray.push([score]);
+        }
+        console.log(stdArray);
+        console.log(scoreArray);
+        /*var data = new google.visualization.DataTable();
         data.addColumn('string', 'Estudiantes');
         data.addColumn('number', 'Puntaje');
         data.addRows(result);
-          var view = new google.visualization.DataView(data);
-          var options = {
+        var view = new google.visualization.DataView(data);
+        var options = {
             title: "PUNTAJE DE ESTUDIANTES POR CURSO",
             width: 800,
             height: 400,
-            bar: {groupWidth: "95%"},
-            legend: { position: "none" },
-          };
-          var chart = new google.visualization.ColumnChart(this.chart6.domNode);
-          chart.draw(view, options);
+            bar: {
+                groupWidth: "95%"
+            },
+            legend: {
+                position: "none"
+            },
+        };
+        var chart = new google.visualization.ColumnChart(this.chart6.domNode);
+        chart.draw(view, options);*/
+        
+        
+        $(function() {
+            $('#main_chart6').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Puntaje de Estudiantes por Curso'
+                },
+                subtitle: {
+                    text: 'Puntaje general por estudiante'
+                },
+                xAxis: {
+                    categories: stdArray,
+                    labels: {
+                        rotation: 90
+                        }
+                },
+                yAxis: {
+                    title: {
+                        text: 'Puntaje'
+                    }
+                },
+                plotOptions: {
+                    line: {
+                        dataLabels: {
+                            enabled: true
+                        },
+                        enableMouseTracking: false
+                    }
+                },
+                series: [{
+                    name: 'Puntajes',
+                    data: scoreArray
+                }]
+            });
+        });
     },	
 	asignaturaCoordinadorSelectChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {	
         var idasignatura = main.asignaturaCoordinadorSelect.getDataValue();
@@ -1701,6 +1862,7 @@ dojo.declare("Main", wm.Page, {
         this.asignaturaCoordinadorSelect2.setDisplayValue(subjectname);
 	},
     //the end
+	
 	
 	
 	_end: 0

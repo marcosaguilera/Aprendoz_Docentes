@@ -102,13 +102,14 @@ this.calificacionNumEditor23.setValue("dataValue", "1.6");
 },
 //se obtiene el nombre de usuario del serviceVariable global_username
 global_usernameSuccess: function(inSender, inDeprecated) {
-var _usuario= main.global_username.data.dataValue;
+var _usuario  =   main.global_username.data.dataValue;
 this.a_informacionUsuario.input.setValue("user", _usuario);
 this.global_cursy.update();
 this.a_informacionUsuario.update();
 },
 global_cursySuccess: function(inSender, inDeprecated) {
-var _usuario      = main.global_username.getData().dataValue;
+//var _usuario      = main.global_username.getData().dataValue;
+var _usuario      = main.global_username.getItem(0).data.dataValue;
 var syJson        = main.global_cursy.getItem(0);
 var fechaInicio   = syJson.data.fechaDesde;
 var fechaFinal    = syJson.data.fechaHasta;
@@ -139,8 +140,9 @@ this.configuracion_detalles.setCaption(fullname+"<br>Sexo: "+sexo+"<br>No. docum
 var idp      = main.a_informacionUsuario.getItem(0).data.idpersona;
 var today    = new Date().getTime();
 var clave    = main.a_informacionUsuario.getItem(0).data.clave;
-//var json     = main.global_cursy.getItem(0);
-var idsy     = this.myCurSy();
+var json     = main.global_cursy.getItem(0);
+//var idsy     = this.myCurSy();
+var idsy     = main.global_cursy.getItem(0).data.idsy;
 console.log(idsy);
 this.inicio_box_usuario.setDataValue(usuario);
 this.inicio_box_clave.setDataValue(clave);
@@ -808,7 +810,8 @@ main.aprendizajesAsignaturasGrid1.show();
 },
 top_select_syChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
 var idsy =  this.myCurSy();
-var user =  main.global_username.getData().dataValue;
+//var user =  main.global_username.getData().dataValue;
+var user =  main.global_username.getItem(0).data.dataValue;
 this.global_docentes_asignaturas.input.setValue("idsyr", idsy);
 this.global_docentes_asignaturas.input.setValue("nickname", user);
 this.global_docentes_asignaturas.update();
@@ -1293,13 +1296,19 @@ dojoGrid1Select: function(inSender) {
 this.asignatura_detalles_alumno.enable();
 },
 muestraCoordinadorCursoSuccess: function(inSender, inDeprecated) {
+try {
 var count = main.muestraCoordinadorCurso.getCount();
-if(count > 0){
+if (count > 0) {
 //this.panelCoordinadorCurso.show();
 this.dashboard_chart4();
-this.dashboard_chart6();
-}else{
-this.panelCoordinadorCurso.hide();
+console.log("render 4 >>>>");
+} else {
+//this.panelCoordinadorCurso.hide();
+}
+} catch (e) {
+console.log("for exception >>>>");
+main.muestraCoordinadorCurso.update();
+console.error('ERROR IN muestraCoordinadorCursoSuccess: ' + e);
 }
 },
 muestraCoordinadorSubAreaSuccess: function(inSender, inDeprecated) {
@@ -1425,37 +1434,142 @@ function(chart) {
 dashboard_chart5: function(){
 var score = main.dashboard_puntaje_asig_global.getItem(0).data.id.data.avgPuntaje;
 var subject = main.dashboard_puntaje_asig_global.getItem(0).data.id.data.asignatura;
-var data = google.visualization.arrayToDataTable([
-['Label', 'Value'],
-['Puntaje', score]
-]);
-var options = {
-width: 230, height: 200,
-redFrom: 0, redTo: 82,
-yellowFrom:82, yellowTo: 107,
-yellowColor: '#F27D1B',
-yellowFrom:107, yellowTo: 137,
-greenFrom:137, greenTo: 160,
-minorTicks: 10,
-max: 160
-};
-var chart = this._chart = new google.visualization.Gauge(this.chart5.domNode);
-chart.draw(data, options);
+$(function() {
+$('#main_chart5').highcharts({
+chart: {
+type: 'gauge',
+plotBackgroundColor: null,
+plotBackgroundImage: null,
+plotBorderWidth: 0,
+plotShadow: false
+},
+title: {
+text: subject,
+style: { "fontSize": "10px" }
+},
+pane: {
+startAngle: -150,
+endAngle: 150,
+background: [{
+backgroundColor: {
+linearGradient: {
+x1: 0,
+y1: 0,
+x2: 0,
+y2: 1
+},
+stops: [
+[0, '#FFF'],
+[1, '#333']
+]
+},
+borderWidth: 0,
+outerRadius: '109%'
+},
+{
+backgroundColor: {
+linearGradient: {
+x1: 0,
+y1: 0,
+x2: 0,
+y2: 1
+},
+stops: [
+[0, '#333'],
+[1, '#FFF']
+]
+},
+borderWidth: 1,
+outerRadius: '107%'
+},
+{
+// default background
+},
+{
+backgroundColor: '#DDD',
+borderWidth: 0,
+outerRadius: '105%',
+innerRadius: '103%'
+}]
+},
+// the value axis
+yAxis: {
+min: 0,
+max: 160,
+minorTickInterval: 'auto',
+minorTickWidth: 1,
+minorTickLength: 10,
+minorTickPosition: 'inside',
+minorTickColor: '#666',
+tickPixelInterval: 30,
+tickWidth: 2,
+tickPosition: 'inside',
+tickLength: 10,
+tickColor: '#666',
+labels: {
+step: 2,
+rotation: 'auto'
+},
+title: {
+text: '%'
+},
+plotBands: [{
+from: 137,
+to: 160,
+color: '#55BF3B' // green
+},
+{
+from: 107,
+to: 137,
+color: '#754C78' // purple
+},
+{
+from: 82,
+to: 107,
+color: '#DDDF0D' // yellow
+},
+{
+from: 0,
+to: 82,
+color: '#DF5353' // red
+}]
+},
+series: [{
+name: 'Puntaje',
+data: [score],
+tooltip: {
+valueSuffix: ' %'
+}
+}]
+},
+// Add some life
+function(chart) {
+});
+});
+},
+dashboard_calificacion_estudiantesSuccess: function(inSender, inDeprecated) {
+this.dashboard_chart6();
 },
 //chart6
 dashboard_chart6: function(){
-var length = main.dashboard_calificacion_estudiantes.getCount();
-var result = [];
-var mydata = main.dashboard_calificacion_estudiantes.getData();
-for(var i = 0 ;  i < mydata.length ; i++){
+var length      = main.dashboard_calificacion_estudiantes.getCount();
+var result      = [];
+var mydata      = main.dashboard_calificacion_estudiantes.getData();
+var stdArray      = [];
+var scoreArray    = [];
+for (var i = 0; i < mydata.length; i++) {
 //console.log(i);
-var base   = mydata[i];
+var base = mydata[i];
 //console.log(base);
-var std    = base.id.alumnoApellido1;
-var score  = base.id.puntaje;
+var std = base.id.alumnoApellido1;
+var score = base.id.puntaje;
 result.push([std, score]);
+stdArray.push([std]);
+scoreArray.push([score]);
 }
-var data = new google.visualization.DataTable();
+console.log(stdArray);
+console.log(scoreArray);
+/*var data = new google.visualization.DataTable();
 data.addColumn('string', 'Estudiantes');
 data.addColumn('number', 'Puntaje');
 data.addRows(result);
@@ -1464,11 +1578,51 @@ var options = {
 title: "PUNTAJE DE ESTUDIANTES POR CURSO",
 width: 800,
 height: 400,
-bar: {groupWidth: "95%"},
-legend: { position: "none" },
+bar: {
+groupWidth: "95%"
+},
+legend: {
+position: "none"
+},
 };
 var chart = new google.visualization.ColumnChart(this.chart6.domNode);
-chart.draw(view, options);
+chart.draw(view, options);*/
+$(function() {
+$('#main_chart6').highcharts({
+chart: {
+type: 'column'
+},
+title: {
+text: 'Puntaje de Estudiantes por Curso'
+},
+subtitle: {
+text: 'Puntaje general por estudiante'
+},
+xAxis: {
+categories: stdArray,
+labels: {
+rotation: 90
+}
+},
+yAxis: {
+title: {
+text: 'Puntaje'
+}
+},
+plotOptions: {
+line: {
+dataLabels: {
+enabled: true
+},
+enableMouseTracking: false
+}
+},
+series: [{
+name: 'Puntajes',
+data: scoreArray
+}]
+});
+});
 },
 asignaturaCoordinadorSelectChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
 var idasignatura = main.asignaturaCoordinadorSelect.getDataValue();
@@ -2205,7 +2359,7 @@ wire3: ["wm.Wire", {"expression":"\"¡Acción no exitosa!\"","targetProperty":"t
 }]
 }]
 }],
-muestraCoordinadorCurso: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getCoordinadorCursoInfo","service":"aprendoz_test"}, {"onSuccess":"muestraCoordinadorCursoSuccess"}, {
+muestraCoordinadorCurso: ["wm.ServiceVariable", {"inFlightBehavior":"executeAll","operation":"getCoordinadorCursoInfo","service":"aprendoz_test"}, {"onSuccess":"muestraCoordinadorCursoSuccess"}, {
 input: ["wm.ServiceInput", {"type":"getCoordinadorCursoInfoInputs"}, {}]
 }],
 muestraCoordinadorSubArea: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getCoordinadorCurricularInfo","service":"aprendoz_test"}, {"onSuccess":"muestraCoordinadorSubAreaSuccess"}, {
@@ -2220,7 +2374,7 @@ liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.VistaDashboardFalt
 {"caption":"PorcentajeFaltasGraves","sortable":true,"dataIndex":"id.porcentajeFaltasGraves","type":"java.math.BigDecimal","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":2004,"subType":null,"widthUnits":"px"}
 ]}, {}]
 }],
-dashboard_calificacion_estudiantes: ["wm.LiveVariable", {"autoUpdate":false,"inFlightBehavior":"executeLast","startUpdate":false,"type":"com.aprendoz_test.data.VistaDashboardCalificacionEstudiantes"}, {}, {
+dashboard_calificacion_estudiantes: ["wm.LiveVariable", {"autoUpdate":false,"inFlightBehavior":"executeLast","startUpdate":false,"type":"com.aprendoz_test.data.VistaDashboardCalificacionEstudiantes"}, {"onSuccess":"dashboard_calificacion_estudiantesSuccess"}, {
 liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.VistaDashboardCalificacionEstudiantes","related":["id"],"view":[
 {"caption":"DirectorId","sortable":true,"dataIndex":"id.directorId","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":2000,"subType":null,"widthUnits":"px"},
 {"caption":"DirectorApellido1","sortable":true,"dataIndex":"id.directorApellido1","type":"java.lang.String","displayType":"Text","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":2001,"subType":null,"widthUnits":"px"},
@@ -3048,7 +3202,7 @@ panel_right2: ["wm.Panel", {"height":"100%","horizontalAlign":"center","styles":
 panel12: ["wm.Panel", {"height":"48px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 label8: ["wm.Label", {"_classes":{"domNode":["dashboard_headers_labels"]},"align":"center","caption":"PUNTAJE GENERAL POR ASIGNATURA","height":"100%","padding":"4","styles":{},"width":"100%"}, {}]
 }],
-asignaturaCoordinadorSelect: ["wm.SelectMenu", {"caption":"Asignatura","dataField":"idasignatura","dataType":"com.aprendoz_test.data.output.GetSubjectsByTeacherRtnType","dataValue":undefined,"displayField":"asignatura","displayValue":""}, {"onchange":"asignaturaCoordinadorSelectChange"}, {
+asignaturaCoordinadorSelect: ["wm.SelectMenu", {"caption":"Asignatura","dataField":"idasignatura","dataType":"com.aprendoz_test.data.output.GetSubjectsByTeacherRtnType","dataValue":undefined,"displayField":"asignatura","displayValue":"","width":"350px"}, {"onchange":"asignaturaCoordinadorSelectChange"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"asignaturasPorDocente","targetProperty":"dataSet"}, {}]
 }]
@@ -3062,7 +3216,7 @@ panel13: ["wm.Panel", {"height":"48px","horizontalAlign":"left","layoutKind":"le
 label9: ["wm.Label", {"_classes":{"domNode":["dashboard_headers_labels"]},"caption":"MALLA SOBRE ENFASIS CURRICULAR","height":"100%","padding":"4","styles":{},"width":"100%"}, {}]
 }],
 panel15: ["wm.Panel", {"height":"36px","horizontalAlign":"center","layoutKind":"left-to-right","verticalAlign":"middle","width":"100%"}, {}, {
-asignaturaCoordinadorSelect2: ["wm.SelectMenu", {"caption":"Asignatura","dataField":"idasignatura","dataType":"com.aprendoz_test.data.output.GetSubjectsByTeacherRtnType","dataValue":undefined,"displayField":"asignatura","displayValue":""}, {"onchange":"asignaturaCoordinadorSelect2Change"}, {
+asignaturaCoordinadorSelect2: ["wm.SelectMenu", {"caption":"Asignatura","dataField":"idasignatura","dataType":"com.aprendoz_test.data.output.GetSubjectsByTeacherRtnType","dataValue":undefined,"displayField":"asignatura","displayValue":"","width":"350px"}, {"onchange":"asignaturaCoordinadorSelect2Change"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"asignaturasPorDocente","targetProperty":"dataSet"}, {}]
 }]

@@ -597,7 +597,7 @@ Main.widgets = {
 			}]
 		}]
 	}],
-	muestraCoordinadorCurso: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getCoordinadorCursoInfo","service":"aprendoz_test"}, {"onSuccess":"muestraCoordinadorCursoSuccess"}, {
+	muestraCoordinadorCurso: ["wm.ServiceVariable", {"inFlightBehavior":"executeAll","operation":"getCoordinadorCursoInfo","service":"aprendoz_test"}, {"onSuccess":"muestraCoordinadorCursoSuccess"}, {
 		input: ["wm.ServiceInput", {"type":"getCoordinadorCursoInfoInputs"}, {}]
 	}],
 	muestraCoordinadorSubArea: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getCoordinadorCurricularInfo","service":"aprendoz_test"}, {"onSuccess":"muestraCoordinadorSubAreaSuccess"}, {
@@ -612,7 +612,7 @@ Main.widgets = {
 {"caption":"PorcentajeFaltasGraves","sortable":true,"dataIndex":"id.porcentajeFaltasGraves","type":"java.math.BigDecimal","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":2004,"subType":null,"widthUnits":"px"}
 ]}, {}]
 	}],
-	dashboard_calificacion_estudiantes: ["wm.LiveVariable", {"autoUpdate":false,"inFlightBehavior":"executeLast","startUpdate":false,"type":"com.aprendoz_test.data.VistaDashboardCalificacionEstudiantes"}, {}, {
+	dashboard_calificacion_estudiantes: ["wm.LiveVariable", {"autoUpdate":false,"inFlightBehavior":"executeLast","startUpdate":false,"type":"com.aprendoz_test.data.VistaDashboardCalificacionEstudiantes"}, {"onSuccess":"dashboard_calificacion_estudiantesSuccess"}, {
 		liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.VistaDashboardCalificacionEstudiantes","related":["id"],"view":[
 {"caption":"DirectorId","sortable":true,"dataIndex":"id.directorId","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":2000,"subType":null,"widthUnits":"px"},
 {"caption":"DirectorApellido1","sortable":true,"dataIndex":"id.directorApellido1","type":"java.lang.String","displayType":"Text","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":2001,"subType":null,"widthUnits":"px"},
@@ -1440,7 +1440,7 @@ Main.widgets = {
 											panel12: ["wm.Panel", {"height":"48px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 												label8: ["wm.Label", {"_classes":{"domNode":["dashboard_headers_labels"]},"align":"center","caption":"PUNTAJE GENERAL POR ASIGNATURA","height":"100%","padding":"4","styles":{},"width":"100%"}, {}]
 											}],
-											asignaturaCoordinadorSelect: ["wm.SelectMenu", {"caption":"Asignatura","dataField":"idasignatura","dataType":"com.aprendoz_test.data.output.GetSubjectsByTeacherRtnType","dataValue":undefined,"displayField":"asignatura","displayValue":""}, {"onchange":"asignaturaCoordinadorSelectChange"}, {
+											asignaturaCoordinadorSelect: ["wm.SelectMenu", {"caption":"Asignatura","dataField":"idasignatura","dataType":"com.aprendoz_test.data.output.GetSubjectsByTeacherRtnType","dataValue":undefined,"displayField":"asignatura","displayValue":"","width":"350px"}, {"onchange":"asignaturaCoordinadorSelectChange"}, {
 												binding: ["wm.Binding", {}, {}, {
 													wire: ["wm.Wire", {"expression":undefined,"source":"asignaturasPorDocente","targetProperty":"dataSet"}, {}]
 												}]
@@ -1454,7 +1454,7 @@ Main.widgets = {
 												label9: ["wm.Label", {"_classes":{"domNode":["dashboard_headers_labels"]},"caption":"MALLA SOBRE ENFASIS CURRICULAR","height":"100%","padding":"4","styles":{},"width":"100%"}, {}]
 											}],
 											panel15: ["wm.Panel", {"height":"36px","horizontalAlign":"center","layoutKind":"left-to-right","verticalAlign":"middle","width":"100%"}, {}, {
-												asignaturaCoordinadorSelect2: ["wm.SelectMenu", {"caption":"Asignatura","dataField":"idasignatura","dataType":"com.aprendoz_test.data.output.GetSubjectsByTeacherRtnType","dataValue":undefined,"displayField":"asignatura","displayValue":""}, {"onchange":"asignaturaCoordinadorSelect2Change"}, {
+												asignaturaCoordinadorSelect2: ["wm.SelectMenu", {"caption":"Asignatura","dataField":"idasignatura","dataType":"com.aprendoz_test.data.output.GetSubjectsByTeacherRtnType","dataValue":undefined,"displayField":"asignatura","displayValue":"","width":"350px"}, {"onchange":"asignaturaCoordinadorSelect2Change"}, {
 													binding: ["wm.Binding", {}, {}, {
 														wire: ["wm.Wire", {"expression":undefined,"source":"asignaturasPorDocente","targetProperty":"dataSet"}, {}]
 													}]
