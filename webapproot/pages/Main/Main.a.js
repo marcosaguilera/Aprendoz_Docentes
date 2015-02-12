@@ -100,203 +100,7 @@ if (this.calificacionEditor3.dataValue == "Magistral") {
 this.calificacionNumEditor23.setValue("dataValue", "1.6");
 }
 },
-inscalumaprendizajeLiveForm1CancelEdit: function(inSender) {
-try {
-this.calif_alumnos_curso_datag_alumnosDataGrid1.setDisabled(false);
-this.calif_asig_datag_aprendizajesDataGrid1.setDisabled(false);
-} catch(e) {
-console.error('ERROR IN inscalumaprendizajeLiveForm1CancelEdit: ' + e);
-}},
-calif_alumnos_curso_datag_alumnosDataGrid1SelectionChanged: function(inSender) {
-try {
-this.editPanel9.cancelEdit();
-} catch(e) {
-console.error('ERROR IN personasSelectionChanged: ' + e);
-}
-},
-calif_asig_datag_aprendizajesDataGrid1SelectionChanged: function(inSender) {
-try {
-this.editPanel9.cancelEdit();
-} catch(e) {
-console.error('ERROR IN calif_asig_datag_aprendizajesDataGrid1SelectionChanged ' + e);
-}},
-liveForm3BeginInsert: function(inSender) {
-try {
-this.subtopicoLookup8.setValue("dataValue", this.subtopicoDataGrid2.selectedItem.getData().idSubtopico);
-} catch(e) {
-console.error('ERROR IN liveForm3BeginInsert: ' + e);
-}
-},
-inscalumaprendizajeLiveForm2CancelEdit: function(inSender) {
-try {
-this.calif_alumnos_datagrids_datag_alumnos_cursos.setDisabled(false);
-this.calif_alumnos_datagrids_datag_alumnos_asignaturas.setDisabled(false);
-this.calif_alumnos_datagrids_datag_aprendizajes_asignaturas.setDisabled(false);
-} catch(e) {
-console.error('ERROR IN inscalumaprendizajeLiveForm2CancelEdit: ' + e);
-}
-},
-calif_alumnos_datagrids_datag_alumnos_asignaturasSelectionChanged: function(inSender) {
-try {
-this.editPanel10.cancelEdit();
-} catch(e) {
-console.error('ERROR IN calif_alumnos_datagrids_datag_alumnos_asignaturasSelectionChanged: ' + e);
-}
-},
-calif_alumnos_datagrids_datag_aprendizajes_asignaturasSelectionChanged: function(inSender) {
-try {
-this.l_calif_alumnos_datagrids_inscalumaprendizajeLiveVariable1.clearData();
-this.l_calif_alumnos_calificaciones_finales.clearData();
-this.editPanel10.cancelEdit();
-} catch(e) {
-console.error('ERROR IN calif_alumnos_datagrids_datag_aprendizajes_asignaturasSelectionChanged: ' + e);
-}
-},
-inscalumaprendizajeLiveForm2Success: function(inSender, inData) {
-try {
-this.l_calif_alumnos_datagrids_inscalumaprendizajeLiveVariable1.update();
-this.l_calif_alumnos_calificaciones_finales.update();
-this.l_calif_alumnos_alumnos_asignaturas.update();
-this.calif_alumnos_datagrids_datag_alumnos_cursos.setDisabled(false);
-this.calif_alumnos_datagrids_datag_alumnos_asignaturas.setDisabled(false);
-this.calif_alumnos_datagrids_datag_aprendizajes_asignaturas.setDisabled(false);
-} catch(e) {
-console.error('ERROR IN inscalumaprendizajeLiveForm2Success: ' + e);
-}
-},
-liveForm2BeginInsert: function(inSender) {
-try {
-this.asignaturaLookup4.setValue("dataValue", this.asignaturaDataGrid4.selectedItem.getData().idAsignatura);
-} catch(e) {
-console.error('ERROR IN liveForm2BeginInsert: ' + e);
-}
-},
-calif_alumnos_datagrids_datag_alumnos_cursosSelectionChanged: function(inSender) {
-this.l_calif_alumnos_aprendizajes.clearData();
-this.l_calif_alumnos_datagrids_inscalumaprendizajeLiveVariable1.clearData();
-this.l_calif_alumnos_calificaciones_finales.clearData();
-this.editPanel10.cancelEdit();
-},
-inscalumaprendizajeLiveForm2BeginUpdate: function(inSender) {
-try {
-this.calif_alumnos_datagrids_datag_alumnos_cursos.setDisabled(true);
-this.calif_alumnos_datagrids_datag_alumnos_asignaturas.setDisabled(true);
-this.calif_alumnos_datagrids_datag_aprendizajes_asignaturas.setDisabled(true);
-} catch(e) {
-console.error('ERROR IN inscalumaprendizajeLiveForm2BeginUpdate: ' + e);
-}
-},
-apredizajesSelected: function(inSender, inIndex) {
-try {
-this.inscalumaprendizajeLiveVariable1.update();
-this.calif_finales.update();
-} catch(e) {
-console.error('ERROR IN apredizajesSelected: ' + e);
-}
-},
-calificacionesShow: function(inSender) {
-try {
-this.l_calif_encabezado_opciones_listaCursos.update();
-} catch(e) {
-console.error('ERROR IN layer9Show: ' + e);
-}
-},
-calif_alumnos_panel1_sel_cursoChange: function(inSender, inDisplayValue, inDataValue) {
-try {
-this.l_calif_alumnos_alumnosCursos.update();
-} catch(e) {
-console.error('ERROR IN calif_alumnos_panel1_sel_cursoChange: ' + e);
-}
-},
-calif_alumnos_datagrids_datag_aprendizajes_asignaturasSelected: function(inSender, inIndex) {
-try {
-this.l_calif_alumnos_datagrids_inscalumaprendizajeLiveVariable1.update();
-this.l_calif_alumnos_calificaciones_finales.update();
-} catch(e) {
-console.error('ERROR IN calif_alumnos_datagrids_datag_aprendizajes_asignaturasSelected: ' + e);
-}
-},
-calif_alumnos_panel1_butt_showClick: function(inSender, inEvent) {
-try {
-this.calif_alumnos_datagrids_datag_alumnos_cursos.hide();
-} catch(e) {
-console.error('ERROR IN calif_alumnos_panel1_butt_showClick: ' + e);
-}
-},
-calif_alumnos_panel1_butt_hideClick: function(inSender, inEvent) {
-try {
-this.calif_alumnos_datagrids_datag_alumnos_cursos.show();
-} catch(e) {
-console.error('ERROR IN calif_alumnos_panel1_butt_hideClick: ' + e);
-}
-},
-calif_encabezado_opciones_sel_cursoChange: function(inSender, inDisplayValue, inDataValue) {
-try {
-this.calif_asig_datag_asignaturasDataGrid1.clearSelection();
-this.l_calif_contendor_tablas_Vista_Insc_Alumn_Asig_Curso.clearData();
-this.l_calif_contenedor_tablas_aprendizajes.clearData();
-this.l_calif_contenedor_tablas_inscalumaprendizajeLiveVariable2.clearData();
-this.l_calif_contenedor_tablas_calificacion_final.clearData();
-} catch(e) {
-console.error('ERROR IN calif_encabezado_opciones_sel_cursoChange: ' + e);
-}
-},
-l_calif_alumnos_butt_ocultarClick: function(inSender, inEvent) {
-try {
-this.calif_asig_datag_asignaturasDataGrid1.hide();
-} catch(e) {
-console.error('ERROR IN l_calif_alumnos_panel1Click: ' + e);
-}
-},
-l_calif_alumnos_butt_mostrarClick: function(inSender, inEvent) {
-try {
-this.calif_asig_datag_asignaturasDataGrid1.show();
-} catch(e) {
-console.error('ERROR IN l_calif_alumnos_butt_ocultar1Click: ' + e);
-}
-},
-calif_asig_datag_asignaturasDataGrid1Deselected: function(inSender, inIndex) {
-try {
-if(this.calif_asig_datag_asignaturasDataGrid1.getEmptySelection()== true || this.calif_encabezado_opciones_sel_curso.getDataValue()== null){
-this.calif_encabezado_opciones_butt_reporte.disable();
-}
-} catch(e) {
-console.error('ERROR IN calif_asig_datag_asignaturasDataGrid1Deselected: ' + e);
-}
-},
-promocionLiveForm1BeginInsert: function(inSender) {
-try {
-this.personaLookup2.setValue("dataValue", this.promocion_container_datag_personas_x_curso.selectedItem.getData().id.idPersona);
-this.syLookup1.enable();
-this.calificacionEditor5.enable();
-this.calificacionCharEditor1.enable();
-this.promocion_container_datag_personas_x_curso.setDisabled(true);
-this.promocionDataGrid1.setDisabled(true);
-} catch(e) {
-console.error('ERROR IN promocionLiveForm1BeginInsert: ' + e);
-}
-},
-/*
-*
-*inicio detalles acciones promociones
-*/
-aprobadoEditor1Change: function(inSender, inDisplayValue, inDataValue) {
-if(this.aprobadoEditor1.dataValue== true){
-this.promovidoEditor1.enable();
-this.commentpromovidoEditor1.enable();
-}
-else{
-this.promovidoEditor1.disable();
-this.commentpromovidoEditor1.disable();
-}
-},
-promocion_butt_limpiarClick: function(inSender, inEvent) {
-this.promocion_sel_ao_escolar.setDataValue(2);
-this.promocion_sel_grado.clear();
-this.promocion_sel_curso.clear();
-this.l_promocion_insc_alum_curso.clearData();
-this.l_promocion_promocionLiveVariable1.clearData();
-},
+//se obtiene el nombre de usuario del serviceVariable global_username
 global_usernameSuccess: function(inSender, inDeprecated) {
 var _usuario= main.global_username.data.dataValue;
 this.a_informacionUsuario.input.setValue("user", _usuario);
@@ -311,9 +115,9 @@ var fechaFinal    = syJson.data.fechaHasta;
 this.dash_dash_lv1.input.setValue("usuario", _usuario);
 this.dash_dash_lv1.input.setValue("f1", fechaInicio);
 this.dash_dash_lv1.input.setValue("f2", fechaFinal);
-//this.a_informacionUsuario.update();
 this.dash_dash_lv1.update();
 },
+//esta funciona captura los datos del usuario. ej. nombres, apellidos, idpersona, user
 a_informacionUsuarioSuccess: function() {
 var json     =  main.a_informacionUsuario.getItem(0);
 var codigo   = json.data.codigo;
@@ -335,8 +139,9 @@ this.configuracion_detalles.setCaption(fullname+"<br>Sexo: "+sexo+"<br>No. docum
 var idp      = main.a_informacionUsuario.getItem(0).data.idpersona;
 var today    = new Date().getTime();
 var clave    = main.a_informacionUsuario.getItem(0).data.clave;
-var json     = main.global_cursy.getItem(0);
-var idsy     = json.data.idsy;
+//var json     = main.global_cursy.getItem(0);
+var idsy     = this.myCurSy();
+console.log(idsy);
 this.inicio_box_usuario.setDataValue(usuario);
 this.inicio_box_clave.setDataValue(clave);
 this.inicio_box_reclave.setDataValue(clave);
@@ -348,16 +153,10 @@ this.dashboard_faltas_graves.filter.setValue("id.idPersona", idp);
 this.dashboard_calificacion_estudiantes.filter.setValue("id.directorId", idp);
 this.asignaturasPorDocente.input.setValue("usuario",usuario);
 this.asignaturasPorDocente.input.setValue("sy",idsy);
-//this.dashboard_faltas_graves.update();
-//this.dashboard_calificacion_estudiantes.update();
-//this.asignaturasPorDocente.update();
-//this.muestraCoordinadorCurso.update();
-//this.muestraCoordinadorSubArea.update();
-//debugger;
 this.logIngresoUsuario(idp, today);
+this.renderDashBoard();
 },
 logIngresoUsuario: function(persona, fecha){
-console.log("xxxxxxxxxxxxxxxx insertado");
 var idp   = persona;
 var today = fecha;
 this.a_logInsertRecords.setValue("persona.idPersona", idp);
@@ -365,6 +164,13 @@ this.a_logInsertRecords.setValue("fechaIngreso", today);
 this.a_logInsertRecords.setValue("horaIngreso", today);
 this.logForm.setDataSet(this.a_logInsertRecords);
 this.logForm.insertData();
+},
+renderDashBoard: function(){
+this.dashboard_faltas_graves.update();
+this.dashboard_calificacion_estudiantes.update();
+this.asignaturasPorDocente.update();
+this.muestraCoordinadorCurso.update();
+this.muestraCoordinadorSubArea.update();
 },
 promocionDataGrid1Selected: function(inSender, inIndex) {
 if(this.aprobadoEditor1.dataValue == true){
@@ -1489,7 +1295,7 @@ this.asignatura_detalles_alumno.enable();
 muestraCoordinadorCursoSuccess: function(inSender, inDeprecated) {
 var count = main.muestraCoordinadorCurso.getCount();
 if(count > 0){
-this.panelCoordinadorCurso.show();
+//this.panelCoordinadorCurso.show();
 this.dashboard_chart4();
 this.dashboard_chart6();
 }else{
@@ -1642,9 +1448,9 @@ var length = main.dashboard_calificacion_estudiantes.getCount();
 var result = [];
 var mydata = main.dashboard_calificacion_estudiantes.getData();
 for(var i = 0 ;  i < mydata.length ; i++){
-console.log(i);
+//console.log(i);
 var base   = mydata[i];
-console.log(base);
+//console.log(base);
 var std    = base.id.alumnoApellido1;
 var score  = base.id.puntaje;
 result.push([std, score]);
@@ -1684,12 +1490,12 @@ var mydata      = this.dashboard_malla_dimension_comprension.getData();
 var dimensiones = [];
 var data        = [];
 for(var i = 0 ;  i < mydata.length ; i++){
-console.log(i);
+//console.log(i);
 var base   = mydata[i];
-console.log(base);
+//console.log(base);
 var dims    = base.id.dimensionComprension;
 var values  = base.id.porcentaje;
-console.log("Dimension: "+ dims + " Values: "+ values);
+//console.log("Dimension: "+ dims + " Values: "+ values);
 dimensiones.push(dims);
 data.push(values);
 console.log(dimensiones);
@@ -1740,12 +1546,12 @@ var mydata      = this.dashboard_malla_dimension_curricular.getData();
 var dimensiones = [];
 var data        = [];
 for(var i = 0 ;  i < mydata.length ; i++){
-console.log(i);
+//console.log(i);
 var base   = mydata[i];
-console.log(base);
+//console.log(base);
 var dims    = base.id.dimensionCurricular;
 var values  = base.id.porcentaje;
-console.log("Dimension: "+ dims + " Values: "+ values);
+//console.log("Dimension: "+ dims + " Values: "+ values);
 dimensiones.push(dims);
 data.push(values);
 console.log(dimensiones);
