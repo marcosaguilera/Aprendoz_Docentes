@@ -674,15 +674,99 @@ Main.widgets = {
 {"caption":"Porcentaje","sortable":true,"dataIndex":"id.porcentaje","type":"java.math.BigDecimal","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":3,"subType":null}
 ]}, {}]
 	}],
+	unidadLiveVariable2: ["wm.LiveVariable", {"autoUpdate":false,"startUpdate":false,"type":"com.aprendoz_test.data.Unidad"}, {}, {
+		liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.Unidad","related":["asignatura"],"view":[
+{"caption":"IdUnidad","sortable":true,"dataIndex":"idUnidad","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
+{"caption":"Unidad","sortable":true,"dataIndex":"unidad","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null},
+{"caption":"Unit","sortable":true,"dataIndex":"unit","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},
+{"caption":"FechaInicio","sortable":true,"dataIndex":"fechaInicio","type":"java.util.Date","displayType":"Date","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},
+{"caption":"FechaFin","sortable":true,"dataIndex":"fechaFin","type":"java.util.Date","displayType":"Date","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":4,"subType":null},
+{"caption":"NumeroUnidad","sortable":true,"dataIndex":"numeroUnidad","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":5,"subType":null},
+{"caption":"IdSyIdIdSy","sortable":true,"dataIndex":"idSyIdIdSy","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":6,"subType":null},
+{"caption":"IdAsignatura","sortable":true,"dataIndex":"asignatura.idAsignatura","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
+{"caption":"Asignatura","sortable":true,"dataIndex":"asignatura.asignatura","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null},
+{"caption":"Subject","sortable":true,"dataIndex":"asignatura.subject","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},
+{"caption":"Electiva","sortable":true,"dataIndex":"asignatura.electiva","type":"java.lang.Boolean","displayType":"CheckBox","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},
+{"caption":"IdArea1","sortable":true,"dataIndex":"asignatura.idArea1","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":4,"subType":null},
+{"caption":"IdArea2","sortable":true,"dataIndex":"asignatura.idArea2","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":5,"subType":null},
+{"caption":"IdArea3","sortable":true,"dataIndex":"asignatura.idArea3","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":6,"subType":null},
+{"caption":"IdSubarea1","sortable":true,"dataIndex":"asignatura.idSubarea1","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":7,"subType":null},
+{"caption":"IdSubarea2","sortable":true,"dataIndex":"asignatura.idSubarea2","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":8,"subType":null},
+{"caption":"IdSubarea3","sortable":true,"dataIndex":"asignatura.idSubarea3","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":9,"subType":null},
+{"caption":"SalonIdSalon","sortable":true,"dataIndex":"asignatura.salonIdSalon","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":10,"subType":null},
+{"caption":"IntensidadHoraria","sortable":true,"dataIndex":"asignatura.intensidadHoraria","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":11,"subType":null},
+{"caption":"Peso","sortable":true,"dataIndex":"asignatura.peso","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":12,"subType":null},
+{"caption":"DescripAsigEspaniol","sortable":true,"dataIndex":"asignatura.descripAsigEspaniol","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":13,"subType":null},
+{"caption":"DescripAsigIngles","sortable":true,"dataIndex":"asignatura.descripAsigIngles","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":14,"subType":null},
+{"caption":"IhA1","sortable":true,"dataIndex":"asignatura.ihA1","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":15,"subType":null},
+{"caption":"IhA2","sortable":true,"dataIndex":"asignatura.ihA2","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":16,"subType":null},
+{"caption":"IhA3","sortable":true,"dataIndex":"asignatura.ihA3","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":17,"subType":null},
+{"caption":"Meses","sortable":true,"dataIndex":"asignatura.meses","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":18,"subType":null},
+{"caption":"Esperadostotal","sortable":true,"dataIndex":"asignatura.esperadostotal","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":19,"subType":null}
+]}, {}]
+	}],
+	asignaturaLiveVariable1: ["wm.LiveVariable", {"type":"com.aprendoz_test.data.Asignatura"}, {}, {
+		liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.Asignatura","view":[
+{"caption":"IdAsignatura","sortable":true,"dataIndex":"idAsignatura","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
+{"caption":"Asignatura","sortable":true,"dataIndex":"asignatura","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null},
+{"caption":"Subject","sortable":true,"dataIndex":"subject","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},
+{"caption":"Electiva","sortable":true,"dataIndex":"electiva","type":"java.lang.Boolean","displayType":"CheckBox","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},
+{"caption":"IdArea1","sortable":true,"dataIndex":"idArea1","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":4,"subType":null},
+{"caption":"IdArea2","sortable":true,"dataIndex":"idArea2","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":5,"subType":null},
+{"caption":"IdArea3","sortable":true,"dataIndex":"idArea3","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":6,"subType":null},
+{"caption":"IdSubarea1","sortable":true,"dataIndex":"idSubarea1","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":7,"subType":null},
+{"caption":"IdSubarea2","sortable":true,"dataIndex":"idSubarea2","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":8,"subType":null},
+{"caption":"IdSubarea3","sortable":true,"dataIndex":"idSubarea3","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":9,"subType":null},
+{"caption":"SalonIdSalon","sortable":true,"dataIndex":"salonIdSalon","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":10,"subType":null},
+{"caption":"IntensidadHoraria","sortable":true,"dataIndex":"intensidadHoraria","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":11,"subType":null},
+{"caption":"Peso","sortable":true,"dataIndex":"peso","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":12,"subType":null},
+{"caption":"DescripAsigEspaniol","sortable":true,"dataIndex":"descripAsigEspaniol","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":13,"subType":null},
+{"caption":"DescripAsigIngles","sortable":true,"dataIndex":"descripAsigIngles","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":14,"subType":null},
+{"caption":"IhA1","sortable":true,"dataIndex":"ihA1","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":15,"subType":null},
+{"caption":"IhA2","sortable":true,"dataIndex":"ihA2","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":16,"subType":null},
+{"caption":"IhA3","sortable":true,"dataIndex":"ihA3","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":17,"subType":null},
+{"caption":"Meses","sortable":true,"dataIndex":"meses","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":18,"subType":null},
+{"caption":"Esperadostotal","sortable":true,"dataIndex":"esperadostotal","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":19,"subType":null}
+]}, {}]
+	}],
+	subtopicoLiveVariable2: ["wm.LiveVariable", {"autoUpdate":false,"startUpdate":false,"type":"com.aprendoz_test.data.Subtopico"}, {}, {
+		liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.Subtopico","related":["unidad"],"view":[
+{"caption":"IdSubtopico","sortable":true,"dataIndex":"idSubtopico","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
+{"caption":"Subtopico","sortable":true,"dataIndex":"subtopico","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null},
+{"caption":"FechaInicio","sortable":true,"dataIndex":"fechaInicio","type":"java.util.Date","displayType":"Date","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},
+{"caption":"FechaFin","sortable":true,"dataIndex":"fechaFin","type":"java.util.Date","displayType":"Date","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},
+{"caption":"Subtopic","sortable":true,"dataIndex":"subtopic","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":4,"subType":null},
+{"caption":"NumeroSubtopico","sortable":true,"dataIndex":"numeroSubtopico","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":5,"subType":null},
+{"caption":"IdSyIdIdSy","sortable":true,"dataIndex":"idSyIdIdSy","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":6,"subType":null},
+{"caption":"IdUnidad","sortable":true,"dataIndex":"unidad.idUnidad","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
+{"caption":"Unidad","sortable":true,"dataIndex":"unidad.unidad","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null},
+{"caption":"Unit","sortable":true,"dataIndex":"unidad.unit","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},
+{"caption":"FechaInicio","sortable":true,"dataIndex":"unidad.fechaInicio","type":"java.util.Date","displayType":"Date","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},
+{"caption":"FechaFin","sortable":true,"dataIndex":"unidad.fechaFin","type":"java.util.Date","displayType":"Date","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":4,"subType":null},
+{"caption":"NumeroUnidad","sortable":true,"dataIndex":"unidad.numeroUnidad","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":5,"subType":null},
+{"caption":"IdSyIdIdSy","sortable":true,"dataIndex":"unidad.idSyIdIdSy","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":6,"subType":null}
+]}, {}]
+	}],
+	unidadLiveVariable3: ["wm.LiveVariable", {"type":"com.aprendoz_test.data.Unidad"}, {}, {
+		liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.Unidad","view":[
+{"caption":"IdUnidad","sortable":true,"dataIndex":"idUnidad","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
+{"caption":"Unidad","sortable":true,"dataIndex":"unidad","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null},
+{"caption":"Unit","sortable":true,"dataIndex":"unit","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},
+{"caption":"FechaInicio","sortable":true,"dataIndex":"fechaInicio","type":"java.util.Date","displayType":"Date","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},
+{"caption":"FechaFin","sortable":true,"dataIndex":"fechaFin","type":"java.util.Date","displayType":"Date","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":4,"subType":null},
+{"caption":"NumeroUnidad","sortable":true,"dataIndex":"numeroUnidad","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":5,"subType":null},
+{"caption":"IdSyIdIdSy","sortable":true,"dataIndex":"idSyIdIdSy","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":6,"subType":null}
+]}, {}]
+	}],
 	unidadDialog: ["wm.DesignableDialog", {"buttonBarId":"buttonBar1","containerWidgetId":"containerWidget1","styles":{"backgroundColor":"#ebebeb","color":"#0e0c0c"},"title":"Formulario Unidades","width":"500px"}, {}, {
 		containerWidget1: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
-			unidadLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"336px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"unidadLiveForm2BeginInsert","onBeginUpdate":"unidadLiveForm2BeginUpdate","onDeleteData":"unidadLiveForm2DeleteData","onInsertData":"unidadLiveForm2InsertData","onSuccess":"unidadLivePanel1.popupLiveFormSuccess","onSuccess1":"unidadLiveForm2Success1","onUpdateData":"unidadLiveForm2UpdateData"}, {
+			unidadLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"330px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"unidadLiveForm2BeginInsert","onBeginUpdate":"unidadLiveForm2BeginUpdate","onDeleteData":"unidadLiveForm2DeleteData","onInsertData":"unidadLiveForm2InsertData","onSuccess":"unidadLivePanel1.popupLiveFormSuccess","onSuccess1":"unidadLiveForm2Success1","onUpdateData":"unidadLiveForm2UpdateData"}, {
 				binding: ["wm.Binding", {}, {}, {
 					wire: ["wm.Wire", {"expression":undefined,"source":"unidadDojoGrid.selectedItem","targetProperty":"dataSet"}, {}],
 					wire1: ["wm.Wire", {"expression":undefined,"source":"relatedEditor1.dataOutput","targetProperty":"dataOutput.asignatura"}, {}]
 				}],
 				idUnidadEditor2: ["wm.Number", {"border":"0","caption":"Id unidad","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idUnidad","height":"26px","required":true,"width":"100%"}, {}],
-				relatedEditor1: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"asignatura","height":"56px","horizontalAlign":"left","lock":true,"verticalAlign":"top"}, {}, {
+				relatedEditor1: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"asignatura","height":"52px","horizontalAlign":"left","lock":true,"verticalAlign":"top"}, {}, {
 					binding: ["wm.Binding", {}, {}, {
 						wire: ["wm.Wire", {"expression":undefined,"source":"unidadDojoGrid.selectedItem.asignatura","targetProperty":"dataSet"}, {}]
 					}],
@@ -718,8 +802,8 @@ Main.widgets = {
 				}],
 				unidadEditor2: ["wm.LargeTextArea", {"border":"0","caption":"Unidad","captionAlign":"right","captionPosition":"left","captionSize":"140px","changeOnKey":true,"desktopHeight":"80px","emptyValue":"emptyString","formField":"unidad","height":"80px","helpText":"ingrese la descripción en español","maxChars":500,"required":true,"styles":{},"width":"100%"}, {}],
 				unitEditor2: ["wm.LargeTextArea", {"border":"0","caption":"Unit","captionAlign":"right","captionPosition":"left","captionSize":"140px","changeOnKey":true,"desktopHeight":"80px","emptyValue":"emptyString","formField":"unit","height":"80px","helpText":"insert here the description in english","maxChars":500,"required":true,"width":"100%"}, {}],
-				fechaInicioEditor3: ["wm.DateTime", {"border":"0","caption":"Fecha Inicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","width":"100%"}, {}],
-				fechaFinEditor3: ["wm.DateTime", {"border":"0","caption":"Fecha Finalización","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","width":"100%"}, {}],
+				fechaInicioEditor3: ["wm.DateTime", {"caption":"Fecha Inicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","width":"100%"}, {}],
+				fechaFinEditor3: ["wm.DateTime", {"caption":"Fecha Finalización","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","width":"100%"}, {}],
 				idSyIdIdSyEditor3: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idSyIdIdSy","height":"26px","showing":false,"width":"100%"}, {}]
 			}]
 		}],
@@ -734,22 +818,22 @@ Main.widgets = {
 	}],
 	subtopicoDialog: ["wm.DesignableDialog", {"buttonBarId":"buttonBar2","containerWidgetId":"containerWidget2","styles":{"backgroundColor":"#ebebeb","color":"#070707"},"title":"Formulario de Subtópicos","width":"500px"}, {}, {
 		containerWidget2: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
-			subtopicoLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"302px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"subtopicoLiveForm2BeginInsert","onBeginUpdate":"subtopicoLiveForm2BeginUpdate","onDeleteData":"subtopicoLiveForm2DeleteData","onInsertData":"subtopicoLiveForm2InsertData","onSuccess":"subtopicoLivePanel1.popupLiveFormSuccess","onSuccess1":"subtopicoLiveForm2Success1","onUpdateData":"subtopicoLiveForm2UpdateData"}, {
+			subtopicoLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"300px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"subtopicoLiveForm2BeginInsert","onBeginUpdate":"subtopicoLiveForm2BeginUpdate","onDeleteData":"subtopicoLiveForm2DeleteData","onInsertData":"subtopicoLiveForm2InsertData","onSuccess":"subtopicoLivePanel1.popupLiveFormSuccess","onSuccess1":"subtopicoLiveForm2Success1","onUpdateData":"subtopicoLiveForm2UpdateData"}, {
 				binding: ["wm.Binding", {}, {}, {
 					wire: ["wm.Wire", {"expression":undefined,"source":"subtopicoDojoGrid.selectedItem","targetProperty":"dataSet"}, {}],
 					wire1: ["wm.Wire", {"expression":undefined,"source":"relatedEditor2.dataOutput","targetProperty":"dataOutput.unidad"}, {}]
 				}],
 				idSubtopicoEditor2: ["wm.Number", {"border":"0","caption":"Id subtópico","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idSubtopico","height":"26px","required":true,"width":"100%"}, {}],
 				panel21: ["wm.Panel", {"freeze":true,"height":"28px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
-					relatedEditor2: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"unidad","height":"54px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+					relatedEditor2: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"unidad","height":"52px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"expression":undefined,"source":"subtopicoDojoGrid.selectedItem.unidad","targetProperty":"dataSet"}, {}]
 						}],
 						idUnidadEditor1: ["wm.Number", {"border":"0","caption":"Id unidad","captionSize":"140px","desktopHeight":"26px","emptyValue":"zero","formField":"idUnidad","height":"26px","required":true,"width":"100%"}, {}],
 						unidadEditor1: ["wm.Text", {"border":"0","caption":"Unidad","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"unidad","height":"26px","width":"100%"}, {}],
 						unitEditor1: ["wm.Text", {"border":"0","caption":"Unit","captionSize":"140px","emptyValue":"emptyString","formField":"unit","showing":false,"width":"100%"}, {}],
-						fechaInicioEditor4: ["wm.DateTime", {"border":"0","caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaInicio","height":"30px","showing":false,"width":"100%"}, {}],
-						fechaFinEditor4: ["wm.DateTime", {"border":"0","caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaFin","height":"30px","showing":false,"width":"100%"}, {}],
+						fechaInicioEditor4: ["wm.DateTime", {"caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaInicio","height":"30px","showing":false,"width":"100%"}, {}],
+						fechaFinEditor4: ["wm.DateTime", {"caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaFin","height":"30px","showing":false,"width":"100%"}, {}],
 						numeroUnidadEditor1: ["wm.Number", {"border":"0","caption":"NumeroUnidad","captionSize":"140px","emptyValue":"zero","formField":"numeroUnidad","showing":false,"width":"100%"}, {}],
 						idSyIdIdSyEditor9: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","emptyValue":"zero","formField":"idSyIdIdSy","showing":false,"width":"100%"}, {}]
 					}]
@@ -762,8 +846,8 @@ Main.widgets = {
 				subtopicoEditor2: ["wm.LargeTextArea", {"border":"0","caption":"Subtópico","captionAlign":"right","captionPosition":"left","captionSize":"140px","changeOnKey":true,"desktopHeight":"80px","emptyValue":"emptyString","formField":"subtopico","height":"80px","maxChars":200,"required":true,"width":"100%"}, {}],
 				subtopicEditor2: ["wm.LargeTextArea", {"border":"0","caption":"Subtopic","captionAlign":"right","captionPosition":"left","captionSize":"140px","changeOnKey":true,"desktopHeight":"80px","emptyValue":"emptyString","formField":"subtopic","height":"80px","maxChars":200,"required":true,"width":"100%"}, {}],
 				idSyIdIdSyEditor4: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idSyIdIdSy","height":"26px","showing":false,"width":"100%"}, {}],
-				date1: ["wm.Date", {"border":"0","caption":"Fecha inicio","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fechaInicio","height":"26px","required":true,"width":"100%"}, {}],
-				date2: ["wm.Date", {"border":"0","caption":"Fecha final","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fechaFin","height":"26px","required":true,"width":"100%"}, {}]
+				date1: ["wm.Date", {"caption":"Fecha inicio","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fechaInicio","height":"26px","required":true,"width":"100%"}, {}],
+				date2: ["wm.Date", {"caption":"Fecha final","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fechaFin","height":"26px","required":true,"width":"100%"}, {}]
 			}]
 		}],
 		buttonBar2: ["wm.ButtonBarPanel", {"border":"1","desktopHeight":"42px","height":"34px","mobileHeight":"42px"}, {}, {
@@ -777,27 +861,27 @@ Main.widgets = {
 	}],
 	aprendizajeDialog: ["wm.DesignableDialog", {"buttonBarId":"buttonBar3","containerWidgetId":"containerWidget3","desktopHeight":"565px","height":"565px","styles":{"backgroundColor":"#ebebeb","color":"#050505"},"title":"Formulario de Aprendizaje","width":"550px"}, {}, {
 		containerWidget3: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
-			aprendizajeLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"484px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"aprendizajeLiveForm2BeginInsert","onBeginInsert1":"aprendizajeLiveForm2BeginInsert1","onBeginInsert2":"aprendizajeLiveForm2BeginInsert2","onBeginUpdate":"aprendizajeLiveForm2BeginUpdate","onDeleteData":"aprendizajeLiveForm2DeleteData","onInsertData":"aprendizajeLiveForm2InsertData","onSuccess":"aprendizajeLivePanel1.popupLiveFormSuccess","onSuccess1":"aprendizajeLiveForm2Success1","onUpdateData":"aprendizajeLiveForm2UpdateData"}, {
+			aprendizajeLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"482px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"aprendizajeLiveForm2BeginInsert","onBeginInsert1":"aprendizajeLiveForm2BeginInsert1","onBeginInsert2":"aprendizajeLiveForm2BeginInsert2","onBeginUpdate":"aprendizajeLiveForm2BeginUpdate","onDeleteData":"aprendizajeLiveForm2DeleteData","onInsertData":"aprendizajeLiveForm2InsertData","onSuccess":"aprendizajeLivePanel1.popupLiveFormSuccess","onSuccess1":"aprendizajeLiveForm2Success1","onUpdateData":"aprendizajeLiveForm2UpdateData"}, {
 				binding: ["wm.Binding", {}, {}, {
 					wire: ["wm.Wire", {"expression":undefined,"source":"aprendizajeDojoGrid.selectedItem","targetProperty":"dataSet"}, {}],
 					wire1: ["wm.Wire", {"expression":undefined,"source":"relatedEditor3.dataOutput","targetProperty":"dataOutput.subtopico"}, {}]
 				}],
 				idAprendizajeEditor2: ["wm.Number", {"border":"0","caption":"Id aprendizaje","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idAprendizaje","height":"26px","required":true,"width":"100%"}, {}],
 				aprendizajes_grupo_1: ["wm.Panel", {"height":"30px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
-					relatedEditor3: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"54px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+					relatedEditor3: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"52px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"expression":undefined,"source":"aprendizajeDojoGrid.selectedItem.subtopico","targetProperty":"dataSet"}, {}]
 						}],
 						idSubtopicoEditor1: ["wm.Number", {"border":"0","caption":"Id subtópico","captionSize":"140px","desktopHeight":"26px","emptyValue":"zero","formField":"idSubtopico","height":"26px","required":true,"width":"100%"}, {}],
 						subtopicoEditor1: ["wm.Text", {"border":"0","caption":"Subtópico","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"subtopico","height":"26px","width":"100%"}, {}],
-						fechaInicioEditor5: ["wm.DateTime", {"border":"0","caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaInicio","height":"30px","showing":false,"width":"100%"}, {}],
-						fechaFinEditor5: ["wm.DateTime", {"border":"0","caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaFin","height":"30px","showing":false,"width":"100%"}, {}],
+						fechaInicioEditor5: ["wm.DateTime", {"caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaInicio","height":"30px","showing":false,"width":"100%"}, {}],
+						fechaFinEditor5: ["wm.DateTime", {"caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaFin","height":"30px","showing":false,"width":"100%"}, {}],
 						subtopicEditor4: ["wm.Text", {"border":"0","caption":"Subtopic","captionSize":"140px","emptyValue":"emptyString","formField":"subtopic","showing":false,"width":"100%"}, {}],
 						numeroSubtopicoEditor3: ["wm.Number", {"border":"0","caption":"NumeroSubtopico","captionSize":"140px","emptyValue":"zero","formField":"numeroSubtopico","showing":false,"width":"100%"}, {}],
 						idSyIdIdSyEditor10: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","emptyValue":"zero","formField":"idSyIdIdSy","showing":false,"width":"100%"}, {}]
 					}]
 				}],
-				fechaEsperadaEditor2: ["wm.Date", {"border":"0","caption":"Fecha esperada","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fechaEsperada","height":"26px","required":true,"width":"100%"}, {}],
+				fechaEsperadaEditor2: ["wm.Date", {"caption":"Fecha esperada","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fechaEsperada","height":"26px","required":true,"width":"100%"}, {}],
 				aprendizajesAsignaturasGrid1: ["wm.DojoGrid", {"columns":[
 {"show":true,"field":"idAprendizaje","title":" ","width":"50px","align":"left","formatFunc":"","mobileColumn":false},
 {"show":true,"field":"fechaEsperada","title":"Fecha esperada","width":"60px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
@@ -870,26 +954,26 @@ Main.widgets = {
 	}],
 	otrasmetasDialog: ["wm.DesignableDialog", {"buttonBarId":"buttonBar4","containerWidgetId":"containerWidget4","desktopHeight":"284px","height":"284px","styles":{"backgroundColor":"#ebebeb","color":"#020202"},"title":"Formulario Metas","width":"500px"}, {}, {
 		containerWidget4: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
-			otrasmetasLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"222px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"otrasmetasLiveForm2BeginInsert","onBeginUpdate":"otrasmetasLiveForm2BeginUpdate","onDeleteData":"otrasmetasLiveForm2DeleteData","onInsertData":"otrasmetasLiveForm2InsertData","onSuccess":"otrasmetasLivePanel1.popupLiveFormSuccess","onSuccess1":"otrasmetasLiveForm2Success1","onUpdateData":"otrasmetasLiveForm2UpdateData"}, {
+			otrasmetasLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"218px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"otrasmetasLiveForm2BeginInsert","onBeginUpdate":"otrasmetasLiveForm2BeginUpdate","onDeleteData":"otrasmetasLiveForm2DeleteData","onInsertData":"otrasmetasLiveForm2InsertData","onSuccess":"otrasmetasLivePanel1.popupLiveFormSuccess","onSuccess1":"otrasmetasLiveForm2Success1","onUpdateData":"otrasmetasLiveForm2UpdateData"}, {
 				binding: ["wm.Binding", {}, {}, {
 					wire: ["wm.Wire", {"expression":undefined,"source":"otrasmetasDojoGrid.selectedItem","targetProperty":"dataSet"}, {}],
 					wire1: ["wm.Wire", {"expression":undefined,"source":"relatedEditor5.dataOutput","targetProperty":"dataOutput.subtopico"}, {}]
 				}],
 				idOtraMetaEditor2: ["wm.Number", {"border":"0","caption":"Id meta","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idOtraMeta","height":"26px","required":true,"styles":{},"width":"100%"}, {}],
-				relatedEditor5: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"54px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+				relatedEditor5: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"52px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 					binding: ["wm.Binding", {}, {}, {
 						wire: ["wm.Wire", {"expression":undefined,"source":"otrasmetasDojoGrid.selectedItem.subtopico","targetProperty":"dataSet"}, {}]
 					}],
 					idSubtopicoEditor3: ["wm.Number", {"border":"0","caption":"Id subtópico","captionSize":"140px","desktopHeight":"26px","emptyValue":"zero","formField":"idSubtopico","height":"26px","required":true,"width":"100%"}, {}],
 					subtopicoEditor3: ["wm.Text", {"border":"0","caption":"Subtopico","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"subtopico","height":"26px","width":"100%"}, {}],
-					fechaInicioEditor1: ["wm.DateTime", {"border":"0","caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","showing":false,"width":"100%"}, {}],
-					fechaFinEditor1: ["wm.DateTime", {"border":"0","caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","showing":false,"width":"100%"}, {}],
+					fechaInicioEditor1: ["wm.DateTime", {"caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","showing":false,"width":"100%"}, {}],
+					fechaFinEditor1: ["wm.DateTime", {"caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","showing":false,"width":"100%"}, {}],
 					subtopicEditor1: ["wm.Text", {"border":"0","caption":"Subtopic","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"subtopic","height":"26px","showing":false,"width":"100%"}, {}],
 					numeroSubtopicoEditor1: ["wm.Number", {"border":"0","caption":"NumeroSubtopico","captionSize":"140px","emptyValue":"zero","formField":"numeroSubtopico","showing":false,"width":"100%"}, {}],
 					idSyIdIdSyEditor1: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","emptyValue":"zero","formField":"idSyIdIdSy","showing":false,"width":"100%"}, {}]
 				}],
 				metaEditor2: ["wm.LargeTextArea", {"border":"0","caption":"Meta","captionAlign":"right","captionPosition":"left","captionSize":"140px","changeOnKey":true,"desktopHeight":"80px","emptyValue":"emptyString","formField":"meta","height":"80px","maxChars":200,"styles":{},"width":"100%"}, {}],
-				fechaEditorDate1: ["wm.Date", {"border":"0","caption":"Fecha","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fecha","height":"26px","width":"100%"}, {}],
+				fechaEditorDate1: ["wm.Date", {"caption":"Fecha","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fecha","height":"26px","width":"100%"}, {}],
 				logradoEditor3: ["wm.Checkbox", {"caption":"Logrado","captionSize":"140px","desktopHeight":"26px","displayValue":false,"formField":"logrado","height":"26px","width":"100%"}, {}],
 				idSyIdIdSyEditor5: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idSyIdIdSy","height":"26px","showing":false,"width":"100%"}, {}]
 			}]
@@ -905,20 +989,20 @@ Main.widgets = {
 	}],
 	recursoDialog: ["wm.DesignableDialog", {"buttonBarId":"buttonBar5","containerWidgetId":"containerWidget5","desktopHeight":"440px","height":"440px","styles":{"backgroundColor":"#ebebeb","color":"#090808"},"title":"Formulario Recursos","width":"500px"}, {}, {
 		containerWidget5: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
-			recursoLiveForm1: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"337px","horizontalAlign":"left","liveEditing":false,"margin":"4","styles":{},"verticalAlign":"top"}, {"onBeginInsert":"recursoLiveForm1BeginInsert","onBeginUpdate":"recursoLiveForm1BeginUpdate","onDeleteData":"recursoLiveForm1DeleteData","onInsertData":"recursoLiveForm1InsertData","onSuccess":"recursoLivePanel1.popupLiveFormSuccess","onSuccess1":"recursoLiveForm1Success1","onUpdateData":"recursoLiveForm1UpdateData"}, {
+			recursoLiveForm1: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"333px","horizontalAlign":"left","liveEditing":false,"margin":"4","styles":{},"verticalAlign":"top"}, {"onBeginInsert":"recursoLiveForm1BeginInsert","onBeginUpdate":"recursoLiveForm1BeginUpdate","onDeleteData":"recursoLiveForm1DeleteData","onInsertData":"recursoLiveForm1InsertData","onSuccess":"recursoLivePanel1.popupLiveFormSuccess","onSuccess1":"recursoLiveForm1Success1","onUpdateData":"recursoLiveForm1UpdateData"}, {
 				binding: ["wm.Binding", {}, {}, {
 					wire: ["wm.Wire", {"expression":undefined,"source":"recursoDojoGrid.selectedItem","targetProperty":"dataSet"}, {}],
 					wire1: ["wm.Wire", {"expression":undefined,"source":"relatedEditor6.dataOutput","targetProperty":"dataOutput.subtopico"}, {}]
 				}],
 				idRecursoEditor1: ["wm.Number", {"border":"0","caption":"IdRecurso","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idRecurso","height":"26px","required":true,"width":"100%"}, {}],
-				relatedEditor6: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"54px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+				relatedEditor6: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"52px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 					binding: ["wm.Binding", {}, {}, {
 						wire: ["wm.Wire", {"expression":undefined,"source":"recursoDojoGrid.selectedItem.subtopico","targetProperty":"dataSet"}, {}]
 					}],
 					idSubtopicoEditor4: ["wm.Number", {"border":"0","caption":"Id subtópico","captionSize":"140px","desktopHeight":"26px","emptyValue":"zero","formField":"idSubtopico","height":"26px","required":true,"width":"100%"}, {}],
 					subtopicoEditor4: ["wm.Text", {"border":"0","caption":"Subtopico","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"subtopico","height":"26px","width":"100%"}, {}],
-					fechaInicioEditor2: ["wm.DateTime", {"border":"0","caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","showing":false,"width":"100%"}, {}],
-					fechaFinEditor2: ["wm.DateTime", {"border":"0","caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","showing":false,"width":"100%"}, {}],
+					fechaInicioEditor2: ["wm.DateTime", {"caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","showing":false,"width":"100%"}, {}],
+					fechaFinEditor2: ["wm.DateTime", {"caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","showing":false,"width":"100%"}, {}],
 					subtopicEditor3: ["wm.Text", {"border":"0","caption":"Subtopic","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"subtopic","height":"26px","showing":false,"width":"100%"}, {}],
 					numeroSubtopicoEditor2: ["wm.Number", {"border":"0","caption":"NumeroSubtopico","captionSize":"140px","emptyValue":"zero","formField":"numeroSubtopico","showing":false,"width":"100%"}, {}],
 					idSyIdIdSyEditor8: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","emptyValue":"zero","formField":"idSyIdIdSy","showing":false,"width":"100%"}, {}]
@@ -950,20 +1034,20 @@ Main.widgets = {
 	}],
 	actividadDialog1: ["wm.DesignableDialog", {"buttonBarId":"buttonBar6","containerWidgetId":"containerWidget6","desktopHeight":"380px","height":"380px","styles":{"backgroundColor":"#ebebeb","fontSize":"11px","color":"#000000"},"title":"Formulario Actividad","width":"500px"}, {}, {
 		containerWidget6: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
-			actividadLiveForm3: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"313px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginDelete":"actividadLiveForm3BeginDelete","onBeginInsert":"actividadLiveForm3BeginInsert","onBeginUpdate":"actividadLiveForm3BeginUpdate","onDeleteData":"actividadLiveForm3DeleteData","onInsertData":"actividadLiveForm3InsertData","onSuccess":"actividadLivePanel2.popupLiveFormSuccess","onSuccess1":"actividadLiveForm3Success1","onSuccess2":"actividadLiveForm3Success2","onUpdateData":"actividadLiveForm3UpdateData"}, {
+			actividadLiveForm3: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"309px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginDelete":"actividadLiveForm3BeginDelete","onBeginInsert":"actividadLiveForm3BeginInsert","onBeginUpdate":"actividadLiveForm3BeginUpdate","onDeleteData":"actividadLiveForm3DeleteData","onInsertData":"actividadLiveForm3InsertData","onSuccess":"actividadLivePanel2.popupLiveFormSuccess","onSuccess1":"actividadLiveForm3Success1","onSuccess2":"actividadLiveForm3Success2","onUpdateData":"actividadLiveForm3UpdateData"}, {
 				binding: ["wm.Binding", {}, {}, {
 					wire: ["wm.Wire", {"expression":undefined,"source":"actividadDojoGrid1.selectedItem","targetProperty":"dataSet"}, {}],
 					wire1: ["wm.Wire", {"expression":undefined,"source":"relatedEditor7.dataOutput","targetProperty":"dataOutput.subtopico"}, {}]
 				}],
 				idActividadEditor3: ["wm.Number", {"border":"0","caption":"Id actividad","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idActividad","height":"26px","required":true,"styles":{},"width":"100%"}, {}],
-				relatedEditor7: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"54px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+				relatedEditor7: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"52px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 					binding: ["wm.Binding", {}, {}, {
 						wire: ["wm.Wire", {"expression":undefined,"source":"actividadDojoGrid1.selectedItem.subtopico","targetProperty":"dataSet"}, {}]
 					}],
 					idSubtopicoEditor5: ["wm.Number", {"border":"0","caption":"Id subtópico","captionSize":"140px","desktopHeight":"26px","emptyValue":"zero","formField":"idSubtopico","height":"26px","required":true,"width":"100%"}, {}],
 					subtopicoEditor5: ["wm.Text", {"border":"0","caption":"Subtopico","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"subtopico","height":"26px","width":"100%"}, {}],
-					fechaInicioEditor6: ["wm.DateTime", {"border":"0","caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","showing":false,"width":"100%"}, {}],
-					fechaFinEditor6: ["wm.DateTime", {"border":"0","caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","openOnClick":false,"showing":false,"width":"100%"}, {}],
+					fechaInicioEditor6: ["wm.DateTime", {"caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","showing":false,"width":"100%"}, {}],
+					fechaFinEditor6: ["wm.DateTime", {"caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","openOnClick":false,"showing":false,"width":"100%"}, {}],
 					subtopicEditor5: ["wm.Text", {"border":"0","caption":"Subtopic","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"subtopic","height":"26px","showing":false,"width":"100%"}, {}],
 					numeroSubtopicoEditor4: ["wm.Number", {"border":"0","caption":"NumeroSubtopico","captionSize":"140px","emptyValue":"zero","formField":"numeroSubtopico","showing":false,"width":"100%"}, {}],
 					idSyIdIdSyEditor11: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","emptyValue":"zero","formField":"idSyIdIdSy","showing":false,"width":"100%"}, {}]
@@ -989,7 +1073,7 @@ Main.widgets = {
 						wire: ["wm.Wire", {"expression":undefined,"source":"curriculo_tipo_desempeno","targetProperty":"dataSet"}, {}]
 					}]
 				}],
-				fechaEditor6: ["wm.DateTime", {"border":"0","caption":"Fecha","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fecha","height":"26px","width":"100%"}, {}],
+				fechaEditor6: ["wm.DateTime", {"caption":"Fecha","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fecha","height":"26px","width":"100%"}, {}],
 				requeridoAlternativoEditor3: ["wm.Checkbox", {"caption":"Requerido","captionSize":"140px","desktopHeight":"26px","displayValue":false,"formField":"requeridoAlternativo","height":"26px","width":"100%"}, {}],
 				idSyIdIdSyEditor7: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idSyIdIdSy","height":"26px","showing":false,"width":"100%"}, {}]
 			}]
@@ -1035,13 +1119,13 @@ Main.widgets = {
 						format: ["wm.DataFormatter", {}, {}]
 					}],
 					logForm: ["wm.LiveForm", {"height":"60px","horizontalAlign":"left","showing":false,"verticalAlign":"top"}, {}, {
-						inicio_box_fecha: ["wm.DateEditor", {"caption":"hora","disabled":true,"displayValue":"2/11/2015","padding":"2","readonly":true,"showing":false}, {}, {
+						inicio_box_fecha: ["wm.DateEditor", {"caption":"hora","disabled":true,"displayValue":"2/19/2015","padding":"2","readonly":true,"showing":false}, {}, {
 							binding: ["wm.Binding", {}, {}, {
 								wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 							}],
 							editor: ["wm._DateEditor", {}, {}]
 						}],
-						inicio_box_hora: ["wm.TimeEditor", {"caption":"fecha","disabled":true,"displayValue":"15:10 PM","padding":"2","showing":false}, {}, {
+						inicio_box_hora: ["wm.TimeEditor", {"caption":"fecha","disabled":true,"displayValue":"10:07 AM","padding":"2","showing":false}, {}, {
 							binding: ["wm.Binding", {}, {}, {
 								wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 							}],
@@ -1110,7 +1194,7 @@ Main.widgets = {
 						logo: ["wm.Picture", {"aspect":"h","height":"100%","source":"resources/images/logos/headerapp.jpg","width":"600px"}, {}],
 						spacer5: ["wm.Spacer", {"height":"48px","width":"99%"}, {}],
 						top_Head: ["wm.Panel", {"height":"40px","horizontalAlign":"right","layoutKind":"left-to-right","verticalAlign":"bottom","width":"100%"}, {}, {
-							dateEditor1: ["wm.DateEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"captionPosition":"right","displayValue":"2/11/2015","padding":"2","readonly":true,"width":"80px"}, {}, {
+							dateEditor1: ["wm.DateEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"captionPosition":"right","displayValue":"2/19/2015","padding":"2","readonly":true,"width":"80px"}, {}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 								}],
@@ -1119,7 +1203,7 @@ Main.widgets = {
 							label1: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_16px"]},"align":"center","caption":"|","padding":"0","width":"10px"}, {}, {
 								format: ["wm.DataFormatter", {}, {}]
 							}],
-							timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"displayValue":"15:10 PM","padding":"2","readonly":true,"width":"76px"}, {}, {
+							timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"displayValue":"10:07 AM","padding":"2","readonly":true,"width":"76px"}, {}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 								}],
@@ -1163,8 +1247,8 @@ Main.widgets = {
 								menu_feedback_butt: ["wm.Button", {"_classes":{"domNode":["eliminar"]},"border":"0","caption":"Feedback","desktopHeight":"40px","height":"40px","iconHeight":"22px","iconUrl":"resources/images/icon_set/feedback.png","iconWidth":"22px","margin":"0","styles":{},"width":"100%"}, {"onclick":"feedbackDialog.show"}]
 							}],
 							contaniner_panels: ["wm.Panel", {"height":"100%","horizontalAlign":"left","padding":"5,10,10,10","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
-								top_notification_panel: ["wm.Panel", {"height":"48px","horizontalAlign":"right","layoutKind":"left-to-right","lock":true,"margin":"0,0,0,0","padding":"0,5,0,0","styles":{"backgroundColor":"#a3a3a3"},"verticalAlign":"middle","width":"100%"}, {}, {
-									top_select_sy: ["wm.SelectMenu", {"caption":"Año escolar","dataType":"com.aprendoz_test.data.Sy","dataValue":undefined,"displayField":"schoolYear","displayValue":""}, {"onchange":"top_select_syChange","onchange1":"top_select_syChange1","onchange2":"top_select_syChange2"}, {
+								top_notification_panel: ["wm.Panel", {"height":"48px","horizontalAlign":"right","layoutKind":"left-to-right","margin":"0,0,0,0","padding":"0,5,0,0","styles":{"backgroundColor":"#a3a3a3"},"verticalAlign":"middle","width":"100%"}, {}, {
+									top_select_sy: ["wm.SelectMenu", {"caption":"Año escolar","dataType":"com.aprendoz_test.data.Sy","dataValue":undefined,"desktopHeight":"34px","displayField":"schoolYear","displayValue":"","height":"34px","placeHolder":"Año escolar"}, {"onchange":"top_select_syChange","onchange1":"top_select_syChange1","onchange2":"top_select_syChange2"}, {
 										binding: ["wm.Binding", {}, {}, {
 											wire: ["wm.Wire", {"expression":undefined,"source":"a_lista_sy","targetProperty":"dataSet"}, {}]
 										}]
@@ -1172,9 +1256,15 @@ Main.widgets = {
 									spacer2: ["wm.Spacer", {"height":"48px","width":"100%"}, {}],
 									profile_button: ["wm.Button", {"_classes":{"domNode":["blue_button"]},"border":"0","caption":" ","iconHeight":"24px","iconMargin":"0 5px 0 0","iconUrl":"resources/images/icon_set/settings.png","iconWidth":"24px","margin":"0","styles":{},"width":"110px"}, {"onclick":"settingsUser.show"}]
 								}],
-								curriculo_big_panel: ["wm.Panel", {"height":"1264px","horizontalAlign":"left","lock":true,"showing":false,"styles":{},"verticalAlign":"top","width":"100%"}, {}, {
-									curriculo_action_panel: ["wm.Panel", {"height":"32px","horizontalAlign":"right","layoutKind":"left-to-right","styles":{"backgroundColor":"#f2f2f2"},"verticalAlign":"top","width":"100%"}, {}, {
-										curriculo_detalles_estudiantes_butt: ["wm.Button", {"_classes":{"domNode":["nuevoButtons"]},"caption":"Ver estudiantes","disabled":true,"margin":"4","styles":{},"width":"138px"}, {"onclick":"curriculo_detalles_estudiantes_buttClick","onclick1":"curriculo_detalles_estudiantes_buttClick1"}]
+								curriculo_big_panel: ["wm.Panel", {"autoScroll":true,"height":"1264px","horizontalAlign":"left","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
+									curriculo_action_panel: ["wm.Panel", {"height":"48px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#f2f2f2"},"verticalAlign":"middle","width":"100%"}, {}, {
+										sel_asignaturas_select: ["wm.SelectMenu", {"caption":"Asignatura","dataType":"com.aprendoz_test.data.output._global_curriculo_asig_docRtnType","dataValue":undefined,"desktopHeight":"34px","displayField":"asignatura","displayValue":"","height":"34px","placeHolder":"Seleccione una asignatura"}, {"onchange":"sel_asignaturas_selectChange"}, {
+											binding: ["wm.Binding", {}, {}, {
+												wire: ["wm.Wire", {"expression":undefined,"source":"global_docentes_asignaturas","targetProperty":"dataSet"}, {}]
+											}]
+										}],
+										edit_asig_button: ["wm.Button", {"_classes":{"domNode":["blue_button"]},"caption":"Editar Asignatura","desktopHeight":"34px","height":"34px","margin":"4","styles":{},"width":"128px"}, {}],
+										curriculo_detalles_estudiantes_butt: ["wm.Button", {"_classes":{"domNode":["nuevoButtons"]},"caption":"Ver estudiantes","desktopHeight":"34px","disabled":true,"height":"34px","margin":"4","styles":{},"width":"138px"}, {"onclick":"curriculo_detalles_estudiantes_buttClick","onclick1":"curriculo_detalles_estudiantes_buttClick1"}]
 									}],
 									curriculo_grid_docentes_asignaturas: ["wm.DojoGrid", {"_classes":{"domNode":["gridscss"]},"columns":[
 {"show":false,"field":"idpersona","title":"Idpersona","width":"100px","align":"left","formatFunc":"","mobileColumn":false},
@@ -1188,12 +1278,84 @@ Main.widgets = {
 {"show":false,"field":"subarea2","title":"Subarea2","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":false,"field":"subarea1","title":"Subarea1","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":false,"field":"subarea3","title":"Subarea3","width":"100%","align":"left","formatFunc":"","mobileColumn":false}
-],"dsType":"com.aprendoz_test.data.output._global_curriculo_asig_docRtnType","height":"210px","localizationStructure":{},"margin":"0","minDesktopHeight":60,"singleClickEdit":true,"styles":{"fontSize":"11px","backgroundColor":"#ffffff"}}, {"onCellDblClick":"curriculo_grid_docentes_asignaturasCellDblClick","onSelect":"curriculo_grid_docentes_asignaturasSelect","onSelect1":"curriculo_grid_docentes_asignaturasSelect1","onSelect2":"curriculo_grid_docentes_asignaturasSelect2","onSelect3":"curriculo_grid_docentes_asignaturasSelect3","onSelect4":"curriculo_grid_docentes_asignaturasSelect4","onSelectionChange":"curriculo_grid_docentes_asignaturasSelectionChange","onSelectionChange1":"curriculo_grid_docentes_asignaturasSelectionChange1"}, {
+],"dsType":"com.aprendoz_test.data.output._global_curriculo_asig_docRtnType","height":"210px","localizationStructure":{},"margin":"0","minDesktopHeight":60,"showing":false,"singleClickEdit":true,"styles":{"fontSize":"11px","backgroundColor":"#ffffff"}}, {"onCellDblClick":"curriculo_grid_docentes_asignaturasCellDblClick","onSelect":"curriculo_grid_docentes_asignaturasSelect","onSelect1":"curriculo_grid_docentes_asignaturasSelect1","onSelect2":"curriculo_grid_docentes_asignaturasSelect2","onSelect3":"curriculo_grid_docentes_asignaturasSelect3","onSelect4":"curriculo_grid_docentes_asignaturasSelect4","onSelectionChange":"curriculo_grid_docentes_asignaturasSelectionChange","onSelectionChange1":"curriculo_grid_docentes_asignaturasSelectionChange1"}, {
 										binding: ["wm.Binding", {}, {}, {
 											wire: ["wm.Wire", {"expression":undefined,"source":"global_docentes_asignaturas","targetProperty":"dataSet"}, {}]
 										}]
 									}],
-									panel9: ["wm.Panel", {"height":"32px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#f2f2f2"},"verticalAlign":"top","width":"100%"}, {}],
+									panel_unidades_subtopicos: ["wm.Panel", {"height":"255px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#f2f2f2"},"verticalAlign":"top","width":"100%"}, {}, {
+										unidadLivePanel2: ["wm.LivePanel", {"horizontalAlign":"left","verticalAlign":"top"}, {}, {
+											binding: ["wm.Binding", {}, {}, {
+												wire: ["wm.Wire", {"source":"unidadDojoGrid1","targetId":null,"targetProperty":"dataGrid"}, {}]
+											}],
+											unidadDojoGrid1: ["wm.DojoGrid", {"columns":[
+{"show":true,"field":"idUnidad","title":"ID","width":"80px","align":"center","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"unidad","title":"Unidad","width":"100%","align":"left","formatFunc":"","fieldType":"dojox.grid.cells._Widget","mobileColumn":false},
+{"show":true,"field":"unit","title":"Unit","width":"100%","align":"left","formatFunc":"","fieldType":"dojox.grid.cells._Widget","mobileColumn":false},
+{"show":true,"field":"fechaInicio","title":"Fecha <br>Inicio","width":"80px","align":"left","formatFunc":"wm_date_formatter","fieldType":"dojox.grid.cells.DateTextBox","mobileColumn":false},
+{"show":true,"field":"fechaFin","title":"Fecha<br>Fin","width":"80px","align":"left","formatFunc":"wm_date_formatter","fieldType":"dojox.grid.cells.DateTextBox","mobileColumn":false},
+{"show":true,"field":"numeroUnidad","title":"# Unidad","width":"50px","align":"center","formatFunc":"","fieldType":"dojox.grid.cells.ComboBox","editorProps":{"selectDataSet":"global_numero_unidad","displayField":"name","isSimpleType":true,"restrictValues":false},"mobileColumn":false},
+{"show":false,"field":"idSyIdIdSy","title":"IdSyIdIdSy","width":"80px","align":"right","formatFunc":"","fieldType":"dojox.grid.cells.NumberTextBox","mobileColumn":false},
+{"show":true,"field":"asignatura.idAsignatura","title":"IdAsignatura","width":"80px","align":"right","formatFunc":"","fieldType":"dojox.grid.cells.NumberTextBox","constraints":{"min":0},"editorProps":{"invalidMessage":"Es ibligatorio un numero de asig"},"mobileColumn":false},
+{"show":false,"field":"asignatura.asignatura","title":"Asignatura","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.subject","title":"Subject","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.electiva","title":"Electiva","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.idArea1","title":"IdArea1","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.idArea2","title":"IdArea2","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.idArea3","title":"IdArea3","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.idSubarea1","title":"IdSubarea1","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.idSubarea2","title":"IdSubarea2","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.idSubarea3","title":"IdSubarea3","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.salonIdSalon","title":"SalonIdSalon","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.intensidadHoraria","title":"IntensidadHoraria","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.peso","title":"Peso","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.descripAsigEspaniol","title":"Asignatura","width":"100%","align":"left","formatFunc":"","fieldType":"dojox.grid.cells.ComboBox","editorProps":{"selectDataSet":"asignaturaLiveVariable1","displayField":"descripAsigEspaniol"},"mobileColumn":false},
+{"show":false,"field":"asignatura.descripAsigIngles","title":"DescripAsigIngles","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.ihA1","title":"IhA1","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.ihA2","title":"IhA2","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.ihA3","title":"IhA3","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.meses","title":"Meses","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.esperadostotal","title":"Esperadostotal","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"ID: \" + ${idUnidad} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Unidad: \" + ${unidad}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Unit: \" + ${unit}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Fecha <br>Inicio: \" + ${wm.runtimeId}.formatCell(\"fechaInicio\", ${fechaInicio}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Fecha<br>Fin: \" + ${wm.runtimeId}.formatCell(\"fechaFin\", ${fechaFin}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"# Unidad: \" + ${numeroUnidad}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"IdAsignatura: \" + ${asignatura.idAsignatura}\n + \"</div>\"\n\n","mobileColumn":true}
+],"deleteColumn":true,"dsType":"com.aprendoz_test.data.Unidad","height":"100%","liveEditing":true,"margin":"4","minDesktopHeight":60,"singleClickEdit":true,"styles":{"fontSize":"11px"}}, {}, {
+												binding: ["wm.Binding", {}, {}, {
+													wire: ["wm.Wire", {"source":"unidadLiveVariable2","targetProperty":"dataSet"}, {}]
+												}]
+											}],
+											unidadGridButtonPanel1: ["wm.Panel", {"desktopHeight":"32px","enableTouchHeight":true,"height":"32px","horizontalAlign":"right","layoutKind":"left-to-right","mobileHeight":"40px","verticalAlign":"top","width":"100%"}, {}, {
+												unidadNewButton1: ["wm.Button", {"caption":"New","margin":"4"}, {"onclick":"unidadDojoGrid1.addEmptyRow"}]
+											}]
+										}],
+										subtopicoLivePanel2: ["wm.LivePanel", {"horizontalAlign":"left","verticalAlign":"top"}, {}, {
+											binding: ["wm.Binding", {}, {}, {
+												wire: ["wm.Wire", {"source":"subtopicoDojoGrid1","targetId":null,"targetProperty":"dataGrid"}, {}]
+											}],
+											subtopicoDojoGrid1: ["wm.DojoGrid", {"columns":[
+{"show":true,"field":"idSubtopico","title":"IdSubtopico","width":"80px","displayType":"Number","align":"right","formatFunc":""},
+{"show":true,"field":"subtopico","title":"Subtopico","width":"100%","displayType":"Text","align":"left","formatFunc":"","fieldType":"dojox.grid.cells._Widget"},
+{"show":true,"field":"fechaInicio","title":"FechaInicio","width":"80px","displayType":"Date","align":"left","formatFunc":"wm_date_formatter","fieldType":"dojox.grid.cells.DateTextBox"},
+{"show":true,"field":"fechaFin","title":"FechaFin","width":"80px","displayType":"Date","align":"left","formatFunc":"wm_date_formatter","fieldType":"dojox.grid.cells.DateTextBox"},
+{"show":true,"field":"subtopic","title":"Subtopic","width":"100%","displayType":"Text","align":"left","formatFunc":"","fieldType":"dojox.grid.cells._Widget"},
+{"show":true,"field":"numeroSubtopico","title":"NumeroSubtopico","width":"80px","displayType":"Number","align":"right","formatFunc":"","fieldType":"dojox.grid.cells.NumberTextBox"},
+{"show":true,"field":"idSyIdIdSy","title":"IdSyIdIdSy","width":"80px","displayType":"Number","align":"right","formatFunc":"","fieldType":"dojox.grid.cells.NumberTextBox"},
+{"show":false,"field":"unidad.idUnidad","title":"IdUnidad","width":"80px","displayType":"Number","align":"right","formatFunc":""},
+{"show":false,"field":"unidad.unidad","title":"Unidad","width":"100%","displayType":"Text","align":"left","formatFunc":"","fieldType":"dojox.grid.cells.ComboBox","editorProps":{"selectDataSet":"unidadLiveVariable3","displayField":"unidad"}},
+{"show":false,"field":"unidad.unit","title":"Unit","width":"100%","displayType":"Text","align":"left","formatFunc":""},
+{"show":false,"field":"unidad.fechaInicio","title":"FechaInicio","width":"80px","displayType":"Date","align":"left","formatFunc":"wm_date_formatter"},
+{"show":false,"field":"unidad.fechaFin","title":"FechaFin","width":"80px","displayType":"Date","align":"left","formatFunc":"wm_date_formatter"},
+{"show":false,"field":"unidad.numeroUnidad","title":"NumeroUnidad","width":"80px","displayType":"Number","align":"right","formatFunc":""},
+{"show":false,"field":"unidad.idSyIdIdSy","title":"IdSyIdIdSy","width":"80px","displayType":"Number","align":"right","formatFunc":""},
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"IdSubtopico: \" + ${idSubtopico} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Subtopico: \" + ${subtopico}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"FechaInicio: \" + ${wm.runtimeId}.formatCell(\"fechaInicio\", ${fechaInicio}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"FechaFin: \" + ${wm.runtimeId}.formatCell(\"fechaFin\", ${fechaFin}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Subtopic: \" + ${subtopic}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"NumeroSubtopico: \" + ${numeroSubtopico}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"IdSyIdIdSy: \" + ${idSyIdIdSy}\n + \"</div>\"\n\n","mobileColumn":true}
+],"deleteColumn":true,"dsType":"com.aprendoz_test.data.Subtopico","height":"100%","liveEditing":true,"margin":"4","minDesktopHeight":60,"singleClickEdit":true}, {}, {
+												binding: ["wm.Binding", {}, {}, {
+													wire: ["wm.Wire", {"source":"subtopicoLiveVariable2","targetProperty":"dataSet"}, {}]
+												}]
+											}],
+											subtopicoGridButtonPanel1: ["wm.Panel", {"desktopHeight":"32px","enableTouchHeight":true,"height":"32px","horizontalAlign":"right","layoutKind":"left-to-right","mobileHeight":"40px","verticalAlign":"top","width":"100%"}, {}, {
+												subtopicoNewButton1: ["wm.Button", {"caption":"New","margin":"4"}, {"onclick":"subtopicoDojoGrid1.addEmptyRow"}]
+											}]
+										}]
+									}],
 									logDocentesliveForm: ["wm.LiveForm", {"height":"44px","horizontalAlign":"left","showing":false,"verticalAlign":"top"}, {}],
 									unidadLivePanel1: ["wm.LivePanel", {"autoScroll":false,"height":"230px","horizontalAlign":"left","styles":{},"verticalAlign":"top"}, {}, {
 										binding: ["wm.Binding", {}, {}, {
@@ -1414,7 +1576,7 @@ Main.widgets = {
 									home_label1: ["wm.Label", {"caption":"¿Cómo desea empezar?","height":"40px","padding":"4","styles":{"color":"#020202","fontSize":"14px"},"width":"100%"}, {}],
 									panel23: ["wm.Panel", {"height":"48px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{},"verticalAlign":"top","width":"100%"}, {}]
 								}],
-								inicio_big_panel: ["wm.Panel", {"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"10","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
+								inicio_big_panel: ["wm.Panel", {"autoScroll":true,"height":"100%","horizontalAlign":"left","lock":true,"padding":"10","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 									label_nombreCompleto: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_28px"]},"align":"center","caption":"Indicadores // Dashboard","height":"50px","padding":"4","styles":{"fontSize":"10px"},"width":"100%"}, {}, {
 										format: ["wm.DataFormatter", {}, {}]
 									}],
@@ -1740,7 +1902,7 @@ Main.widgets = {
 														salonIdSalonEditor2: ["wm.Editor", {"caption":"Salon","disabled":true,"display":"Number","formField":"salonIdSalon","height":"26px","padding":"2","readonly":true,"width":"100%"}, {}, {
 															editor: ["wm._NumberEditor", {"required":true}, {}]
 														}],
-														relatedEditor4: ["wm.RelatedEditor", {"fitToContentHeight":true,"formField":"tipoInscAsig","height":"28px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+														relatedEditor4: ["wm.RelatedEditor", {"fitToContentHeight":true,"formField":"tipoInscAsig","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 															binding: ["wm.Binding", {}, {}, {
 																wire: ["wm.Wire", {"expression":undefined,"source":"asignaturaDataGrid2.selectedItem.tipoInscAsig","targetProperty":"dataSet"}, {}],
 																wire1: ["wm.Wire", {"expression":undefined,"source":"tipoInscAsigLookup2.selectedItem","targetProperty":"dataOutput"}, {}]

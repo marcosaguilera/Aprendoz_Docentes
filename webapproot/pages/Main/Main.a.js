@@ -1,64 +1,78 @@
 Date.prototype.getWeek = function() {
-var onejan = new Date(this.getFullYear(),0,1);
-return Math.ceil((((this - onejan) / 86400000) + onejan.getDay()+1)/7);
-},
-/*****************************/
+var onejan = new Date(this.getFullYear(), 0, 1);
+return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+}, /*****************************/
 dojo.declare("Main", wm.Page, {
 start: function() {
+/*cuando se inicia la aplicación se captura la fecha actual
+* y se obtiene el año escolar actual
+*/
 this.curdate = new Date().getTime();
-main.global_cursy.input.setValue("f1",this.curdate);
+main.global_cursy.input.setValue("f1", this.curdate);
 main.global_cursy.update();
+//metodo de dojo para detectar una sesion expirada y realizar acciones como logout
 dojo.subscribe("session-expiration", this, "mySessionExpiredMethod");
 wm.DataGrid.extend({
-setDisabled: function(inDisabled) { dojo[inDisabled ? "addClass" : "removeClass"](this.domNode, "wmgrid-disabled");}
+setDisabled: function(inDisabled) {
+dojo[inDisabled ? "addClass" : "removeClass"](this.domNode, "wmgrid-disabled");
+}
 });
 },
 "preferredDevice": "desktop",
-myCurSy: function(){
-var sy  = main.global_cursy.getItem(0).data.idsy;
+// funcion reutilizable en cualquier parte
+// del codigo para obtener el id del año escolar
+myCurSy: function() {
+var sy = main.global_cursy.getItem(0).data.idsy;
 return sy;
 },
+// cuando espira la sesion dojo usa session-expiration para redireccion al usuario
+// a la ventana de login
 mySessionExpiredMethod: function() {
 window.location.reload();
 },
 inscalumaprendizajeDataGrid1RowDblClick: function(inSender, inEvent) {
 try {
 this.editPanel9.beginDataUpdate();
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN inscalumaprendizajeDataGrid1RowDblClick: ' + e);
-}},
+}
+},
 inscalumaprendizajeLiveForm1BeginUpdate: function(inSender) {
 try {
 this.personas.setDisabled(true);
 this.tablaAprendizajes.setDisabled(true);
 this.fechaIngresoEditor2.disable();
 this.fechaIngresoEditor2.setDataValue(new Date());
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN inscalumaprendizajeLiveForm1BeginUpdate: ' + e);
-}},
+}
+},
 asistenciaShow: function(inSender) {
 try {
 app.listaSY.update();
 app.listaGrado.update();
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN layer43Show: ' + e);
 }
 },
+// cada vez que el docente cambie del tipo de calificacion,
+// el sistema asignara un puntaje equivalente
+// se usa estrcutura de control 'if'
 calificacionEditor2Change: function(inSender, inDisplayValue, inDataValue) {
 try {
-if(this.calificacionEditor2.dataValue=="En Progreso"){
+if (this.calificacionEditor2.dataValue == "En Progreso") {
 this.calificacionNumEditor2.setValue("dataValue", "0.3")
 }
-if(this.calificacionEditor2.dataValue=="Competente"){
+if (this.calificacionEditor2.dataValue == "Competente") {
 this.calificacionNumEditor2.setValue("dataValue", "1")
 }
-if(this.calificacionEditor2.dataValue=="Avanzado"){
+if (this.calificacionEditor2.dataValue == "Avanzado") {
 this.calificacionNumEditor2.setValue("dataValue", "1.3")
 }
-if(this.calificacionEditor2.dataValue=="Magistral"){
+if (this.calificacionEditor2.dataValue == "Magistral") {
 this.calificacionNumEditor2.setValue("dataValue", "1.6")
 }
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN calificacionEditor2Change: ' + e);
 }
 },
@@ -66,23 +80,27 @@ calif_encabezado_opciones_butt_reporteClick: function(inSender, inEvent) {
 try {
 main.a_informacionUsuario.update();
 var getter = main.a_informacionUsuario2.getItem(0);
-var id= getter.data.idpersona;
-var clave= getter.data.clave;
+var id = getter.data.idpersona;
+var clave = getter.data.clave;
 var idc = this.calif_encabezado_opciones_sel_curso.getDataValue();
 var ida = this.calif_asig_datag_asignaturasDataGrid1.selectedItem.getData().id.asignaturaIdAsignatura;
-var formatType= "PDF";
+var formatType = "PDF";
 $.fileDownload("http://aprendoz.rochester.edu.co/wsreport/runreport?callback=?", {
 failMessageHtml: "Hubo un problema generando tu reporte, por favor intenta de nuevo.",
 httpMethod: "POST",
-data:{ idp: id,
+data: {
+idp: id,
 pass: clave,
 uri: "/aprendozreports/DOC002",
 format: formatType,
-params: { curso: idc, asignatura: ida }
+params: {
+curso: idc,
+asignatura: ida
+}
 }
 });
 inEvent.preventDefault();
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN botonReporte3Click: ' + e);
 }
 },
@@ -102,17 +120,17 @@ this.calificacionNumEditor23.setValue("dataValue", "1.6");
 },
 //se obtiene el nombre de usuario del serviceVariable global_username
 global_usernameSuccess: function(inSender, inDeprecated) {
-var _usuario  =   main.global_username.data.dataValue;
+var _usuario = main.global_username.data.dataValue;
 this.a_informacionUsuario.input.setValue("user", _usuario);
 this.global_cursy.update();
 this.a_informacionUsuario.update();
 },
 global_cursySuccess: function(inSender, inDeprecated) {
 //var _usuario      = main.global_username.getData().dataValue;
-var _usuario      = main.global_username.getItem(0).data.dataValue;
-var syJson        = main.global_cursy.getItem(0);
-var fechaInicio   = syJson.data.fechaDesde;
-var fechaFinal    = syJson.data.fechaHasta;
+var _usuario = main.global_username.getItem(0).data.dataValue;
+var syJson = main.global_cursy.getItem(0);
+var fechaInicio = syJson.data.fechaDesde;
+var fechaFinal = syJson.data.fechaHasta;
 this.dash_dash_lv1.input.setValue("usuario", _usuario);
 this.dash_dash_lv1.input.setValue("f1", fechaInicio);
 this.dash_dash_lv1.input.setValue("f2", fechaFinal);
@@ -120,29 +138,29 @@ this.dash_dash_lv1.update();
 },
 //esta funciona captura los datos del usuario. ej. nombres, apellidos, idpersona, user
 a_informacionUsuarioSuccess: function() {
-var json     =  main.a_informacionUsuario.getItem(0);
-var codigo   = json.data.codigo;
-var usuario  = json.data.usuario;
-var tipo     = json.data.tipoPersona;
-var nombre1  = json.data.nombre1;
-var nombre2  = json.data.nombre2;
-var apellido1= json.data.apellido1;
-var apellido2= json.data.apellido2;
-var nodoc    = json.data.numeroDocumento;
-var sexo     = json.data.sexo;
-var fullname = nombre1+" "+nombre2+" "+apellido1+" "+apellido2;
+var json = main.a_informacionUsuario.getItem(0);
+var codigo = json.data.codigo;
+var usuario = json.data.usuario;
+var tipo = json.data.tipoPersona;
+var nombre1 = json.data.nombre1;
+var nombre2 = json.data.nombre2;
+var apellido1 = json.data.apellido1;
+var apellido2 = json.data.apellido2;
+var nodoc = json.data.numeroDocumento;
+var sexo = json.data.sexo;
+var fullname = nombre1 + " " + nombre2 + " " + apellido1 + " " + apellido2;
 this.profile_button.setCaption(usuario);
 this.menu_rol.setCaption(tipo);
-this.menu_profile_img.setSource("http://www.rochester.edu.co/fotosempleados/"+codigo+".Jpeg");
-this.configuracion_profile_image.setSource("http://www.rochester.edu.co/fotosempleados/"+codigo+".Jpeg");
-this.menu_bienvenida.setCaption("Bienvenid@, "+usuario);
-this.configuracion_detalles.setCaption(fullname+"<br>Sexo: "+sexo+"<br>No. documento: "+nodoc+"<br><br>"+tipo);
-var idp      = main.a_informacionUsuario.getItem(0).data.idpersona;
-var today    = new Date().getTime();
-var clave    = main.a_informacionUsuario.getItem(0).data.clave;
-var json     = main.global_cursy.getItem(0);
+this.menu_profile_img.setSource("http://www.rochester.edu.co/fotosempleados/" + codigo + ".Jpeg");
+this.configuracion_profile_image.setSource("http://www.rochester.edu.co/fotosempleados/" + codigo + ".Jpeg");
+this.menu_bienvenida.setCaption("Bienvenid@, " + usuario);
+this.configuracion_detalles.setCaption(fullname + "<br>Sexo: " + sexo + "<br>No. documento: " + nodoc + "<br><br>" + tipo);
+var idp = main.a_informacionUsuario.getItem(0).data.idpersona;
+var today = new Date().getTime();
+var clave = main.a_informacionUsuario.getItem(0).data.clave;
+var json = main.global_cursy.getItem(0);
 //var idsy     = this.myCurSy();
-var idsy     = main.global_cursy.getItem(0).data.idsy;
+var idsy = main.global_cursy.getItem(0).data.idsy;
 console.log(idsy);
 this.inicio_box_usuario.setDataValue(usuario);
 this.inicio_box_clave.setDataValue(clave);
@@ -153,13 +171,13 @@ this.muestraCoordinadorSubArea.input.setValue("ppersona", idp);
 this.muestraCoordinadorSubArea.input.setValue("pidy", idsy);
 this.dashboard_faltas_graves.filter.setValue("id.idPersona", idp);
 this.dashboard_calificacion_estudiantes.filter.setValue("id.directorId", idp);
-this.asignaturasPorDocente.input.setValue("usuario",usuario);
-this.asignaturasPorDocente.input.setValue("sy",idsy);
+this.asignaturasPorDocente.input.setValue("usuario", usuario);
+this.asignaturasPorDocente.input.setValue("sy", idsy);
 this.logIngresoUsuario(idp, today);
 this.renderDashBoard();
 },
-logIngresoUsuario: function(persona, fecha){
-var idp   = persona;
+logIngresoUsuario: function(persona, fecha) {
+var idp = persona;
 var today = fecha;
 this.a_logInsertRecords.setValue("persona.idPersona", idp);
 this.a_logInsertRecords.setValue("fechaIngreso", today);
@@ -167,7 +185,7 @@ this.a_logInsertRecords.setValue("horaIngreso", today);
 this.logForm.setDataSet(this.a_logInsertRecords);
 this.logForm.insertData();
 },
-renderDashBoard: function(){
+renderDashBoard: function() {
 this.dashboard_faltas_graves.update();
 this.dashboard_calificacion_estudiantes.update();
 this.asignaturasPorDocente.update();
@@ -175,11 +193,11 @@ this.muestraCoordinadorCurso.update();
 this.muestraCoordinadorSubArea.update();
 },
 promocionDataGrid1Selected: function(inSender, inIndex) {
-if(this.aprobadoEditor1.dataValue == true){
+if (this.aprobadoEditor1.dataValue == true) {
 this.promovidoEditor1.enable();
 this.commentpromovidoEditor1.enable();
 }
-else{
+else {
 this.promovidoEditor1.disable();
 this.commentpromovidoEditor1.disable();
 }
@@ -188,7 +206,7 @@ promocionLiveForm1BeginUpdate: function(inSender) {
 try {
 this.promocion_container_datag_personas_x_curso.setDisabled(true);
 this.promocionDataGrid1.setDisabled(true);
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN promocionLiveForm1BeginUpdate: ' + e);
 }
 },
@@ -200,7 +218,7 @@ promocionLiveForm1CancelEdit: function(inSender) {
 try {
 this.promocion_container_datag_personas_x_curso.setDisabled(false);
 this.promocionDataGrid1.setDisabled(false);
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN promocionLiveForm1CancelEdit: ' + e);
 }
 },
@@ -208,21 +226,21 @@ promocionLiveForm1InsertData: function(inSender) {
 try {
 this.promocion_container_datag_personas_x_curso.setDisabled(false);
 this.promocionDataGrid1.setDisabled(false);
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN promocionLiveForm1InsertData: ' + e);
 }
 },
 promocion_container_datag_personas_x_cursoSelectionChanged: function(inSender) {
 try {
 this.editPanel3.cancelEdit();
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN promocion_container_datag_personas_x_cursoSelectionChanged: ' + e);
 }
 },
 promocionDataGrid1SelectionChanged: function(inSender) {
 try {
 this.editPanel3.cancelEdit();
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN promocionDataGrid1SelectionChanged: ' + e);
 }
 },
@@ -231,26 +249,28 @@ try {
 this.l_promocion_curso.update();
 this.l_promocion_insc_alum_curso.clearData();
 this.l_promocion_promocionLiveVariable1.clearData();
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN promocion_sel_gradoChange: ' + e);
-}},
+}
+},
 a_obtenerNombreSuccess: function(inSender, inDeprecated) {
 try {
 var nombre1 = main.a_obtenerNombre.getData().n1;
 var nombre2 = main.a_obtenerNombre.getData().n2;
 var apellido1 = main.a_obtenerNombre.getData().a1;
 var apellido2 = main.a_obtenerNombre.getData().a2;
-this.label_nombreCompleto.setCaption("BIENVENIDO, "+nombre1+" "+nombre2+" "+apellido1+" "+apellido2);
-} catch(e) {
+this.label_nombreCompleto.setCaption("BIENVENIDO, " + nombre1 + " " + nombre2 + " " + apellido1 + " " + apellido2);
+} catch (e) {
 console.error('ERROR IN a_obtenerNombreSuccess: ' + e);
 }
 },
 inicio_abrir_preferenciasClick: function(inSender, inEvent) {
 try {
 this.inicio_panel_opciones.show();
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN inicio_abrir_preferenciasClick: ' + e);
-}},
+}
+},
 inicio_cerrar_preferenciasClick: function(inSender, inEvent) {
 this.inicio_panel_opciones.hide();
 this.inicio_filtros_claves.hide();
@@ -265,7 +285,7 @@ this.editPanel7.cancelEdit();
 inscripcion_estudianteSelectionChanged: function(inSender) {
 try {
 this.editPanel7.cancelEdit();
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN inscripciones_estudianteSelectionChanged: ' + e);
 }
 },
@@ -274,19 +294,19 @@ try {
 this.inicio_box_clave.setReadonly(true);
 this.inicio_box_reclave.setReadonly(true);
 this.inicio_panel_boton_actualizar.hide();
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN inicio_boton_cancelarClick: ' + e);
 }
 },
 inicio_abrir_preferencias1Click: function(inSender, inEvent) {
 try {
 this.inicio_filtros_claves.show();
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN inicio_abrir_preferencias1Click: ' + e);
 }
 },
 pestana_reportes_seguimientoShow: function(inSender) {
-var jsonobject= main.a_informacionUsuario2.getItem(0);
+var jsonobject = main.a_informacionUsuario2.getItem(0);
 var rol = jsonobject.data.idtipo;
 var idpersona = jsonobject.data.idpersona;
 var valueToFilter = rol;
@@ -302,81 +322,46 @@ reportes_graficos_listado_reportesDeselected: function(inSender, inIndex) {
 this.reports_open_report_window.disable();
 },
 a_getLastAccessSuccess: function(inSender, inDeprecated) {
-var json= main.a_getLastAccess.getItem(0);
-var fechaUltimoAcceso= json.data.date;
-var horaUltimoAcceso= json.data.timeLoged;
-this.lastAccess_Label.setCaption("Último acceso: <br/>"+fechaUltimoAcceso);
-},
-/*
-*Inicio
-*Graficos
-*/
-dash_dash_lv1Success: function(inSender, inDeprecated) {
-this.renderChart_dash1();
-},
-renderChart_dash1: function() {
-var data = new google.visualization.DataTable();
-data.addColumn('string', 'Name');
-data.addColumn('number', 'Trayectoria de ingresos del docente');
-var rows = this.dash_dash_lv1.getData(function(inItem) {
-return [inItem.getValue("name"), inItem.getValue("dataValue")];
-});
-var _json= main.dash_dash_lv1.getData();
-var _json= main.dash_dash_lv1.json;
-var _count= main.dash_dash_lv1.getCount();
-for (var i = 0; i < _count; i++) {
-var _item= main.dash_dash_lv1.getItem(i).data;
-var _name= _item.mes;
-var _value= _item.totalingresos;
-data.addRows
-([
-[_name, _value]
-]);
-}
-var options = {'title':'GRÁFICO DE INGRESOS POR DOCENTE',
-'titlePosition': 'out',
-hAxis: {title: 'Meses del año escolar',  titleTextStyle: {color: '#000000'}},
-vAxis: {title: 'Total ingresos' , titleTextStyle: {color: '#000000'}},
-legend : {position: 'in', alignment: 'end'}
-};
-var chart = this._chart = new google.visualization.AreaChart(this.dash_chart1.domNode);
-chart.draw(data, options);
+var json = main.a_getLastAccess.getItem(0);
+var fechaUltimoAcceso = json.data.date;
+var horaUltimoAcceso = json.data.timeLoged;
+this.lastAccess_Label.setCaption("Último acceso: <br/>" + fechaUltimoAcceso);
 },
 codigoReporteChange: function(inSender, inDisplayValue, inDataValue) {
 try {
-var _codigo= this.codigoReporte.getDataValue();
+var _codigo = this.codigoReporte.getDataValue();
 this.l_reportes_graficos_listado_reportes.filter.setValue("id.codigo", _codigo);
 this.l_reportes_graficos_listado_reportes.update();
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN codigoChange: ' + e);
 }
 },
 reporteChange: function(inSender, inDisplayValue, inDataValue) {
 try {
-var _reporte= this.reporte.getDataValue();
+var _reporte = this.reporte.getDataValue();
 this.l_reportes_graficos_listado_reportes.filter.setValue("id.reporte", _reporte);
 this.l_reportes_graficos_listado_reportes.update();
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN reporteChange: ' + e);
 }
 },
 calif_alumnos_datagrids_datag_alumnos_asignaturasSelected: function(inSender, inIndex) {
 try {
-var idasignatura= this.calif_alumnos_datagrids_datag_alumnos_asignaturas.selectedItem.getData().idasignatura;
+var idasignatura = this.calif_alumnos_datagrids_datag_alumnos_asignaturas.selectedItem.getData().idasignatura;
 this.l_calif_alumnos_aprendizajes.filter.setValue("id.asignaturaIdAsignatura", idasignatura);
 this.l_calif_alumnos_aprendizajes.update();
-} catch(e) {
+} catch (e) {
 console.error('ERROR IN calif_alumnos_datagrids_datag_alumnos_asignaturasSelected: ' + e);
 }
 },
 subjects_activitiesChange: function(inSender, inDisplayValue, inDataValue) {
-var idcurso= this.subjects_activities.getDataValue();
-var cadena=  this.subjects_activities.getDisplayValue();
-var idasignatura= cadena.substring(0,6);
+var idcurso = this.subjects_activities.getDataValue();
+var cadena = this.subjects_activities.getDisplayValue();
+var idasignatura = cadena.substring(0, 6);
 var x = parseInt(idasignatura);
-var json= main.a_cursy.getItem(0);
-var sy= json.data.sy;
-var idsy= json.data.idsy;
+var json = main.a_cursy.getItem(0);
+var sy = json.data.sy;
+var idsy = json.data.idsy;
 this.actividad_lv.filter.setValue("subtopico.unidad.asignatura.idAsignatura", x);
 this.actividad_estudiantes.filter.setValue("curso.idCurso", idcurso);
 this.actividad_estudiantes.filter.setValue("sy.idSy", idsy);
@@ -384,81 +369,65 @@ this.actividad_lv.update();
 this.actividad_estudiantes.update();
 },
 activitiesDataGridSelected: function(inSender, inIndex) {
-var id=  this.activitiesDataGrid.selectedItem.getData().idActividad;
-this.inscalumactividadLiveVariable1.filter.setValue("actividad.idActividad",id);
+var id = this.activitiesDataGrid.selectedItem.getData().idActividad;
+this.inscalumactividadLiveVariable1.filter.setValue("actividad.idActividad", id);
 this.inscalumactividadLiveVariable1.update();
 },
 /*
 * Js new version
 */
 menu_inicio_buttClick: function(inSender) {
-$('#main_menu_inicio_butt')
-.css('background-color', '#1125b2');
-$('#main_menu_curriculo_butt')
-.css('background-color', '#a3a3a3');
-$('#main_menu_asignatura_butt')
-.css('background-color', '#a3a3a3');
-$('#main_menu_estudiante_butt')
-.css('background-color', '#a3a3a3');
+$('#main_menu_inicio_butt').css('background-color', '#1125b2');
+$('#main_menu_curriculo_butt').css('background-color', '#a3a3a3');
+$('#main_menu_asignatura_butt').css('background-color', '#a3a3a3');
+$('#main_menu_estudiante_butt').css('background-color', '#a3a3a3');
 },
 menu_curriculo_buttClick3: function(inSender) {
-$('#main_menu_curriculo_butt')
-.css('background-color', '#1125b2');
-$('#main_menu_inicio_butt')
-.css('background-color', '#a3a3a3');
-$('#main_menu_asignatura_butt')
-.css('background-color', '#a3a3a3');
-$('#main_menu_estudiante_butt')
-.css('background-color', '#a3a3a3');
+$('#main_menu_curriculo_butt').css('background-color', '#1125b2');
+$('#main_menu_inicio_butt').css('background-color', '#a3a3a3');
+$('#main_menu_asignatura_butt').css('background-color', '#a3a3a3');
+$('#main_menu_estudiante_butt').css('background-color', '#a3a3a3');
 },
 menu_asignatura_buttClick: function(inSender) {
-$('#main_menu_asignatura_butt')
-.css('background-color', '#1125b2');
-$('#main_menu_curriculo_butt')
-.css('background-color', '#a3a3a3');
-$('#main_menu_inicio_butt')
-.css('background-color', '#a3a3a3');
-$('#main_menu_estudiante_butt')
-.css('background-color', '#a3a3a3');
+$('#main_menu_asignatura_butt').css('background-color', '#1125b2');
+$('#main_menu_curriculo_butt').css('background-color', '#a3a3a3');
+$('#main_menu_inicio_butt').css('background-color', '#a3a3a3');
+$('#main_menu_estudiante_butt').css('background-color', '#a3a3a3');
 },
 menu_estudiante_buttClick: function(inSender) {
-$('#main_menu_estudiante_butt')
-.css('background-color', '#1125b2');
-$('#main_menu_asignatura_butt')
-.css('background-color', '#a3a3a3');
-$('#main_menu_curriculo_butt')
-.css('background-color', '#a3a3a3');
-$('#main_menu_inicio_butt')
-.css('background-color', '#a3a3a3');
+$('#main_menu_estudiante_butt').css('background-color', '#1125b2');
+$('#main_menu_asignatura_butt').css('background-color', '#a3a3a3');
+$('#main_menu_curriculo_butt').css('background-color', '#a3a3a3');
+$('#main_menu_inicio_butt').css('background-color', '#a3a3a3');
 },
 menu_curriculo_buttClick: function(inSender) {
-var json= main.global_cursy.getItem(0);
-var nick= main.global_username.getData().dataValue;
-var idsy= json.data.idsy;
-this.global_docentes_asignaturas.input.setValue("nickname",nick);
-this.global_docentes_asignaturas.input.setValue("idsyr",idsy);
+var json = main.global_cursy.getItem(0);
+var nick = main.global_username.getData().dataValue;
+var idsy = json.data.idsy;
+this.global_docentes_asignaturas.input.setValue("nickname", nick);
+this.global_docentes_asignaturas.input.setValue("idsyr", idsy);
 this.global_docentes_asignaturas.update();
 },
 // loading learnings relation data, if the count is ==0 the var will be dirty is !=0 nothing happens
 menu_curriculo_buttClick1: function(inSender) {
-var count1= this.curriculo_lista_dimension_comprension.getCount();
-var count2= this.curriculo_lista_dimension_curricular.getCount();
-var count3= this.curriculo_lista_inteligencia.getCount();
-var count4= this.curriculo_lista_nivel_esperado.getCount();
-if(count1==0 && count2==0  &&  count3==0  && count4==0){
+var count1 = this.curriculo_lista_dimension_comprension.getCount();
+var count2 = this.curriculo_lista_dimension_curricular.getCount();
+var count3 = this.curriculo_lista_inteligencia.getCount();
+var count4 = this.curriculo_lista_nivel_esperado.getCount();
+if (count1 == 0 && count2 == 0 && count3 == 0 && count4 == 0) {
 this.curriculo_lista_dimension_comprension.update();
 this.curriculo_lista_dimension_curricular.update();
 this.curriculo_lista_inteligencia.update();
 this.curriculo_lista_nivel_esperado.update();
-}else{}
+} else {}
 },
 // filtering eje1 // eje2 // eje3
 curriculo_grid_docentes_asignaturasSelect1: function(inSender) {
-var ejecount= this.curriculo_aprendizaje_eje1.getCount();
+var ejecount = this.curriculo_aprendizaje_eje1.getCount();
 console.log(ejecount);
-var eje1= this.curriculo_grid_docentes_asignaturas.selectedItem.data.subarea1;
-var eje2= this.curriculo_grid_docentes_asignaturas.selectedItem.data.subarea2;
-var eje3= this.curriculo_grid_docentes_asignaturas.selectedItem.data.subarea3;
+var eje1 = this.curriculo_grid_docentes_asignaturas.selectedItem.data.subarea1;
+var eje2 = this.curriculo_grid_docentes_asignaturas.selectedItem.data.subarea2;
+var eje3 = this.curriculo_grid_docentes_asignaturas.selectedItem.data.subarea3;
 this.curriculo_aprendizaje_eje1.filter.setValue("subarea.idSubarea", eje1);
 this.curriculo_aprendizaje_eje2.filter.setValue("subarea.idSubarea", eje2);
 this.curriculo_aprendizaje_eje3.filter.setValue("subarea.idSubarea", eje3);
@@ -470,51 +439,52 @@ pestana_curriculoShow1: function(inSender) {
 this.curriculo_grid_docentes_asignaturas.setSortIndex(0);
 },
 activitiesDataGridCellClick: function(inSender, inEvent) {
-var idcurso= this.subjects_activities.getDataValue();
-var cadena=  this.subjects_activities.getDisplayValue();
-var idasignatura= cadena.substring(0,6);
+var idcurso = this.subjects_activities.getDataValue();
+var cadena = this.subjects_activities.getDisplayValue();
+var idasignatura = cadena.substring(0, 6);
 var x = parseInt(idasignatura);
-var json= main.a_cursy.getItem(0);
-var sy= json.data.sy;
-var idsy= json.data.idsy;
+var json = main.a_cursy.getItem(0);
+var sy = json.data.sy;
+var idsy = json.data.idsy;
 this.actividad_estudiantes.filter.setValue("curso.idCurso", idcurso);
 this.actividad_estudiantes.filter.setValue("sy.idSy", idsy);
 this.actividad_estudiantes.update();
 },
 // filtering unidades by subject selected
+// deprecated this function
 curriculo_grid_docentes_asignaturasSelect: function(inSender) {
-var idasignatura= main.curriculo_grid_docentes_asignaturas.selectedItem.data.idasignatura;
+var idasignatura = main.curriculo_grid_docentes_asignaturas.selectedItem.data.idasignatura;
 this.unidadLiveVariable1.filter.setValue("asignatura.idAsignatura", idasignatura);
 this.unidadLiveVariable1.update();
 },
 // filterin subtopics by unit selected
 unidadDojoGridSelect: function(inSender) {
-var idunidad= main.unidadDojoGrid.selectedItem.data.idUnidad;
+var idunidad = main.unidadDojoGrid.selectedItem.data.idUnidad;
 this.subtopicoLiveVariable1.filter.setValue("unidad.idUnidad", idunidad);
 this.subtopicoLiveVariable1.update();
 },
 // filterin learning by subtopic selected.
 subtopicoDojoGridSelect: function(inSender) {
-var idsubtopico= this.subtopicoDojoGrid.selectedItem.data.idSubtopico;
-this.aprendizajeLiveVariable1.filter.setValue("subtopico.idSubtopico",idsubtopico);
+var idsubtopico = this.subtopicoDojoGrid.selectedItem.data.idSubtopico;
+this.aprendizajeLiveVariable1.filter.setValue("subtopico.idSubtopico", idsubtopico);
 this.aprendizajeLiveVariable1.update();
 },
 // filterin activities by subtopic selected.
 subtopicoDojoGridSelect1: function(inSender) {
-var idsubtopico= main.subtopicoDojoGrid.selectedItem.data.idSubtopico;
-this.otrasmetasLiveVariable1.filter.setValue("subtopico.idSubtopico",idsubtopico);
+var idsubtopico = main.subtopicoDojoGrid.selectedItem.data.idSubtopico;
+this.otrasmetasLiveVariable1.filter.setValue("subtopico.idSubtopico", idsubtopico);
 this.otrasmetasLiveVariable1.update();
 },
 // filterin resources by subtopic selected.
 subtopicoDojoGridSelect2: function(inSender) {
-var idsubtopico= main.subtopicoDojoGrid.selectedItem.data.idSubtopico;
-this.recursoLiveVariable1.filter.setValue("subtopico.idSubtopico",idsubtopico);
+var idsubtopico = main.subtopicoDojoGrid.selectedItem.data.idSubtopico;
+this.recursoLiveVariable1.filter.setValue("subtopico.idSubtopico", idsubtopico);
 this.recursoLiveVariable1.update();
 },
 // filterin goals by subtopic selected.
 subtopicoDojoGridSelect3: function(inSender) {
-var idsubtopico= main.subtopicoDojoGrid.selectedItem.data.idSubtopico;
-this.actividadLiveVariable2.filter.setValue("subtopico.idSubtopico",idsubtopico);
+var idsubtopico = main.subtopicoDojoGrid.selectedItem.data.idSubtopico;
+this.actividadLiveVariable2.filter.setValue("subtopico.idSubtopico", idsubtopico);
 this.actividadLiveVariable2.update();
 },
 // renderin' grid styles
@@ -547,20 +517,20 @@ this.actividadDojoGrid1.setSortIndex(0);
 },
 // readonly widgets & getttin' idasignatura
 unidadLiveForm2BeginUpdate: function(inSender) {
-var idasignatura= main.curriculo_grid_docentes_asignaturas.selectedItem.data.idasignatura;
+var idasignatura = main.curriculo_grid_docentes_asignaturas.selectedItem.data.idasignatura;
 this.idAsignaturaEditor1.setReadonly(true);
 this.asignaturaEditor1.setReadonly(true);
 },
 // readonly widgets & getttin' idasignatura
 unidadLiveForm2BeginInsert: function(inSender) {
-var idasignatura= main.curriculo_grid_docentes_asignaturas.selectedItem.data.idasignatura;
+var idasignatura = main.curriculo_grid_docentes_asignaturas.selectedItem.data.idasignatura;
 this.idAsignaturaEditor1.setReadonly(true);
 this.asignaturaEditor1.setReadonly(true);
 this.idAsignaturaEditor1.setDataValue(idasignatura);
 },
 // updatin' subtopicos events
 subtopicoLiveForm2BeginInsert: function(inSender) {
-var idunidad= main.unidadDojoGrid.selectedItem.data.idUnidad;
+var idunidad = main.unidadDojoGrid.selectedItem.data.idUnidad;
 this.idUnidadEditor1.setReadonly(true);
 this.unidadEditor1.setReadonly(true);
 this.idUnidadEditor1.setDataValue(idunidad);
@@ -572,14 +542,14 @@ this.unidadEditor1.setReadonly(true);
 },
 // insertin' aprendizajes events
 aprendizajeLiveForm2BeginInsert: function(inSender) {
-var idsubtopico= this.subtopicoDojoGrid.selectedItem.data.idSubtopico;
+var idsubtopico = this.subtopicoDojoGrid.selectedItem.data.idSubtopico;
 this.idSubtopicoEditor1.setReadonly(true);
 this.subtopicoEditor1.setReadonly(true);
 this.idSubtopicoEditor1.setDataValue(idsubtopico);
 },
 // insert otras metas
 otrasmetasLiveForm2BeginInsert: function(inSender) {
-var idsubtopico= this.subtopicoDojoGrid.selectedItem.data.idSubtopico;
+var idsubtopico = this.subtopicoDojoGrid.selectedItem.data.idSubtopico;
 this.idSubtopicoEditor3.setReadonly(true);
 this.subtopicoEditor3.setReadonly(true);
 this.idSubtopicoEditor3.setDataValue(idsubtopico);
@@ -591,7 +561,7 @@ this.subtopicoEditor3.setReadonly(true);
 },
 // insert recurso
 recursoLiveForm1BeginInsert: function(inSender) {
-var idsubtopico= this.subtopicoDojoGrid.selectedItem.data.idSubtopico;
+var idsubtopico = this.subtopicoDojoGrid.selectedItem.data.idSubtopico;
 this.idSubtopicoEditor4.setReadonly(true);
 this.subtopicoEditor4.setReadonly(true);
 this.idSubtopicoEditor4.setDataValue(idsubtopico);
@@ -604,13 +574,13 @@ main.subtopicoEditor4.setReadonly(true);
 // onUpload success
 dojoFileUpload1Success: function(inSender, fileList) {
 var objectFileUploaded = this.dojoFileUpload1.variable.getItemData(0);
-var name= objectFileUploaded.name;
+var name = objectFileUploaded.name;
 this.fileNameEditor2.setDataValue(name);
-this.ubicacionEditor1.setDataValue("http://aprendoz.rochester.edu.co/resources/data/"+name);
+this.ubicacionEditor1.setDataValue("http://aprendoz.rochester.edu.co/resources/data/" + name);
 },
 // update actividad
 actividadLiveForm3BeginInsert: function(inSender) {
-var idsubtopico= this.subtopicoDojoGrid.selectedItem.data.idSubtopico;
+var idsubtopico = this.subtopicoDojoGrid.selectedItem.data.idSubtopico;
 this.idSubtopicoEditor5.setReadonly(true);
 this.subtopicoEditor5.setReadonly(true);
 this.idSubtopicoEditor5.setDataValue(idsubtopico);
@@ -637,12 +607,12 @@ this.actividadLiveVariable2.clearData();
 },
 // tipo recurso
 tipoRecursoLookup1Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
-var tiporecurso= main.tipoRecursoLookup1.getDataValue().idTipoRecurso;
-if(tiporecurso===7){
+var tiporecurso = main.tipoRecursoLookup1.getDataValue().idTipoRecurso;
+if (tiporecurso === 7) {
 this.dojoFileUpload1.show();
 this.ubicacionEditor1.setReadonly(true);
 this.ubicacionEditor1.setDataValue("Http://");
-}else{
+} else {
 this.dojoFileUpload1.hide();
 this.ubicacionEditor1.setReadonly(false);
 }
@@ -670,25 +640,25 @@ this.inicio_box_reclave.setReadonly(false);
 this.inicio_boton_actualiza.disable();
 },
 inicio_box_claveChange: function(inSender, inDisplayValue, inDataValue) {
-if(this.inicio_box_clave.dataValue == this.inicio_box_reclave.dataValue){
+if (this.inicio_box_clave.dataValue == this.inicio_box_reclave.dataValue) {
 //alert("si son iguales");
 this.inicio_bad_label.hide();
 this.inicio_ok_label.show();
 this.inicio_boton_actualiza.enable();
 }
-else if(this.inicio_box_clave.dataValue != this.inicio_box_reclave.dataValue){
+else if (this.inicio_box_clave.dataValue != this.inicio_box_reclave.dataValue) {
 this.inicio_ok_label.hide();
 this.inicio_bad_label.show();
 this.inicio_boton_actualiza.disable();
 }
 },
 inicio_box_reclaveChange: function(inSender, inDisplayValue, inDataValue) {
-if(this.inicio_box_clave.dataValue == this.inicio_box_reclave.dataValue){
+if (this.inicio_box_clave.dataValue == this.inicio_box_reclave.dataValue) {
 this.inicio_bad_label.hide();
 this.inicio_ok_label.show();
 this.inicio_boton_actualiza.enable();
 }
-else if(this.inicio_box_clave.dataValue != this.inicio_box_reclave.dataValue){
+else if (this.inicio_box_clave.dataValue != this.inicio_box_reclave.dataValue) {
 this.inicio_ok_label.hide();
 this.inicio_bad_label.show();
 this.inicio_boton_actualiza.disable();
@@ -705,10 +675,6 @@ this.inicio_ok_label.hide();
 // onActualizaClave error
 a_actualizaClaveError: function(inSender, inError) {
 alert("No ha sido posible realizar la operación.");
-},
-// reRender lineChart
-menu_inicio_buttClick2: function(inSender) {
-this.renderChart_dash1();
 },
 unidadDojoGridSelect1: function(inSender) {
 this.subtopicoNewButton.enable();
@@ -728,30 +694,33 @@ this.unidadNewButton.enable();
 this.subtopicoNewButton.disable();
 },
 menu_curriculo_buttClick5: function(inSender) {
-var count= this.curriculo_tipo_desempeno.getCount();
-if(count===0){
+var count = this.curriculo_tipo_desempeno.getCount();
+if (count === 0) {
 this.curriculo_tipo_desempeno.update();
-}else{/*nothing happens*/}
+} else { /*nothing happens*/
+}
 },
 menu_curriculo_buttClick6: function(inSender) {
-var count= this.curriculo_tipo_valoracion.getCount();
-if(count===0){
+var count = this.curriculo_tipo_valoracion.getCount();
+if (count === 0) {
 this.curriculo_tipo_valoracion.update();
-}else{/*nothing happens*/}
+} else { /*nothing happens*/
+}
 },
 menu_curriculo_buttClick7: function(inSender) {
-var count= this.curriculo_tipo_actividad.getCount();
-if(count===0){
+var count = this.curriculo_tipo_actividad.getCount();
+if (count === 0) {
 this.curriculo_tipo_actividad.update();
-}else{/*nothing happens*/}
+} else { /*nothing happens*/
+}
 },
 lookup3Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
-var tipo= main.lookup3.getDataValue().idTipoActividad;
-if(tipo===1){
+var tipo = main.lookup3.getDataValue().idTipoActividad;
+if (tipo === 1) {
 this.lookup2.enable();
 this.lookup1.disable();
 this.lookup1.setDisplayValue("No aplica");
-}else{
+} else {
 this.lookup1.enable();
 this.lookup2.disable();
 this.lookup2.setDisplayValue("No aplica");
@@ -778,21 +747,21 @@ unidadLiveForm2Success1: function(inSender, inData) {
 main.unidadDojoGrid.setSelectedItem(false);
 },
 curriculo_grid_docentes_asignaturasSelect3: function(inSender) {
-var idasignatura= this.curriculo_grid_docentes_asignaturas.selectedItem.getData().idasignatura;
+var idasignatura = this.curriculo_grid_docentes_asignaturas.selectedItem.getData().idasignatura;
 main.curriculo_aprendizajes_asignaturasLiveVariable.filter.setValue("asignatura.idAsignatura", idasignatura);
 main.curriculo_aprendizajes_asignaturasLiveVariable.update();
 },
 aprendizajesAsignaturasGrid1Select: function(inSender) {
-var aprendizaje= main.aprendizajesAsignaturasGrid1.selectedItem.getData().aprendizaje;
-var learning= main.aprendizajesAsignaturasGrid1.selectedItem.getData().learning;
-var peso= main.aprendizajesAsignaturasGrid1.selectedItem.getData().peso;
-var eje1= main.aprendizajesAsignaturasGrid1.selectedItem.getData().ejeIdEje;
-var eje2= main.aprendizajesAsignaturasGrid1.selectedItem.getData().eje2IdEje;
-var eje3= main.aprendizajesAsignaturasGrid1.selectedItem.getData().eje3IdEje;
-var inteligencia= main.aprendizajesAsignaturasGrid1.selectedItem.getData().inteligencia.inteligencia;
-var dcomprension= main.aprendizajesAsignaturasGrid1.selectedItem.getData().dimensionComprension.dimensionComprension;
-var dcurricular= main.aprendizajesAsignaturasGrid1.selectedItem.getData().dimensionCurricular.dimensionCurricular;
-var nivel= main.aprendizajesAsignaturasGrid1.selectedItem.getData().nivelEsperado.nivelEsperado;
+var aprendizaje = main.aprendizajesAsignaturasGrid1.selectedItem.getData().aprendizaje;
+var learning = main.aprendizajesAsignaturasGrid1.selectedItem.getData().learning;
+var peso = main.aprendizajesAsignaturasGrid1.selectedItem.getData().peso;
+var eje1 = main.aprendizajesAsignaturasGrid1.selectedItem.getData().ejeIdEje;
+var eje2 = main.aprendizajesAsignaturasGrid1.selectedItem.getData().eje2IdEje;
+var eje3 = main.aprendizajesAsignaturasGrid1.selectedItem.getData().eje3IdEje;
+var inteligencia = main.aprendizajesAsignaturasGrid1.selectedItem.getData().inteligencia.inteligencia;
+var dcomprension = main.aprendizajesAsignaturasGrid1.selectedItem.getData().dimensionComprension.dimensionComprension;
+var dcurricular = main.aprendizajesAsignaturasGrid1.selectedItem.getData().dimensionCurricular.dimensionCurricular;
+var nivel = main.aprendizajesAsignaturasGrid1.selectedItem.getData().nivelEsperado.nivelEsperado;
 this.aprendizajeEditor2.setDataValue(aprendizaje);
 this.learningEditor2.setDataValue(learning);
 this.numeroAprendizajeSelectMenu1.setDataValue(peso);
@@ -809,69 +778,69 @@ this.aprendizajes_grupo2.hide();
 main.aprendizajesAsignaturasGrid1.show();
 },
 top_select_syChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
-var idsy =  this.myCurSy();
+var idsy = this.myCurSy();
 //var user =  main.global_username.getData().dataValue;
-var user =  main.global_username.getItem(0).data.dataValue;
+var user = main.global_username.getItem(0).data.dataValue;
 this.global_docentes_asignaturas.input.setValue("idsyr", idsy);
 this.global_docentes_asignaturas.input.setValue("nickname", user);
 this.global_docentes_asignaturas.update();
 },
 unidadLiveForm2InsertData: function(inSender) {
-var user= main.global_username.getData().dataValue;
-var idunidad= main.idUnidadEditor2.getDataValue();
-var idasignatura= main.idAsignaturaEditor1.getDataValue();
-var unidad= main.unidadEditor2.getDataValue();
-var unit= main.unitEditor2.getDataValue();
-var finicio= main.fechaInicioEditor3.getDisplayValue();
-var ffinal= main.fechaFinEditor3.getDisplayValue();
-var nounidad= main.numeroUnidadselect1.getDataValue();
-var accion= "v2-docentes-unidad -> accion: crear "+" ->idUnidad: "+idunidad+" ->idAsignatura: "+idasignatura+" ->detalles: "+unidad+"-"+unit+" ->finicio: "+finicio+" ->ffinal: "+ffinal+" >no_unidad: "+nounidad;
-var now= new Date().getTime();
-this.logCurriculoDocentes.setValue("accionRealizada",accion);
-this.logCurriculoDocentes.setValue("fechaCreacion",now);
-this.logCurriculoDocentes.setValue("tablaAfectada","Unidad");
-this.logCurriculoDocentes.setValue("usuario",user);
+var user = main.global_username.getData().dataValue;
+var idunidad = main.idUnidadEditor2.getDataValue();
+var idasignatura = main.idAsignaturaEditor1.getDataValue();
+var unidad = main.unidadEditor2.getDataValue();
+var unit = main.unitEditor2.getDataValue();
+var finicio = main.fechaInicioEditor3.getDisplayValue();
+var ffinal = main.fechaFinEditor3.getDisplayValue();
+var nounidad = main.numeroUnidadselect1.getDataValue();
+var accion = "v2-docentes-unidad -> accion: crear " + " ->idUnidad: " + idunidad + " ->idAsignatura: " + idasignatura + " ->detalles: " + unidad + "-" + unit + " ->finicio: " + finicio + " ->ffinal: " + ffinal + " >no_unidad: " + nounidad;
+var now = new Date().getTime();
+this.logCurriculoDocentes.setValue("accionRealizada", accion);
+this.logCurriculoDocentes.setValue("fechaCreacion", now);
+this.logCurriculoDocentes.setValue("tablaAfectada", "Unidad");
+this.logCurriculoDocentes.setValue("usuario", user);
 this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 unidadLiveForm2UpdateData: function(inSender) {
-var user= main.global_username.getData().dataValue;
-var idunidad= main.idUnidadEditor2.getDataValue();
-var idasignatura= main.idAsignaturaEditor1.getDataValue();
-var unidad= main.unidadEditor2.getDataValue();
-var unit= main.unitEditor2.getDataValue();
-var finicio= main.fechaInicioEditor3.getDisplayValue();
-var ffinal= main.fechaFinEditor3.getDisplayValue();
-var nounidad= main.numeroUnidadselect1.getDataValue();
-var accion= "v2-docentes-unidad -> accion: actualizar "+" ->idUnidad: "+idunidad+" ->idAsignatura: "+idasignatura+" ->detalles: "+unidad+"-"+unit+" ->finicio: "+finicio+" ->ffinal: "+ffinal+" >no_unidad: "+nounidad;
-var now= new Date().getTime();
-this.logCurriculoDocentes.setValue("accionRealizada",accion);
-this.logCurriculoDocentes.setValue("fechaCreacion",now);
-this.logCurriculoDocentes.setValue("tablaAfectada","Unidad");
-this.logCurriculoDocentes.setValue("usuario",user);
+var user = main.global_username.getData().dataValue;
+var idunidad = main.idUnidadEditor2.getDataValue();
+var idasignatura = main.idAsignaturaEditor1.getDataValue();
+var unidad = main.unidadEditor2.getDataValue();
+var unit = main.unitEditor2.getDataValue();
+var finicio = main.fechaInicioEditor3.getDisplayValue();
+var ffinal = main.fechaFinEditor3.getDisplayValue();
+var nounidad = main.numeroUnidadselect1.getDataValue();
+var accion = "v2-docentes-unidad -> accion: actualizar " + " ->idUnidad: " + idunidad + " ->idAsignatura: " + idasignatura + " ->detalles: " + unidad + "-" + unit + " ->finicio: " + finicio + " ->ffinal: " + ffinal + " >no_unidad: " + nounidad;
+var now = new Date().getTime();
+this.logCurriculoDocentes.setValue("accionRealizada", accion);
+this.logCurriculoDocentes.setValue("fechaCreacion", now);
+this.logCurriculoDocentes.setValue("tablaAfectada", "Unidad");
+this.logCurriculoDocentes.setValue("usuario", user);
 this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 unidadLiveForm2DeleteData: function(inSender) {
-var user= main.global_username.getData().dataValue;
-var idunidad= main.idUnidadEditor2.getDataValue();
-var idasignatura= main.idAsignaturaEditor1.getDataValue();
-var unidad= main.unidadEditor2.getDataValue();
-var unit= main.unitEditor2.getDataValue();
-var finicio= main.fechaInicioEditor3.getDisplayValue();
-var ffinal= main.fechaFinEditor3.getDisplayValue();
-var nounidad= main.numeroUnidadselect1.getDataValue();
-var accion= "v2-docentes-unidad -> accion: borrar "+" ->idUnidad: "+idunidad+" ->idAsignatura: "+idasignatura+" ->detalles: "+unidad+"-"+unit+" ->finicio: "+finicio+" ->ffinal: "+ffinal+" >no_unidad: "+nounidad;
-var now= new Date().getTime();
-this.logCurriculoDocentes.setValue("accionRealizada",accion);
-this.logCurriculoDocentes.setValue("fechaCreacion",now);
-this.logCurriculoDocentes.setValue("tablaAfectada","Unidad");
-this.logCurriculoDocentes.setValue("usuario",user);
+var user = main.global_username.getData().dataValue;
+var idunidad = main.idUnidadEditor2.getDataValue();
+var idasignatura = main.idAsignaturaEditor1.getDataValue();
+var unidad = main.unidadEditor2.getDataValue();
+var unit = main.unitEditor2.getDataValue();
+var finicio = main.fechaInicioEditor3.getDisplayValue();
+var ffinal = main.fechaFinEditor3.getDisplayValue();
+var nounidad = main.numeroUnidadselect1.getDataValue();
+var accion = "v2-docentes-unidad -> accion: borrar " + " ->idUnidad: " + idunidad + " ->idAsignatura: " + idasignatura + " ->detalles: " + unidad + "-" + unit + " ->finicio: " + finicio + " ->ffinal: " + ffinal + " >no_unidad: " + nounidad;
+var now = new Date().getTime();
+this.logCurriculoDocentes.setValue("accionRealizada", accion);
+this.logCurriculoDocentes.setValue("fechaCreacion", now);
+this.logCurriculoDocentes.setValue("tablaAfectada", "Unidad");
+this.logCurriculoDocentes.setValue("usuario", user);
 this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 subtopicoLiveForm2InsertData: function(inSender) {
-var user= main.global_username.getData().dataValue;
+var user = main.global_username.getData().dataValue;
 var idsubtopico = main.idSubtopicoEditor2.getDataValue();
 var idunidad = main.idUnidadEditor1.getDataValue();
 var subtopico = main.subtopicoEditor2.getDataValue();
@@ -889,7 +858,7 @@ this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 subtopicoLiveForm2UpdateData: function(inSender) {
-var user= main.global_username.getData().dataValue;
+var user = main.global_username.getData().dataValue;
 var idsubtopico = main.idSubtopicoEditor2.getDataValue();
 var idunidad = main.idUnidadEditor1.getDataValue();
 var subtopico = main.subtopicoEditor2.getDataValue();
@@ -907,7 +876,7 @@ this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 subtopicoLiveForm2DeleteData: function(inSender) {
-var user= main.global_username.getData().dataValue;
+var user = main.global_username.getData().dataValue;
 var idsubtopico = main.idSubtopicoEditor2.getDataValue();
 var idunidad = main.idUnidadEditor1.getDataValue();
 var subtopico = main.subtopicoEditor2.getDataValue();
@@ -925,224 +894,227 @@ this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 aprendizajeLiveForm2InsertData: function(inSender) {
-var user= main.global_username.getData().dataValue;
+var user = main.global_username.getData().dataValue;
 var idaprendizaje = main.idAprendizajeEditor2.getDataValue();
 var idsubtopico = main.idSubtopicoEditor1.getDataValue();
-var fesperada= main.fechaEsperadaEditor2.getDisplayValue();
-var aprendizaje= main.aprendizajeEditor2.getDataValue();
-var learning= main.learningEditor2.getDataValue();
-var peso= main.numeroAprendizajeSelectMenu1.getDataValue();
+var fesperada = main.fechaEsperadaEditor2.getDisplayValue();
+var aprendizaje = main.aprendizajeEditor2.getDataValue();
+var learning = main.learningEditor2.getDataValue();
+var peso = main.numeroAprendizajeSelectMenu1.getDataValue();
 var eje1 = main.ejeSelect1.getDisplayValue();
 var eje2 = main.ejeSelect2.getDisplayValue();
 var eje3 = main.ejeSelect3.getDisplayValue();
-var nivel= main.nivelEsperadoLookup2.getDisplayValue();
+var nivel = main.nivelEsperadoLookup2.getDisplayValue();
 var dcomprension = main.dimensionComprensionLookup2.getDisplayValue();
 var dcurricular = main.dimensionCurricularLookup2.getDisplayValue();
-var inteligencia= main.inteligenciaLookup2.getDisplayValue();
-var accion= "v2-docentes-aprendizaje -> accion: crear "+" ->idAprendizaje: "+idaprendizaje+" ->idSubtopico: "+idsubtopico+" ->detalles: "+aprendizaje+" - "+learning+" ->fesperada: "+fesperada+" ->peso: "+peso+" ->eje1: "+eje1+" ->eje2: "+eje2+" ->eje3: "+eje3+" ->nivel: "+nivel+" ->dcomprension: "+dcomprension+" ->dcurricular: "+dcurricular+" ->inteligencia: "+inteligencia;          var now= new Date().getTime();
-this.logCurriculoDocentes.setValue("accionRealizada",accion);
-this.logCurriculoDocentes.setValue("fechaCreacion",now);
-this.logCurriculoDocentes.setValue("tablaAfectada","Aprendizaje");
-this.logCurriculoDocentes.setValue("usuario",user);
+var inteligencia = main.inteligenciaLookup2.getDisplayValue();
+var accion = "v2-docentes-aprendizaje -> accion: crear " + " ->idAprendizaje: " + idaprendizaje + " ->idSubtopico: " + idsubtopico + " ->detalles: " + aprendizaje + " - " + learning + " ->fesperada: " + fesperada + " ->peso: " + peso + " ->eje1: " + eje1 + " ->eje2: " + eje2 + " ->eje3: " + eje3 + " ->nivel: " + nivel + " ->dcomprension: " + dcomprension + " ->dcurricular: " + dcurricular + " ->inteligencia: " + inteligencia;
+var now = new Date().getTime();
+this.logCurriculoDocentes.setValue("accionRealizada", accion);
+this.logCurriculoDocentes.setValue("fechaCreacion", now);
+this.logCurriculoDocentes.setValue("tablaAfectada", "Aprendizaje");
+this.logCurriculoDocentes.setValue("usuario", user);
 this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 aprendizajeLiveForm2UpdateData: function(inSender) {
-var user= main.global_username.getData().dataValue;
+var user = main.global_username.getData().dataValue;
 var idaprendizaje = main.idAprendizajeEditor2.getDataValue();
 var idsubtopico = main.idSubtopicoEditor1.getDataValue();
-var fesperada= main.fechaEsperadaEditor2.getDisplayValue();
-var aprendizaje= main.aprendizajeEditor2.getDataValue();
-var learning= main.learningEditor2.getDataValue();
-var peso= main.numeroAprendizajeSelectMenu1.getDataValue();
+var fesperada = main.fechaEsperadaEditor2.getDisplayValue();
+var aprendizaje = main.aprendizajeEditor2.getDataValue();
+var learning = main.learningEditor2.getDataValue();
+var peso = main.numeroAprendizajeSelectMenu1.getDataValue();
 var eje1 = main.ejeSelect1.getDisplayValue();
 var eje2 = main.ejeSelect2.getDisplayValue();
 var eje3 = main.ejeSelect3.getDisplayValue();
-var nivel= main.nivelEsperadoLookup2.getDisplayValue();
+var nivel = main.nivelEsperadoLookup2.getDisplayValue();
 var dcomprension = main.dimensionComprensionLookup2.getDisplayValue();
 var dcurricular = main.dimensionCurricularLookup2.getDisplayValue();
-var inteligencia= main.inteligenciaLookup2.getDisplayValue();
-var accion= "v2-docentes-aprendizaje -> accion: actualizar "+" ->idAprendizaje: "+idaprendizaje+" ->idSubtopico: "+idsubtopico+" ->detalles: "+aprendizaje+" - "+learning+" ->fesperada: "+fesperada+" ->peso: "+peso+" ->eje1: "+eje1+" ->eje2: "+eje2+" ->eje3: "+eje3+" ->nivel: "+nivel+" ->dcomprension: "+dcomprension+" ->dcurricular: "+dcurricular+" ->inteligencia: "+inteligencia;          var now= new Date().getTime();
-this.logCurriculoDocentes.setValue("accionRealizada",accion);
-this.logCurriculoDocentes.setValue("fechaCreacion",now);
-this.logCurriculoDocentes.setValue("tablaAfectada","Aprendizaje");
-this.logCurriculoDocentes.setValue("usuario",user);
+var inteligencia = main.inteligenciaLookup2.getDisplayValue();
+var accion = "v2-docentes-aprendizaje -> accion: actualizar " + " ->idAprendizaje: " + idaprendizaje + " ->idSubtopico: " + idsubtopico + " ->detalles: " + aprendizaje + " - " + learning + " ->fesperada: " + fesperada + " ->peso: " + peso + " ->eje1: " + eje1 + " ->eje2: " + eje2 + " ->eje3: " + eje3 + " ->nivel: " + nivel + " ->dcomprension: " + dcomprension + " ->dcurricular: " + dcurricular + " ->inteligencia: " + inteligencia;
+var now = new Date().getTime();
+this.logCurriculoDocentes.setValue("accionRealizada", accion);
+this.logCurriculoDocentes.setValue("fechaCreacion", now);
+this.logCurriculoDocentes.setValue("tablaAfectada", "Aprendizaje");
+this.logCurriculoDocentes.setValue("usuario", user);
 this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 aprendizajeLiveForm2DeleteData: function(inSender) {
-var user= main.global_username.getData().dataValue;
+var user = main.global_username.getData().dataValue;
 var idaprendizaje = main.idAprendizajeEditor2.getDataValue();
 var idsubtopico = main.idSubtopicoEditor1.getDataValue();
-var fesperada= main.fechaEsperadaEditor2.getDisplayValue();
-var aprendizaje= main.aprendizajeEditor2.getDataValue();
-var learning= main.learningEditor2.getDataValue();
-var peso= main.numeroAprendizajeSelectMenu1.getDataValue();
+var fesperada = main.fechaEsperadaEditor2.getDisplayValue();
+var aprendizaje = main.aprendizajeEditor2.getDataValue();
+var learning = main.learningEditor2.getDataValue();
+var peso = main.numeroAprendizajeSelectMenu1.getDataValue();
 var eje1 = main.ejeSelect1.getDisplayValue();
 var eje2 = main.ejeSelect2.getDisplayValue();
 var eje3 = main.ejeSelect3.getDisplayValue();
-var nivel= main.nivelEsperadoLookup2.getDisplayValue();
+var nivel = main.nivelEsperadoLookup2.getDisplayValue();
 var dcomprension = main.dimensionComprensionLookup2.getDisplayValue();
 var dcurricular = main.dimensionCurricularLookup2.getDisplayValue();
-var inteligencia= main.inteligenciaLookup2.getDisplayValue();
-var accion= "v2-docentes-aprendizaje -> accion: borrar "+" ->idAprendizaje: "+idaprendizaje+" ->idSubtopico: "+idsubtopico+" ->detalles: "+aprendizaje+" - "+learning+" ->fesperada: "+fesperada+" ->peso: "+peso+" ->eje1: "+eje1+" ->eje2: "+eje2+" ->eje3: "+eje3+" ->nivel: "+nivel+" ->dcomprension: "+dcomprension+" ->dcurricular: "+dcurricular+" ->inteligencia: "+inteligencia;          var now= new Date().getTime();
-this.logCurriculoDocentes.setValue("accionRealizada",accion);
-this.logCurriculoDocentes.setValue("fechaCreacion",now);
-this.logCurriculoDocentes.setValue("tablaAfectada","Aprendizaje");
-this.logCurriculoDocentes.setValue("usuario",user);
+var inteligencia = main.inteligenciaLookup2.getDisplayValue();
+var accion = "v2-docentes-aprendizaje -> accion: borrar " + " ->idAprendizaje: " + idaprendizaje + " ->idSubtopico: " + idsubtopico + " ->detalles: " + aprendizaje + " - " + learning + " ->fesperada: " + fesperada + " ->peso: " + peso + " ->eje1: " + eje1 + " ->eje2: " + eje2 + " ->eje3: " + eje3 + " ->nivel: " + nivel + " ->dcomprension: " + dcomprension + " ->dcurricular: " + dcurricular + " ->inteligencia: " + inteligencia;
+var now = new Date().getTime();
+this.logCurriculoDocentes.setValue("accionRealizada", accion);
+this.logCurriculoDocentes.setValue("fechaCreacion", now);
+this.logCurriculoDocentes.setValue("tablaAfectada", "Aprendizaje");
+this.logCurriculoDocentes.setValue("usuario", user);
 this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 otrasmetasLiveForm2InsertData: function(inSender) {
-var user= main.global_username.getData().dataValue;
-var idmeta= main.idOtraMetaEditor2.getDataValue();
-var idsubtopico= main.idSubtopicoEditor3.getDataValue();
-var meta= main.metaEditor2.getDataValue();
-var fecha= main.fechaEditorDate1.getDisplayValue();
-var logrado= main.logradoEditor3.getDataValue();
-var accion= "v2-docentes-metas -> accion: crear "+" ->idmeta: "+idmeta+" ->idSubtopico: "+idsubtopico+" ->detalles: "+meta+" ->fecha: "+fecha+" ->logrado: "+logrado;
-var now= new Date().getTime();
-this.logCurriculoDocentes.setValue("accionRealizada",accion);
-this.logCurriculoDocentes.setValue("fechaCreacion",now);
-this.logCurriculoDocentes.setValue("tablaAfectada","OtrasMetas");
-this.logCurriculoDocentes.setValue("usuario",user);
+var user = main.global_username.getData().dataValue;
+var idmeta = main.idOtraMetaEditor2.getDataValue();
+var idsubtopico = main.idSubtopicoEditor3.getDataValue();
+var meta = main.metaEditor2.getDataValue();
+var fecha = main.fechaEditorDate1.getDisplayValue();
+var logrado = main.logradoEditor3.getDataValue();
+var accion = "v2-docentes-metas -> accion: crear " + " ->idmeta: " + idmeta + " ->idSubtopico: " + idsubtopico + " ->detalles: " + meta + " ->fecha: " + fecha + " ->logrado: " + logrado;
+var now = new Date().getTime();
+this.logCurriculoDocentes.setValue("accionRealizada", accion);
+this.logCurriculoDocentes.setValue("fechaCreacion", now);
+this.logCurriculoDocentes.setValue("tablaAfectada", "OtrasMetas");
+this.logCurriculoDocentes.setValue("usuario", user);
 this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 otrasmetasLiveForm2UpdateData: function(inSender) {
-var user= main.global_username.getData().dataValue;
-var idmeta= main.idOtraMetaEditor2.getDataValue();
-var idsubtopico= main.idSubtopicoEditor3.getDataValue();
-var meta= main.metaEditor2.getDataValue();
-var fecha= main.fechaEditorDate1.getDisplayValue();
-var logrado= main.logradoEditor3.getDataValue();
-var accion= "v2-docentes-metas -> accion: actualizar "+" ->idmeta: "+idmeta+" ->idSubtopico: "+idsubtopico+" ->detalles: "+meta+" ->fecha: "+fecha+" ->logrado: "+logrado;
-var now= new Date().getTime();
-this.logCurriculoDocentes.setValue("accionRealizada",accion);
-this.logCurriculoDocentes.setValue("fechaCreacion",now);
-this.logCurriculoDocentes.setValue("tablaAfectada","OtrasMetas");
-this.logCurriculoDocentes.setValue("usuario",user);
+var user = main.global_username.getData().dataValue;
+var idmeta = main.idOtraMetaEditor2.getDataValue();
+var idsubtopico = main.idSubtopicoEditor3.getDataValue();
+var meta = main.metaEditor2.getDataValue();
+var fecha = main.fechaEditorDate1.getDisplayValue();
+var logrado = main.logradoEditor3.getDataValue();
+var accion = "v2-docentes-metas -> accion: actualizar " + " ->idmeta: " + idmeta + " ->idSubtopico: " + idsubtopico + " ->detalles: " + meta + " ->fecha: " + fecha + " ->logrado: " + logrado;
+var now = new Date().getTime();
+this.logCurriculoDocentes.setValue("accionRealizada", accion);
+this.logCurriculoDocentes.setValue("fechaCreacion", now);
+this.logCurriculoDocentes.setValue("tablaAfectada", "OtrasMetas");
+this.logCurriculoDocentes.setValue("usuario", user);
 this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 otrasmetasLiveForm2DeleteData: function(inSender) {
-var user= main.global_username.getData().dataValue;
-var idmeta= main.idOtraMetaEditor2.getDataValue();
-var idsubtopico= main.idSubtopicoEditor3.getDataValue();
-var meta= main.metaEditor2.getDataValue();
-var fecha= main.fechaEditorDate1.getDisplayValue();
-var logrado= main.logradoEditor3.getDataValue();
-var accion= "v2-docentes-metas -> accion: borrar "+" ->idmeta: "+idmeta+" ->idSubtopico: "+idsubtopico+" ->detalles: "+meta+" ->fecha: "+fecha+" ->logrado: "+logrado;
-var now= new Date().getTime();
-this.logCurriculoDocentes.setValue("accionRealizada",accion);
-this.logCurriculoDocentes.setValue("fechaCreacion",now);
-this.logCurriculoDocentes.setValue("tablaAfectada","OtrasMetas");
-this.logCurriculoDocentes.setValue("usuario",user);
+var user = main.global_username.getData().dataValue;
+var idmeta = main.idOtraMetaEditor2.getDataValue();
+var idsubtopico = main.idSubtopicoEditor3.getDataValue();
+var meta = main.metaEditor2.getDataValue();
+var fecha = main.fechaEditorDate1.getDisplayValue();
+var logrado = main.logradoEditor3.getDataValue();
+var accion = "v2-docentes-metas -> accion: borrar " + " ->idmeta: " + idmeta + " ->idSubtopico: " + idsubtopico + " ->detalles: " + meta + " ->fecha: " + fecha + " ->logrado: " + logrado;
+var now = new Date().getTime();
+this.logCurriculoDocentes.setValue("accionRealizada", accion);
+this.logCurriculoDocentes.setValue("fechaCreacion", now);
+this.logCurriculoDocentes.setValue("tablaAfectada", "OtrasMetas");
+this.logCurriculoDocentes.setValue("usuario", user);
 this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 recursoLiveForm1InsertData: function(inSender) {
-var user= main.global_username.getData().dataValue;
-var idrecurso= main.idRecursoEditor1.getDataValue();
-var idsubtopico= main.idSubtopicoEditor4.getDataValue();
-var recurso= main.recursoTextEditor1.getDataValue();
+var user = main.global_username.getData().dataValue;
+var idrecurso = main.idRecursoEditor1.getDataValue();
+var idsubtopico = main.idSubtopicoEditor4.getDataValue();
+var recurso = main.recursoTextEditor1.getDataValue();
 var direccion = main.ubicacionEditor1.getDataValue();
 var tipo = main.tipoRecursoLookup1.getDisplayValue();
-var accion= "v2-docentes-recurso -> accion: crear "+" ->idrecurso: "+idrecurso+" ->idSubtopico: "+idsubtopico+" ->detalles: "+recurso+" ->direccion: "+direccion+"->tipo: "+tipo;
-var now= new Date().getTime();
-this.logCurriculoDocentes.setValue("accionRealizada",accion);
-this.logCurriculoDocentes.setValue("fechaCreacion",now);
-this.logCurriculoDocentes.setValue("tablaAfectada","Recurso");
-this.logCurriculoDocentes.setValue("usuario",user);
+var accion = "v2-docentes-recurso -> accion: crear " + " ->idrecurso: " + idrecurso + " ->idSubtopico: " + idsubtopico + " ->detalles: " + recurso + " ->direccion: " + direccion + "->tipo: " + tipo;
+var now = new Date().getTime();
+this.logCurriculoDocentes.setValue("accionRealizada", accion);
+this.logCurriculoDocentes.setValue("fechaCreacion", now);
+this.logCurriculoDocentes.setValue("tablaAfectada", "Recurso");
+this.logCurriculoDocentes.setValue("usuario", user);
 this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 recursoLiveForm1UpdateData: function(inSender) {
-var user= main.global_username.getData().dataValue;
-var idrecurso= main.idRecursoEditor1.getDataValue();
-var idsubtopico= main.idSubtopicoEditor4.getDataValue();
-var recurso= main.recursoTextEditor1.getDataValue();
+var user = main.global_username.getData().dataValue;
+var idrecurso = main.idRecursoEditor1.getDataValue();
+var idsubtopico = main.idSubtopicoEditor4.getDataValue();
+var recurso = main.recursoTextEditor1.getDataValue();
 var direccion = main.ubicacionEditor1.getDataValue();
 var tipo = main.tipoRecursoLookup1.getDisplayValue();
-var accion= "v2-docentes-recurso -> accion: actualizar "+" ->idrecurso: "+idrecurso+" ->idSubtopico: "+idsubtopico+" ->detalles: "+recurso+" ->direccion: "+direccion+"->tipo: "+tipo;
-var now= new Date().getTime();
-this.logCurriculoDocentes.setValue("accionRealizada",accion);
-this.logCurriculoDocentes.setValue("fechaCreacion",now);
-this.logCurriculoDocentes.setValue("tablaAfectada","Recurso");
-this.logCurriculoDocentes.setValue("usuario",user);
+var accion = "v2-docentes-recurso -> accion: actualizar " + " ->idrecurso: " + idrecurso + " ->idSubtopico: " + idsubtopico + " ->detalles: " + recurso + " ->direccion: " + direccion + "->tipo: " + tipo;
+var now = new Date().getTime();
+this.logCurriculoDocentes.setValue("accionRealizada", accion);
+this.logCurriculoDocentes.setValue("fechaCreacion", now);
+this.logCurriculoDocentes.setValue("tablaAfectada", "Recurso");
+this.logCurriculoDocentes.setValue("usuario", user);
 this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 recursoLiveForm1DeleteData: function(inSender) {
-var user= main.global_username.getData().dataValue;
-var idrecurso= main.idRecursoEditor1.getDataValue();
-var idsubtopico= main.idSubtopicoEditor4.getDataValue();
-var recurso= main.recursoTextEditor1.getDataValue();
+var user = main.global_username.getData().dataValue;
+var idrecurso = main.idRecursoEditor1.getDataValue();
+var idsubtopico = main.idSubtopicoEditor4.getDataValue();
+var recurso = main.recursoTextEditor1.getDataValue();
 var direccion = main.ubicacionEditor1.getDataValue();
 var tipo = main.tipoRecursoLookup1.getDisplayValue();
-var accion= "v2-docentes-recurso -> accion: borrar "+" ->idrecurso: "+idrecurso+" ->idSubtopico: "+idsubtopico+" ->detalles: "+recurso+" ->direccion: "+direccion+"->tipo: "+tipo;
-var now= new Date().getTime();
-this.logCurriculoDocentes.setValue("accionRealizada",accion);
-this.logCurriculoDocentes.setValue("fechaCreacion",now);
-this.logCurriculoDocentes.setValue("tablaAfectada","Recurso");
-this.logCurriculoDocentes.setValue("usuario",user);
+var accion = "v2-docentes-recurso -> accion: borrar " + " ->idrecurso: " + idrecurso + " ->idSubtopico: " + idsubtopico + " ->detalles: " + recurso + " ->direccion: " + direccion + "->tipo: " + tipo;
+var now = new Date().getTime();
+this.logCurriculoDocentes.setValue("accionRealizada", accion);
+this.logCurriculoDocentes.setValue("fechaCreacion", now);
+this.logCurriculoDocentes.setValue("tablaAfectada", "Recurso");
+this.logCurriculoDocentes.setValue("usuario", user);
 this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 actividadLiveForm3InsertData: function(inSender) {
-var user= main.global_username.getData().dataValue;
-var idactividad= main.idActividadEditor3.getDataValue();
+var user = main.global_username.getData().dataValue;
+var idactividad = main.idActividadEditor3.getDataValue();
 var idsubtopico = main.idSubtopicoEditor5.getDataValue();
-var fecha= main.fechaEditor6.getDisplayValue();
+var fecha = main.fechaEditor6.getDisplayValue();
 var actividad = main.actividadEditor3.getDataValue();
-var requerido= main.requeridoAlternativoEditor3.getDataValue();
-var tipo_actividad= main.lookup3.getDisplayValue();
+var requerido = main.requeridoAlternativoEditor3.getDataValue();
+var tipo_actividad = main.lookup3.getDisplayValue();
 var retro = main.lookup1.getDisplayValue();
 var desempeno = main.lookup2.getDisplayValue();
-var accion= "v2-docentes-actividad -> accion: crear "+" ->idactividad: "+idactividad+" ->idSubtopico: "+idsubtopico+" ->detalles: "+actividad+" ->fecha: "+fecha+" ->requerido: "+requerido+" ->tipo_actividad: "+tipo_actividad+" ->retroalimentacio: "+retro+" ->desempeno: "+desempeno;
-var now= new Date().getTime();
-this.logCurriculoDocentes.setValue("accionRealizada",accion);
-this.logCurriculoDocentes.setValue("fechaCreacion",now);
-this.logCurriculoDocentes.setValue("tablaAfectada","Actividad");
-this.logCurriculoDocentes.setValue("usuario",user);
+var accion = "v2-docentes-actividad -> accion: crear " + " ->idactividad: " + idactividad + " ->idSubtopico: " + idsubtopico + " ->detalles: " + actividad + " ->fecha: " + fecha + " ->requerido: " + requerido + " ->tipo_actividad: " + tipo_actividad + " ->retroalimentacio: " + retro + " ->desempeno: " + desempeno;
+var now = new Date().getTime();
+this.logCurriculoDocentes.setValue("accionRealizada", accion);
+this.logCurriculoDocentes.setValue("fechaCreacion", now);
+this.logCurriculoDocentes.setValue("tablaAfectada", "Actividad");
+this.logCurriculoDocentes.setValue("usuario", user);
 this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 actividadLiveForm3UpdateData: function(inSender) {
-var user= main.global_username.getData().dataValue;
-var idactividad= main.idActividadEditor3.getDataValue();
+var user = main.global_username.getData().dataValue;
+var idactividad = main.idActividadEditor3.getDataValue();
 var idsubtopico = main.idSubtopicoEditor5.getDataValue();
-var fecha= main.fechaEditor6.getDisplayValue();
+var fecha = main.fechaEditor6.getDisplayValue();
 var actividad = main.actividadEditor3.getDataValue();
-var requerido= main.requeridoAlternativoEditor3.getDataValue();
-var tipo_actividad= main.lookup3.getDisplayValue();
+var requerido = main.requeridoAlternativoEditor3.getDataValue();
+var tipo_actividad = main.lookup3.getDisplayValue();
 var retro = main.lookup1.getDisplayValue();
 var desempeno = main.lookup2.getDisplayValue();
-var accion= "v2-docentes-actividad -> accion: actualizar "+" ->idactividad: "+idactividad+" ->idSubtopico: "+idsubtopico+" ->detalles: "+actividad+" ->fecha: "+fecha+" ->requerido: "+requerido+" ->tipo_actividad: "+tipo_actividad+" ->retroalimentacio: "+retro+" ->desempeno: "+desempeno;
-var now= new Date().getTime();
-this.logCurriculoDocentes.setValue("accionRealizada",accion);
-this.logCurriculoDocentes.setValue("fechaCreacion",now);
-this.logCurriculoDocentes.setValue("tablaAfectada","Actividad");
-this.logCurriculoDocentes.setValue("usuario",user);
+var accion = "v2-docentes-actividad -> accion: actualizar " + " ->idactividad: " + idactividad + " ->idSubtopico: " + idsubtopico + " ->detalles: " + actividad + " ->fecha: " + fecha + " ->requerido: " + requerido + " ->tipo_actividad: " + tipo_actividad + " ->retroalimentacio: " + retro + " ->desempeno: " + desempeno;
+var now = new Date().getTime();
+this.logCurriculoDocentes.setValue("accionRealizada", accion);
+this.logCurriculoDocentes.setValue("fechaCreacion", now);
+this.logCurriculoDocentes.setValue("tablaAfectada", "Actividad");
+this.logCurriculoDocentes.setValue("usuario", user);
 this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
 actividadLiveForm3DeleteData: function(inSender) {
-var user= main.global_username.getData().dataValue;
-var idactividad= main.idActividadEditor3.getDataValue();
+var user = main.global_username.getData().dataValue;
+var idactividad = main.idActividadEditor3.getDataValue();
 var idsubtopico = main.idSubtopicoEditor5.getDataValue();
-var fecha= main.fechaEditor6.getDisplayValue();
+var fecha = main.fechaEditor6.getDisplayValue();
 var actividad = main.actividadEditor3.getDataValue();
-var requerido= main.requeridoAlternativoEditor3.getDataValue();
-var tipo_actividad= main.lookup3.getDisplayValue();
+var requerido = main.requeridoAlternativoEditor3.getDataValue();
+var tipo_actividad = main.lookup3.getDisplayValue();
 var retro = main.lookup1.getDisplayValue();
 var desempeno = main.lookup2.getDisplayValue();
-var accion= "v2-docentes-actividad -> accion: borrar "+" ->idactividad: "+idactividad+" ->idSubtopico: "+idsubtopico+" ->detalles: "+actividad+" ->fecha: "+fecha+" ->requerido: "+requerido+" ->tipo_actividad: "+tipo_actividad+" ->retroalimentacio: "+retro+" ->desempeno: "+desempeno;
-var now= new Date().getTime();
-this.logCurriculoDocentes.setValue("accionRealizada",accion);
-this.logCurriculoDocentes.setValue("fechaCreacion",now);
-this.logCurriculoDocentes.setValue("tablaAfectada","Actividad");
-this.logCurriculoDocentes.setValue("usuario",user);
+var accion = "v2-docentes-actividad -> accion: borrar " + " ->idactividad: " + idactividad + " ->idSubtopico: " + idsubtopico + " ->detalles: " + actividad + " ->fecha: " + fecha + " ->requerido: " + requerido + " ->tipo_actividad: " + tipo_actividad + " ->retroalimentacio: " + retro + " ->desempeno: " + desempeno;
+var now = new Date().getTime();
+this.logCurriculoDocentes.setValue("accionRealizada", accion);
+this.logCurriculoDocentes.setValue("fechaCreacion", now);
+this.logCurriculoDocentes.setValue("tablaAfectada", "Actividad");
+this.logCurriculoDocentes.setValue("usuario", user);
 this.logDocentesliveForm.setDataSet(this.logCurriculoDocentes);
 this.logDocentesliveForm.insertData();
 },
@@ -1158,19 +1130,19 @@ curriculo_grid_docentes_asignaturasSelectionChange1: function(inSender) {
 this.top_select_syChange1();
 },
 a_lista_sySuccess: function(inSender, inDeprecated) {
-var sy= main.global_cursy.getItem(0).data.sy;
+var sy = main.global_cursy.getItem(0).data.sy;
 main.top_select_sy.setDisplayValue(sy)
 },
 asignaturas_vista_asignaturas_estudiantes_svSuccess: function(inSender, inDeprecated) {
-var count= main.asignaturas_vista_asignaturas_estudiantes_sv.getCount();
-this.asignatura_footer_counter_label.setCaption("  Total alumnos en la asignatura: "+count);
+var count = main.asignaturas_vista_asignaturas_estudiantes_sv.getCount();
+this.asignatura_footer_counter_label.setCaption("  Total alumnos en la asignatura: " + count);
 },
 curriculo_detalles_estudiantes_buttClick: function(inSender) {
-var idasignatura= main.curriculo_grid_docentes_asignaturas.selectedItem.getData().idasignatura;
-var asignatura= main.curriculo_grid_docentes_asignaturas.selectedItem.getData().asignatura;
+var idasignatura = main.curriculo_grid_docentes_asignaturas.selectedItem.getData().idasignatura;
+var asignatura = main.curriculo_grid_docentes_asignaturas.selectedItem.getData().asignatura;
 main.asignaturas_vista_asignaturas_estudiantes_sv.input.setValue("pasig", idasignatura)
 this.asignaturas_vista_asignaturas_estudiantes_sv.update();
-this.asignatura_titulo.setCaption("   &NestedGreaterGreater; "+asignatura);
+this.asignatura_titulo.setCaption("   &NestedGreaterGreater; " + asignatura);
 this.curriculo_big_panel.hide();
 this.how_to_start.hide();
 this.inicio_big_panel.hide();
@@ -1194,40 +1166,33 @@ this.estudiante_big_panel.hide();
 this.asignatura_big_panel.show();
 },
 curriculo_detalles_estudiantes_buttClick1: function(inSender) {
-$('#main_menu_asignatura_butt')
-.css('background-color', '#1125b2');
-$('#main_menu_curriculo_butt')
-.css('background-color', '#a3a3a3');
-$('#main_menu_inicio_butt')
-.css('background-color', '#a3a3a3');
+$('#main_menu_asignatura_butt').css('background-color', '#1125b2');
+$('#main_menu_curriculo_butt').css('background-color', '#a3a3a3');
+$('#main_menu_inicio_butt').css('background-color', '#a3a3a3');
 },
 asignatura_detalles_alumnoClick1: function(inSender) {
 var idpersona = main.dojoGrid1.selectedItem.getData().idPersona;
 var idasignatura = main.dojoGrid1.selectedItem.getData().idasignatura;
-var codigo= main.dojoGrid1.selectedItem.getData().codigo;
-var nombre= main.dojoGrid1.selectedItem.getData().nombres;
-var asig= main.dojoGrid1.selectedItem.getData().asignatura;
-var std_nombre= main.dojoGrid1.selectedItem.getData().nombres;
-var std_apellido= main.dojoGrid1.selectedItem.getData().apellidos;
-var curso= main.dojoGrid1.selectedItem.getData().curso;
-this.estudiante_foto_perfil.setSource("http://www.rochester.edu.co/fotosestudiantes/"+codigo+".Jpeg");
-this.estudiante_demografica_butt.setCaption("&NestedGreaterGreater; "+nombre);
-this.estudiante_asignatura_butt.setCaption("&NestedGreaterGreater; "+asig);
-this.estudiante_nombre_perfil.setCaption(std_nombre+"<br>"+std_apellido+"<br><br>"+curso);
-main.estudiantes_detalles_curriculo.input.setValue("pidasignatura",idasignatura);
-main.estudiantes_detalles_curriculo.input.setValue("pidpersona",idpersona);
+var codigo = main.dojoGrid1.selectedItem.getData().codigo;
+var nombre = main.dojoGrid1.selectedItem.getData().nombres;
+var asig = main.dojoGrid1.selectedItem.getData().asignatura;
+var std_nombre = main.dojoGrid1.selectedItem.getData().nombres;
+var std_apellido = main.dojoGrid1.selectedItem.getData().apellidos;
+var curso = main.dojoGrid1.selectedItem.getData().curso;
+this.estudiante_foto_perfil.setSource("http://www.rochester.edu.co/fotosestudiantes/" + codigo + ".Jpeg");
+this.estudiante_demografica_butt.setCaption("&NestedGreaterGreater; " + nombre);
+this.estudiante_asignatura_butt.setCaption("&NestedGreaterGreater; " + asig);
+this.estudiante_nombre_perfil.setCaption(std_nombre + "<br>" + std_apellido + "<br><br>" + curso);
+main.estudiantes_detalles_curriculo.input.setValue("pidasignatura", idasignatura);
+main.estudiantes_detalles_curriculo.input.setValue("pidpersona", idpersona);
 main.estudiantes_detalles_curriculo.update();
 },
 // hightlight the button when detalles_alumnos pressed!
 asignatura_detalles_alumnoClick2: function(inSender) {
-$('#main_menu_estudiante_butt')
-.css('background-color', '#1125b2');
-$('#main_menu_asignatura_butt')
-.css('background-color', '#a3a3a3');
-$('#main_menu_curriculo_butt')
-.css('background-color', '#a3a3a3');
-$('#main_menu_inicio_butt')
-.css('background-color', '#a3a3a3');
+$('#main_menu_estudiante_butt').css('background-color', '#1125b2');
+$('#main_menu_asignatura_butt').css('background-color', '#a3a3a3');
+$('#main_menu_curriculo_butt').css('background-color', '#a3a3a3');
+$('#main_menu_inicio_butt').css('background-color', '#a3a3a3');
 },
 menu_estudiante_buttClick1: function(inSender) {
 this.curriculo_big_panel.hide();
@@ -1237,14 +1202,10 @@ this.asignatura_big_panel.hide();
 this.estudiante_big_panel.show();
 },
 estudiante_asignatura_buttClick: function(inSender) {
-$('#main_menu_asignatura_butt')
-.css('background-color', '#1125b2');
-$('#main_menu_curriculo_butt')
-.css('background-color', '#a3a3a3');
-$('#main_menu_inicio_butt')
-.css('background-color', '#a3a3a3');
-$('#main_menu_estudiante_butt')
-.css('background-color', '#a3a3a3');
+$('#main_menu_asignatura_butt').css('background-color', '#1125b2');
+$('#main_menu_curriculo_butt').css('background-color', '#a3a3a3');
+$('#main_menu_inicio_butt').css('background-color', '#a3a3a3');
+$('#main_menu_estudiante_butt').css('background-color', '#a3a3a3');
 },
 estudiante_asignatura_buttClick1: function(inSender) {
 this.curriculo_big_panel.hide();
@@ -1263,17 +1224,17 @@ main.curriculo_aprendizajes_asignaturasLiveVariable.filter.setValue("asignatura.
 main.curriculo_aprendizajes_asignaturasLiveVariable.update();*/
 },
 feedback_enviarClick: function(inSender) {
-var user= main.global_username.getData().dataValue;
-var now= new Date().getTime();
-var tipo= this.feedback_tipo_feedback.getDataValue();
-var titulo= this.feedback_titulo.getDataValue();
-var comentario= this.feedback_comentario.getDataValue();
-this.feedback_sendFeedBack.setValue("usuario",user);
-this.feedback_sendFeedBack.setValue("titulo",titulo);
-this.feedback_sendFeedBack.setValue("comentario",comentario);
-this.feedback_sendFeedBack.setValue("fechaCreacion",now);
-this.feedback_sendFeedBack.setValue("fechaActualizacion",now);
-this.feedback_sendFeedBack.setValue("tipoFeedback",tipo);
+var user = main.global_username.getData().dataValue;
+var now = new Date().getTime();
+var tipo = this.feedback_tipo_feedback.getDataValue();
+var titulo = this.feedback_titulo.getDataValue();
+var comentario = this.feedback_comentario.getDataValue();
+this.feedback_sendFeedBack.setValue("usuario", user);
+this.feedback_sendFeedBack.setValue("titulo", titulo);
+this.feedback_sendFeedBack.setValue("comentario", comentario);
+this.feedback_sendFeedBack.setValue("fechaCreacion", now);
+this.feedback_sendFeedBack.setValue("fechaActualizacion", now);
+this.feedback_sendFeedBack.setValue("tipoFeedback", tipo);
 this.feedback_liveForm.setDataSet(this.feedback_sendFeedBack);
 this.feedback_liveForm.insertData();
 },
@@ -1295,6 +1256,17 @@ this.asignatura_detalles_alumnoClick2();
 dojoGrid1Select: function(inSender) {
 this.asignatura_detalles_alumno.enable();
 },
+// reRender lineChart
+menu_inicio_buttClick2: function(inSender) {
+this.renderChart_dash1();
+this.dashboard_chart4();
+this.dashboard_chart5();
+this.dashboard_chart6();
+this.dashboard_malla_dimension_curricularSuccess();
+this.dashboard_malla_dimension_comprensionSuccess();
+},
+/**Inicio*Graficos**
+*******************/
 muestraCoordinadorCursoSuccess: function(inSender, inDeprecated) {
 try {
 var count = main.muestraCoordinadorCurso.getCount();
@@ -1313,16 +1285,83 @@ console.error('ERROR IN muestraCoordinadorCursoSuccess: ' + e);
 },
 muestraCoordinadorSubAreaSuccess: function(inSender, inDeprecated) {
 var count = main.muestraCoordinadorSubArea.getCount();
-if(count > 0){
+if (count > 0) {
 this.panelCoordinadorCurricular.show();
-}else{
+} else {
 this.panelCoordinadorCurricular.hide();
 }
+},
+dash_dash_lv1Success: function(inSender, inDeprecated) {
+this.renderChart_dash1();
+},
+renderChart_dash1: function() {
+var _json = main.dash_dash_lv1.getData();
+var _json = main.dash_dash_lv1.json;
+var _count = main.dash_dash_lv1.getCount();
+var mesArray = [];
+var ingresosArray = [];
+for (var i = 0; i < _count; i++) {
+var _item = main.dash_dash_lv1.getItem(i).data;
+var _name = _item.mes;
+var _value = _item.totalingresos;
+mesArray.push([_name]);
+ingresosArray.push([_value]);
+}
+$(function() {
+$('#main_dash_chart1').highcharts({
+title: {
+text: 'INGRESOS POR DOCENTE',
+x: -20 //center
+},
+subtitle: {
+text: 'Número de ingresos por mes',
+x: -20
+},
+xAxis: {
+categories: mesArray,
+title: {
+text: 'Mes - Año escolar'
+}
+},
+yAxis: {
+title: {
+text: 'Total ingresos'
+},
+plotLines: [{
+value: 0,
+width: 1,
+color: '#808080'
+}]
+},
+tooltip: {
+headerFormat: '<b>{series.name}</b><br>',
+valueSuffix: ' ingresos'
+},
+plotOptions: {
+line: {
+dataLabels: {
+enabled: true
+},
+enableMouseTracking: true
+}
+},
+legend: {
+layout: 'vertical',
+align: 'right',
+verticalAlign: 'middle',
+borderWidth: 0
+},
+series: [{
+name: '2014-2015',
+data: ingresosArray
+}]
+});
+});
 },
 //chart4
 dashboard_chart4: function() {
 var porc_faltas = main.dashboard_faltas_graves.getItem(0).data.id.data.porcentajeFaltasGraves;
-var curso       = main.dashboard_faltas_graves.getItem(0).data.id.data.curso;
+var curso = main.dashboard_faltas_graves.getItem(0).data.id.data.curso;
 $(function() {
 $('#main_chart4').highcharts({
 chart: {
@@ -1431,7 +1470,7 @@ function(chart) {
 });
 },
 //chart5
-dashboard_chart5: function(){
+dashboard_chart5: function() {
 var score = main.dashboard_puntaje_asig_global.getItem(0).data.id.data.avgPuntaje;
 var subject = main.dashboard_puntaje_asig_global.getItem(0).data.id.data.asignatura;
 $(function() {
@@ -1445,7 +1484,9 @@ plotShadow: false
 },
 title: {
 text: subject,
-style: { "fontSize": "10px" }
+style: {
+"fontSize": "10px"
+}
 },
 pane: {
 startAngle: -150,
@@ -1551,12 +1592,12 @@ dashboard_calificacion_estudiantesSuccess: function(inSender, inDeprecated) {
 this.dashboard_chart6();
 },
 //chart6
-dashboard_chart6: function(){
-var length      = main.dashboard_calificacion_estudiantes.getCount();
-var result      = [];
-var mydata      = main.dashboard_calificacion_estudiantes.getData();
-var stdArray      = [];
-var scoreArray    = [];
+dashboard_chart6: function() {
+var length = main.dashboard_calificacion_estudiantes.getCount();
+var result = [];
+var mydata = main.dashboard_calificacion_estudiantes.getData();
+var stdArray = [];
+var scoreArray = [];
 for (var i = 0; i < mydata.length; i++) {
 //console.log(i);
 var base = mydata[i];
@@ -1567,26 +1608,6 @@ result.push([std, score]);
 stdArray.push([std]);
 scoreArray.push([score]);
 }
-console.log(stdArray);
-console.log(scoreArray);
-/*var data = new google.visualization.DataTable();
-data.addColumn('string', 'Estudiantes');
-data.addColumn('number', 'Puntaje');
-data.addRows(result);
-var view = new google.visualization.DataView(data);
-var options = {
-title: "PUNTAJE DE ESTUDIANTES POR CURSO",
-width: 800,
-height: 400,
-bar: {
-groupWidth: "95%"
-},
-legend: {
-position: "none"
-},
-};
-var chart = new google.visualization.ColumnChart(this.chart6.domNode);
-chart.draw(view, options);*/
 $(function() {
 $('#main_chart6').highcharts({
 chart: {
@@ -1619,7 +1640,20 @@ enableMouseTracking: false
 },
 series: [{
 name: 'Puntajes',
-data: scoreArray
+data: scoreArray,
+dataLabels: {
+enabled: true,
+rotation: -90,
+color: '#FFFFFF',
+align: 'right',
+x: 4,
+y: 10,
+style: {
+fontSize: '10px',
+fontFamily: 'Verdana, sans-serif',
+textShadow: '0 0 3px black'
+}
+}
 }]
 });
 });
@@ -1640,15 +1674,15 @@ this.dashboard_malla_dimension_comprension.update();
 this.dashboard_malla_dimension_curricular.update();
 },
 dashboard_malla_dimension_comprensionSuccess: function(inSender, inDeprecated) {
-var mydata      = this.dashboard_malla_dimension_comprension.getData();
+var mydata = this.dashboard_malla_dimension_comprension.getData();
 var dimensiones = [];
-var data        = [];
-for(var i = 0 ;  i < mydata.length ; i++){
+var data = [];
+for (var i = 0; i < mydata.length; i++) {
 //console.log(i);
-var base   = mydata[i];
+var base = mydata[i];
 //console.log(base);
-var dims    = base.id.dimensionComprension;
-var values  = base.id.porcentaje;
+var dims = base.id.dimensionComprension;
+var values = base.id.porcentaje;
 //console.log("Dimension: "+ dims + " Values: "+ values);
 dimensiones.push(dims);
 data.push(values);
@@ -1696,15 +1730,15 @@ pointPlacement: 'on'
 });
 },
 dashboard_malla_dimension_curricularSuccess: function(inSender, inDeprecated) {
-var mydata      = this.dashboard_malla_dimension_curricular.getData();
+var mydata = this.dashboard_malla_dimension_curricular.getData();
 var dimensiones = [];
-var data        = [];
-for(var i = 0 ;  i < mydata.length ; i++){
+var data = [];
+for (var i = 0; i < mydata.length; i++) {
 //console.log(i);
-var base   = mydata[i];
+var base = mydata[i];
 //console.log(base);
-var dims    = base.id.dimensionCurricular;
-var values  = base.id.porcentaje;
+var dims = base.id.dimensionCurricular;
+var values = base.id.porcentaje;
 //console.log("Dimension: "+ dims + " Values: "+ values);
 dimensiones.push(dims);
 data.push(values);
@@ -1755,6 +1789,13 @@ asignaturasPorDocenteSuccess: function(inSender, inDeprecated) {
 var subjectname = main.asignaturasPorDocente.getItem(0).data.asignatura;
 this.asignaturaCoordinadorSelect.setDisplayValue(subjectname);
 this.asignaturaCoordinadorSelect2.setDisplayValue(subjectname);
+},
+// seleccion de asignatura y cambio por evento OnChange
+sel_asignaturas_selectChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+//var idasignatura = main.curriculo_grid_docentes_asignaturas.selectedItem.data.idasignatura;
+var idasignatura = main.sel_asignaturas_select.getDataValue().idasignatura;
+this.unidadLiveVariable2.filter.setValue("asignatura.idAsignatura", idasignatura);
+this.unidadLiveVariable2.update();
 },
 //the end
 _end: 0
@@ -2436,15 +2477,99 @@ liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.VistaDashboardMall
 {"caption":"Porcentaje","sortable":true,"dataIndex":"id.porcentaje","type":"java.math.BigDecimal","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":3,"subType":null}
 ]}, {}]
 }],
+unidadLiveVariable2: ["wm.LiveVariable", {"autoUpdate":false,"startUpdate":false,"type":"com.aprendoz_test.data.Unidad"}, {}, {
+liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.Unidad","related":["asignatura"],"view":[
+{"caption":"IdUnidad","sortable":true,"dataIndex":"idUnidad","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
+{"caption":"Unidad","sortable":true,"dataIndex":"unidad","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null},
+{"caption":"Unit","sortable":true,"dataIndex":"unit","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},
+{"caption":"FechaInicio","sortable":true,"dataIndex":"fechaInicio","type":"java.util.Date","displayType":"Date","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},
+{"caption":"FechaFin","sortable":true,"dataIndex":"fechaFin","type":"java.util.Date","displayType":"Date","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":4,"subType":null},
+{"caption":"NumeroUnidad","sortable":true,"dataIndex":"numeroUnidad","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":5,"subType":null},
+{"caption":"IdSyIdIdSy","sortable":true,"dataIndex":"idSyIdIdSy","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":6,"subType":null},
+{"caption":"IdAsignatura","sortable":true,"dataIndex":"asignatura.idAsignatura","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
+{"caption":"Asignatura","sortable":true,"dataIndex":"asignatura.asignatura","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null},
+{"caption":"Subject","sortable":true,"dataIndex":"asignatura.subject","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},
+{"caption":"Electiva","sortable":true,"dataIndex":"asignatura.electiva","type":"java.lang.Boolean","displayType":"CheckBox","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},
+{"caption":"IdArea1","sortable":true,"dataIndex":"asignatura.idArea1","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":4,"subType":null},
+{"caption":"IdArea2","sortable":true,"dataIndex":"asignatura.idArea2","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":5,"subType":null},
+{"caption":"IdArea3","sortable":true,"dataIndex":"asignatura.idArea3","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":6,"subType":null},
+{"caption":"IdSubarea1","sortable":true,"dataIndex":"asignatura.idSubarea1","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":7,"subType":null},
+{"caption":"IdSubarea2","sortable":true,"dataIndex":"asignatura.idSubarea2","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":8,"subType":null},
+{"caption":"IdSubarea3","sortable":true,"dataIndex":"asignatura.idSubarea3","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":9,"subType":null},
+{"caption":"SalonIdSalon","sortable":true,"dataIndex":"asignatura.salonIdSalon","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":10,"subType":null},
+{"caption":"IntensidadHoraria","sortable":true,"dataIndex":"asignatura.intensidadHoraria","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":11,"subType":null},
+{"caption":"Peso","sortable":true,"dataIndex":"asignatura.peso","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":12,"subType":null},
+{"caption":"DescripAsigEspaniol","sortable":true,"dataIndex":"asignatura.descripAsigEspaniol","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":13,"subType":null},
+{"caption":"DescripAsigIngles","sortable":true,"dataIndex":"asignatura.descripAsigIngles","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":14,"subType":null},
+{"caption":"IhA1","sortable":true,"dataIndex":"asignatura.ihA1","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":15,"subType":null},
+{"caption":"IhA2","sortable":true,"dataIndex":"asignatura.ihA2","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":16,"subType":null},
+{"caption":"IhA3","sortable":true,"dataIndex":"asignatura.ihA3","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":17,"subType":null},
+{"caption":"Meses","sortable":true,"dataIndex":"asignatura.meses","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":18,"subType":null},
+{"caption":"Esperadostotal","sortable":true,"dataIndex":"asignatura.esperadostotal","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":19,"subType":null}
+]}, {}]
+}],
+asignaturaLiveVariable1: ["wm.LiveVariable", {"type":"com.aprendoz_test.data.Asignatura"}, {}, {
+liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.Asignatura","view":[
+{"caption":"IdAsignatura","sortable":true,"dataIndex":"idAsignatura","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
+{"caption":"Asignatura","sortable":true,"dataIndex":"asignatura","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null},
+{"caption":"Subject","sortable":true,"dataIndex":"subject","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},
+{"caption":"Electiva","sortable":true,"dataIndex":"electiva","type":"java.lang.Boolean","displayType":"CheckBox","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},
+{"caption":"IdArea1","sortable":true,"dataIndex":"idArea1","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":4,"subType":null},
+{"caption":"IdArea2","sortable":true,"dataIndex":"idArea2","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":5,"subType":null},
+{"caption":"IdArea3","sortable":true,"dataIndex":"idArea3","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":6,"subType":null},
+{"caption":"IdSubarea1","sortable":true,"dataIndex":"idSubarea1","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":7,"subType":null},
+{"caption":"IdSubarea2","sortable":true,"dataIndex":"idSubarea2","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":8,"subType":null},
+{"caption":"IdSubarea3","sortable":true,"dataIndex":"idSubarea3","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":9,"subType":null},
+{"caption":"SalonIdSalon","sortable":true,"dataIndex":"salonIdSalon","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":10,"subType":null},
+{"caption":"IntensidadHoraria","sortable":true,"dataIndex":"intensidadHoraria","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":11,"subType":null},
+{"caption":"Peso","sortable":true,"dataIndex":"peso","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":12,"subType":null},
+{"caption":"DescripAsigEspaniol","sortable":true,"dataIndex":"descripAsigEspaniol","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":13,"subType":null},
+{"caption":"DescripAsigIngles","sortable":true,"dataIndex":"descripAsigIngles","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":14,"subType":null},
+{"caption":"IhA1","sortable":true,"dataIndex":"ihA1","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":15,"subType":null},
+{"caption":"IhA2","sortable":true,"dataIndex":"ihA2","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":16,"subType":null},
+{"caption":"IhA3","sortable":true,"dataIndex":"ihA3","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":17,"subType":null},
+{"caption":"Meses","sortable":true,"dataIndex":"meses","type":"java.lang.Float","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":18,"subType":null},
+{"caption":"Esperadostotal","sortable":true,"dataIndex":"esperadostotal","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":19,"subType":null}
+]}, {}]
+}],
+subtopicoLiveVariable2: ["wm.LiveVariable", {"autoUpdate":false,"startUpdate":false,"type":"com.aprendoz_test.data.Subtopico"}, {}, {
+liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.Subtopico","related":["unidad"],"view":[
+{"caption":"IdSubtopico","sortable":true,"dataIndex":"idSubtopico","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
+{"caption":"Subtopico","sortable":true,"dataIndex":"subtopico","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null},
+{"caption":"FechaInicio","sortable":true,"dataIndex":"fechaInicio","type":"java.util.Date","displayType":"Date","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},
+{"caption":"FechaFin","sortable":true,"dataIndex":"fechaFin","type":"java.util.Date","displayType":"Date","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},
+{"caption":"Subtopic","sortable":true,"dataIndex":"subtopic","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":4,"subType":null},
+{"caption":"NumeroSubtopico","sortable":true,"dataIndex":"numeroSubtopico","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":5,"subType":null},
+{"caption":"IdSyIdIdSy","sortable":true,"dataIndex":"idSyIdIdSy","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":6,"subType":null},
+{"caption":"IdUnidad","sortable":true,"dataIndex":"unidad.idUnidad","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
+{"caption":"Unidad","sortable":true,"dataIndex":"unidad.unidad","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null},
+{"caption":"Unit","sortable":true,"dataIndex":"unidad.unit","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},
+{"caption":"FechaInicio","sortable":true,"dataIndex":"unidad.fechaInicio","type":"java.util.Date","displayType":"Date","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},
+{"caption":"FechaFin","sortable":true,"dataIndex":"unidad.fechaFin","type":"java.util.Date","displayType":"Date","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":4,"subType":null},
+{"caption":"NumeroUnidad","sortable":true,"dataIndex":"unidad.numeroUnidad","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":5,"subType":null},
+{"caption":"IdSyIdIdSy","sortable":true,"dataIndex":"unidad.idSyIdIdSy","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":6,"subType":null}
+]}, {}]
+}],
+unidadLiveVariable3: ["wm.LiveVariable", {"type":"com.aprendoz_test.data.Unidad"}, {}, {
+liveView: ["wm.LiveView", {"dataType":"com.aprendoz_test.data.Unidad","view":[
+{"caption":"IdUnidad","sortable":true,"dataIndex":"idUnidad","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
+{"caption":"Unidad","sortable":true,"dataIndex":"unidad","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null},
+{"caption":"Unit","sortable":true,"dataIndex":"unit","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},
+{"caption":"FechaInicio","sortable":true,"dataIndex":"fechaInicio","type":"java.util.Date","displayType":"Date","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},
+{"caption":"FechaFin","sortable":true,"dataIndex":"fechaFin","type":"java.util.Date","displayType":"Date","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":4,"subType":null},
+{"caption":"NumeroUnidad","sortable":true,"dataIndex":"numeroUnidad","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":5,"subType":null},
+{"caption":"IdSyIdIdSy","sortable":true,"dataIndex":"idSyIdIdSy","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":6,"subType":null}
+]}, {}]
+}],
 unidadDialog: ["wm.DesignableDialog", {"buttonBarId":"buttonBar1","containerWidgetId":"containerWidget1","styles":{"backgroundColor":"#ebebeb","color":"#0e0c0c"},"title":"Formulario Unidades","width":"500px"}, {}, {
 containerWidget1: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
-unidadLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"336px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"unidadLiveForm2BeginInsert","onBeginUpdate":"unidadLiveForm2BeginUpdate","onDeleteData":"unidadLiveForm2DeleteData","onInsertData":"unidadLiveForm2InsertData","onSuccess":"unidadLivePanel1.popupLiveFormSuccess","onSuccess1":"unidadLiveForm2Success1","onUpdateData":"unidadLiveForm2UpdateData"}, {
+unidadLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"330px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"unidadLiveForm2BeginInsert","onBeginUpdate":"unidadLiveForm2BeginUpdate","onDeleteData":"unidadLiveForm2DeleteData","onInsertData":"unidadLiveForm2InsertData","onSuccess":"unidadLivePanel1.popupLiveFormSuccess","onSuccess1":"unidadLiveForm2Success1","onUpdateData":"unidadLiveForm2UpdateData"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"unidadDojoGrid.selectedItem","targetProperty":"dataSet"}, {}],
 wire1: ["wm.Wire", {"expression":undefined,"source":"relatedEditor1.dataOutput","targetProperty":"dataOutput.asignatura"}, {}]
 }],
 idUnidadEditor2: ["wm.Number", {"border":"0","caption":"Id unidad","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idUnidad","height":"26px","required":true,"width":"100%"}, {}],
-relatedEditor1: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"asignatura","height":"56px","horizontalAlign":"left","lock":true,"verticalAlign":"top"}, {}, {
+relatedEditor1: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"asignatura","height":"52px","horizontalAlign":"left","lock":true,"verticalAlign":"top"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"unidadDojoGrid.selectedItem.asignatura","targetProperty":"dataSet"}, {}]
 }],
@@ -2480,8 +2605,8 @@ wire: ["wm.Wire", {"expression":undefined,"source":"global_numero_unidad","targe
 }],
 unidadEditor2: ["wm.LargeTextArea", {"border":"0","caption":"Unidad","captionAlign":"right","captionPosition":"left","captionSize":"140px","changeOnKey":true,"desktopHeight":"80px","emptyValue":"emptyString","formField":"unidad","height":"80px","helpText":"ingrese la descripción en español","maxChars":500,"required":true,"styles":{},"width":"100%"}, {}],
 unitEditor2: ["wm.LargeTextArea", {"border":"0","caption":"Unit","captionAlign":"right","captionPosition":"left","captionSize":"140px","changeOnKey":true,"desktopHeight":"80px","emptyValue":"emptyString","formField":"unit","height":"80px","helpText":"insert here the description in english","maxChars":500,"required":true,"width":"100%"}, {}],
-fechaInicioEditor3: ["wm.DateTime", {"border":"0","caption":"Fecha Inicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","width":"100%"}, {}],
-fechaFinEditor3: ["wm.DateTime", {"border":"0","caption":"Fecha Finalización","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","width":"100%"}, {}],
+fechaInicioEditor3: ["wm.DateTime", {"caption":"Fecha Inicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","width":"100%"}, {}],
+fechaFinEditor3: ["wm.DateTime", {"caption":"Fecha Finalización","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","width":"100%"}, {}],
 idSyIdIdSyEditor3: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idSyIdIdSy","height":"26px","showing":false,"width":"100%"}, {}]
 }]
 }],
@@ -2496,22 +2621,22 @@ unidadCancelButton: ["wm.Button", {"_classes":{"domNode":["eliminar"]},"caption"
 }],
 subtopicoDialog: ["wm.DesignableDialog", {"buttonBarId":"buttonBar2","containerWidgetId":"containerWidget2","styles":{"backgroundColor":"#ebebeb","color":"#070707"},"title":"Formulario de Subtópicos","width":"500px"}, {}, {
 containerWidget2: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
-subtopicoLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"302px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"subtopicoLiveForm2BeginInsert","onBeginUpdate":"subtopicoLiveForm2BeginUpdate","onDeleteData":"subtopicoLiveForm2DeleteData","onInsertData":"subtopicoLiveForm2InsertData","onSuccess":"subtopicoLivePanel1.popupLiveFormSuccess","onSuccess1":"subtopicoLiveForm2Success1","onUpdateData":"subtopicoLiveForm2UpdateData"}, {
+subtopicoLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"300px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"subtopicoLiveForm2BeginInsert","onBeginUpdate":"subtopicoLiveForm2BeginUpdate","onDeleteData":"subtopicoLiveForm2DeleteData","onInsertData":"subtopicoLiveForm2InsertData","onSuccess":"subtopicoLivePanel1.popupLiveFormSuccess","onSuccess1":"subtopicoLiveForm2Success1","onUpdateData":"subtopicoLiveForm2UpdateData"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"subtopicoDojoGrid.selectedItem","targetProperty":"dataSet"}, {}],
 wire1: ["wm.Wire", {"expression":undefined,"source":"relatedEditor2.dataOutput","targetProperty":"dataOutput.unidad"}, {}]
 }],
 idSubtopicoEditor2: ["wm.Number", {"border":"0","caption":"Id subtópico","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idSubtopico","height":"26px","required":true,"width":"100%"}, {}],
 panel21: ["wm.Panel", {"freeze":true,"height":"28px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
-relatedEditor2: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"unidad","height":"54px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+relatedEditor2: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"unidad","height":"52px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"subtopicoDojoGrid.selectedItem.unidad","targetProperty":"dataSet"}, {}]
 }],
 idUnidadEditor1: ["wm.Number", {"border":"0","caption":"Id unidad","captionSize":"140px","desktopHeight":"26px","emptyValue":"zero","formField":"idUnidad","height":"26px","required":true,"width":"100%"}, {}],
 unidadEditor1: ["wm.Text", {"border":"0","caption":"Unidad","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"unidad","height":"26px","width":"100%"}, {}],
 unitEditor1: ["wm.Text", {"border":"0","caption":"Unit","captionSize":"140px","emptyValue":"emptyString","formField":"unit","showing":false,"width":"100%"}, {}],
-fechaInicioEditor4: ["wm.DateTime", {"border":"0","caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaInicio","height":"30px","showing":false,"width":"100%"}, {}],
-fechaFinEditor4: ["wm.DateTime", {"border":"0","caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaFin","height":"30px","showing":false,"width":"100%"}, {}],
+fechaInicioEditor4: ["wm.DateTime", {"caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaInicio","height":"30px","showing":false,"width":"100%"}, {}],
+fechaFinEditor4: ["wm.DateTime", {"caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaFin","height":"30px","showing":false,"width":"100%"}, {}],
 numeroUnidadEditor1: ["wm.Number", {"border":"0","caption":"NumeroUnidad","captionSize":"140px","emptyValue":"zero","formField":"numeroUnidad","showing":false,"width":"100%"}, {}],
 idSyIdIdSyEditor9: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","emptyValue":"zero","formField":"idSyIdIdSy","showing":false,"width":"100%"}, {}]
 }]
@@ -2524,8 +2649,8 @@ wire: ["wm.Wire", {"expression":undefined,"source":"global_numero_subtopico","ta
 subtopicoEditor2: ["wm.LargeTextArea", {"border":"0","caption":"Subtópico","captionAlign":"right","captionPosition":"left","captionSize":"140px","changeOnKey":true,"desktopHeight":"80px","emptyValue":"emptyString","formField":"subtopico","height":"80px","maxChars":200,"required":true,"width":"100%"}, {}],
 subtopicEditor2: ["wm.LargeTextArea", {"border":"0","caption":"Subtopic","captionAlign":"right","captionPosition":"left","captionSize":"140px","changeOnKey":true,"desktopHeight":"80px","emptyValue":"emptyString","formField":"subtopic","height":"80px","maxChars":200,"required":true,"width":"100%"}, {}],
 idSyIdIdSyEditor4: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idSyIdIdSy","height":"26px","showing":false,"width":"100%"}, {}],
-date1: ["wm.Date", {"border":"0","caption":"Fecha inicio","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fechaInicio","height":"26px","required":true,"width":"100%"}, {}],
-date2: ["wm.Date", {"border":"0","caption":"Fecha final","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fechaFin","height":"26px","required":true,"width":"100%"}, {}]
+date1: ["wm.Date", {"caption":"Fecha inicio","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fechaInicio","height":"26px","required":true,"width":"100%"}, {}],
+date2: ["wm.Date", {"caption":"Fecha final","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fechaFin","height":"26px","required":true,"width":"100%"}, {}]
 }]
 }],
 buttonBar2: ["wm.ButtonBarPanel", {"border":"1","desktopHeight":"42px","height":"34px","mobileHeight":"42px"}, {}, {
@@ -2539,27 +2664,27 @@ subtopicoCancelButton: ["wm.Button", {"_classes":{"domNode":["eliminar"]},"capti
 }],
 aprendizajeDialog: ["wm.DesignableDialog", {"buttonBarId":"buttonBar3","containerWidgetId":"containerWidget3","desktopHeight":"565px","height":"565px","styles":{"backgroundColor":"#ebebeb","color":"#050505"},"title":"Formulario de Aprendizaje","width":"550px"}, {}, {
 containerWidget3: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
-aprendizajeLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"484px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"aprendizajeLiveForm2BeginInsert","onBeginInsert1":"aprendizajeLiveForm2BeginInsert1","onBeginInsert2":"aprendizajeLiveForm2BeginInsert2","onBeginUpdate":"aprendizajeLiveForm2BeginUpdate","onDeleteData":"aprendizajeLiveForm2DeleteData","onInsertData":"aprendizajeLiveForm2InsertData","onSuccess":"aprendizajeLivePanel1.popupLiveFormSuccess","onSuccess1":"aprendizajeLiveForm2Success1","onUpdateData":"aprendizajeLiveForm2UpdateData"}, {
+aprendizajeLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"482px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"aprendizajeLiveForm2BeginInsert","onBeginInsert1":"aprendizajeLiveForm2BeginInsert1","onBeginInsert2":"aprendizajeLiveForm2BeginInsert2","onBeginUpdate":"aprendizajeLiveForm2BeginUpdate","onDeleteData":"aprendizajeLiveForm2DeleteData","onInsertData":"aprendizajeLiveForm2InsertData","onSuccess":"aprendizajeLivePanel1.popupLiveFormSuccess","onSuccess1":"aprendizajeLiveForm2Success1","onUpdateData":"aprendizajeLiveForm2UpdateData"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"aprendizajeDojoGrid.selectedItem","targetProperty":"dataSet"}, {}],
 wire1: ["wm.Wire", {"expression":undefined,"source":"relatedEditor3.dataOutput","targetProperty":"dataOutput.subtopico"}, {}]
 }],
 idAprendizajeEditor2: ["wm.Number", {"border":"0","caption":"Id aprendizaje","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idAprendizaje","height":"26px","required":true,"width":"100%"}, {}],
 aprendizajes_grupo_1: ["wm.Panel", {"height":"30px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
-relatedEditor3: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"54px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+relatedEditor3: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"52px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"aprendizajeDojoGrid.selectedItem.subtopico","targetProperty":"dataSet"}, {}]
 }],
 idSubtopicoEditor1: ["wm.Number", {"border":"0","caption":"Id subtópico","captionSize":"140px","desktopHeight":"26px","emptyValue":"zero","formField":"idSubtopico","height":"26px","required":true,"width":"100%"}, {}],
 subtopicoEditor1: ["wm.Text", {"border":"0","caption":"Subtópico","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"subtopico","height":"26px","width":"100%"}, {}],
-fechaInicioEditor5: ["wm.DateTime", {"border":"0","caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaInicio","height":"30px","showing":false,"width":"100%"}, {}],
-fechaFinEditor5: ["wm.DateTime", {"border":"0","caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaFin","height":"30px","showing":false,"width":"100%"}, {}],
+fechaInicioEditor5: ["wm.DateTime", {"caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaInicio","height":"30px","showing":false,"width":"100%"}, {}],
+fechaFinEditor5: ["wm.DateTime", {"caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"30px","emptyValue":"zero","formField":"fechaFin","height":"30px","showing":false,"width":"100%"}, {}],
 subtopicEditor4: ["wm.Text", {"border":"0","caption":"Subtopic","captionSize":"140px","emptyValue":"emptyString","formField":"subtopic","showing":false,"width":"100%"}, {}],
 numeroSubtopicoEditor3: ["wm.Number", {"border":"0","caption":"NumeroSubtopico","captionSize":"140px","emptyValue":"zero","formField":"numeroSubtopico","showing":false,"width":"100%"}, {}],
 idSyIdIdSyEditor10: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","emptyValue":"zero","formField":"idSyIdIdSy","showing":false,"width":"100%"}, {}]
 }]
 }],
-fechaEsperadaEditor2: ["wm.Date", {"border":"0","caption":"Fecha esperada","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fechaEsperada","height":"26px","required":true,"width":"100%"}, {}],
+fechaEsperadaEditor2: ["wm.Date", {"caption":"Fecha esperada","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fechaEsperada","height":"26px","required":true,"width":"100%"}, {}],
 aprendizajesAsignaturasGrid1: ["wm.DojoGrid", {"columns":[
 {"show":true,"field":"idAprendizaje","title":" ","width":"50px","align":"left","formatFunc":"","mobileColumn":false},
 {"show":true,"field":"fechaEsperada","title":"Fecha esperada","width":"60px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
@@ -2632,26 +2757,26 @@ aprendizajeCancelButton: ["wm.Button", {"_classes":{"domNode":["eliminar"]},"cap
 }],
 otrasmetasDialog: ["wm.DesignableDialog", {"buttonBarId":"buttonBar4","containerWidgetId":"containerWidget4","desktopHeight":"284px","height":"284px","styles":{"backgroundColor":"#ebebeb","color":"#020202"},"title":"Formulario Metas","width":"500px"}, {}, {
 containerWidget4: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
-otrasmetasLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"222px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"otrasmetasLiveForm2BeginInsert","onBeginUpdate":"otrasmetasLiveForm2BeginUpdate","onDeleteData":"otrasmetasLiveForm2DeleteData","onInsertData":"otrasmetasLiveForm2InsertData","onSuccess":"otrasmetasLivePanel1.popupLiveFormSuccess","onSuccess1":"otrasmetasLiveForm2Success1","onUpdateData":"otrasmetasLiveForm2UpdateData"}, {
+otrasmetasLiveForm2: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"218px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginInsert":"otrasmetasLiveForm2BeginInsert","onBeginUpdate":"otrasmetasLiveForm2BeginUpdate","onDeleteData":"otrasmetasLiveForm2DeleteData","onInsertData":"otrasmetasLiveForm2InsertData","onSuccess":"otrasmetasLivePanel1.popupLiveFormSuccess","onSuccess1":"otrasmetasLiveForm2Success1","onUpdateData":"otrasmetasLiveForm2UpdateData"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"otrasmetasDojoGrid.selectedItem","targetProperty":"dataSet"}, {}],
 wire1: ["wm.Wire", {"expression":undefined,"source":"relatedEditor5.dataOutput","targetProperty":"dataOutput.subtopico"}, {}]
 }],
 idOtraMetaEditor2: ["wm.Number", {"border":"0","caption":"Id meta","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idOtraMeta","height":"26px","required":true,"styles":{},"width":"100%"}, {}],
-relatedEditor5: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"54px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+relatedEditor5: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"52px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"otrasmetasDojoGrid.selectedItem.subtopico","targetProperty":"dataSet"}, {}]
 }],
 idSubtopicoEditor3: ["wm.Number", {"border":"0","caption":"Id subtópico","captionSize":"140px","desktopHeight":"26px","emptyValue":"zero","formField":"idSubtopico","height":"26px","required":true,"width":"100%"}, {}],
 subtopicoEditor3: ["wm.Text", {"border":"0","caption":"Subtopico","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"subtopico","height":"26px","width":"100%"}, {}],
-fechaInicioEditor1: ["wm.DateTime", {"border":"0","caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","showing":false,"width":"100%"}, {}],
-fechaFinEditor1: ["wm.DateTime", {"border":"0","caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","showing":false,"width":"100%"}, {}],
+fechaInicioEditor1: ["wm.DateTime", {"caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","showing":false,"width":"100%"}, {}],
+fechaFinEditor1: ["wm.DateTime", {"caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","showing":false,"width":"100%"}, {}],
 subtopicEditor1: ["wm.Text", {"border":"0","caption":"Subtopic","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"subtopic","height":"26px","showing":false,"width":"100%"}, {}],
 numeroSubtopicoEditor1: ["wm.Number", {"border":"0","caption":"NumeroSubtopico","captionSize":"140px","emptyValue":"zero","formField":"numeroSubtopico","showing":false,"width":"100%"}, {}],
 idSyIdIdSyEditor1: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","emptyValue":"zero","formField":"idSyIdIdSy","showing":false,"width":"100%"}, {}]
 }],
 metaEditor2: ["wm.LargeTextArea", {"border":"0","caption":"Meta","captionAlign":"right","captionPosition":"left","captionSize":"140px","changeOnKey":true,"desktopHeight":"80px","emptyValue":"emptyString","formField":"meta","height":"80px","maxChars":200,"styles":{},"width":"100%"}, {}],
-fechaEditorDate1: ["wm.Date", {"border":"0","caption":"Fecha","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fecha","height":"26px","width":"100%"}, {}],
+fechaEditorDate1: ["wm.Date", {"caption":"Fecha","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"fecha","height":"26px","width":"100%"}, {}],
 logradoEditor3: ["wm.Checkbox", {"caption":"Logrado","captionSize":"140px","desktopHeight":"26px","displayValue":false,"formField":"logrado","height":"26px","width":"100%"}, {}],
 idSyIdIdSyEditor5: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idSyIdIdSy","height":"26px","showing":false,"width":"100%"}, {}]
 }]
@@ -2667,20 +2792,20 @@ otrasmetasCancelButton: ["wm.Button", {"_classes":{"domNode":["eliminar"]},"capt
 }],
 recursoDialog: ["wm.DesignableDialog", {"buttonBarId":"buttonBar5","containerWidgetId":"containerWidget5","desktopHeight":"440px","height":"440px","styles":{"backgroundColor":"#ebebeb","color":"#090808"},"title":"Formulario Recursos","width":"500px"}, {}, {
 containerWidget5: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
-recursoLiveForm1: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"337px","horizontalAlign":"left","liveEditing":false,"margin":"4","styles":{},"verticalAlign":"top"}, {"onBeginInsert":"recursoLiveForm1BeginInsert","onBeginUpdate":"recursoLiveForm1BeginUpdate","onDeleteData":"recursoLiveForm1DeleteData","onInsertData":"recursoLiveForm1InsertData","onSuccess":"recursoLivePanel1.popupLiveFormSuccess","onSuccess1":"recursoLiveForm1Success1","onUpdateData":"recursoLiveForm1UpdateData"}, {
+recursoLiveForm1: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"333px","horizontalAlign":"left","liveEditing":false,"margin":"4","styles":{},"verticalAlign":"top"}, {"onBeginInsert":"recursoLiveForm1BeginInsert","onBeginUpdate":"recursoLiveForm1BeginUpdate","onDeleteData":"recursoLiveForm1DeleteData","onInsertData":"recursoLiveForm1InsertData","onSuccess":"recursoLivePanel1.popupLiveFormSuccess","onSuccess1":"recursoLiveForm1Success1","onUpdateData":"recursoLiveForm1UpdateData"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"recursoDojoGrid.selectedItem","targetProperty":"dataSet"}, {}],
 wire1: ["wm.Wire", {"expression":undefined,"source":"relatedEditor6.dataOutput","targetProperty":"dataOutput.subtopico"}, {}]
 }],
 idRecursoEditor1: ["wm.Number", {"border":"0","caption":"IdRecurso","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idRecurso","height":"26px","required":true,"width":"100%"}, {}],
-relatedEditor6: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"54px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+relatedEditor6: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"52px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"recursoDojoGrid.selectedItem.subtopico","targetProperty":"dataSet"}, {}]
 }],
 idSubtopicoEditor4: ["wm.Number", {"border":"0","caption":"Id subtópico","captionSize":"140px","desktopHeight":"26px","emptyValue":"zero","formField":"idSubtopico","height":"26px","required":true,"width":"100%"}, {}],
 subtopicoEditor4: ["wm.Text", {"border":"0","caption":"Subtopico","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"subtopico","height":"26px","width":"100%"}, {}],
-fechaInicioEditor2: ["wm.DateTime", {"border":"0","caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","showing":false,"width":"100%"}, {}],
-fechaFinEditor2: ["wm.DateTime", {"border":"0","caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","showing":false,"width":"100%"}, {}],
+fechaInicioEditor2: ["wm.DateTime", {"caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","showing":false,"width":"100%"}, {}],
+fechaFinEditor2: ["wm.DateTime", {"caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","showing":false,"width":"100%"}, {}],
 subtopicEditor3: ["wm.Text", {"border":"0","caption":"Subtopic","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"subtopic","height":"26px","showing":false,"width":"100%"}, {}],
 numeroSubtopicoEditor2: ["wm.Number", {"border":"0","caption":"NumeroSubtopico","captionSize":"140px","emptyValue":"zero","formField":"numeroSubtopico","showing":false,"width":"100%"}, {}],
 idSyIdIdSyEditor8: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","emptyValue":"zero","formField":"idSyIdIdSy","showing":false,"width":"100%"}, {}]
@@ -2712,20 +2837,20 @@ recursoCancelButton: ["wm.Button", {"_classes":{"domNode":["eliminar"]},"caption
 }],
 actividadDialog1: ["wm.DesignableDialog", {"buttonBarId":"buttonBar6","containerWidgetId":"containerWidget6","desktopHeight":"380px","height":"380px","styles":{"backgroundColor":"#ebebeb","fontSize":"11px","color":"#000000"},"title":"Formulario Actividad","width":"500px"}, {}, {
 containerWidget6: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
-actividadLiveForm3: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"313px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginDelete":"actividadLiveForm3BeginDelete","onBeginInsert":"actividadLiveForm3BeginInsert","onBeginUpdate":"actividadLiveForm3BeginUpdate","onDeleteData":"actividadLiveForm3DeleteData","onInsertData":"actividadLiveForm3InsertData","onSuccess":"actividadLivePanel2.popupLiveFormSuccess","onSuccess1":"actividadLiveForm3Success1","onSuccess2":"actividadLiveForm3Success2","onUpdateData":"actividadLiveForm3UpdateData"}, {
+actividadLiveForm3: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"309px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onBeginDelete":"actividadLiveForm3BeginDelete","onBeginInsert":"actividadLiveForm3BeginInsert","onBeginUpdate":"actividadLiveForm3BeginUpdate","onDeleteData":"actividadLiveForm3DeleteData","onInsertData":"actividadLiveForm3InsertData","onSuccess":"actividadLivePanel2.popupLiveFormSuccess","onSuccess1":"actividadLiveForm3Success1","onSuccess2":"actividadLiveForm3Success2","onUpdateData":"actividadLiveForm3UpdateData"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"actividadDojoGrid1.selectedItem","targetProperty":"dataSet"}, {}],
 wire1: ["wm.Wire", {"expression":undefined,"source":"relatedEditor7.dataOutput","targetProperty":"dataOutput.subtopico"}, {}]
 }],
 idActividadEditor3: ["wm.Number", {"border":"0","caption":"Id actividad","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idActividad","height":"26px","required":true,"styles":{},"width":"100%"}, {}],
-relatedEditor7: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"54px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+relatedEditor7: ["wm.RelatedEditor", {"editingMode":"readonly","fitToContentHeight":true,"formField":"subtopico","height":"52px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"actividadDojoGrid1.selectedItem.subtopico","targetProperty":"dataSet"}, {}]
 }],
 idSubtopicoEditor5: ["wm.Number", {"border":"0","caption":"Id subtópico","captionSize":"140px","desktopHeight":"26px","emptyValue":"zero","formField":"idSubtopico","height":"26px","required":true,"width":"100%"}, {}],
 subtopicoEditor5: ["wm.Text", {"border":"0","caption":"Subtopico","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"subtopico","height":"26px","width":"100%"}, {}],
-fechaInicioEditor6: ["wm.DateTime", {"border":"0","caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","showing":false,"width":"100%"}, {}],
-fechaFinEditor6: ["wm.DateTime", {"border":"0","caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","openOnClick":false,"showing":false,"width":"100%"}, {}],
+fechaInicioEditor6: ["wm.DateTime", {"caption":"FechaInicio","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaInicio","height":"26px","showing":false,"width":"100%"}, {}],
+fechaFinEditor6: ["wm.DateTime", {"caption":"FechaFin","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fechaFin","height":"26px","openOnClick":false,"showing":false,"width":"100%"}, {}],
 subtopicEditor5: ["wm.Text", {"border":"0","caption":"Subtopic","captionSize":"140px","desktopHeight":"26px","emptyValue":"emptyString","formField":"subtopic","height":"26px","showing":false,"width":"100%"}, {}],
 numeroSubtopicoEditor4: ["wm.Number", {"border":"0","caption":"NumeroSubtopico","captionSize":"140px","emptyValue":"zero","formField":"numeroSubtopico","showing":false,"width":"100%"}, {}],
 idSyIdIdSyEditor11: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","emptyValue":"zero","formField":"idSyIdIdSy","showing":false,"width":"100%"}, {}]
@@ -2751,7 +2876,7 @@ dataFieldWire: ["wm.Wire", {"source":"lookup2.liveVariable","targetProperty":"da
 wire: ["wm.Wire", {"expression":undefined,"source":"curriculo_tipo_desempeno","targetProperty":"dataSet"}, {}]
 }]
 }],
-fechaEditor6: ["wm.DateTime", {"border":"0","caption":"Fecha","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fecha","height":"26px","width":"100%"}, {}],
+fechaEditor6: ["wm.DateTime", {"caption":"Fecha","captionSize":"140px","dateMode":"Date","desktopHeight":"26px","emptyValue":"zero","formField":"fecha","height":"26px","width":"100%"}, {}],
 requeridoAlternativoEditor3: ["wm.Checkbox", {"caption":"Requerido","captionSize":"140px","desktopHeight":"26px","displayValue":false,"formField":"requeridoAlternativo","height":"26px","width":"100%"}, {}],
 idSyIdIdSyEditor7: ["wm.Number", {"border":"0","caption":"IdSyIdIdSy","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idSyIdIdSy","height":"26px","showing":false,"width":"100%"}, {}]
 }]
@@ -2797,13 +2922,13 @@ inicio_forgot_password: ["wm.Label", {"align":"center","caption":"<u>¿Desea cam
 format: ["wm.DataFormatter", {}, {}]
 }],
 logForm: ["wm.LiveForm", {"height":"60px","horizontalAlign":"left","showing":false,"verticalAlign":"top"}, {}, {
-inicio_box_fecha: ["wm.DateEditor", {"caption":"hora","disabled":true,"displayValue":"2/11/2015","padding":"2","readonly":true,"showing":false}, {}, {
+inicio_box_fecha: ["wm.DateEditor", {"caption":"hora","disabled":true,"displayValue":"2/19/2015","padding":"2","readonly":true,"showing":false}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 }],
 editor: ["wm._DateEditor", {}, {}]
 }],
-inicio_box_hora: ["wm.TimeEditor", {"caption":"fecha","disabled":true,"displayValue":"15:10 PM","padding":"2","showing":false}, {}, {
+inicio_box_hora: ["wm.TimeEditor", {"caption":"fecha","disabled":true,"displayValue":"10:07 AM","padding":"2","showing":false}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 }],
@@ -2872,7 +2997,7 @@ panelHeader: ["wm.Panel", {"_classes":{"domNode":["template-header-panel","wm_Ba
 logo: ["wm.Picture", {"aspect":"h","height":"100%","source":"resources/images/logos/headerapp.jpg","width":"600px"}, {}],
 spacer5: ["wm.Spacer", {"height":"48px","width":"99%"}, {}],
 top_Head: ["wm.Panel", {"height":"40px","horizontalAlign":"right","layoutKind":"left-to-right","verticalAlign":"bottom","width":"100%"}, {}, {
-dateEditor1: ["wm.DateEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"captionPosition":"right","displayValue":"2/11/2015","padding":"2","readonly":true,"width":"80px"}, {}, {
+dateEditor1: ["wm.DateEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"captionPosition":"right","displayValue":"2/19/2015","padding":"2","readonly":true,"width":"80px"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 }],
@@ -2881,7 +3006,7 @@ editor: ["wm._DateEditor", {}, {}]
 label1: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_16px"]},"align":"center","caption":"|","padding":"0","width":"10px"}, {}, {
 format: ["wm.DataFormatter", {}, {}]
 }],
-timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"displayValue":"15:10 PM","padding":"2","readonly":true,"width":"76px"}, {}, {
+timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontFamily_Arial","wm_TextDecoration_Bold","wm_FontSizePx_12px"]},"displayValue":"10:07 AM","padding":"2","readonly":true,"width":"76px"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
 }],
@@ -2925,8 +3050,8 @@ menu_spacer: ["wm.Spacer", {"height":"100%","styles":{},"width":"96px"}, {}],
 menu_feedback_butt: ["wm.Button", {"_classes":{"domNode":["eliminar"]},"border":"0","caption":"Feedback","desktopHeight":"40px","height":"40px","iconHeight":"22px","iconUrl":"resources/images/icon_set/feedback.png","iconWidth":"22px","margin":"0","styles":{},"width":"100%"}, {"onclick":"feedbackDialog.show"}]
 }],
 contaniner_panels: ["wm.Panel", {"height":"100%","horizontalAlign":"left","padding":"5,10,10,10","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
-top_notification_panel: ["wm.Panel", {"height":"48px","horizontalAlign":"right","layoutKind":"left-to-right","lock":true,"margin":"0,0,0,0","padding":"0,5,0,0","styles":{"backgroundColor":"#a3a3a3"},"verticalAlign":"middle","width":"100%"}, {}, {
-top_select_sy: ["wm.SelectMenu", {"caption":"Año escolar","dataType":"com.aprendoz_test.data.Sy","dataValue":undefined,"displayField":"schoolYear","displayValue":""}, {"onchange":"top_select_syChange","onchange1":"top_select_syChange1","onchange2":"top_select_syChange2"}, {
+top_notification_panel: ["wm.Panel", {"height":"48px","horizontalAlign":"right","layoutKind":"left-to-right","margin":"0,0,0,0","padding":"0,5,0,0","styles":{"backgroundColor":"#a3a3a3"},"verticalAlign":"middle","width":"100%"}, {}, {
+top_select_sy: ["wm.SelectMenu", {"caption":"Año escolar","dataType":"com.aprendoz_test.data.Sy","dataValue":undefined,"desktopHeight":"34px","displayField":"schoolYear","displayValue":"","height":"34px","placeHolder":"Año escolar"}, {"onchange":"top_select_syChange","onchange1":"top_select_syChange1","onchange2":"top_select_syChange2"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"a_lista_sy","targetProperty":"dataSet"}, {}]
 }]
@@ -2934,9 +3059,15 @@ wire: ["wm.Wire", {"expression":undefined,"source":"a_lista_sy","targetProperty"
 spacer2: ["wm.Spacer", {"height":"48px","width":"100%"}, {}],
 profile_button: ["wm.Button", {"_classes":{"domNode":["blue_button"]},"border":"0","caption":" ","iconHeight":"24px","iconMargin":"0 5px 0 0","iconUrl":"resources/images/icon_set/settings.png","iconWidth":"24px","margin":"0","styles":{},"width":"110px"}, {"onclick":"settingsUser.show"}]
 }],
-curriculo_big_panel: ["wm.Panel", {"height":"1264px","horizontalAlign":"left","lock":true,"showing":false,"styles":{},"verticalAlign":"top","width":"100%"}, {}, {
-curriculo_action_panel: ["wm.Panel", {"height":"32px","horizontalAlign":"right","layoutKind":"left-to-right","styles":{"backgroundColor":"#f2f2f2"},"verticalAlign":"top","width":"100%"}, {}, {
-curriculo_detalles_estudiantes_butt: ["wm.Button", {"_classes":{"domNode":["nuevoButtons"]},"caption":"Ver estudiantes","disabled":true,"margin":"4","styles":{},"width":"138px"}, {"onclick":"curriculo_detalles_estudiantes_buttClick","onclick1":"curriculo_detalles_estudiantes_buttClick1"}]
+curriculo_big_panel: ["wm.Panel", {"autoScroll":true,"height":"1264px","horizontalAlign":"left","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
+curriculo_action_panel: ["wm.Panel", {"height":"48px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#f2f2f2"},"verticalAlign":"middle","width":"100%"}, {}, {
+sel_asignaturas_select: ["wm.SelectMenu", {"caption":"Asignatura","dataType":"com.aprendoz_test.data.output._global_curriculo_asig_docRtnType","dataValue":undefined,"desktopHeight":"34px","displayField":"asignatura","displayValue":"","height":"34px","placeHolder":"Seleccione una asignatura"}, {"onchange":"sel_asignaturas_selectChange"}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"global_docentes_asignaturas","targetProperty":"dataSet"}, {}]
+}]
+}],
+edit_asig_button: ["wm.Button", {"_classes":{"domNode":["blue_button"]},"caption":"Editar Asignatura","desktopHeight":"34px","height":"34px","margin":"4","styles":{},"width":"128px"}, {}],
+curriculo_detalles_estudiantes_butt: ["wm.Button", {"_classes":{"domNode":["nuevoButtons"]},"caption":"Ver estudiantes","desktopHeight":"34px","disabled":true,"height":"34px","margin":"4","styles":{},"width":"138px"}, {"onclick":"curriculo_detalles_estudiantes_buttClick","onclick1":"curriculo_detalles_estudiantes_buttClick1"}]
 }],
 curriculo_grid_docentes_asignaturas: ["wm.DojoGrid", {"_classes":{"domNode":["gridscss"]},"columns":[
 {"show":false,"field":"idpersona","title":"Idpersona","width":"100px","align":"left","formatFunc":"","mobileColumn":false},
@@ -2950,12 +3081,84 @@ curriculo_grid_docentes_asignaturas: ["wm.DojoGrid", {"_classes":{"domNode":["gr
 {"show":false,"field":"subarea2","title":"Subarea2","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":false,"field":"subarea1","title":"Subarea1","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":false,"field":"subarea3","title":"Subarea3","width":"100%","align":"left","formatFunc":"","mobileColumn":false}
-],"dsType":"com.aprendoz_test.data.output._global_curriculo_asig_docRtnType","height":"210px","localizationStructure":{},"margin":"0","minDesktopHeight":60,"singleClickEdit":true,"styles":{"fontSize":"11px","backgroundColor":"#ffffff"}}, {"onCellDblClick":"curriculo_grid_docentes_asignaturasCellDblClick","onSelect":"curriculo_grid_docentes_asignaturasSelect","onSelect1":"curriculo_grid_docentes_asignaturasSelect1","onSelect2":"curriculo_grid_docentes_asignaturasSelect2","onSelect3":"curriculo_grid_docentes_asignaturasSelect3","onSelect4":"curriculo_grid_docentes_asignaturasSelect4","onSelectionChange":"curriculo_grid_docentes_asignaturasSelectionChange","onSelectionChange1":"curriculo_grid_docentes_asignaturasSelectionChange1"}, {
+],"dsType":"com.aprendoz_test.data.output._global_curriculo_asig_docRtnType","height":"210px","localizationStructure":{},"margin":"0","minDesktopHeight":60,"showing":false,"singleClickEdit":true,"styles":{"fontSize":"11px","backgroundColor":"#ffffff"}}, {"onCellDblClick":"curriculo_grid_docentes_asignaturasCellDblClick","onSelect":"curriculo_grid_docentes_asignaturasSelect","onSelect1":"curriculo_grid_docentes_asignaturasSelect1","onSelect2":"curriculo_grid_docentes_asignaturasSelect2","onSelect3":"curriculo_grid_docentes_asignaturasSelect3","onSelect4":"curriculo_grid_docentes_asignaturasSelect4","onSelectionChange":"curriculo_grid_docentes_asignaturasSelectionChange","onSelectionChange1":"curriculo_grid_docentes_asignaturasSelectionChange1"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"global_docentes_asignaturas","targetProperty":"dataSet"}, {}]
 }]
 }],
-panel9: ["wm.Panel", {"height":"32px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#f2f2f2"},"verticalAlign":"top","width":"100%"}, {}],
+panel_unidades_subtopicos: ["wm.Panel", {"height":"255px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#f2f2f2"},"verticalAlign":"top","width":"100%"}, {}, {
+unidadLivePanel2: ["wm.LivePanel", {"horizontalAlign":"left","verticalAlign":"top"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"source":"unidadDojoGrid1","targetId":null,"targetProperty":"dataGrid"}, {}]
+}],
+unidadDojoGrid1: ["wm.DojoGrid", {"columns":[
+{"show":true,"field":"idUnidad","title":"ID","width":"80px","align":"center","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"unidad","title":"Unidad","width":"100%","align":"left","formatFunc":"","fieldType":"dojox.grid.cells._Widget","mobileColumn":false},
+{"show":true,"field":"unit","title":"Unit","width":"100%","align":"left","formatFunc":"","fieldType":"dojox.grid.cells._Widget","mobileColumn":false},
+{"show":true,"field":"fechaInicio","title":"Fecha <br>Inicio","width":"80px","align":"left","formatFunc":"wm_date_formatter","fieldType":"dojox.grid.cells.DateTextBox","mobileColumn":false},
+{"show":true,"field":"fechaFin","title":"Fecha<br>Fin","width":"80px","align":"left","formatFunc":"wm_date_formatter","fieldType":"dojox.grid.cells.DateTextBox","mobileColumn":false},
+{"show":true,"field":"numeroUnidad","title":"# Unidad","width":"50px","align":"center","formatFunc":"","fieldType":"dojox.grid.cells.ComboBox","editorProps":{"selectDataSet":"global_numero_unidad","displayField":"name","isSimpleType":true,"restrictValues":false},"mobileColumn":false},
+{"show":false,"field":"idSyIdIdSy","title":"IdSyIdIdSy","width":"80px","align":"right","formatFunc":"","fieldType":"dojox.grid.cells.NumberTextBox","mobileColumn":false},
+{"show":true,"field":"asignatura.idAsignatura","title":"IdAsignatura","width":"80px","align":"right","formatFunc":"","fieldType":"dojox.grid.cells.NumberTextBox","constraints":{"min":0},"editorProps":{"invalidMessage":"Es ibligatorio un numero de asig"},"mobileColumn":false},
+{"show":false,"field":"asignatura.asignatura","title":"Asignatura","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.subject","title":"Subject","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.electiva","title":"Electiva","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.idArea1","title":"IdArea1","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.idArea2","title":"IdArea2","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.idArea3","title":"IdArea3","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.idSubarea1","title":"IdSubarea1","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.idSubarea2","title":"IdSubarea2","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.idSubarea3","title":"IdSubarea3","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.salonIdSalon","title":"SalonIdSalon","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.intensidadHoraria","title":"IntensidadHoraria","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.peso","title":"Peso","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.descripAsigEspaniol","title":"Asignatura","width":"100%","align":"left","formatFunc":"","fieldType":"dojox.grid.cells.ComboBox","editorProps":{"selectDataSet":"asignaturaLiveVariable1","displayField":"descripAsigEspaniol"},"mobileColumn":false},
+{"show":false,"field":"asignatura.descripAsigIngles","title":"DescripAsigIngles","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.ihA1","title":"IhA1","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.ihA2","title":"IhA2","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.ihA3","title":"IhA3","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.meses","title":"Meses","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"asignatura.esperadostotal","title":"Esperadostotal","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"ID: \" + ${idUnidad} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Unidad: \" + ${unidad}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Unit: \" + ${unit}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Fecha <br>Inicio: \" + ${wm.runtimeId}.formatCell(\"fechaInicio\", ${fechaInicio}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Fecha<br>Fin: \" + ${wm.runtimeId}.formatCell(\"fechaFin\", ${fechaFin}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"# Unidad: \" + ${numeroUnidad}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"IdAsignatura: \" + ${asignatura.idAsignatura}\n + \"</div>\"\n\n","mobileColumn":true}
+],"deleteColumn":true,"dsType":"com.aprendoz_test.data.Unidad","height":"100%","liveEditing":true,"margin":"4","minDesktopHeight":60,"singleClickEdit":true,"styles":{"fontSize":"11px"}}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"source":"unidadLiveVariable2","targetProperty":"dataSet"}, {}]
+}]
+}],
+unidadGridButtonPanel1: ["wm.Panel", {"desktopHeight":"32px","enableTouchHeight":true,"height":"32px","horizontalAlign":"right","layoutKind":"left-to-right","mobileHeight":"40px","verticalAlign":"top","width":"100%"}, {}, {
+unidadNewButton1: ["wm.Button", {"caption":"New","margin":"4"}, {"onclick":"unidadDojoGrid1.addEmptyRow"}]
+}]
+}],
+subtopicoLivePanel2: ["wm.LivePanel", {"horizontalAlign":"left","verticalAlign":"top"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"source":"subtopicoDojoGrid1","targetId":null,"targetProperty":"dataGrid"}, {}]
+}],
+subtopicoDojoGrid1: ["wm.DojoGrid", {"columns":[
+{"show":true,"field":"idSubtopico","title":"IdSubtopico","width":"80px","displayType":"Number","align":"right","formatFunc":""},
+{"show":true,"field":"subtopico","title":"Subtopico","width":"100%","displayType":"Text","align":"left","formatFunc":"","fieldType":"dojox.grid.cells._Widget"},
+{"show":true,"field":"fechaInicio","title":"FechaInicio","width":"80px","displayType":"Date","align":"left","formatFunc":"wm_date_formatter","fieldType":"dojox.grid.cells.DateTextBox"},
+{"show":true,"field":"fechaFin","title":"FechaFin","width":"80px","displayType":"Date","align":"left","formatFunc":"wm_date_formatter","fieldType":"dojox.grid.cells.DateTextBox"},
+{"show":true,"field":"subtopic","title":"Subtopic","width":"100%","displayType":"Text","align":"left","formatFunc":"","fieldType":"dojox.grid.cells._Widget"},
+{"show":true,"field":"numeroSubtopico","title":"NumeroSubtopico","width":"80px","displayType":"Number","align":"right","formatFunc":"","fieldType":"dojox.grid.cells.NumberTextBox"},
+{"show":true,"field":"idSyIdIdSy","title":"IdSyIdIdSy","width":"80px","displayType":"Number","align":"right","formatFunc":"","fieldType":"dojox.grid.cells.NumberTextBox"},
+{"show":false,"field":"unidad.idUnidad","title":"IdUnidad","width":"80px","displayType":"Number","align":"right","formatFunc":""},
+{"show":false,"field":"unidad.unidad","title":"Unidad","width":"100%","displayType":"Text","align":"left","formatFunc":"","fieldType":"dojox.grid.cells.ComboBox","editorProps":{"selectDataSet":"unidadLiveVariable3","displayField":"unidad"}},
+{"show":false,"field":"unidad.unit","title":"Unit","width":"100%","displayType":"Text","align":"left","formatFunc":""},
+{"show":false,"field":"unidad.fechaInicio","title":"FechaInicio","width":"80px","displayType":"Date","align":"left","formatFunc":"wm_date_formatter"},
+{"show":false,"field":"unidad.fechaFin","title":"FechaFin","width":"80px","displayType":"Date","align":"left","formatFunc":"wm_date_formatter"},
+{"show":false,"field":"unidad.numeroUnidad","title":"NumeroUnidad","width":"80px","displayType":"Number","align":"right","formatFunc":""},
+{"show":false,"field":"unidad.idSyIdIdSy","title":"IdSyIdIdSy","width":"80px","displayType":"Number","align":"right","formatFunc":""},
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"IdSubtopico: \" + ${idSubtopico} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Subtopico: \" + ${subtopico}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"FechaInicio: \" + ${wm.runtimeId}.formatCell(\"fechaInicio\", ${fechaInicio}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"FechaFin: \" + ${wm.runtimeId}.formatCell(\"fechaFin\", ${fechaFin}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Subtopic: \" + ${subtopic}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"NumeroSubtopico: \" + ${numeroSubtopico}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"IdSyIdIdSy: \" + ${idSyIdIdSy}\n + \"</div>\"\n\n","mobileColumn":true}
+],"deleteColumn":true,"dsType":"com.aprendoz_test.data.Subtopico","height":"100%","liveEditing":true,"margin":"4","minDesktopHeight":60,"singleClickEdit":true}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"source":"subtopicoLiveVariable2","targetProperty":"dataSet"}, {}]
+}]
+}],
+subtopicoGridButtonPanel1: ["wm.Panel", {"desktopHeight":"32px","enableTouchHeight":true,"height":"32px","horizontalAlign":"right","layoutKind":"left-to-right","mobileHeight":"40px","verticalAlign":"top","width":"100%"}, {}, {
+subtopicoNewButton1: ["wm.Button", {"caption":"New","margin":"4"}, {"onclick":"subtopicoDojoGrid1.addEmptyRow"}]
+}]
+}]
+}],
 logDocentesliveForm: ["wm.LiveForm", {"height":"44px","horizontalAlign":"left","showing":false,"verticalAlign":"top"}, {}],
 unidadLivePanel1: ["wm.LivePanel", {"autoScroll":false,"height":"230px","horizontalAlign":"left","styles":{},"verticalAlign":"top"}, {}, {
 binding: ["wm.Binding", {}, {}, {
@@ -3176,7 +3379,7 @@ how_to_start: ["wm.Panel", {"height":"156px","horizontalAlign":"left","lock":tru
 home_label1: ["wm.Label", {"caption":"¿Cómo desea empezar?","height":"40px","padding":"4","styles":{"color":"#020202","fontSize":"14px"},"width":"100%"}, {}],
 panel23: ["wm.Panel", {"height":"48px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{},"verticalAlign":"top","width":"100%"}, {}]
 }],
-inicio_big_panel: ["wm.Panel", {"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"10","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
+inicio_big_panel: ["wm.Panel", {"autoScroll":true,"height":"100%","horizontalAlign":"left","lock":true,"padding":"10","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 label_nombreCompleto: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_28px"]},"align":"center","caption":"Indicadores // Dashboard","height":"50px","padding":"4","styles":{"fontSize":"10px"},"width":"100%"}, {}, {
 format: ["wm.DataFormatter", {}, {}]
 }],
@@ -3502,7 +3705,7 @@ editor: ["wm._NumberEditor", {}, {}]
 salonIdSalonEditor2: ["wm.Editor", {"caption":"Salon","disabled":true,"display":"Number","formField":"salonIdSalon","height":"26px","padding":"2","readonly":true,"width":"100%"}, {}, {
 editor: ["wm._NumberEditor", {"required":true}, {}]
 }],
-relatedEditor4: ["wm.RelatedEditor", {"fitToContentHeight":true,"formField":"tipoInscAsig","height":"28px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+relatedEditor4: ["wm.RelatedEditor", {"fitToContentHeight":true,"formField":"tipoInscAsig","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"asignaturaDataGrid2.selectedItem.tipoInscAsig","targetProperty":"dataSet"}, {}],
 wire1: ["wm.Wire", {"expression":undefined,"source":"tipoInscAsigLookup2.selectedItem","targetProperty":"dataOutput"}, {}]
